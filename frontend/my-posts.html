@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/my-posts.css">
+    <title>My Posts - StudySync</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">StudySync</a>
+            <nav class="nav">
+                <a href="browse.html" class="nav-link">Browse</a>
+                <a href="my-posts.html" class="nav-link active">My Posts</a>
+                <a href="mentorship.html" class="nav-link">Mentorship</a>
+                <button class="btn btn-primary">Log in</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="content-wrapper">
+                <aside class="sidebar">
+                    <div class="filters">
+                        <div class="filter-group">
+                            <label for="status">Status</label>
+                            <select id="status" class="select">
+                                <option>All</option>
+                                <option>Active</option>
+                                <option>Completed</option>
+                                <option>Cancelled</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" class="select">
+                                <option>All</option>
+                                <option>JavaScript</option>
+                                <option>Math</option>
+                                <option>English</option>
+                                <option>Physics</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary btn-full">Post a New Session</button>
+                    </div>
+                </aside>
+
+                <section class="study-sessions">
+                    <div class="section-header">
+                        <h2 class="section-title">My Study Sessions</h2>
+                        <p class="section-subtitle">Manage your posted study sessions and track participation.</p>
+                    </div>
+
+                    <div class="session-list">
+                        <div class="session-card">
+                            <div class="user-avatar blue-avatar">
+                                <span>Me</span>
+                            </div>
+                            <div class="session-info">
+                                <h3 class="user-name">Your Session</h3>
+                                <p class="subject">JavaScript - Advanced Concepts</p>
+                                <p class="time-slot">Tomorrow, 6:00PM - 8:00PM</p>
+                                <span class="status-badge active">Active - 3 participants</span>
+                            </div>
+                            <div class="session-actions">
+                                <button class="btn btn-secondary">Edit</button>
+                                <button class="btn btn-secondary">View Participants</button>
+                                <button class="btn btn-danger">Cancel</button>
+                            </div>
+                        </div>
+
+                        <div class="session-card">
+                            <div class="user-avatar blue-avatar">
+                                <span>Me</span>
+                            </div>
+                            <div class="session-info">
+                                <h3 class="user-name">Your Session</h3>
+                                <p class="subject">React.js Study Group</p>
+                                <p class="time-slot">Friday, 3:00PM - 5:00PM</p>
+                                <span class="status-badge active">Active - 1 participant</span>
+                            </div>
+                            <div class="session-actions">
+                                <button class="btn btn-secondary">Edit</button>
+                                <button class="btn btn-secondary">View Participants</button>
+                                <button class="btn btn-danger">Cancel</button>
+                            </div>
+                        </div>
+
+                        <div class="session-card">
+                            <div class="user-avatar blue-avatar">
+                                <span>Me</span>
+                            </div>
+                            <div class="session-info">
+                                <h3 class="user-name">Your Session</h3>
+                                <p class="subject">Math - Calculus Review</p>
+                                <p class="time-slot">Yesterday, 2:00PM - 4:00PM</p>
+                                <span class="status-badge completed">Completed - 2 participants</span>
+                            </div>
+                            <div class="session-actions">
+                                <button class="btn btn-secondary">View Details</button>
+                                <button class="btn btn-secondary">Rate Participants</button>
+                            </div>
+                        </div>
+
+                        <div class="session-card">
+                            <div class="user-avatar blue-avatar">
+                                <span>Me</span>
+                            </div>
+                            <div class="session-info">
+                                <h3 class="user-name">Your Session</h3>
+                                <p class="subject">English Literature Discussion</p>
+                                <p class="time-slot">Last Week, 7:00PM - 9:00PM</p>
+                                <span class="status-badge completed">Completed - 4 participants</span>
+                            </div>
+                            <div class="session-actions">
+                                <button class="btn btn-secondary">View Details</button>
+                                <button class="btn btn-secondary">Rate Participants</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <aside class="messages-panel">
+                    <h3 class="messages-title">Recent Activity</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">📝</div>
+                            <div class="activity-content">
+                                <p class="activity-text">New participant joined your JavaScript session</p>
+                                <span class="activity-time">2 hours ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">✅</div>
+                            <div class="activity-content">
+                                <p class="activity-text">Math session completed successfully</p>
+                                <span class="activity-time">1 day ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">💬</div>
+                            <div class="activity-content">
+                                <p class="activity-text">New message from Alex</p>
+                                <span class="activity-time">2 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

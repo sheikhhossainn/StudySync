@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/user-selection.css">
+    <title>StudySync - Join Us</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">StudySync</h1>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="#" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="selection-container">
+                <div class="selection-card">
+                    <div class="icon-container">
+                        <svg class="icon graduation-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Join as a Student</h2>
+                    <p class="card-description">
+                        Find study partners, join groups,<br>
+                        and get mentorship.
+                    </p>
+                    <div class="button-group">
+                        <button class="btn btn-outline" onclick="location.href='login.html?type=student'">Log in</button>
+                        <button class="btn btn-primary" onclick="location.href='signup.html?type=student'">Sign up</button>
+                    </div>
+                </div>
+
+                <div class="selection-card">
+                    <div class="icon-container">
+                        <svg class="icon lightbulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <!-- Lightbulb circle -->
+                            <circle cx="12" cy="11" r="4"/>
+                            <!-- Base lines -->
+                            <path d="M9 17h6"/>
+                            <path d="M9 20h6"/>
+                            <!-- Light rays -->
+                            <path d="M12 5v2"/>
+                            <path d="M19 11h-2"/>
+                            <path d="M5 11h2"/>
+                            <path d="m16.5 7.5-1.5 1.5"/>
+                            <path d="m7.5 7.5 1.5 1.5"/>
+                            <path d="m16.5 14.5-1.5-1.5"/>
+                            <path d="m7.5 14.5 1.5-1.5"/>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Join as a Mentor</h2>
+                    <p class="card-description">
+                        Guide students, share expertise,<br>
+                        and earn through mentorship.
+                    </p>
+                    <div class="button-group">
+                        <button class="btn btn-outline" onclick="location.href='login.html?type=mentor'">Log in</button>
+                        <button class="btn btn-primary" onclick="location.href='signup.html?type=mentor'">Sign up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

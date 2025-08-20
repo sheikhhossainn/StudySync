@@ -57,6 +57,12 @@ body {
     color: #334155;
 }
 
+/* Active Navigation Link */
+.nav-link.active {
+    color: #2563eb;
+    font-weight: 600;
+}
+
 /* Button Styles */
 .btn {
     padding: 0.5rem 1rem;

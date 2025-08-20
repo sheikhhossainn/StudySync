@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/browse.css">
+    <title>Browse Posts - StudySync</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">StudySync</a>
+            <nav class="nav">
+                <a href="browse.html" class="nav-link active">Browse</a>
+                <a href="my-posts.html" class="nav-link">My Posts</a>
+                <a href="mentorship.html" class="nav-link">Mentorship</a>
+                <button class="btn btn-primary">Log in</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="content-wrapper">
+                <aside class="sidebar">
+                    <div class="filters">
+                        <div class="filter-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" class="select">
+                                <option>All</option>
+                                <option>JavaScript</option>
+                                <option>Math</option>
+                                <option>English</option>
+                                <option>Physics</option>
+                                <option>Chemistry</option>
+                                <option>Biology</option>
+                                <option>History</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="time">Time</label>
+                            <select id="time" class="select">
+                                <option>All</option>
+                                <option>Morning</option>
+                                <option>Afternoon</option>
+                                <option>Evening</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary btn-full">Post a Session</button>
+                    </div>
+                </aside>
+
+                <section class="study-sessions">
+                    <div class="section-header">
+                        <h2 class="section-title">All Study Sessions</h2>
+                        <p class="section-subtitle">Browse all available study sessions posted by students.</p>
+                    </div>
+
+                    <div class="session-list">
+                        <div class="session-card">
+                            <div class="user-avatar blue-avatar">
+                                <span>J</span>
+                            </div>
+                            <div class="session-info">
+                                <h3 class="user-name">Jessica</h3>
+                                <p class="subject">JavaScript</p>
+                                <p class="time-slot">Tomorrow, 2:00PM - 4:30PM</p>
+                            </div>
+                            <div class="session-actions">
+                                <button class="btn btn-primary">Request to join</button>
+                                <button class="btn btn-secondary">Message</button>
+                            </div>
+                        </div>
+
+                        <div class="session-card">
+                            <div class="user-avatar blue-avatar">
+                                <span>A</span>
+                            </div>
+                            <div class="session-info">
+                                <h3 class="user-name">Alex</h3>
+                                <p class="subject">Math</p>
+                                <p class="time-slot">Tomorrow, 3:00PM - 4:30PM</p>
+                            </div>
+                            <div class="session-actions">
+                                <button class="btn btn-primary">Request to join</button>
+                                <button class="btn btn-secondary">Message</button>
+                            </div>
+                        </div>
+
+                        <div class="session-card">
+                            <div class="user-avatar blue-avatar">
+                                <span>M</span>
+                            </div>
+                            <div class="session-info">
+                                <h3 class="user-name">Maria</h3>
+                                <p class="subject">Physics</p>
+                                <p class="time-slot">Today, 7:00PM - 9:00PM</p>
+                            </div>
+                            <div class="session-actions">
+                                <button class="btn btn-primary">Request to join</button>
+                                <button class="btn btn-secondary">Message</button>
+                            </div>
+                        </div>
+
+                        <div class="session-card">
+                            <div class="user-avatar blue-avatar">
+                                <span>S</span>
+                            </div>
+                            <div class="session-info">
+                                <h3 class="user-name">Sarah</h3>
+                                <p class="subject">Chemistry</p>
+                                <p class="time-slot">Wednesday, 4:00PM - 6:00PM</p>
+                            </div>
+                            <div class="session-actions">
+                                <button class="btn btn-primary">Request to join</button>
+                                <button class="btn btn-secondary">Message</button>
+                            </div>
+                        </div>
+
+                        <div class="session-card">
+                            <div class="user-avatar blue-avatar">
+                                <span>D</span>
+                            </div>
+                            <div class="session-info">
+                                <h3 class="user-name">David</h3>
+                                <p class="subject">English</p>
+                                <p class="time-slot">Friday, 1:00PM - 3:00PM</p>
+                            </div>
+                            <div class="session-actions">
+                                <button class="btn btn-primary">Request to join</button>
+                                <button class="btn btn-secondary">Message</button>
+                            </div>
+                        </div>
+
+                        <div class="session-card">
+                            <div class="user-avatar blue-avatar">
+                                <span>L</span>
+                            </div>
+                            <div class="session-info">
+                                <h3 class="user-name">Lisa</h3>
+                                <p class="subject">Biology</p>
+                                <p class="time-slot">Saturday, 10:00AM - 12:00PM</p>
+                            </div>
+                            <div class="session-actions">
+                                <button class="btn btn-primary">Request to join</button>
+                                <button class="btn btn-secondary">Message</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <aside class="messages-panel">
+                    <h3 class="messages-title">Messages</h3>
+                    <div class="search-box">
+                        <input type="text" placeholder="Search" class="search-input">
+                    </div>
+                    <div class="message-item">
+                        <div class="user-avatar blue-avatar small">
+                            <span>J</span>
+                        </div>
+                        <div class="message-content">
+                            <h4 class="message-sender">Jessica</h4>
+                            <p class="message-text">Thanks for joining my session!</p>
+                        </div>
+                    </div>
+                    <div class="message-item">
+                        <div class="user-avatar blue-avatar small">
+                            <span>A</span>
+                        </div>
+                        <div class="message-content">
+                            <h4 class="message-sender">Alex</h4>
+                            <p class="message-text">Looking forward to studying math together.</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

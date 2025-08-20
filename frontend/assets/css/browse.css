@@ -1,0 +1,214 @@
+/* Browse Page Specific Styles */
+
+/* Enhanced Session Cards for Browse Page */
+.session-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    transition: all 0.2s ease;
+}
+
+.session-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    background-color: #3b82f6;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.blue-avatar {
+    background-color: #3b82f6;
+}
+
+.session-info {
+    flex: 1;
+}
+
+.user-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 0.25rem;
+}
+
+.subject {
+    color: #2563eb;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.time-slot {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.session-actions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+/* Browse Page Specific Filters */
+.filters .filter-group select {
+    background-color: white;
+    border: 1px solid #d1d5db;
+    transition: border-color 0.2s;
+}
+
+.filters .filter-group select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Enhanced Messages Panel for Browse */
+.messages-panel .message-item {
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    background: #f8fafc;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    transition: background-color 0.2s;
+}
+
+.messages-panel .message-item:hover {
+    background: #f1f5f9;
+}
+
+.message-content {
+    flex: 1;
+}
+
+.message-sender {
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.message-text {
+    color: #64748b;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.user-avatar.small {
+    width: 35px;
+    height: 35px;
+    font-size: 0.8rem;
+}
+
+/* Search Input Styling */
+.search-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.search-input::placeholder {
+    color: #9ca3af;
+}
+
+/* Section Header Enhancements */
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    color: #64748b;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Session List Container */
+.session-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Enhanced Button Hover Effects */
+.btn-primary:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.btn-secondary:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+/* Responsive Design for Browse Page */
+@media (max-width: 768px) {
+    .session-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.25rem;
+    }
+    
+    .session-actions {
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    
+    .user-avatar {
+        align-self: center;
+    }
+    
+    .messages-panel .message-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .user-avatar.small {
+        align-self: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .session-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .btn {
+        width: 100%;
+        min-width: 120px;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+}

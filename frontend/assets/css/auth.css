@@ -33,13 +33,16 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.logo {
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: white;
+}/* Buttons */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
     text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    font-size: 1rem;
 }
 
 .nav-link {
@@ -61,10 +64,17 @@ body {
     align-items: center;
 }
 
+.container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 2rem !important;
+    width: 100% !important;
+}
+
 .auth-container {
-    max-width: 600px;
-    margin: 0 auto;
-    width: 100%;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
 }
 
 /* Progress Indicator */
@@ -131,10 +141,14 @@ body {
 
 /* Auth Card */
 .auth-card {
-    background: white;
-    border-radius: 1rem;
-    padding: 2rem;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    background: white !important;
+    border-radius: 1rem !important;
+    padding: 3rem 4rem !important;
+    min-height: 500px !important;
+    width: 100% !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
     animation: slideUp 0.4s ease-out;
 }
 
@@ -196,6 +210,7 @@ body {
     background: white;
     color: #374151;
     font-weight: 500;
+    font-size: 1rem;
     cursor: pointer;
     transition: all 0.2s;
     margin-bottom: 1.5rem;
@@ -242,7 +257,7 @@ body {
 }
 
 .form-group {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .form-group label {
@@ -250,6 +265,7 @@ body {
     margin-bottom: 0.5rem;
     font-weight: 500;
     color: #374151;
+    font-size: 1rem;
 }
 
 .form-group input,
@@ -286,12 +302,18 @@ body {
 }
 
 .country-select {
-    width: 120px;
-    flex-shrink: 0;
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    transition: border-color 0.2s;
+    background-color: white;
 }
 
-.phone-input input {
-    flex: 1;
+.country-select:focus {
+    outline: none;
+    border-color: #3b82f6;
 }
 
 .form-text {
@@ -338,6 +360,11 @@ body {
 
 .btn-full {
     width: 100%;
+}
+
+.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
 }
 
 .btn-link {
@@ -641,14 +668,15 @@ body {
 }
 
 .auth-container {
-    max-width: 450px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
 .auth-card {
     background: white;
     border-radius: 12px;
-    padding: 2.5rem;
+    padding: 4.5rem 4rem;
+    min-height: 750px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     border: 1px solid #e2e8f0;
 }
@@ -763,6 +791,23 @@ body {
     width: 100%;
 }
 
+.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #3b82f6;
+    border: 2px solid #3b82f6;
+}
+
+.btn-outline:hover {
+    background-color: #3b82f6;
+    color: white;
+    transform: translateY(-1px);
+}
+
 /* Footer */
 .auth-footer {
     text-align: center;
@@ -799,7 +844,12 @@ body {
 /* Responsive design */
 @media (max-width: 768px) {
     .auth-card {
-        padding: 2rem 1.5rem;
+        padding: 6rem 5rem;
+        min-height: 900px;
+    }
+    
+    .auth-container {
+        max-width: 1200px;
     }
     
     .form-row {

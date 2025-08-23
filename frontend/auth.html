@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="stylesheet" href="assets/css/auth.css?v=2025082301">
     <title>StudySync - Authentication</title>
 </head>
 <body>
@@ -95,25 +95,23 @@
 
                     <form class="auth-form" id="phoneForm">
                         <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <div class="phone-input">
-                                <select id="countryCode" class="country-select">
-                                    <option value="+880">🇧🇩 +880</option>
-                                    <option value="+1">🇺🇸 +1</option>
-                                    <option value="+44">🇬🇧 +44</option>
-                                    <option value="+91">🇮🇳 +91</option>
-                                </select>
-                                <input type="tel" id="phone" name="phone" placeholder="1XXXXXXXXX" required>
-                            </div>
+                            <label for="countryCode">Select Country</label>
+                            <select id="countryCode" class="country-select">
+                                <option value="+880">🇧🇩 Bangladesh (+880)</option>
+                                <option value="+1">🇺🇸 United States (+1)</option>
+                                <option value="+44">🇬🇧 United Kingdom (+44)</option>
+                                <option value="+91">🇮🇳 India (+91)</option>
+                            </select>
+                            <button type="button" class="btn btn-outline btn-small" id="sendCodeBtn" style="margin-top: 10px;">Send Code</button>
                         </div>
                         
-                        <div class="form-group" id="otpGroup" style="display: none;">
+                        <div class="form-group">
                             <label for="otp">Verification Code</label>
                             <input type="text" id="otp" name="otp" placeholder="Enter 6-digit code" maxlength="6">
-                            <small class="form-text">Code sent to your phone number</small>
+                            <small class="form-text">Enter the code sent to your phone number</small>
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-full" id="phoneSubmitBtn">Send Code</button>
+                        <button type="submit" class="btn btn-primary btn-full" id="phoneSubmitBtn">Verify & Continue</button>
                     </form>
 
                     <div class="auth-footer">

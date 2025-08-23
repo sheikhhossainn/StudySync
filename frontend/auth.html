@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/auth.css">
+    <title>StudySync - Authentication</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">StudySync</a>
+            <nav class="nav">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="index.html" class="nav-link">← Back to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="auth-container">
+                <!-- Progress Indicator -->
+                <div class="progress-container" id="progressContainer" style="display: none;">
+                    <div class="progress-steps">
+                        <div class="step active" data-step="1">
+                            <div class="step-number">1</div>
+                            <span>Account</span>
+                        </div>
+                        <div class="step" data-step="2">
+                            <div class="step-number">2</div>
+                            <span>Verification</span>
+                        </div>
+                        <div class="step" data-step="3">
+                            <div class="step-number">3</div>
+                            <span>Profile</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 1: Login or Initial Signup -->
+                <div class="auth-card" id="step1">
+                    <div class="auth-header">
+                        <h2 id="authTitle">Welcome to StudySync</h2>
+                        <p id="authSubtitle">Choose your login method</p>
+                    </div>
+
+                    <div class="user-type-indicator" id="userTypeIndicator" style="display: none;">
+                        <div class="user-badge">
+                            <span id="userTypeText"></span>
+                            <span id="userTypeIcon"></span>
+                        </div>
+                    </div>
+
+                    <!-- Google OAuth Button -->
+                    <button class="google-btn" id="googleBtn">
+                        <svg class="google-icon" viewBox="0 0 24 24">
+                            <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                        <span id="googleBtnText">Continue with Google</span>
+                    </button>
+
+                    <div class="divider">
+                        <span>or</span>
+                    </div>
+
+                    <!-- Email Login Form -->
+                    <form class="auth-form" id="emailForm">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group" id="passwordGroup" style="display: none;">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full" id="emailSubmitBtn">Continue</button>
+                    </form>
+
+                    <div class="auth-footer">
+                        <p id="authFooterText">New to StudySync? <a href="#" id="switchAuthMode">Sign up</a></p>
+                    </div>
+                </div>
+
+                <!-- Step 2: Phone Verification -->
+                <div class="auth-card" id="step2" style="display: none;">
+                    <div class="auth-header">
+                        <h2>Phone Verification</h2>
+                        <p>We need to verify your phone number for security</p>
+                    </div>
+
+                    <form class="auth-form" id="phoneForm">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <div class="phone-input">
+                                <select id="countryCode" class="country-select">
+                                    <option value="+880">🇧🇩 +880</option>
+                                    <option value="+1">🇺🇸 +1</option>
+                                    <option value="+44">🇬🇧 +44</option>
+                                    <option value="+91">🇮🇳 +91</option>
+                                </select>
+                                <input type="tel" id="phone" name="phone" placeholder="1XXXXXXXXX" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" id="otpGroup" style="display: none;">
+                            <label for="otp">Verification Code</label>
+                            <input type="text" id="otp" name="otp" placeholder="Enter 6-digit code" maxlength="6">
+                            <small class="form-text">Code sent to your phone number</small>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full" id="phoneSubmitBtn">Send Code</button>
+                    </form>
+
+                    <div class="auth-footer">
+                        <button class="btn-link" id="backToStep1">← Back</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Document Upload & Profile -->
+                <div class="auth-card" id="step3" style="display: none;">
+                    <div class="auth-header">
+                        <h2 id="step3Title">Document Verification</h2>
+                        <p id="step3Subtitle">Upload your ID for verification</p>
+                    </div>
+
+                    <form class="auth-form" id="documentForm">
+                        <!-- Student ID Upload -->
+                        <div class="upload-section" id="studentSection" style="display: none;">
+                            <div class="upload-card" id="studentIdUpload">
+                                <div class="upload-icon">📄</div>
+                                <h3>Student ID Card</h3>
+                                <p>Upload a clear photo of your student ID</p>
+                                <input type="file" id="studentId" accept="image/*" class="file-input">
+                                <button type="button" class="btn btn-outline" onclick="document.getElementById('studentId').click()">
+                                    Choose File
+                                </button>
+                                <div class="file-preview" id="studentIdPreview"></div>
+                            </div>
+                        </div>
+
+                        <!-- Mentor Documents Upload -->
+                        <div class="upload-section" id="mentorSection" style="display: none;">
+                            <div class="upload-grid">
+                                <div class="upload-card" id="nidUpload">
+                                    <div class="upload-icon">🆔</div>
+                                    <h3>National ID</h3>
+                                    <p>Upload your NID card</p>
+                                    <input type="file" id="nid" accept="image/*" class="file-input">
+                                    <button type="button" class="btn btn-outline" onclick="document.getElementById('nid').click()">
+                                        Choose File
+                                    </button>
+                                    <div class="file-preview" id="nidPreview"></div>
+                                </div>
+
+                                <div class="upload-card" id="companyIdUpload">
+                                    <div class="upload-icon">🏢</div>
+                                    <h3>Company ID</h3>
+                                    <p>Upload your company ID card</p>
+                                    <input type="file" id="companyId" accept="image/*" class="file-input">
+                                    <button type="button" class="btn btn-outline" onclick="document.getElementById('companyId').click()">
+                                        Choose File
+                                    </button>
+                                    <div class="file-preview" id="companyIdPreview"></div>
+                                </div>
+                            </div>
+
+                            <!-- Professional Info for Mentors -->
+                            <div class="professional-info">
+                                <h3>Professional Information</h3>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="linkedin">LinkedIn Profile</label>
+                                        <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/username">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="github">GitHub Profile</label>
+                                        <input type="url" id="github" name="github" placeholder="https://github.com/username">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="experience">Years of Experience</label>
+                                        <select id="experience" name="experience" required>
+                                            <option value="">Select experience</option>
+                                            <option value="1-2">1-2 years</option>
+                                            <option value="3-5">3-5 years</option>
+                                            <option value="5-10">5-10 years</option>
+                                            <option value="10+">10+ years</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="expertise">Area of Expertise</label>
+                                        <select id="expertise" name="expertise" required>
+                                            <option value="">Select expertise</option>
+                                            <option value="web-development">Web Development</option>
+                                            <option value="mobile-development">Mobile Development</option>
+                                            <option value="data-science">Data Science</option>
+                                            <option value="machine-learning">Machine Learning</option>
+                                            <option value="cybersecurity">Cybersecurity</option>
+                                            <option value="ui-ux">UI/UX Design</option>
+                                            <option value="devops">DevOps</option>
+                                            <option value="blockchain">Blockchain</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Auto-filled Profile Information -->
+                        <div class="profile-section">
+                            <h3>Profile Information</h3>
+                            <p class="info-text">Information extracted from your documents:</p>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" id="firstName" name="firstName" readonly class="auto-filled">
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" name="lastName" readonly class="auto-filled">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="idNumber">ID Number</label>
+                                    <input type="text" id="idNumber" name="idNumber" readonly class="auto-filled">
+                                </div>
+                                <div class="form-group" id="institutionGroup" style="display: none;">
+                                    <label for="institution">Institution</label>
+                                    <input type="text" id="institution" name="institution" readonly class="auto-filled">
+                                </div>
+                                <div class="form-group" id="companyGroup" style="display: none;">
+                                    <label for="company">Company</label>
+                                    <input type="text" id="company" name="company" readonly class="auto-filled">
+                                </div>
+                            </div>
+
+                            <div class="ocr-status" id="ocrStatus" style="display: none;">
+                                <div class="status-indicator">
+                                    <div class="spinner"></div>
+                                    <span>Processing documents...</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full" id="finalSubmitBtn">Complete Registration</button>
+                    </form>
+
+                    <div class="auth-footer">
+                        <button class="btn-link" id="backToStep2">← Back</button>
+                    </div>
+                </div>
+
+                <!-- Success Page -->
+                <div class="auth-card" id="successStep" style="display: none;">
+                    <div class="success-animation">
+                        <div class="checkmark">✓</div>
+                    </div>
+                    <div class="auth-header">
+                        <h2>Welcome to StudySync!</h2>
+                        <p id="successMessage">Your account has been created successfully.</p>
+                    </div>
+                    <button class="btn btn-primary btn-full" onclick="location.href='index.html'">Go to Dashboard</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/ocr.js"></script>
+</body>
+</html>

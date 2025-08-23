@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/user-selection.css">
     <title>StudySync - Join Us</title>
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <h1 class="logo">StudySync</h1>
+            <a href="index.html" class="logo">StudySync</a>
             <nav class="nav">
-                <a href="index.html" class="nav-link">Home</a>
                 <a href="#" class="nav-link">About</a>
                 <a href="#" class="nav-link">Contact</a>
             </nav>
@@ -34,27 +34,26 @@
                         and get mentorship.
                     </p>
                     <div class="button-group">
-                        <button class="btn btn-outline" onclick="location.href='login.html?type=student'">Log in</button>
-                        <button class="btn btn-primary" onclick="location.href='signup.html?type=student'">Sign up</button>
+                        <a href="auth.html?type=student&mode=login" class="btn btn-outline">Log in</a>
+                        <a href="auth.html?type=student&mode=signup" class="btn btn-primary">Sign up</a>
                     </div>
                 </div>
 
                 <div class="selection-card">
                     <div class="icon-container">
-                        <svg class="icon lightbulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <!-- Lightbulb circle -->
-                            <circle cx="12" cy="11" r="4"/>
-                            <!-- Base lines -->
-                            <path d="M9 17h6"/>
-                            <path d="M9 20h6"/>
-                            <!-- Light rays -->
-                            <path d="M12 5v2"/>
-                            <path d="M19 11h-2"/>
-                            <path d="M5 11h2"/>
-                            <path d="m16.5 7.5-1.5 1.5"/>
-                            <path d="m7.5 7.5 1.5 1.5"/>
-                            <path d="m16.5 14.5-1.5-1.5"/>
-                            <path d="m7.5 14.5 1.5-1.5"/>
+                        <svg class="icon lightbulb" viewBox="-1 -2 26 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <!-- Lightbulb main shape -->
+                            <path d="M9 18h6"/>
+                            <path d="M10 21h4"/>
+                            <path d="M12 3c-3.31 0-6 2.69-6 6 0 1.7.7 3.2 1.8 4.3.4.4.7.9.9 1.4.1.3.3.6.3 1.3h6c0-.7.2-1 .3-1.3.2-.5.5-1 .9-1.4 1.1-1.1 1.8-2.6 1.8-4.3 0-3.31-2.69-6-6-6z"/>
+                            <!-- Light rays moved further away -->
+                            <path d="M12 -1v1"/>
+                            <path d="M22.5 12h-1"/>
+                            <path d="M1.5 12h1"/>
+                            <path d="m20.5 3.5-1 1"/>
+                            <path d="m4.5 4.5-1-1"/>
+                            <path d="m20.5 20.5-1-1"/>
+                            <path d="m4.5 19.5-1 1"/>
                         </svg>
                     </div>
                     <h2 class="card-title">Join as a Mentor</h2>
@@ -63,8 +62,8 @@
                         and earn through mentorship.
                     </p>
                     <div class="button-group">
-                        <button class="btn btn-outline" onclick="location.href='login.html?type=mentor'">Log in</button>
-                        <button class="btn btn-primary" onclick="location.href='signup.html?type=mentor'">Sign up</button>
+                        <a href="auth.html?type=mentor&mode=login" class="btn btn-outline">Log in</a>
+                        <a href="auth.html?type=mentor&mode=signup" class="btn btn-primary">Sign up</a>
                     </div>
                 </div>
             </div>

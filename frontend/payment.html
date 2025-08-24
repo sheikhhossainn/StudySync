@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/payment.css">
+    <script src="https://js.stripe.com/v3/"></script>
+    <title>Payment - StudySync</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">StudySync</a>
+            <nav class="nav">
+                <a href="my-posts.html" class="nav-link">My Posts</a>
+                <a href="mentorship.html" class="nav-link">Mentorship</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="user-selection.html" class="btn btn-primary">Log in</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="payment-wrapper">
+                <h1 class="page-title">Choose Your Payment Option</h1>
+                <p class="page-subtitle">Select the service you'd like to pay for and complete your transaction securely</p>
+
+                <!-- Payment Options Cards -->
+                <div class="payment-options">
+                    <!-- Remove Ads Payment -->
+                    <div class="payment-card" data-payment-type="remove-ads">
+                        <div class="payment-header">
+                            <div class="payment-icon ads-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L13.09 7.26L18 9L13.09 10.74L12 16L10.91 10.74L6 9L10.91 7.26L12 2Z" fill="currentColor"/>
+                                    <path d="M19 11L19.74 13.26L22 14L19.74 14.74L19 17L18.26 14.74L16 14L18.26 13.26L19 11Z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <h2>Remove Advertisements</h2>
+                        </div>
+                        <div class="payment-content">
+                            <div class="price">
+                                <span class="price-amount">$4.99</span>
+                                <span class="price-period">/month</span>
+                            </div>
+                            <ul class="features-list">
+                                <li>✓ Ad-free browsing experience</li>
+                                <li>✓ Faster page loading</li>
+                                <li>✓ Cleaner interface</li>
+                                <li>✓ Focus on learning without distractions</li>
+                            </ul>
+                            <button class="btn btn-primary btn-select" onclick="initiateAdRemovalPayment()">
+                                Remove Advertisements - $4.99/month
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Pay Mentor Payment -->
+                    <div class="payment-card" data-payment-type="mentor-payment">
+                        <div class="payment-header">
+                            <div class="payment-icon mentor-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" fill="currentColor"/>
+                                    <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <h2>Pay Your Mentor</h2>
+                        </div>
+                        <div class="payment-content">
+                            <div class="mentor-selection">
+                                <label for="mentor-select">Select Mentor:</label>
+                                <select id="mentor-select" class="select mentor-dropdown">
+                                    <option value="">Choose a mentor</option>
+                                    <option value="sarah-johnson">Sarah Johnson - JavaScript Expert</option>
+                                    <option value="mike-chen">Mike Chen - Math Tutor</option>
+                                    <option value="emily-davis">Emily Davis - English Literature</option>
+                                    <option value="alex-brown">Alex Brown - Computer Science</option>
+                                </select>
+                            </div>
+                            <div class="amount-input-group">
+                                <label for="mentor-amount">Payment Amount:</label>
+                                <div class="amount-input-wrapper">
+                                    <span class="currency-symbol">$</span>
+                                    <input type="number" id="mentor-amount" class="amount-input" placeholder="0.00" min="1" step="0.01">
+                                </div>
+                            </div>
+                            <div class="session-details">
+                                <label for="session-description">Session Description (optional):</label>
+                                <textarea id="session-description" class="session-textarea" placeholder="Brief description of the tutoring session..."></textarea>
+                            </div>
+                            <button class="btn btn-primary btn-select" onclick="initiateMentorPayment()">
+                                Pay Mentor
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Form (Hidden by default) -->
+                <div class="payment-form-container" id="payment-form-container" style="display: none;">
+                    <div class="payment-form-card">
+                        <h3 class="form-title" id="form-title">Complete Your Payment</h3>
+                        
+                        <div class="payment-summary" id="payment-summary">
+                            <!-- Payment summary will be populated by JavaScript -->
+                        </div>
+
+                        <form class="payment-form" id="payment-form">
+                            <div class="form-section">
+                                <h4>Payment Method <span class="required-text">(Please select a payment method)</span></h4>
+
+                                <!-- Mobile Banking Section -->
+                                <div class="payment-category">
+                                    <h5 class="payment-category-title">Mobile Banking</h5>
+                                    <p class="payment-category-subtitle">Pay using your mobile banking account</p>
+                                    
+                                    <div class="payment-options-grid">
+                                        <div class="payment-method-option">
+                                            <input type="radio" id="bkash" name="payment-method" value="bkash">
+                                            <label for="bkash" class="payment-method-label">
+                                                <div class="payment-logo-container">
+                                                    <div class="payment-logo bkash-logo">bKash</div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        
+                                        <div class="payment-method-option">
+                                            <input type="radio" id="nagad" name="payment-method" value="nagad">
+                                            <label for="nagad" class="payment-method-label">
+                                                <div class="payment-logo-container">
+                                                    <div class="payment-logo nagad-logo">Nagad</div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        
+                                        <div class="payment-method-option">
+                                            <input type="radio" id="rocket" name="payment-method" value="rocket">
+                                            <label for="rocket" class="payment-method-label">
+                                                <div class="payment-logo-container">
+                                                    <div class="payment-logo rocket-logo">Rocket</div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Credit/Debit Card Section -->
+                                <div class="payment-category">
+                                    <h5 class="payment-category-title">Credit / Debit Card</h5>
+                                    <p class="payment-category-subtitle">Pay using your credit or debit card</p>
+                                    
+                                    <div class="payment-method-option">
+                                        <input type="radio" id="card" name="payment-method" value="card">
+                                        <label for="card" class="payment-method-label card-option">
+                                            <div class="card-logos">
+                                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCA0MCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iMiIgeT0iNCIgd2lkdGg9IjM2IiBoZWlnaHQ9IjE2IiByeD0iNCIgZmlsbD0iIzAwNTFBNSIvPgo8dGV4dCB4PSIyMCIgeT0iMTQiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiPVZJU0E8L3RleHQ+Cjwvc3ZnPgo=" alt="Visa" class="card-brand">
+                                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCA0MCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTQiIGN5PSIxMiIgcj0iOCIgZmlsbD0iI0VCMDAxQiIvPgo8Y2lyY2xlIGN4PSIyNiIgY3k9IjEyIiByPSI4IiBmaWxsPSIjRkY1RjAwIi8+Cjwvc3ZnPgo=" alt="Mastercard" class="card-brand">
+                                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCA0MCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iMiIgeT0iNCIgd2lkdGg9IjM2IiBoZWlnaHQ9IjE2IiByeD0iNCIgZmlsbD0iIzAwNjZDQyIvPgo8dGV4dCB4PSIyMCIgeT0iMTQiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFNRVg8L3RleHQ+Cjwvc3ZnPgo=" alt="American Express" class="card-brand">
+                                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCA0MCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iMiIgeT0iNCIgd2lkdGg9IjM2IiBoZWlnaHQ9IjE2IiByeD0iNCIgZmlsbD0iI0ZGMDAwMCIvPgo8dGV4dCB4PSIyMCIgeT0iMTQiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkRJTkVSUzwvdGV4dD4KPC9zdmc+Cg==" alt="Diners" class="card-brand">
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Terms and Conditions -->
+                                <div class="terms-section">
+                                    <label class="terms-checkbox">
+                                        <input type="checkbox" id="terms-agreement" required>
+                                        <span class="checkmark"></span>
+                                        I agree to the <a href="#" class="terms-link">Terms & Conditions</a>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Card Payment Details -->
+                            <div class="form-section" id="card-details" style="display: none;">
+                                <h4>Card Details</h4>
+                                <div id="card-element">
+                                    <!-- Stripe Elements will create form elements here -->
+                                </div>
+                                <div id="card-errors" role="alert"></div>
+                            </div>
+
+                            <!-- Mobile Banking Details -->
+                            <div class="form-section" id="mobile-banking-details" style="display: none;">
+                                <h4 id="mobile-banking-title">Mobile Banking Details</h4>
+                                <div class="mobile-banking-info">
+                                    <div class="info-card" id="payment-instructions">
+                                        <!-- Payment instructions will be populated by JavaScript -->
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="mobile-number">Your Mobile Number</label>
+                                            <input type="tel" id="mobile-number" placeholder="01XXXXXXXXX" maxlength="11">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="transaction-id">Transaction ID</label>
+                                            <input type="text" id="transaction-id" placeholder="Enter transaction ID after payment">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group full-width">
+                                            <label for="reference-note">Reference Note (Optional)</label>
+                                            <input type="text" id="reference-note" placeholder="Any additional reference">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h4>Billing Information</h4>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="billing-email">Email</label>
+                                        <input type="email" id="billing-email" placeholder="john@example.com" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="billing-name">Full Name</label>
+                                        <input type="text" id="billing-name" placeholder="John Doe" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="billing-address">Address</label>
+                                        <input type="text" id="billing-address" placeholder="123 Main Street" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="billing-city">City</label>
+                                        <input type="text" id="billing-city" placeholder="Dhaka" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="billing-state">Division</label>
+                                        <input type="text" id="billing-state" placeholder="Dhaka" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="billing-zip">Postal Code</label>
+                                        <input type="text" id="billing-zip" placeholder="1000" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary" onclick="goBack()">
+                                    ← Back to Options
+                                </button>
+                                <button type="submit" class="btn btn-primary" id="submit-payment">
+                                    <span id="button-text">Complete Payment</span>
+                                    <span id="spinner" class="spinner hidden"></span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/payment.js"></script>
+</body>
+</html>

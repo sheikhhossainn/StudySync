@@ -350,9 +350,203 @@ async function handleCardPayment() {
 
 // Handle mobile banking payment
 async function handleMobileBankingPayment(method) {
+    switch (method) {
+        case 'bkash':
+            await handleBkashPayment();
+            break;
+        case 'nagad':
+            await handleNagadPayment();
+            break;
+        case 'rocket':
+            await handleRocketPayment();
+            break;
+        default:
+            throw new Error('Unsupported payment method');
+    }
+}
+
+// bKash Payment Integration
+async function handleBkashPayment() {
+    try {
+        const bkashConfig = {
+            paymentMode: 'checkout',
+            paymentRequest: {
+                amount: (paymentAmount * 85).toFixed(2), // Convert USD to BDT
+                intent: 'sale',
+                merchantInvoiceNumber: 'SS' + Date.now(),
+                currency: 'BDT',
+                merchantAssociationInfo: 'StudySync Payment'
+            },
+            createRequest: async function(request) {
+                // Create payment on your server
+                const response = await fetch('/api/bkash/create-payment', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        amount: request.amount,
+                        invoice: request.merchantInvoiceNumber,
+                        customer_details: getBillingDetails(),
+                        payment_type: selectedPaymentType,
+                        mentor_info: mentorInfo
+                    })
+                });
+                return await response.json();
+            },
+            executeRequestOnAuthorization: async function(request) {
+                // Execute payment on your server
+                const response = await fetch('/api/bkash/execute-payment', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        paymentID: request.paymentID
+                    })
+                });
+                return await response.json();
+            }
+        };
+
+        // Initialize bKash checkout
+        if (typeof bKash !== 'undefined') {
+            bKash.init(bkashConfig);
+            bKash.create().onSuccess = function(data) {
+                if (data && data.paymentID) {
+                    bKash.execute(data.paymentID);
+                } else {
+                    throw new Error('bKash payment creation failed');
+                }
+            };
+            
+            bKash.execute().onSuccess = function(data) {
+                if (data && data.paymentID) {
+                    handleSuccessfulPayment({
+                        id: data.paymentID,
+                        status: 'completed',
+                        payment_method: 'bkash',
+                        transaction_id: data.trxID
+                    });
+                } else {
+                    throw new Error('bKash payment execution failed');
+                }
+            };
+            
+            bKash.create().onClose = function() {
+                throw new Error('Payment cancelled by user');
+            };
+        } else {
+            // Fallback to manual bKash payment
+            await handleManualMobileBankingPayment('bkash');
+        }
+    } catch (error) {
+        console.error('bKash payment error:', error);
+        throw error;
+    }
+}
+
+// Nagad Payment Integration
+async function handleNagadPayment() {
+    try {
+        const nagadConfig = {
+            clientId: 'YOUR_NAGAD_CLIENT_ID', // Replace with your actual client ID
+            amount: (paymentAmount * 85).toFixed(2), // Convert USD to BDT
+            orderId: 'SS-NGD-' + Date.now(),
+            currency: 'BDT',
+            challenge: generateRandomString(40)
+        };
+
+        // Initialize Nagad checkout
+        if (typeof NagadCheckout !== 'undefined') {
+            const nagadCheckout = new NagadCheckout({
+                baseURL: 'https://api.mynagad.com/api/dfs/check-out/v1',
+                merchantId: 'YOUR_NAGAD_MERCHANT_ID', // Replace with your merchant ID
+                orderId: nagadConfig.orderId,
+                amount: nagadConfig.amount,
+                successCallback: function(data) {
+                    handleSuccessfulPayment({
+                        id: data.payment_ref_id,
+                        status: 'completed',
+                        payment_method: 'nagad',
+                        transaction_id: data.payment_ref_id
+                    });
+                },
+                failureCallback: function(data) {
+                    throw new Error(data.status_message || 'Nagad payment failed');
+                },
+                cancelledCallback: function(data) {
+                    throw new Error('Payment cancelled by user');
+                }
+            });
+            
+            nagadCheckout.proceed();
+        } else {
+            // Fallback to manual Nagad payment
+            await handleManualMobileBankingPayment('nagad');
+        }
+    } catch (error) {
+        console.error('Nagad payment error:', error);
+        throw error;
+    }
+}
+
+// Rocket Payment Integration
+async function handleRocketPayment() {
+    try {
+        const rocketConfig = {
+            merchantId: 'YOUR_ROCKET_MERCHANT_ID', // Replace with your merchant ID
+            amount: (paymentAmount * 85).toFixed(2), // Convert USD to BDT
+            orderId: 'SS-RKT-' + Date.now(),
+            currency: 'BDT',
+            description: selectedPaymentType === 'remove-ads' ? 'Remove Ads Subscription' : 'Mentor Payment'
+        };
+
+        // Initialize Rocket checkout
+        if (typeof RocketCheckout !== 'undefined') {
+            const rocketCheckout = new RocketCheckout({
+                merchantId: rocketConfig.merchantId,
+                amount: rocketConfig.amount,
+                orderId: rocketConfig.orderId,
+                successUrl: window.location.origin + '/payment-success',
+                failUrl: window.location.origin + '/payment-failed',
+                cancelUrl: window.location.origin + '/payment-cancelled',
+                onSuccess: function(data) {
+                    handleSuccessfulPayment({
+                        id: data.transactionId,
+                        status: 'completed',
+                        payment_method: 'rocket',
+                        transaction_id: data.transactionId
+                    });
+                },
+                onError: function(error) {
+                    throw new Error(error.message || 'Rocket payment failed');
+                },
+                onCancel: function() {
+                    throw new Error('Payment cancelled by user');
+                }
+            });
+            
+            rocketCheckout.pay();
+        } else {
+            // Fallback to manual Rocket payment
+            await handleManualMobileBankingPayment('rocket');
+        }
+    } catch (error) {
+        console.error('Rocket payment error:', error);
+        throw error;
+    }
+}
+
+// Manual mobile banking payment (fallback)
+async function handleManualMobileBankingPayment(method) {
     const mobileNumber = document.getElementById('mobile-number').value;
     const transactionId = document.getElementById('transaction-id').value;
     const referenceNote = document.getElementById('reference-note').value;
+    
+    if (!mobileNumber || !transactionId) {
+        throw new Error('Please provide mobile number and transaction ID');
+    }
     
     // Create mobile banking payment record
     const paymentData = {
@@ -640,3 +834,55 @@ function getUrlParameter(name) {
     const results = regex.exec(location.search);
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 }
+
+// Utility function to generate random string
+function generateRandomString(length) {
+    const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        result += charset.charAt(Math.floor(Math.random() * charset.length));
+    }
+    return result;
+}
+
+// Mobile Banking API Configuration
+const MOBILE_BANKING_CONFIG = {
+    bkash: {
+        baseUrl: 'https://tokenized.pay.bka.sh/v1.2.0-beta',
+        username: 'YOUR_BKASH_USERNAME', // Replace with actual credentials
+        password: 'YOUR_BKASH_PASSWORD',
+        appKey: 'YOUR_BKASH_APP_KEY',
+        appSecret: 'YOUR_BKASH_APP_SECRET'
+    },
+    nagad: {
+        baseUrl: 'https://api.mynagad.com/api/dfs/check-out/v1',
+        merchantId: 'YOUR_NAGAD_MERCHANT_ID',
+        publicKey: 'YOUR_NAGAD_PUBLIC_KEY',
+        privateKey: 'YOUR_NAGAD_PRIVATE_KEY'
+    },
+    rocket: {
+        baseUrl: 'https://rocket.com.bd/api',
+        merchantId: 'YOUR_ROCKET_MERCHANT_ID',
+        apiKey: 'YOUR_ROCKET_API_KEY',
+        secretKey: 'YOUR_ROCKET_SECRET_KEY'
+    }
+};
+
+// Server-side API endpoints (these should be implemented on your backend)
+const API_ENDPOINTS = {
+    bkash: {
+        createPayment: '/api/bkash/create-payment',
+        executePayment: '/api/bkash/execute-payment',
+        queryPayment: '/api/bkash/query-payment'
+    },
+    nagad: {
+        initPayment: '/api/nagad/init-payment',
+        completePayment: '/api/nagad/complete-payment',
+        verifyPayment: '/api/nagad/verify-payment'
+    },
+    rocket: {
+        initiatePayment: '/api/rocket/initiate-payment',
+        confirmPayment: '/api/rocket/confirm-payment',
+        checkStatus: '/api/rocket/check-status'
+    }
+};

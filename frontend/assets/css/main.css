@@ -108,7 +108,14 @@ body {
 
 .content-wrapper {
     display: grid;
-    grid-template-columns: 250px 1fr 300px;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 300px;
     gap: 2rem;
     align-items: start;
 }
@@ -295,6 +302,11 @@ body {
 /* Responsive Design */
 @media (max-width: 1024px) {
     .content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .main-content {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }

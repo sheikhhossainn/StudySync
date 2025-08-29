@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription System Test - StudySync</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/my-posts.css">
+    <link rel="stylesheet" href="assets/css/subscription.css">
+    <style>
+        .test-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .test-section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+        }
+        
+        .test-section h3 {
+            margin-top: 0;
+            color: #1f2937;
+        }
+        
+        .test-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .test-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .test-btn.primary {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .test-btn.secondary {
+            background: #6b7280;
+            color: white;
+        }
+        
+        .test-btn:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>StudySync Subscription System Test</h1>
+        
+        <!-- User Status Section -->
+        <div class="test-section">
+            <h3>User Status</h3>
+            <div class="user-info">
+                <span>Current Status: </span>
+                <span class="subscription-badge free" id="userStatus">Free User</span>
+            </div>
+            <div class="post-limit-display" id="postLimitDisplay">
+                You have used <strong>2</strong> out of <strong>5</strong> posts this month.
+            </div>
+        </div>
+        
+        <!-- Advertisement Section -->
+        <div class="test-section">
+            <h3>Advertisement Display</h3>
+            <div id="adContainer"></div>
+        </div>
+        
+        <!-- Actions Section -->
+        <div class="test-section">
+            <h3>Test Actions</h3>
+            <div class="test-buttons">
+                <button class="test-btn primary" onclick="toggleSubscription()">Toggle Subscription</button>
+                <button class="test-btn secondary" onclick="showUpgradeModal()">Show Upgrade Modal</button>
+                <button class="test-btn secondary" onclick="simulateAdClick()">Simulate Ad Click</button>
+                <button class="test-btn secondary" onclick="resetTest()">Reset Test</button>
+            </div>
+        </div>
+        
+        <!-- Feature Access Section -->
+        <div class="test-section">
+            <h3>Feature Access Test</h3>
+            <div class="test-buttons">
+                <button class="test-btn primary" onclick="testMentorship()">Test Mentorship Access</button>
+                <button class="test-btn primary" onclick="testPostCreation()">Test Post Creation</button>
+                <button class="test-btn primary" onclick="testGroupStudy()">Test Group Study</button>
+            </div>
+            <div id="featureTestResult" style="margin-top: 1rem; padding: 1rem; border-radius: 0.5rem; display: none;"></div>
+        </div>
+    </div>
+    
+    <!-- Upgrade Modal (will be dynamically inserted by subscription.js) -->
+    
+    <script src="assets/js/subscription.js"></script>
+    <script>
+        // Test data and functions
+        let currentSubscription = 'free';
+        let postCount = 2;
+        let subscriptionManager;
+        
+        // Initialize subscription manager
+        document.addEventListener('DOMContentLoaded', function() {
+            subscriptionManager = new SubscriptionManager();
+            updateDisplay();
+            showTestAd();
+        });
+        
+        function updateDisplay() {
+            const statusBadge = document.getElementById('userStatus');
+            const postDisplay = document.getElementById('postLimitDisplay');
+            
+            if (currentSubscription === 'premium') {
+                statusBadge.textContent = 'Premium User';
+                statusBadge.className = 'subscription-badge premium';
+                postDisplay.innerHTML = '<span class="unlimited">Unlimited posts available</span>';
+                postDisplay.className = 'post-limit-display';
+                hideAds();
+            } else {
+                statusBadge.textContent = 'Free User';
+                statusBadge.className = 'subscription-badge free';
+                postDisplay.innerHTML = `You have used <strong>${postCount}</strong> out of <strong>5</strong> posts this month.`;
+                postDisplay.className = postCount >= 4 ? 'post-limit-display warning' : 'post-limit-display';
+                showTestAd();
+            }
+        }
+        
+        function toggleSubscription() {
+            currentSubscription = currentSubscription === 'free' ? 'premium' : 'free';
+            updateDisplay();
+            showSuccessToast(`Switched to ${currentSubscription} subscription`);
+        }
+        
+        function showUpgradeModal() {
+            if (subscriptionManager) {
+                subscriptionManager.showUpgradeModal();
+            }
+        }
+        
+        function showTestAd() {
+            const container = document.getElementById('adContainer');
+            if (currentSubscription === 'free') {
+                container.innerHTML = `
+                    <div class="ad-container content-ad">
+                        <div class="ad-label">Advertisement</div>
+                        <div class="ad-content">
+                            <div class="ad-body">
+                                <img src="https://via.placeholder.com/60x60/3b82f6/ffffff?text=📚" alt="Study Guide" class="ad-image">
+                                <div class="ad-text">
+                                    <div class="ad-title">Ultimate Study Guide</div>
+                                    <div class="ad-description">Boost your grades with our comprehensive study materials and expert tips.</div>
+                                </div>
+                            </div>
+                            <button class="ad-cta" onclick="simulateAdClick()">Learn More</button>
+                        </div>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = '<p style="color: #6b7280; font-style: italic;">No ads for premium users</p>';
+            }
+        }
+        
+        function hideAds() {
+            const container = document.getElementById('adContainer');
+            container.innerHTML = '<p style="color: #6b7280; font-style: italic;">No ads for premium users</p>';
+        }
+        
+        function simulateAdClick() {
+            showSuccessToast('Ad clicked! Revenue generated.');
+        }
+        
+        function testMentorship() {
+            const result = document.getElementById('featureTestResult');
+            if (currentSubscription === 'premium') {
+                result.innerHTML = '✅ Mentorship access granted - You can connect with mentors';
+                result.style.background = '#dcfce7';
+                result.style.color = '#166534';
+            } else {
+                result.innerHTML = '❌ Mentorship access denied - Please upgrade to premium';
+                result.style.background = '#fef2f2';
+                result.style.color = '#dc2626';
+            }
+            result.style.display = 'block';
+        }
+        
+        function testPostCreation() {
+            const result = document.getElementById('featureTestResult');
+            if (currentSubscription === 'premium' || postCount < 5) {
+                result.innerHTML = '✅ Post creation allowed';
+                result.style.background = '#dcfce7';
+                result.style.color = '#166534';
+                if (currentSubscription === 'free') {
+                    postCount++;
+                    updateDisplay();
+                }
+            } else {
+                result.innerHTML = '❌ Monthly post limit reached - Please upgrade to premium';
+                result.style.background = '#fef2f2';
+                result.style.color = '#dc2626';
+            }
+            result.style.display = 'block';
+        }
+        
+        function testGroupStudy() {
+            const result = document.getElementById('featureTestResult');
+            result.innerHTML = '✅ Group study access granted - Available for all users';
+            result.style.background = '#dcfce7';
+            result.style.color = '#166534';
+            result.style.display = 'block';
+        }
+        
+        function resetTest() {
+            currentSubscription = 'free';
+            postCount = 2;
+            updateDisplay();
+            document.getElementById('featureTestResult').style.display = 'none';
+            showSuccessToast('Test reset to default state');
+        }
+        
+        function showSuccessToast(message) {
+            // Create toast element
+            const toast = document.createElement('div');
+            toast.className = 'success-toast';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            // Show toast
+            setTimeout(() => toast.classList.add('show'), 100);
+            
+            // Hide and remove toast
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => document.body.removeChild(toast), 300);
+            }, 3000);
+        }
+        
+        // Override subscription manager methods for testing
+        window.addEventListener('load', function() {
+            if (subscriptionManager) {
+                // Override upgrade success callback
+                const originalUpgrade = subscriptionManager.processUpgrade;
+                subscriptionManager.processUpgrade = function(selectedMethod) {
+                    console.log('Test upgrade with method:', selectedMethod);
+                    currentSubscription = 'premium';
+                    updateDisplay();
+                    this.hideUpgradeModal();
+                    showSuccessToast('Successfully upgraded to Premium! 🎉');
+                };
+            }
+        });
+    </script>
+</body>
+</html>

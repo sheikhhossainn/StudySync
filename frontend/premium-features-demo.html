@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Premium Features - StudySync</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/my-posts.css">
+    <link rel="stylesheet" href="assets/css/subscription.css">
+    <style>
+        .demo-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .demo-section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 1rem;
+            background: #f8fafc;
+        }
+        
+        .demo-section h2 {
+            color: #1f2937;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .demo-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+        
+        .demo-btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+        }
+        
+        .demo-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+        
+        .demo-btn.premium {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: #92400e;
+        }
+        
+        .demo-btn.premium:hover {
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-description {
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+        
+        .status-indicator {
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .status-active {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .status-coming-soon {
+            background: #fef3cd;
+            color: #92400e;
+        }
+        
+        .sample-post {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .post-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+        
+        .post-info h4 {
+            margin: 0;
+            color: #1f2937;
+        }
+        
+        .post-info p {
+            margin: 0;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        
+        .post-actions {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .post-actions .btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">StudySync</a>
+            <nav class="nav">
+                <a href="my-posts.html" class="nav-link">My Posts</a>
+                <a href="mentorship.html" class="nav-link">Mentorship</a>
+                <a href="#" class="nav-link">Features</a>
+                <a href="user-selection.html" class="btn btn-primary">Dashboard</a>
+            </nav>
+            <span class="subscription-badge premium">👑 Premium</span>
+        </div>
+    </header>
+
+    <div class="demo-container">
+        <h1>🚀 Enhanced Premium Features Demo</h1>
+        <p class="intro-text">Experience all the premium features that make StudySync the ultimate learning platform.</p>
+
+        <!-- Subscription Status -->
+        <div class="demo-section">
+            <h2>👑 Subscription Status</h2>
+            <div class="demo-buttons">
+                <button class="demo-btn" onclick="toggleSubscriptionDemo()">Toggle Free/Premium</button>
+                <button class="demo-btn premium" onclick="showSubscriptionManagement()">Manage Subscription</button>
+            </div>
+            <div class="post-limit-display" id="statusDisplay">
+                <span class="unlimited">✅ Unlimited posts - Premium Member</span>
+            </div>
+        </div>
+
+        <!-- Premium Features Grid -->
+        <div class="demo-section">
+            <h2>🎯 Premium Features Overview</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-title">Advanced Analytics</div>
+                    <div class="feature-description">Track your study progress with detailed insights and personalized recommendations.</div>
+                    <span class="status-indicator status-active">Active</span>
+                    <br><br>
+                    <button class="demo-btn premium" onclick="showAnalyticsDemo()">View Analytics</button>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📎</div>
+                    <div class="feature-title">File Sharing</div>
+                    <div class="feature-description">Share documents, PDFs, images, and study materials with your groups.</div>
+                    <span class="status-indicator status-active">Active</span>
+                    <br><br>
+                    <button class="demo-btn premium" onclick="showFileShareDemo()">Share Files</button>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <div class="feature-title">Custom Themes</div>
+                    <div class="feature-description">Personalize your experience with beautiful custom themes and dark mode.</div>
+                    <span class="status-indicator status-active">Active</span>
+                    <br><br>
+                    <button class="demo-btn premium" onclick="showThemeDemo()">Change Theme</button>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍🏫</div>
+                    <div class="feature-title">Mentorship Access</div>
+                    <div class="feature-description">Connect with experienced mentors and get personalized guidance.</div>
+                    <span class="status-indicator status-active">Active</span>
+                    <br><br>
+                    <button class="demo-btn premium" onclick="showMentorshipDemo()">Find Mentors</button>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎧</div>
+                    <div class="feature-title">Priority Support</div>
+                    <div class="feature-description">Get 24/7 priority support with instant response from our team.</div>
+                    <span class="status-indicator status-active">Active</span>
+                    <br><br>
+                    <button class="demo-btn premium" onclick="showPrioritySupportDemo()">Contact Support</button>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📹</div>
+                    <div class="feature-title">Video Conferencing</div>
+                    <div class="feature-description">Start instant video study sessions with your study groups.</div>
+                    <span class="status-indicator status-coming-soon">Coming Soon</span>
+                    <br><br>
+                    <button class="demo-btn premium" onclick="showVideoDemo()">Start Video Call</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sample Posts with Premium Features -->
+        <div class="demo-section">
+            <h2>✨ Enhanced Study Posts</h2>
+            <div class="sample-post">
+                <div class="post-header">
+                    <div class="post-avatar">JS</div>
+                    <div class="post-info">
+                        <h4>JavaScript Study Group - Advanced Concepts</h4>
+                        <p>Created 2 hours ago • Computer Science</p>
+                    </div>
+                    <span class="subscription-badge premium">Premium</span>
+                </div>
+                <p>Looking for study partners to dive deep into advanced JavaScript concepts including closures, prototypes, and async programming. I have comprehensive notes and practice exercises to share!</p>
+                
+                <div class="file-preview">
+                    <div class="file-item">
+                        <span class="file-icon">📄</span>
+                        <span class="file-name">JavaScript_Advanced_Notes.pdf</span>
+                        <span class="file-size">(2.4 MB)</span>
+                    </div>
+                    <div class="file-item">
+                        <span class="file-icon">📊</span>
+                        <span class="file-name">Practice_Exercises.pptx</span>
+                        <span class="file-size">(1.8 MB)</span>
+                    </div>
+                </div>
+
+                <div class="post-actions">
+                    <button class="btn btn-primary">Join Group</button>
+                    <button class="btn btn-video-call premium-feature">📹 Video Study</button>
+                    <button class="btn btn-secondary">📊 Analytics</button>
+                    <button class="btn btn-secondary">👨‍🏫 Find Mentor</button>
+                </div>
+            </div>
+
+            <div class="sample-post">
+                <div class="post-header">
+                    <div class="post-avatar">DS</div>
+                    <div class="post-info">
+                        <h4>Data Structures & Algorithms Bootcamp</h4>
+                        <p>Created 1 day ago • Computer Science</p>
+                    </div>
+                    <span class="subscription-badge premium">Premium</span>
+                </div>
+                <p>Intensive study session for coding interviews. Premium members get access to exclusive problem sets and one-on-one mentoring sessions.</p>
+
+                <div class="post-actions">
+                    <button class="btn btn-primary">Join Group</button>
+                    <button class="btn btn-video-call premium-feature">📹 Video Study</button>
+                    <button class="btn btn-secondary">📎 Share Files</button>
+                    <button class="btn btn-secondary">🎧 Priority Support</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Test Controls -->
+        <div class="demo-section">
+            <h2>🧪 Test Premium Features</h2>
+            <div class="demo-buttons">
+                <button class="demo-btn" onclick="testAllFeatures()">Test All Features</button>
+                <button class="demo-btn" onclick="showPaymentHistory()">Payment History</button>
+                <button class="demo-btn" onclick="resetDemo()">Reset Demo</button>
+            </div>
+            <div id="testResults" style="margin-top: 1rem; padding: 1rem; background: #f1f5f9; border-radius: 0.5rem; display: none;"></div>
+        </div>
+    </div>
+
+    <script src="assets/js/subscription.js"></script>
+    <script>
+        let isPremium = true;
+        let subscriptionManager;
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mock subscription manager for demo
+            subscriptionManager = {
+                userStatus: {
+                    is_premium: true,
+                    premium_expires_at: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
+                    current_month_posts: 15,
+                    post_limit: 999
+                },
+                showAnalyticsDashboard: function() {
+                    this.createAnalyticsModal().style.display = 'block';
+                },
+                showSubscriptionManagement: function() {
+                    this.createSubscriptionManagementModal().style.display = 'block';
+                },
+                showSuccessMessage: function(message) {
+                    const toast = document.createElement('div');
+                    toast.className = 'success-toast show';
+                    toast.textContent = message;
+                    document.body.appendChild(toast);
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                        setTimeout(() => document.body.removeChild(toast), 300);
+                    }, 3000);
+                }
+            };
+
+            // Initialize with the actual SubscriptionManager methods
+            if (window.SubscriptionManager) {
+                const manager = new window.SubscriptionManager();
+                Object.assign(subscriptionManager, manager);
+            }
+
+            updatePremiumDemo();
+        });
+
+        function toggleSubscriptionDemo() {
+            isPremium = !isPremium;
+            updatePremiumDemo();
+            const message = isPremium ? 'Upgraded to Premium! 🎉' : 'Switched to Free plan';
+            subscriptionManager.showSuccessMessage(message);
+        }
+
+        function updatePremiumDemo() {
+            const badge = document.querySelector('.subscription-badge');
+            const statusDisplay = document.getElementById('statusDisplay');
+            
+            if (isPremium) {
+                badge.className = 'subscription-badge premium';
+                badge.textContent = '👑 Premium';
+                statusDisplay.innerHTML = '<span class="unlimited">✅ Unlimited posts - Premium Member</span>';
+                enablePremiumFeatures();
+            } else {
+                badge.className = 'subscription-badge free';
+                badge.textContent = '🆓 Free';
+                statusDisplay.innerHTML = 'You have used <strong>3</strong> out of <strong>5</strong> posts this month.';
+                statusDisplay.className = 'post-limit-display warning';
+                disablePremiumFeatures();
+            }
+        }
+
+        function enablePremiumFeatures() {
+            document.querySelectorAll('.premium-feature').forEach(el => {
+                el.classList.remove('premium-only');
+                if (el.tagName === 'BUTTON') {
+                    el.disabled = false;
+                }
+            });
+        }
+
+        function disablePremiumFeatures() {
+            document.querySelectorAll('.premium-feature').forEach(el => {
+                el.classList.add('premium-only');
+                if (el.tagName === 'BUTTON') {
+                    el.disabled = true;
+                }
+            });
+        }
+
+        function showAnalyticsDemo() {
+            if (!isPremium) {
+                alert('Analytics is a Premium feature! Upgrade to access detailed study insights.');
+                return;
+            }
+            subscriptionManager.showAnalyticsDashboard();
+        }
+
+        function showFileShareDemo() {
+            if (!isPremium) {
+                alert('File sharing is a Premium feature! Upgrade to share documents with study groups.');
+                return;
+            }
+            
+            const modal = document.createElement('div');
+            modal.className = 'modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title">📎 File Sharing Demo</h2>
+                        <span class="modal-close">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="file-share-section premium-feature">
+                            <div class="file-upload-area">
+                                <div class="upload-icon">📎</div>
+                                <h4>Attach Files (Premium)</h4>
+                                <p>Share PDFs, images, documents with your study group</p>
+                                <button type="button" class="btn-file-upload">Choose Files</button>
+                                <div class="file-preview">
+                                    <div class="file-item">
+                                        <span class="file-icon">📄</span>
+                                        <span class="file-name">Sample_Notes.pdf</span>
+                                        <span class="file-size">(2.4 MB)</span>
+                                        <button type="button" class="btn-remove">×</button>
+                                    </div>
+                                    <div class="file-item">
+                                        <span class="file-icon">🖼️</span>
+                                        <span class="file-name">Diagram.png</span>
+                                        <span class="file-size">(856 KB)</span>
+                                        <button type="button" class="btn-remove">×</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            modal.style.display = 'block';
+            document.body.appendChild(modal);
+            
+            modal.querySelector('.modal-close').onclick = () => {
+                modal.style.display = 'none';
+                modal.remove();
+            };
+        }
+
+        function showThemeDemo() {
+            if (!isPremium) {
+                alert('Custom themes are a Premium feature! Upgrade to personalize your experience.');
+                return;
+            }
+            
+            // Create and show theme selector
+            const existingSelector = document.querySelector('.theme-selector');
+            if (existingSelector) existingSelector.remove();
+            
+            const themeSelector = document.createElement('div');
+            themeSelector.className = 'theme-selector premium-feature';
+            themeSelector.innerHTML = `
+                <div class="theme-header">
+                    <span class="theme-icon">🎨</span>
+                    <h4>Premium Themes</h4>
+                </div>
+                <div class="theme-options">
+                    <button class="theme-btn active" data-theme="default">
+                        <div class="theme-preview default"></div>
+                        <span>Default</span>
+                    </button>
+                    <button class="theme-btn" data-theme="dark">
+                        <div class="theme-preview dark"></div>
+                        <span>Dark</span>
+                    </button>
+                    <button class="theme-btn" data-theme="ocean">
+                        <div class="theme-preview ocean"></div>
+                        <span>Ocean</span>
+                    </button>
+                    <button class="theme-btn" data-theme="forest">
+                        <div class="theme-preview forest"></div>
+                        <span>Forest</span>
+                    </button>
+                    <button class="theme-btn" data-theme="sunset">
+                        <div class="theme-preview sunset"></div>
+                        <span>Sunset</span>
+                    </button>
+                </div>
+            `;
+            
+            document.querySelector('.demo-container').appendChild(themeSelector);
+            
+            themeSelector.addEventListener('click', (e) => {
+                const themeBtn = e.target.closest('.theme-btn');
+                if (themeBtn) {
+                    const theme = themeBtn.dataset.theme;
+                    applyDemoTheme(theme);
+                    
+                    themeSelector.querySelectorAll('.theme-btn').forEach(btn => btn.classList.remove('active'));
+                    themeBtn.classList.add('active');
+                    
+                    subscriptionManager.showSuccessMessage(`Applied ${theme} theme! 🎨`);
+                }
+            });
+        }
+
+        function applyDemoTheme(theme) {
+            document.body.className = document.body.className.replace(/theme-\w+/g, '');
+            document.body.classList.add(`theme-${theme}`);
+            
+            // Simple theme demo styles
+            const header = document.querySelector('.header');
+            if (theme === 'dark') {
+                header.style.background = '#2d2d2d';
+                document.body.style.background = '#1a1a1a';
+                document.body.style.color = '#ffffff';
+            } else if (theme === 'ocean') {
+                header.style.background = 'linear-gradient(135deg, #0ea5e9, #0284c7)';
+            } else if (theme === 'forest') {
+                header.style.background = 'linear-gradient(135deg, #059669, #047857)';
+            } else if (theme === 'sunset') {
+                header.style.background = 'linear-gradient(135deg, #f97316, #ea580c)';
+            } else {
+                header.style.background = '';
+                document.body.style.background = '';
+                document.body.style.color = '';
+            }
+        }
+
+        function showMentorshipDemo() {
+            if (!isPremium) {
+                alert('Mentorship is a Premium feature! Upgrade to connect with expert mentors.');
+                return;
+            }
+            subscriptionManager.showSuccessMessage('Connecting you with available mentors... 👨‍🏫');
+        }
+
+        function showPrioritySupportDemo() {
+            if (!isPremium) {
+                alert('Priority support is a Premium feature! Upgrade for 24/7 instant support.');
+                return;
+            }
+            subscriptionManager.showSuccessMessage('Priority support activated! Chat window opening... 🎧');
+        }
+
+        function showVideoDemo() {
+            if (!isPremium) {
+                alert('Video conferencing is a Premium feature! Upgrade to start video study sessions.');
+                return;
+            }
+            subscriptionManager.showSuccessMessage('Video call feature coming soon! 📹');
+        }
+
+        function showSubscriptionManagement() {
+            subscriptionManager.showSubscriptionManagement();
+        }
+
+        function showPaymentHistory() {
+            const mockHistory = [
+                {
+                    created_at: '2024-01-15T10:30:00Z',
+                    amount: 300,
+                    payment_method: 'bkash',
+                    status: 'completed',
+                    description: 'Premium Subscription - January'
+                },
+                {
+                    created_at: '2023-12-15T10:30:00Z',
+                    amount: 300,
+                    payment_method: 'nagad',
+                    status: 'completed',
+                    description: 'Premium Subscription - December'
+                }
+            ];
+            
+            const modal = subscriptionManager.createPaymentHistoryModal(mockHistory);
+            modal.style.display = 'block';
+        }
+
+        function testAllFeatures() {
+            const results = document.getElementById('testResults');
+            results.style.display = 'block';
+            results.innerHTML = `
+                <h4>🧪 Premium Features Test Results:</h4>
+                <ul style="margin: 0; padding-left: 1.5rem;">
+                    <li style="color: #059669;">✅ Analytics Dashboard - Working</li>
+                    <li style="color: #059669;">✅ File Sharing - Working</li>
+                    <li style="color: #059669;">✅ Custom Themes - Working</li>
+                    <li style="color: #059669;">✅ Mentorship Access - Working</li>
+                    <li style="color: #059669;">✅ Priority Support - Working</li>
+                    <li style="color: #f59e0b;">⏳ Video Conferencing - Coming Soon</li>
+                    <li style="color: #059669;">✅ Ad-free Experience - Active</li>
+                    <li style="color: #059669;">✅ Unlimited Posts - Active</li>
+                </ul>
+            `;
+        }
+
+        function resetDemo() {
+            isPremium = true;
+            updatePremiumDemo();
+            document.body.className = '';
+            document.querySelector('.header').style.background = '';
+            document.body.style.background = '';
+            document.body.style.color = '';
+            
+            const themeSelector = document.querySelector('.theme-selector');
+            if (themeSelector) themeSelector.remove();
+            
+            document.getElementById('testResults').style.display = 'none';
+            subscriptionManager.showSuccessMessage('Demo reset to Premium state! 🔄');
+        }
+    </script>
+</body>
+</html>

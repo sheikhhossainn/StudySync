@@ -29,79 +29,130 @@
 
     <main class="main">
         <div class="container">
-            <div class="payment-wrapper">
-                <h1 class="page-title">Choose Your Payment Option</h1>
-                <p class="page-subtitle">Select the service you'd like to pay for and complete your transaction securely</p>
+            <div class="premium-wrapper">
+                <div class="premium-hero">
+                    <div class="premium-badge">👑 PREMIUM</div>
+                    <h1 class="page-title">Unlock Premium StudySync</h1>
+                    <p class="page-subtitle">Get access to exclusive features and take your learning experience to the next level</p>
+                </div>
 
-                <!-- Payment Options Cards -->
-                <div class="payment-options">
-                    <!-- Remove Ads Payment -->
-                    <div class="payment-card" data-payment-type="remove-ads">
-                        <div class="payment-header">
-                            <div class="payment-icon ads-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L13.09 7.26L18 9L13.09 10.74L12 16L10.91 10.74L6 9L10.91 7.26L12 2Z" fill="currentColor"/>
-                                    <path d="M19 11L19.74 13.26L22 14L19.74 14.74L19 17L18.26 14.74L16 14L18.26 13.26L19 11Z" fill="currentColor"/>
-                                </svg>
-                            </div>
-                            <h2>Remove Advertisements</h2>
+                <!-- Premium Plan Card -->
+                <div class="premium-plan-card">
+                    <div class="plan-header">
+                        <div class="plan-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9L17 14.74L18.18 21.02L12 17.27L5.82 21.02L7 14.74L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
+                            </svg>
                         </div>
-                        <div class="payment-content">
-                            <div class="price">
-                                <span class="price-amount">$4.99</span>
-                                <span class="price-period">/month</span>
-                            </div>
-                            <ul class="features-list">
-                                <li>✓ Ad-free browsing experience</li>
-                                <li>✓ Faster page loading</li>
-                                <li>✓ Cleaner interface</li>
-                                <li>✓ Focus on learning without distractions</li>
-                            </ul>
-                            <button class="btn btn-primary btn-select" onclick="initiateAdRemovalPayment()">
-                                Remove Advertisements - $4.99/month
-                            </button>
+                        <h2>StudySync Premium</h2>
+                        <div class="plan-price">
+                            <span class="price-amount">৳300</span>
+                            <span class="price-period">/month</span>
                         </div>
                     </div>
 
-                    <!-- Pay Mentor Payment -->
-                    <div class="payment-card" data-payment-type="mentor-payment">
-                        <div class="payment-header">
-                            <div class="payment-icon mentor-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" fill="currentColor"/>
-                                    <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" fill="currentColor"/>
-                                </svg>
-                            </div>
-                            <h2>Pay Your Mentor</h2>
-                        </div>
-                        <div class="payment-content">
-                            <div class="mentor-selection">
-                                <label for="mentor-select">Select Mentor:</label>
-                                <select id="mentor-select" class="select mentor-dropdown">
-                                    <option value="">Choose a mentor</option>
-                                    <option value="sarah-johnson">Sarah Johnson - JavaScript Expert</option>
-                                    <option value="mike-chen">Mike Chen - Math Tutor</option>
-                                    <option value="emily-davis">Emily Davis - English Literature</option>
-                                    <option value="alex-brown">Alex Brown - Computer Science</option>
-                                </select>
-                            </div>
-                            <div class="amount-input-group">
-                                <label for="mentor-amount">Payment Amount:</label>
-                                <div class="amount-input-wrapper">
-                                    <span class="currency-symbol">$</span>
-                                    <input type="number" id="mentor-amount" class="amount-input" placeholder="0.00" min="1" step="0.01">
+                    <div class="plan-features">
+                        <h3>Premium Features</h3>
+                        <ul class="features-list">
+                            <li>
+                                <span class="feature-icon">🚫</span>
+                                <div class="feature-content">
+                                    <strong>Ad-Free Experience</strong>
+                                    <p>Browse without any interruptions or distractions</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="feature-icon">📝</span>
+                                <div class="feature-content">
+                                    <strong>Unlimited Posts & Questions</strong>
+                                    <p>Share knowledge and ask questions without limits</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="feature-icon">👨‍🏫</span>
+                                <div class="feature-content">
+                                    <strong>Priority Mentorship Access</strong>
+                                    <p>Get priority booking with top mentors and tutors</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="feature-icon">📊</span>
+                                <div class="feature-content">
+                                    <strong>Advanced Analytics</strong>
+                                    <p>Track your learning progress with detailed insights</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="feature-icon">📁</span>
+                                <div class="feature-content">
+                                    <strong>Unlimited File Sharing</strong>
+                                    <p>Share study materials without size restrictions</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="feature-icon">🎨</span>
+                                <div class="feature-content">
+                                    <strong>Premium Themes</strong>
+                                    <p>Customize your interface with exclusive themes</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="plan-benefits">
+                        <h3>Why Choose Premium?</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">⚡</div>
+                                <div class="benefit-text">
+                                    <h4>Enhanced Performance</h4>
+                                    <p>Faster loading and smoother experience</p>
                                 </div>
                             </div>
-                            <div class="session-details">
-                                <label for="session-description">Session Description (optional):</label>
-                                <textarea id="session-description" class="session-textarea" placeholder="Brief description of the tutoring session..."></textarea>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🎯</div>
+                                <div class="benefit-text">
+                                    <h4>Focused Learning</h4>
+                                    <p>No distractions, just pure learning</p>
+                                </div>
                             </div>
-                            <button class="btn btn-primary btn-select" onclick="initiateMentorPayment()">
-                                Pay Mentor
-                            </button>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🔄</div>
+                                <div class="benefit-text">
+                                    <h4>Cancel Anytime</h4>
+                                    <p>No long-term commitments required</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🛡️</div>
+                                <div class="benefit-text">
+                                    <h4>Secure & Private</h4>
+                                    <p>Your data is always protected</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                    <div class="plan-action">
+                        <button class="btn btn-premium" onclick="showPremiumPayment()">
+                            <span class="btn-icon">👑</span>
+                            Upgrade to Premium - ৳300/month
+                        </button>
+                        <p class="plan-note">✓ 7-day free trial • ✓ Cancel anytime • ✓ Instant activation</p>
+                    </div>
                 </div>
+
+                <!-- Free Trial Banner -->
+                <div class="trial-banner">
+                    <div class="trial-content">
+                        <h3>🎉 Special Offer: 7-Day Free Trial</h3>
+                        <p>Try all premium features for free. No payment required for the first week!</p>
+                        <button class="btn btn-trial" onclick="startFreeTrial()">
+                            Start Free Trial
+                        </button>
+                    </div>
+                </div>
+            </div>
 
                 <!-- Payment Form (Hidden by default) -->
                 <div class="payment-form-container" id="payment-form-container" style="display: none;">
@@ -264,6 +315,6 @@
         </div>
     </main>
 
-    <script src="assets/js/payment.js"></script>
+    <script src="assets/js/premium.js"></script>
 </body>
 </html>

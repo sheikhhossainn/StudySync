@@ -1,0 +1,5 @@
+INFO 2025-08-29 21:52:33,931 autoreload 11580 6576 Watching for file changes with StatReloader
+INFO 2025-08-29 21:54:09,646 autoreload 11580 6576 C:\Users\Usha_Personal_Laptop\Desktop\Vs all Code\StudySync\backend\studysync\settings.py changed, reloading.
+INFO 2025-08-29 21:54:20,147 autoreload 10480 15804 Watching for file changes with StatReloader
+INFO 2025-08-29 22:07:50,034 autoreload 10480 15804 C:\Users\Usha_Personal_Laptop\Desktop\Vs all Code\StudySync\backend\studysync\settings.py changed, reloading.
+INFO 2025-08-29 22:08:01,300 autoreload 11240 8776 Watching for file changes with StatReloader

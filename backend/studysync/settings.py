@@ -109,14 +109,22 @@ WSGI_APPLICATION = 'studysync.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME', default='studysync_db'),
-        'USER': config('DB_USER', default='studysync_user'),
-        'PASSWORD': config('DB_PASSWORD', default='password'),
-        'HOST': config('DB_HOST', default='localhost'),
-        'PORT': config('DB_PORT', default='5432'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# Uncomment below for PostgreSQL in production
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': config('DB_NAME', default='studysync_db'),
+#         'USER': config('DB_USER', default='studysync_user'),
+#         'PASSWORD': config('DB_PASSWORD', default='password'),
+#         'HOST': config('DB_HOST', default='localhost'),
+#         'PORT': config('DB_PORT', default='5432'),
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

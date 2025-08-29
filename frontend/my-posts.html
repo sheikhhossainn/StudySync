@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/my-posts.css">
+    <link rel="stylesheet" href="assets/css/subscription.css">
     <title>My Posts - StudySync</title>
 </head>
 <body>
@@ -68,9 +69,9 @@
                                 <span class="status-badge active">Active - 3 participants</span>
                             </div>
                             <div class="session-actions">
-                                <button class="btn btn-secondary">Edit</button>
-                                <button class="btn btn-secondary">View Participants</button>
-                                <button class="btn btn-danger">Cancel</button>
+                                <button class="btn btn-secondary btn-icon btn-edit">Edit</button>
+                                <button class="btn btn-success btn-icon btn-participants">View Participants</button>
+                                <button class="btn btn-danger btn-icon btn-delete">Delete</button>
                             </div>
                         </div>
 
@@ -85,9 +86,9 @@
                                 <span class="status-badge active">Active - 1 participant</span>
                             </div>
                             <div class="session-actions">
-                                <button class="btn btn-secondary">Edit</button>
-                                <button class="btn btn-secondary">View Participants</button>
-                                <button class="btn btn-danger">Cancel</button>
+                                <button class="btn btn-secondary btn-icon btn-edit">Edit</button>
+                                <button class="btn btn-success btn-icon btn-participants">View Participants</button>
+                                <button class="btn btn-danger btn-icon btn-delete">Delete</button>
                             </div>
                         </div>
 
@@ -102,8 +103,8 @@
                                 <span class="status-badge completed">Completed - 2 participants</span>
                             </div>
                             <div class="session-actions">
-                                <button class="btn btn-secondary">View Details</button>
-                                <button class="btn btn-secondary">Rate Participants</button>
+                                <button class="btn btn-secondary btn-icon btn-details">View Details</button>
+                                <button class="btn btn-success btn-icon btn-rate">Rate Participants</button>
                             </div>
                         </div>
 
@@ -118,8 +119,8 @@
                                 <span class="status-badge completed">Completed - 4 participants</span>
                             </div>
                             <div class="session-actions">
-                                <button class="btn btn-secondary">View Details</button>
-                                <button class="btn btn-secondary">Rate Participants</button>
+                                <button class="btn btn-secondary btn-icon btn-details">View Details</button>
+                                <button class="btn btn-success btn-icon btn-rate">Rate Participants</button>
                             </div>
                         </div>
                     </div>
@@ -127,5 +128,8 @@
             </div>
         </div>
     </main>
+    
+    <!-- JavaScript for API integration -->
+    <script src="assets/js/my-posts.js"></script>
 </body>
 </html>

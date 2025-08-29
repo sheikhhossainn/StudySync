@@ -1,25 +1,40 @@
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
+from django.urls import path
 from . import views
 
-router = DefaultRouter()
-router.register(r'payments', views.PaymentViewSet)
-router.register(r'subscriptions', views.SubscriptionViewSet)
+app_name = 'payments'
 
 urlpatterns = [
-    path('', include(router.urls)),
+    # Subscription plans
+    path('plans/', views.SubscriptionPlanListView.as_view(), name='subscription-plans'),
+    path('features/', views.subscription_features, name='subscription-features'),
     
-    # bKash endpoints
-    path('bkash/create-payment/', views.BkashCreatePaymentView.as_view(), name='bkash-create-payment'),
-    path('bkash/execute-payment/', views.BkashExecutePaymentView.as_view(), name='bkash-execute-payment'),
-    path('bkash/query-payment/<str:payment_id>/', views.BkashQueryPaymentView.as_view(), name='bkash-query-payment'),
+    # User subscription management
+    path('subscription/status/', views.UserSubscriptionStatusView.as_view(), name='subscription-status'),
+    path('subscription/upgrade/', views.upgrade_to_premium, name='upgrade-premium'),
+    path('subscription/cancel/', views.cancel_subscription, name='cancel-subscription'),
     
-    # Nagad endpoints
-    path('nagad/init-payment/', views.NagadInitPaymentView.as_view(), name='nagad-init-payment'),
-    path('nagad/complete-payment/', views.NagadCompletePaymentView.as_view(), name='nagad-complete-payment'),
-    path('nagad/verify-payment/<str:payment_ref_id>/', views.NagadVerifyPaymentView.as_view(), name='nagad-verify-payment'),
+    # Payment history
+    path('history/', views.PaymentHistoryView.as_view(), name='payment-history'),
     
-    # Rocket endpoints
+    # Payment methods
+    path('methods/', views.UserPaymentMethodListCreateView.as_view(), name='payment-methods'),
+    
+    # Advertisements
+    path('ads/', views.AdvertisementListView.as_view(), name='advertisements'),
+    path('ads/<uuid:ad_id>/impression/', views.track_ad_impression, name='track-ad-impression'),
+    path('ads/<uuid:ad_id>/click/', views.track_ad_click, name='track-ad-click'),
+    
+    # bKash Payment Gateway
+    path('bkash/initiate-payment/', views.BKashInitiatePaymentView.as_view(), name='bkash-initiate-payment'),
+    path('bkash/confirm-payment/', views.BKashConfirmPaymentView.as_view(), name='bkash-confirm-payment'),
+    path('bkash/check-status/<str:transaction_id>/', views.BKashCheckStatusView.as_view(), name='bkash-check-status'),
+    
+    # Nagad Payment Gateway
+    path('nagad/initiate-payment/', views.NagadInitiatePaymentView.as_view(), name='nagad-initiate-payment'),
+    path('nagad/confirm-payment/', views.NagadConfirmPaymentView.as_view(), name='nagad-confirm-payment'),
+    path('nagad/check-status/<str:transaction_id>/', views.NagadCheckStatusView.as_view(), name='nagad-check-status'),
+    
+    # Rocket Payment Gateway
     path('rocket/initiate-payment/', views.RocketInitiatePaymentView.as_view(), name='rocket-initiate-payment'),
     path('rocket/confirm-payment/', views.RocketConfirmPaymentView.as_view(), name='rocket-confirm-payment'),
     path('rocket/check-status/<str:transaction_id>/', views.RocketCheckStatusView.as_view(), name='rocket-check-status'),
@@ -28,4 +43,7 @@ urlpatterns = [
     path('verify-manual-payment/', views.VerifyManualPaymentView.as_view(), name='verify-manual-payment'),
     path('payment-success/', views.PaymentSuccessView.as_view(), name='payment-success'),
     path('payment-failed/', views.PaymentFailedView.as_view(), name='payment-failed'),
+    
+    # Premium features endpoints
+    path('premium-features/', views.PremiumFeaturesView.as_view(), name='premium-features'),
 ]

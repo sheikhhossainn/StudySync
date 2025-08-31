@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudySync - Dashboard</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .welcome-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .user-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+        .logout-btn {
+            background: #ff4757;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .auth-check {
+            text-align: center;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">StudySync</a>
+            <nav class="nav">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <button onclick="logout()" class="logout-btn">Logout</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="dashboard-container">
+            <!-- Loading state -->
+            <div id="loading" class="auth-check">
+                <h2>Loading...</h2>
+                <p>Checking authentication status...</p>
+            </div>
+
+            <!-- Not authenticated -->
+            <div id="not-authenticated" class="auth-check" style="display: none;">
+                <h2>Access Denied</h2>
+                <p>You need to be logged in to access this page.</p>
+                <a href="auth.html" class="btn btn-primary">Go to Login</a>
+            </div>
+
+            <!-- Authenticated content -->
+            <div id="dashboard-content" style="display: none;">
+                <div class="welcome-section">
+                    <div class="user-info">
+                        <div class="user-avatar" id="userAvatar">
+                            👤
+                        </div>
+                        <div>
+                            <h1>Welcome back, <span id="userName">User</span>!</h1>
+                            <p id="userEmail">user@example.com</p>
+                            <p>You're successfully authenticated with StudySync</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Study Sessions</h3>
+                        <p>Join or create study sessions with other students</p>
+                        <button class="btn btn-primary">Browse Sessions</button>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Mentorship</h3>
+                        <p>Connect with mentors or become a mentor yourself</p>
+                        <button class="btn btn-primary">Find Mentors</button>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Payments</h3>
+                        <p>Manage your payments and subscriptions</p>
+                        <button class="btn btn-primary">View Payments</button>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Profile</h3>
+                        <p>Update your profile and preferences</p>
+                        <button class="btn btn-primary">Edit Profile</button>
+                    </div>
+                </div>
+
+                <div class="token-info" style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 5px;">
+                    <h3>Authentication Info</h3>
+                    <p><strong>Token Status:</strong> <span id="tokenStatus">Valid</span></p>
+                    <p><strong>User ID:</strong> <span id="userId">N/A</span></p>
+                    <p><strong>Login Method:</strong> <span id="loginMethod">N/A</span></p>
+                    <button onclick="refreshToken()" class="btn btn-secondary">Refresh Token</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/google-auth.js"></script>
+    <script>
+        // Check authentication on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            checkAuthentication();
+        });
+
+        function checkAuthentication() {
+            const loading = document.getElementById('loading');
+            const notAuth = document.getElementById('not-authenticated');
+            const dashboard = document.getElementById('dashboard-content');
+
+            if (isAuthenticated()) {
+                const user = getCurrentUser();
+                displayUserData(user);
+                
+                loading.style.display = 'none';
+                dashboard.style.display = 'block';
+            } else {
+                loading.style.display = 'none';
+                notAuth.style.display = 'block';
+            }
+        }
+
+        function displayUserData(user) {
+            if (user) {
+                document.getElementById('userName').textContent = user.first_name || user.username || 'User';
+                document.getElementById('userEmail').textContent = user.email || 'No email';
+                document.getElementById('userId').textContent = user.id || 'N/A';
+                
+                // Set user avatar
+                const avatar = document.getElementById('userAvatar');
+                if (user.first_name) {
+                    avatar.textContent = user.first_name.charAt(0).toUpperCase();
+                }
+
+                // Check if user logged in with Google
+                const loginMethod = localStorage.getItem('access_token') ? 'JWT Token' : 'Session';
+                document.getElementById('loginMethod').textContent = loginMethod;
+            }
+        }
+
+        // Logout function
+        async function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                await StudySyncAuth.logout();
+            }
+        }
+
+        // Refresh token function
+        async function refreshToken() {
+            try {
+                const newToken = await StudySyncAuth.refreshToken();
+                if (newToken) {
+                    document.getElementById('tokenStatus').textContent = 'Refreshed';
+                    setTimeout(() => {
+                        document.getElementById('tokenStatus').textContent = 'Valid';
+                    }, 2000);
+                }
+            } catch (error) {
+                document.getElementById('tokenStatus').textContent = 'Error';
+                console.error('Token refresh failed:', error);
+            }
+        }
+    </script>
+</body>
+</html>

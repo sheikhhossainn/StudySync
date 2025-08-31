@@ -24,8 +24,8 @@ urlpatterns = [
     path('api/auth/', include('accounts.urls')),
     path('api/payments/', include('payments.urls')),
     path('api/study-sessions/', include('study_sessions.urls')),
-    path('api/mentorship/', include('mentorship.urls')),
-    path('api/', include('core.urls')),
+    # path('api/mentorship/', include('mentorship.urls')),  # TODO: Create mentorship views
+    # path('api/', include('core.urls')),  # TODO: Create core views
     
     # OAuth 2.0 endpoints
     path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),

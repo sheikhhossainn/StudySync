@@ -16,8 +16,8 @@ from social_django.utils import psa
 import json
 import logging
 
-from .models import User, UserProfile
-from .serializers import UserSerializer, UserProfileSerializer, UserRegistrationSerializer
+from .models import User, Student, Mentor
+from .serializers import UserSerializer, StudentSerializer, MentorSerializer, UserRegistrationSerializer
 
 logger = logging.getLogger(__name__)
 
@@ -33,15 +33,26 @@ class UserViewSet(viewsets.ModelViewSet):
         return User.objects.filter(id=self.request.user.id)
 
 
-class UserProfileViewSet(viewsets.ModelViewSet):
-    queryset = UserProfile.objects.all()
-    serializer_class = UserProfileSerializer
+class StudentViewSet(viewsets.ModelViewSet):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
     permission_classes = [IsAuthenticated]
     
     def get_queryset(self):
         if self.request.user.is_staff:
-            return UserProfile.objects.all()
-        return UserProfile.objects.filter(user=self.request.user)
+            return Student.objects.all()
+        return Student.objects.filter(user=self.request.user)
+
+
+class MentorViewSet(viewsets.ModelViewSet):
+    queryset = Mentor.objects.all()
+    serializer_class = MentorSerializer
+    permission_classes = [IsAuthenticated]
+    
+    def get_queryset(self):
+        if self.request.user.is_staff:
+            return Mentor.objects.all()
+        return Mentor.objects.filter(user=self.request.user)
 
 
 class RegisterView(APIView):
@@ -52,13 +63,23 @@ class RegisterView(APIView):
         if serializer.is_valid():
             user = serializer.save()
             
-            # Create user profile
-            UserProfile.objects.create(
-                user=user,
-                bio=request.data.get('bio', ''),
-                subjects_of_interest=request.data.get('subjects_of_interest', []),
-                expertise_level=request.data.get('expertise_level', 'beginner')
-            )
+            # Create profile based on user type
+            if user.user_type == 'student':
+                Student.objects.create(
+                    user=user,
+                    name=f"{user.first_name} {user.last_name}" or "Not specified",
+                    institution_name=request.data.get('institution_name', 'Not specified'),
+                    field_of_study=request.data.get('field_of_study', 'Not specified'),
+                    bio=request.data.get('bio', '')
+                )
+            elif user.user_type == 'mentor':
+                Mentor.objects.create(
+                    user=user,
+                    name=f"{user.first_name} {user.last_name}" or "Not specified",
+                    job_role=request.data.get('job_role', 'Not specified'),
+                    organization_name=request.data.get('organization_name', 'Not specified'),
+                    bio=request.data.get('bio', '')
+                )
             
             return Response({
                 'message': 'User registered successfully',
@@ -110,23 +131,53 @@ class ProfileView(APIView):
     
     def get(self, request):
         try:
-            profile = UserProfile.objects.get(user=request.user)
+            # Check if user is a student or mentor
+            if request.user.user_type == 'STUDENT':
+                profile = Student.objects.get(user=request.user)
+                profile_data = StudentSerializer(profile).data
+            elif request.user.user_type == 'MENTOR':
+                profile = Mentor.objects.get(user=request.user)
+                profile_data = MentorSerializer(profile).data
+            else:
+                return Response({
+                    'error': 'Invalid user type'
+                }, status=status.HTTP_400_BAD_REQUEST)
+                
             return Response({
                 'user': UserSerializer(request.user).data,
-                'profile': UserProfileSerializer(profile).data
+                'profile': profile_data
             })
-        except UserProfile.DoesNotExist:
-            # Create profile if it doesn't exist
-            profile = UserProfile.objects.create(user=request.user)
+        except (Student.DoesNotExist, Mentor.DoesNotExist):
+            # Create profile based on user type
+            if request.user.user_type == 'STUDENT':
+                profile = Student.objects.create(user=request.user)
+                profile_data = StudentSerializer(profile).data
+            elif request.user.user_type == 'MENTOR':
+                profile = Mentor.objects.create(user=request.user)
+                profile_data = MentorSerializer(profile).data
+            else:
+                return Response({
+                    'error': 'Invalid user type'
+                }, status=status.HTTP_400_BAD_REQUEST)
+                
             return Response({
                 'user': UserSerializer(request.user).data,
-                'profile': UserProfileSerializer(profile).data
+                'profile': profile_data
             })
     
     def put(self, request):
         try:
-            profile = UserProfile.objects.get(user=request.user)
-            serializer = UserProfileSerializer(profile, data=request.data, partial=True)
+            # Get profile based on user type
+            if request.user.user_type == 'STUDENT':
+                profile = Student.objects.get(user=request.user)
+                serializer = StudentSerializer(profile, data=request.data, partial=True)
+            elif request.user.user_type == 'MENTOR':
+                profile = Mentor.objects.get(user=request.user)
+                serializer = MentorSerializer(profile, data=request.data, partial=True)
+            else:
+                return Response({
+                    'error': 'Invalid user type'
+                }, status=status.HTTP_400_BAD_REQUEST)
             
             if serializer.is_valid():
                 serializer.save()
@@ -148,12 +199,12 @@ class ProfileView(APIView):
                 return Response({
                     'message': 'Profile updated successfully',
                     'user': UserSerializer(request.user).data,
-                    'profile': UserProfileSerializer(profile).data
+                    'profile': serializer.data
                 })
             
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
             
-        except UserProfile.DoesNotExist:
+        except (Student.DoesNotExist, Mentor.DoesNotExist):
             return Response({
                 'error': 'Profile not found'
             }, status=status.HTTP_404_NOT_FOUND)
@@ -181,15 +232,40 @@ class SocialAuthView(APIView):
             user = request.backend.do_auth(token)
             
             if user:
-                # Create or get user profile
-                profile, created = UserProfile.objects.get_or_create(
-                    user=user,
-                    defaults={
-                        'bio': f'User authenticated via {backend}',
-                        'subjects_of_interest': [],
-                        'expertise_level': 'beginner'
-                    }
-                )
+                # Create or get user profile based on user type
+                if user.user_type == 'STUDENT':
+                    profile, created = Student.objects.get_or_create(
+                        user=user,
+                        defaults={
+                            'bio': f'Student authenticated via {backend}',
+                            'subjects_of_interest': [],
+                            'current_education_level': 'undergraduate'
+                        }
+                    )
+                    profile_data = StudentSerializer(profile).data
+                elif user.user_type == 'MENTOR':
+                    profile, created = Mentor.objects.get_or_create(
+                        user=user,
+                        defaults={
+                            'bio': f'Mentor authenticated via {backend}',
+                            'expertise_areas': [],
+                            'experience_years': 0
+                        }
+                    )
+                    profile_data = MentorSerializer(profile).data
+                else:
+                    # Default to student if no user_type set
+                    user.user_type = 'STUDENT'
+                    user.save()
+                    profile, created = Student.objects.get_or_create(
+                        user=user,
+                        defaults={
+                            'bio': f'Student authenticated via {backend}',
+                            'subjects_of_interest': [],
+                            'current_education_level': 'undergraduate'
+                        }
+                    )
+                    profile_data = StudentSerializer(profile).data
                 
                 # Create OAuth token for API access
                 application = Application.objects.get(name='StudySync Frontend')
@@ -203,7 +279,7 @@ class SocialAuthView(APIView):
                 return Response({
                     'access_token': access_token.token,
                     'user': UserSerializer(user).data,
-                    'profile': UserProfileSerializer(profile).data
+                    'profile': profile_data
                 }, status=status.HTTP_200_OK)
             else:
                 return Response({
@@ -274,7 +350,16 @@ def user_info(request):
     OAuth 2.0 user info endpoint
     """
     try:
-        profile = UserProfile.objects.get(user=request.user)
+        # Get profile based on user type
+        if request.user.user_type == 'STUDENT':
+            profile = Student.objects.get(user=request.user)
+            profile_data = StudentSerializer(profile).data
+        elif request.user.user_type == 'MENTOR':
+            profile = Mentor.objects.get(user=request.user)
+            profile_data = MentorSerializer(profile).data
+        else:
+            profile_data = None
+            
         return Response({
             'id': request.user.id,
             'email': request.user.email,
@@ -282,9 +367,9 @@ def user_info(request):
             'first_name': request.user.first_name,
             'last_name': request.user.last_name,
             'user_type': request.user.user_type,
-            'profile': UserProfileSerializer(profile).data
+            'profile': profile_data
         })
-    except UserProfile.DoesNotExist:
+    except (Student.DoesNotExist, Mentor.DoesNotExist):
         return Response({
             'id': request.user.id,
             'email': request.user.email,

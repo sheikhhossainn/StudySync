@@ -3,3 +3,12 @@ INFO 2025-08-29 21:54:09,646 autoreload 11580 6576 C:\Users\Usha_Personal_Laptop
 INFO 2025-08-29 21:54:20,147 autoreload 10480 15804 Watching for file changes with StatReloader
 INFO 2025-08-29 22:07:50,034 autoreload 10480 15804 C:\Users\Usha_Personal_Laptop\Desktop\Vs all Code\StudySync\backend\studysync\settings.py changed, reloading.
 INFO 2025-08-29 22:08:01,300 autoreload 11240 8776 Watching for file changes with StatReloader
+INFO 2025-08-31 11:13:42,775 autoreload 13004 8060 Watching for file changes with StatReloader
+WARNING 2025-08-31 11:13:54,960 log 13004 14960 Not Found: /
+WARNING 2025-08-31 11:13:54,962 basehttp 13004 14960 "GET / HTTP/1.1" 404 11910
+INFO 2025-08-31 11:13:55,052 basehttp 13004 2704 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2025-08-31 11:13:55,123 basehttp 13004 9016 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2025-08-31 11:13:55,161 basehttp 13004 9016 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-08-31 11:13:55,233 basehttp 13004 9016 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+WARNING 2025-08-31 11:13:55,361 log 13004 9016 Not Found: /favicon.ico
+WARNING 2025-08-31 11:13:55,362 basehttp 13004 9016 "GET /favicon.ico HTTP/1.1" 404 11971

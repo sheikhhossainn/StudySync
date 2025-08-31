@@ -1,6 +1,7 @@
 # Core Django and Database
 Django==4.2.7
 psycopg2-binary==2.9.9
+dj-database-url==2.1.0
 django-cors-headers==4.3.1
 
 # Environment variables
@@ -8,6 +9,7 @@ python-decouple==3.8
 
 # API Development
 djangorestframework==3.14.0
+djangorestframework-simplejwt==5.5.1
 django-filter==23.3
 
 # OAuth 2.0 and Authentication
@@ -15,6 +17,11 @@ django-oauth-toolkit==1.7.1
 django-allauth==0.57.0
 social-auth-app-django==5.4.0
 PyJWT==2.8.0
+
+# Google Authentication
+google-auth==2.40.3
+google-auth-oauthlib==1.2.2
+google-auth-httplib2==0.2.0
 
 # Payment Processing
 requests==2.31.0

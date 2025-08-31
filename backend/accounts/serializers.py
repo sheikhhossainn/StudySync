@@ -1,24 +1,35 @@
 from rest_framework import serializers
 from django.contrib.auth.password_validation import validate_password
-from .models import User, UserProfile
+from .models import User, Student, Mentor
 
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id', 'username', 'email', 'first_name', 'last_name', 'user_type', 'phone_number', 'date_joined')
-        read_only_fields = ('id', 'date_joined')
+        fields = ('id', 'username', 'email', 'first_name', 'last_name', 'user_type', 'subscription_type', 'is_premium', 'date_joined')
+        read_only_fields = ('id', 'date_joined', 'is_premium')
 
 
-class UserProfileSerializer(serializers.ModelSerializer):
+class StudentSerializer(serializers.ModelSerializer):
+    user = UserSerializer(read_only=True)
+    age = serializers.ReadOnlyField()
+    
+    class Meta:
+        model = Student
+        fields = ('id', 'user', 'name', 'date_of_birth', 'age', 'institution_name', 'student_id', 
+                 'field_of_study', 'academic_year', 'bio', 'student_id_card_image_url', 'created_at', 'updated_at')
+        read_only_fields = ('id', 'created_at', 'updated_at', 'age')
+
+
+class MentorSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)
     
     class Meta:
-        model = UserProfile
-        fields = ('user', 'bio', 'location', 'date_of_birth', 'avatar', 'subjects_of_interest', 
-                 'expertise_level', 'github_url', 'linkedin_url', 'website_url', 
-                 'receive_notifications', 'is_available_for_mentoring', 'created_at', 'updated_at')
-        read_only_fields = ('created_at', 'updated_at')
+        model = Mentor
+        fields = ('id', 'user', 'name', 'age', 'expertise', 'years_of_experience', 'job_role', 
+                 'organization_name', 'bio', 'linkedin_url', 'is_verified', 'verification_date',
+                 'nid_card_image_url', 'organization_id_card_image_url', 'created_at', 'updated_at')
+        read_only_fields = ('id', 'is_verified', 'verification_date', 'created_at', 'updated_at')
 
 
 class UserRegistrationSerializer(serializers.ModelSerializer):
@@ -27,7 +38,17 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = User
-        fields = ('username', 'email', 'password', 'password_confirm', 'first_name', 'last_name', 'user_type', 'phone_number')
+        fields = ('username', 'email', 'password', 'password_confirm', 'first_name', 'last_name', 'user_type')
+        
+    def validate(self, attrs):
+        if attrs['password'] != attrs['password_confirm']:
+            raise serializers.ValidationError("Password fields didn't match.")
+        return attrs
+    
+    def create(self, validated_data):
+        validated_data.pop('password_confirm', None)
+        user = User.objects.create_user(**validated_data)
+        return user
     
     def validate(self, attrs):
         if attrs['password'] != attrs['password_confirm']:

@@ -38,7 +38,7 @@ class UserSubscription(models.Model):
     ]
     
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='subscriptions')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='user_subscriptions')
     plan = models.ForeignKey(SubscriptionPlan, on_delete=models.CASCADE, related_name='subscriptions')
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='active')
     started_at = models.DateTimeField(auto_now_add=True)
@@ -160,42 +160,13 @@ class AdImpression(models.Model):
 
     class Meta:
         db_table = 'ad_impressions'
+        indexes = [
+            models.Index(fields=['user', 'clicked']),
+            models.Index(fields=['ad', 'created_at']),
+        ]
 
     def __str__(self):
         return f"Impression for {self.ad.title}"
-    object_id = models.PositiveIntegerField(null=True, blank=True)
-    content_object = GenericForeignKey('content_type', 'object_id')
-    
-    # Mobile banking specific fields
-    mobile_number = models.CharField(max_length=15, blank=True, null=True)
-    reference_note = models.TextField(blank=True, null=True)
-    
-    # Billing information
-    billing_email = models.EmailField()
-    billing_name = models.CharField(max_length=100)
-    billing_address = models.TextField()
-    billing_city = models.CharField(max_length=50)
-    billing_state = models.CharField(max_length=50)
-    billing_zip = models.CharField(max_length=10)
-    
-    # Timestamps
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-    completed_at = models.DateTimeField(null=True, blank=True)
-    
-    # Metadata
-    metadata = models.JSONField(default=dict, blank=True)
-    
-    class Meta:
-        ordering = ['-created_at']
-        indexes = [
-            models.Index(fields=['user', 'status']),
-            models.Index(fields=['payment_method', 'status']),
-            models.Index(fields=['transaction_id']),
-        ]
-    
-    def __str__(self):
-        return f"Payment {self.id} - {self.user.email} - {self.get_payment_method_display()}"
 
 
 class MobileBankingTransaction(models.Model):
@@ -244,14 +215,14 @@ class Subscription(models.Model):
         ('expired', 'Expired'),
     ]
     
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='subscriptions')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='legacy_subscriptions')
     subscription_type = models.CharField(max_length=20, choices=SUBSCRIPTION_TYPES)
     status = models.CharField(max_length=15, choices=STATUS_CHOICES, default='active')
     
     start_date = models.DateTimeField()
     end_date = models.DateTimeField()
     
-    payment = models.ForeignKey(Payment, on_delete=models.SET_NULL, null=True, blank=True)
+    payment = models.ForeignKey(Payment, on_delete=models.SET_NULL, null=True, blank=True, related_name='legacy_subscription')
     
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

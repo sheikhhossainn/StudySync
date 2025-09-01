@@ -20,7 +20,7 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 -- CORE USER MANAGEMENT TABLES
 -- ============================================================================
 
--- Users table (Custom User Model)
+-- Users table (Single comprehensive user table with all profile data)
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     username VARCHAR(150) UNIQUE NOT NULL,
@@ -29,37 +29,34 @@ CREATE TABLE users (
     last_name VARCHAR(30) NOT NULL,
     phone VARCHAR(20),
     password VARCHAR(128) NOT NULL,
-    is_active BOOLEAN DEFAULT TRUE,
-    is_staff BOOLEAN DEFAULT FALSE,
-    is_superuser BOOLEAN DEFAULT FALSE,
-    is_verified BOOLEAN DEFAULT FALSE,
-    date_joined TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-    last_login TIMESTAMP WITH TIME ZONE,
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
-
--- User Profiles table
-CREATE TABLE user_profiles (
-    id SERIAL PRIMARY KEY,
-    user_id INTEGER UNIQUE REFERENCES users(id) ON DELETE CASCADE,
+    
+    -- Profile Information (merged from user_profiles)
     profile_picture TEXT,
     bio TEXT,
     date_of_birth DATE,
     gender VARCHAR(10) CHECK (gender IN ('male', 'female', 'other')),
     student_id VARCHAR(50),
-    university VARCHAR(200),
+    institution VARCHAR(200),
     department VARCHAR(100),
     year_of_study INTEGER,
-    gpa DECIMAL(3,2),
     skills TEXT[], -- Array of skills
     interests TEXT[], -- Array of interests
     location VARCHAR(100),
     timezone VARCHAR(50) DEFAULT 'UTC',
     language_preference VARCHAR(10) DEFAULT 'en',
+    
+    -- Account Status
+    is_active BOOLEAN DEFAULT TRUE,
+    is_staff BOOLEAN DEFAULT FALSE,
+    is_superuser BOOLEAN DEFAULT FALSE,
+    is_verified BOOLEAN DEFAULT FALSE,
     email_verified BOOLEAN DEFAULT FALSE,
     phone_verified BOOLEAN DEFAULT FALSE,
     profile_completed BOOLEAN DEFAULT FALSE,
+    
+    -- Timestamps
+    date_joined TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    last_login TIMESTAMP WITH TIME ZONE,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
@@ -413,6 +410,7 @@ CREATE TABLE django_content_type (
     id SERIAL PRIMARY KEY,
     app_label VARCHAR(100) NOT NULL,
     model VARCHAR(100) NOT NULL,
+    name VARCHAR(100) NOT NULL,
     UNIQUE(app_label, model)
 );
 

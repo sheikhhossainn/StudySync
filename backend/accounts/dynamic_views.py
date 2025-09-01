@@ -25,8 +25,8 @@ from google.oauth2 import id_token
 from google.auth.transport import requests
 from django.conf import settings
 
-from .models import User, UserProfile
-from .serializers import UserSerializer, UserProfileSerializer
+from .models import User
+from .serializers import UserSerializer
 
 logger = logging.getLogger(__name__)
 
@@ -38,16 +38,13 @@ class UserRegistrationView(CreateView):
     fields = ['username', 'email', 'first_name', 'last_name', 'password']
 
     def form_valid(self, form):
-        """Create user and profile in a transaction"""
+        """Create user in a transaction"""
         try:
             with transaction.atomic():
                 # Create user
                 user = form.save(commit=False)
                 user.set_password(form.cleaned_data['password'])
                 user.save()
-                
-                # Create profile
-                UserProfile.objects.create(user=user)
                 
                 # Log the user in
                 login(self.request, user)
@@ -124,36 +121,26 @@ def google_oauth_signup(request):
                     'phone': phone_number,
                     'is_verified': True,
                     'is_active': True,
-                }
-            )
-            
-            # Create or update profile
-            profile, profile_created = UserProfile.objects.get_or_create(
-                user=user,
-                defaults={
                     'profile_picture': profile_picture,
                     'email_verified': True,
                     'student_id': student_id,
-                    'university': organization_name,
+                    'institution': organization_name,
                     'date_of_birth': date_of_birth if date_of_birth else None,
                 }
             )
             
-            if not profile_created:
-                # Update existing profile with new data
-                profile.profile_picture = profile_picture
-                profile.email_verified = True
+            if not created:
+                # Update existing user with new data
+                user.profile_picture = profile_picture
+                user.email_verified = True
                 if student_id:
-                    profile.student_id = student_id
+                    user.student_id = student_id
                 if organization_name:
-                    profile.university = organization_name
+                    user.institution = organization_name
                 if date_of_birth:
-                    profile.date_of_birth = date_of_birth
-                profile.save()
-            
-            # Update user phone if provided and not already set
-            if phone_number and not user.phone:
-                user.phone = phone_number
+                    user.date_of_birth = date_of_birth
+                if phone_number and not user.phone:
+                    user.phone = phone_number
                 user.save()
             
             # Generate JWT tokens
@@ -167,7 +154,6 @@ def google_oauth_signup(request):
             response_data = {
                 'success': True,
                 'user': UserSerializer(user).data,
-                'profile': UserProfileSerializer(profile).data,
                 'tokens': {
                     'access': str(access_token),
                     'refresh': str(refresh),
@@ -285,18 +271,11 @@ def google_oauth_login(request):
 def user_profile_management(request):
     """Handle profile viewing and updates"""
     
-    try:
-        profile = request.user.profile
-    except UserProfile.DoesNotExist:
-        # Create profile if it doesn't exist
-        profile = UserProfile.objects.create(user=request.user)
-    
     if request.method == 'GET':
         """Get user profile data"""
         return Response({
             'user': UserSerializer(request.user).data,
-            'profile': UserProfileSerializer(profile).data,
-            'completion_percentage': profile.completion_percentage
+            'completion_percentage': request.user.completion_percentage
         })
     
     elif request.method in ['PUT', 'PATCH']:
@@ -309,17 +288,13 @@ def user_profile_management(request):
                     if field in user_data:
                         setattr(request.user, field, user_data[field])
                 
-                # Update profile fields
-                profile_data = request.data.get('profile', {})
-                for field in ['bio', 'university', 'major', 'year_of_study', 'gpa', 
-                             'location', 'timezone', 'study_preferences', 'date_of_birth', 
-                             'gender', 'student_id', 'availability_hours']:
-                    if field in profile_data:
-                        setattr(profile, field, profile_data[field])
+                # Update profile fields  
+                for field in ['bio', 'location', 'gender', 'date_of_birth', 'student_id', 
+                             'institution', 'department', 'year_of_study', 'skills', 'interests']:
+                    if field in request.data:
+                        setattr(request.user, field, request.data[field])
                 
-                # Save changes
                 request.user.save()
-                profile.save()
                 
                 logger.info(f"Profile updated for user {request.user.email}")
                 
@@ -327,8 +302,7 @@ def user_profile_management(request):
                     'success': True,
                     'message': 'Profile updated successfully!',
                     'user': UserSerializer(request.user).data,
-                    'profile': UserProfileSerializer(profile).data,
-                    'completion_percentage': profile.completion_percentage
+                    'completion_percentage': request.user.completion_percentage
                 })
                 
         except ValidationError as e:
@@ -462,7 +436,6 @@ def user_dashboard_data(request):
     """Get comprehensive user dashboard data"""
     try:
         user = request.user
-        profile = user.profile
         
         # Get related data counts
         from study_sessions.models import StudySession
@@ -470,12 +443,11 @@ def user_dashboard_data(request):
         
         dashboard_data = {
             'user': UserSerializer(user).data,
-            'profile': UserProfileSerializer(profile).data,
             'stats': {
                 'sessions_hosted': StudySession.objects.filter(host=user).count(),
                 'sessions_joined': user.session_participants.count(),
                 'total_payments': Payment.objects.filter(user=user, status='completed').count(),
-                'profile_completion': profile.completion_percentage,
+                'profile_completion': user.completion_percentage,
             },
             'recent_activity': {
                 'recent_sessions': StudySession.objects.filter(host=user).order_by('-created_at')[:5],

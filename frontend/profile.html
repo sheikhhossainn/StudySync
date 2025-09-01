@@ -202,6 +202,26 @@
                 align-items: center;
             }
         }
+
+        .edit-btn {
+            font-size: 0.75rem !important;
+            padding: 0.25rem 0.5rem !important;
+            margin-left: 0.5rem;
+        }
+
+        .btn-sm {
+            font-size: 0.8rem;
+            padding: 0.25rem 0.75rem;
+        }
+
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 0.75rem;
+            border-radius: 0.25rem;
+            margin: 1rem 0;
+            border: 1px solid #c3e6cb;
+        }
     </style>
 </head>
 <body>
@@ -273,12 +293,44 @@
                             <span class="info-value" id="studentId">-</span>
                         </div>
                         <div class="info-item">
-                            <span class="info-label">University</span>
-                            <span class="info-value" id="university">-</span>
+                            <span class="info-label">Institution</span>
+                            <span class="info-value" id="institution">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Department</span>
+                            <span class="info-value" id="department">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Year of Study</span>
+                            <span class="info-value" id="yearOfStudy">-</span>
                         </div>
                         <div class="info-item">
                             <span class="info-label">Date of Birth</span>
                             <span class="info-value" id="dateOfBirth">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Phone Number</span>
+                            <span class="info-value" id="phoneNumber">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Gender</span>
+                            <span class="info-value" id="gender">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Skills</span>
+                            <span class="info-value" id="skills">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Interests</span>
+                            <span class="info-value" id="interests">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Location</span>
+                            <span class="info-value" id="location">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Phone Verified</span>
+                            <span class="info-value" id="phoneVerified">-</span>
                         </div>
                     </div>
 
@@ -459,7 +511,8 @@
 
                 const user = JSON.parse(userData);
                 
-                // Fetch fresh data from backend
+                // Try to fetch fresh data from backend with better error handling
+                let profile = null;
                 try {
                     const response = await fetch('http://127.0.0.1:8000/api/auth/profile/manage/', {
                         headers: {
@@ -470,14 +523,28 @@
 
                     if (response.ok) {
                         const freshData = await response.json();
-                        displayUserProfile(freshData.user || user, freshData.profile);
+                        profile = freshData.profile;
+                        // Update user data if we got fresh data
+                        if (freshData.user) {
+                            Object.assign(user, freshData.user);
+                        }
+                    } else if (response.status === 401) {
+                        console.warn('Access token expired, attempting to refresh...');
+                        // Try to refresh the token
+                        const refreshed = await refreshAccessToken();
+                        if (refreshed) {
+                            // Retry the API call with new token
+                            return loadUserProfile();
+                        }
                     } else {
-                        displayUserProfile(user);
+                        console.warn('API error:', response.status, response.statusText);
                     }
                 } catch (apiError) {
                     console.warn('Failed to fetch fresh data, using cached data:', apiError);
-                    displayUserProfile(user);
                 }
+
+                // Always display user profile, even if API fails
+                displayUserProfile(user, profile);
 
             } catch (error) {
                 console.error('Error loading profile:', error);
@@ -490,10 +557,28 @@
             document.getElementById('loading').style.display = 'none';
             document.getElementById('profileContent').style.display = 'block';
 
+            // Debug: Log the user and profile data
+            console.log('User data:', user);
+            console.log('Profile data:', profile);
+            console.log('Additional localStorage data:', {
+                signup_data: localStorage.getItem('signup_data'),
+                user_data: localStorage.getItem('user_data')
+            });
+
             // Use default values if user data is missing
-            const firstName = user?.first_name || 'User';
+            // Check for name from multiple sources including signup data
+            const firstName = user?.first_name || '';
             const lastName = user?.last_name || '';
-            const fullName = `${firstName} ${lastName}`.trim();
+            const signupName = user?.name || user?.extracted_full_name || ''; // From signup process
+            
+            // Construct full name - prefer signup name if available, otherwise combine first+last
+            let fullName = signupName;
+            if (!fullName || fullName.trim() === '') {
+                fullName = `${firstName} ${lastName}`.trim();
+            }
+            if (!fullName || fullName.trim() === '') {
+                fullName = 'User'; // Final fallback
+            }
 
             // Profile Avatar - use default if no profile picture
             const defaultAvatar = 'https://via.placeholder.com/120/e2e8f0/64748b?text=' + 
@@ -514,24 +599,364 @@
 
             // Profile Information - handle missing data gracefully
             document.getElementById('userName').textContent = fullName || 'Not provided';
-            document.getElementById('studentId').textContent = profile?.student_id || 'Not provided';
-            document.getElementById('university').textContent = profile?.university || 'Not provided';
             
-            // Format date of birth if available
-            let dobText = 'Not provided';
-            if (profile?.date_of_birth) {
+            // Check both user and profile objects for the information
+            // Also check localStorage for any additional signup data
+            const signupData = localStorage.getItem('signup_data');
+            const authData = localStorage.getItem('auth_form_data'); // Check for auth form data
+            let additionalData = {};
+            
+            if (signupData) {
                 try {
-                    const date = new Date(profile.date_of_birth);
+                    additionalData = JSON.parse(signupData);
+                } catch (e) {
+                    console.warn('Error parsing signup data:', e);
+                }
+            }
+            
+            if (authData) {
+                try {
+                    const authFormData = JSON.parse(authData);
+                    Object.assign(additionalData, authFormData);
+                } catch (e) {
+                    console.warn('Error parsing auth data:', e);
+                }
+            }
+            
+            // Student ID - prioritize backend profile data, then fallback to localStorage
+            const studentId = profile?.student_id || user?.student_id || user?.studentId || 
+                             additionalData?.student_id || additionalData?.studentId ||
+                             user?.extracted_full_name || additionalData?.extracted_full_name || 'Not provided';
+            document.getElementById('studentId').textContent = studentId;
+            
+            // Institution - prioritize backend profile data (institution field), then fallback to signup data
+            const institution = profile?.institution || profile?.university || user?.institution || user?.university || 
+                               user?.organization_name || additionalData?.organization_name ||
+                               additionalData?.institution || additionalData?.university || additionalData?.organizationName || 'Not provided';
+            document.getElementById('institution').textContent = institution;
+            
+            // Department
+            const department = profile?.department || user?.department || additionalData?.department || 'Not provided';
+            document.getElementById('department').textContent = department;
+            
+            // Year of Study
+            const yearOfStudy = profile?.year_of_study || user?.year_of_study || additionalData?.year_of_study || 'Not provided';
+            document.getElementById('yearOfStudy').textContent = yearOfStudy;
+            
+            // Date of Birth - prioritize backend profile data, then fallback to signup data
+            let dobText = 'Not provided';
+            const dateOfBirth = profile?.date_of_birth || user?.date_of_birth || user?.dateOfBirth || 
+                               user?.date_of_birth || additionalData?.date_of_birth || additionalData?.dateOfBirth;
+            
+            if (dateOfBirth) {
+                try {
+                    const date = new Date(dateOfBirth);
                     dobText = date.toLocaleDateString('en-US', { 
                         year: 'numeric', 
                         month: 'long', 
                         day: 'numeric' 
                     });
                 } catch (e) {
-                    dobText = profile.date_of_birth;
+                    dobText = dateOfBirth;
                 }
             }
             document.getElementById('dateOfBirth').textContent = dobText;
+            
+            // Phone Number - prioritize user data from signup, then backend profile data
+            const phoneNumber = user?.phone_number || user?.phoneNumber || user?.phone || 
+                               profile?.phone_number || additionalData?.phone_number || 
+                               additionalData?.phoneNumber || additionalData?.phone || 'Not provided';
+            document.getElementById('phoneNumber').textContent = phoneNumber;
+            
+            // Gender
+            const gender = profile?.gender || user?.gender || additionalData?.gender || 'Not provided';
+            document.getElementById('gender').textContent = gender;
+            
+            // Skills (array field)
+            let skillsText = 'Not provided';
+            const skills = profile?.skills || user?.skills || additionalData?.skills;
+            if (skills && Array.isArray(skills) && skills.length > 0) {
+                skillsText = skills.join(', ');
+            } else if (skills && typeof skills === 'string') {
+                skillsText = skills;
+            }
+            document.getElementById('skills').textContent = skillsText;
+            
+            // Interests (array field)
+            let interestsText = 'Not provided';
+            const interests = profile?.interests || user?.interests || additionalData?.interests;
+            if (interests && Array.isArray(interests) && interests.length > 0) {
+                interestsText = interests.join(', ');
+            } else if (interests && typeof interests === 'string') {
+                interestsText = interests;
+            }
+            document.getElementById('interests').textContent = interestsText;
+            
+            // Location
+            const location = profile?.location || user?.location || additionalData?.location || 'Not provided';
+            document.getElementById('location').textContent = location;
+            
+            // Phone Verified
+            const phoneVerified = profile?.phone_verified || user?.phone_verified || false;
+            document.getElementById('phoneVerified').textContent = phoneVerified ? 'Yes' : 'No';
+            
+            // Add edit buttons for missing information
+            addEditButtonsForMissingInfo({
+                studentId, institution, department, yearOfStudy, dobText, phoneNumber,
+                gender, skillsText, interestsText, location
+            });
+        }
+
+        function addEditButtonsForMissingInfo(profileData) {
+            // Add edit buttons for missing information
+            const fieldsToCheck = [
+                { field: 'studentId', value: profileData.studentId, label: 'Add Student ID' },
+                { field: 'institution', value: profileData.institution, label: 'Add Institution' },
+                { field: 'department', value: profileData.department, label: 'Add Department' },
+                { field: 'yearOfStudy', value: profileData.yearOfStudy, label: 'Add Year of Study' },
+                { field: 'dateOfBirth', value: profileData.dobText, label: 'Add Date of Birth' },
+                { field: 'phoneNumber', value: profileData.phoneNumber, label: 'Add Phone Number' },
+                { field: 'gender', value: profileData.gender, label: 'Add Gender' },
+                { field: 'skills', value: profileData.skillsText, label: 'Add Skills' },
+                { field: 'interests', value: profileData.interestsText, label: 'Add Interests' },
+                { field: 'location', value: profileData.location, label: 'Add Location' }
+            ];
+            
+            fieldsToCheck.forEach(({ field, value, label }) => {
+                if (value === 'Not provided') {
+                    addEditButton(field, label);
+                }
+            });
+        }
+
+        function addEditButton(fieldId, buttonText) {
+            const field = document.getElementById(fieldId);
+            if (field && !field.nextElementSibling?.classList.contains('edit-btn')) {
+                const editBtn = document.createElement('button');
+                editBtn.textContent = buttonText;
+                editBtn.className = 'btn btn-sm btn-outline edit-btn';
+                editBtn.style.marginLeft = '10px';
+                editBtn.style.fontSize = '0.8rem';
+                editBtn.onclick = () => editField(fieldId);
+                field.parentNode.appendChild(editBtn);
+            }
+        }
+
+        function editField(fieldId) {
+            const field = document.getElementById(fieldId);
+            const currentValue = field.textContent;
+            
+            let inputType = 'text';
+            let placeholder = '';
+            let isSelect = false;
+            let options = [];
+            
+            switch(fieldId) {
+                case 'studentId':
+                    placeholder = 'Enter your Student ID';
+                    break;
+                case 'institution':
+                    placeholder = 'Enter your Institution/University';
+                    break;
+                case 'department':
+                    placeholder = 'Enter your Department';
+                    break;
+                case 'yearOfStudy':
+                    inputType = 'number';
+                    placeholder = 'Enter your Year of Study (1-4)';
+                    break;
+                case 'dateOfBirth':
+                    inputType = 'date';
+                    placeholder = 'Select your date of birth';
+                    break;
+                case 'phoneNumber':
+                    inputType = 'tel';
+                    placeholder = 'Enter your phone number';
+                    break;
+                case 'gender':
+                    isSelect = true;
+                    options = ['male', 'female', 'other'];
+                    break;
+                case 'skills':
+                    placeholder = 'Enter your skills (comma-separated)';
+                    break;
+                case 'interests':
+                    placeholder = 'Enter your interests (comma-separated)';
+                    break;
+                case 'location':
+                    placeholder = 'Enter your location';
+                    break;
+            }
+            
+            let input;
+            if (isSelect) {
+                input = document.createElement('select');
+                input.style.width = '200px';
+                input.style.padding = '5px';
+                input.style.marginRight = '10px';
+                
+                // Add default option
+                const defaultOption = document.createElement('option');
+                defaultOption.value = '';
+                defaultOption.textContent = 'Select ' + fieldId;
+                input.appendChild(defaultOption);
+                
+                // Add options
+                options.forEach(option => {
+                    const optionElement = document.createElement('option');
+                    optionElement.value = option;
+                    optionElement.textContent = option.charAt(0).toUpperCase() + option.slice(1);
+                    if (currentValue.toLowerCase() === option) {
+                        optionElement.selected = true;
+                    }
+                    input.appendChild(optionElement);
+                });
+            } else {
+                input = document.createElement('input');
+                input.type = inputType;
+                input.value = currentValue === 'Not provided' ? '' : currentValue;
+                input.placeholder = placeholder;
+                input.style.width = '200px';
+                input.style.padding = '5px';
+                input.style.marginRight = '10px';
+                
+                if (fieldId === 'yearOfStudy') {
+                    input.min = '1';
+                    input.max = '10';
+                }
+            }
+            
+            const saveBtn = document.createElement('button');
+            saveBtn.textContent = 'Save';
+            saveBtn.className = 'btn btn-sm btn-primary';
+            saveBtn.onclick = () => saveField(fieldId, input.value);
+            
+            const cancelBtn = document.createElement('button');
+            cancelBtn.textContent = 'Cancel';
+            cancelBtn.className = 'btn btn-sm btn-secondary';
+            cancelBtn.style.marginLeft = '5px';
+            cancelBtn.onclick = () => cancelEdit(fieldId);
+            
+            // Replace the text with input
+            field.textContent = '';
+            field.appendChild(input);
+            field.appendChild(saveBtn);
+            field.appendChild(cancelBtn);
+            
+            input.focus();
+        }
+
+        function saveField(fieldId, value) {
+            if (!value.trim()) {
+                alert('Please enter a value');
+                return;
+            }
+            
+            // Update the display
+            const field = document.getElementById(fieldId);
+            if (fieldId === 'dateOfBirth' && value) {
+                try {
+                    const date = new Date(value);
+                    field.textContent = date.toLocaleDateString('en-US', { 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric' 
+                    });
+                } catch (e) {
+                    field.textContent = value;
+                }
+            } else {
+                field.textContent = value;
+            }
+            
+            // TODO: Save to backend
+            // For now, save to localStorage
+            updateUserDataInStorage(fieldId, value);
+            
+            // Remove edit button since we now have data
+            const editBtn = field.parentNode.querySelector('.edit-btn');
+            if (editBtn) {
+                editBtn.remove();
+            }
+            
+            showSuccessMessage(`${fieldId} updated successfully!`);
+        }
+
+        function cancelEdit(fieldId) {
+            // Restore original text
+            loadUserProfile(); // Reload to restore original state
+        }
+
+        function updateUserDataInStorage(fieldId, value) {
+            try {
+                const userData = localStorage.getItem('user_data');
+                if (userData) {
+                    const user = JSON.parse(userData);
+                    
+                    // Map field IDs to storage keys
+                    const fieldMap = {
+                        'studentId': 'student_id',
+                        'institution': 'institution',
+                        'department': 'department',
+                        'yearOfStudy': 'year_of_study',
+                        'dateOfBirth': 'date_of_birth',
+                        'phoneNumber': 'phone_number',
+                        'gender': 'gender',
+                        'skills': 'skills',
+                        'interests': 'interests',
+                        'location': 'location'
+                    };
+                    
+                    let processedValue = value;
+                    
+                    // Process array fields (skills, interests)
+                    if (fieldId === 'skills' || fieldId === 'interests') {
+                        processedValue = value.split(',').map(item => item.trim()).filter(item => item.length > 0);
+                    }
+                    
+                    // Process numeric fields
+                    if (fieldId === 'yearOfStudy') {
+                        processedValue = parseInt(value);
+                    }
+                    
+                    user[fieldMap[fieldId]] = processedValue;
+                    localStorage.setItem('user_data', JSON.stringify(user));
+                    
+                    // Also try to save to backend
+                    saveProfileToBackend(fieldMap[fieldId], processedValue);
+                }
+            } catch (e) {
+                console.error('Error updating user data in storage:', e);
+            }
+        }
+
+        async function saveProfileToBackend(fieldName, value) {
+            try {
+                const accessToken = localStorage.getItem('access_token');
+                if (!accessToken) {
+                    console.warn('No access token available for backend save');
+                    return;
+                }
+
+                const response = await fetch('http://127.0.0.1:8000/api/auth/profile/manage/', {
+                    method: 'PATCH',
+                    headers: {
+                        'Authorization': `Bearer ${accessToken}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        [fieldName]: value
+                    })
+                });
+
+                if (response.ok) {
+                    console.log(`✅ ${fieldName} saved to backend successfully`);
+                } else {
+                    console.warn(`⚠️ Failed to save ${fieldName} to backend:`, response.status);
+                }
+            } catch (error) {
+                console.error('Error saving to backend:', error);
+            }
         }
 
         function confirmDeleteAccount() {

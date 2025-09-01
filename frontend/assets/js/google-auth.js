@@ -1,32 +1,72 @@
 // StudySync Google OAuth 2.0 Integration
-// Configuration
-const API_BASE_URL = 'http://localhost:8000'; // Change to your Vercel API URL in production
-const GOOGLE_CLIENT_ID = 'YOUR_GOOGLE_CLIENT_ID_HERE'; // Replace with your Google Client ID
+// Configuration - Detect current environment
+const API_BASE_URL = window.StudySyncConfig?.API_BASE_URL || 'http://127.0.0.1:8000';
+const GOOGLE_CLIENT_ID = window.StudySyncConfig?.GOOGLE_CLIENT_ID;
+
+// Get current origin for redirects
+const CURRENT_ORIGIN = window.location.origin;
 
 // Initialize Google OAuth when page loads
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('🚀 Initializing Google Auth...');
+    console.log('Current URL:', window.location.href);
+    console.log('API Base URL:', API_BASE_URL);
+    console.log('Google Client ID:', GOOGLE_CLIENT_ID);
+    
     initializeGoogleAuth();
+    setupOAuthButtons();
 });
 
+function setupOAuthButtons() {
+    console.log('🔧 Setting up OAuth buttons...');
+    
+    // Setup custom Google button
+    const googleBtn = document.getElementById('googleBtn');
+    if (googleBtn) {
+        console.log('✅ Found Google button, adding click handler');
+        googleBtn.addEventListener('click', function() {
+            console.log('🖱️ Google button clicked');
+            // Trigger Google OAuth flow
+            if (window.google && window.google.accounts) {
+                console.log('📞 Triggering Google Sign-In...');
+                window.google.accounts.id.prompt();
+            } else {
+                console.error('❌ Google OAuth library not loaded');
+                showError('Google OAuth is not available. Please refresh the page.');
+            }
+        });
+    } else {
+        console.warn('⚠️ Google button not found');
+    }
+}
+
 function initializeGoogleAuth() {
+    // Check if Google Client ID is configured
+    if (!GOOGLE_CLIENT_ID) {
+        console.error('Google OAuth Client ID not configured');
+        showError('Google OAuth is not properly configured. Please check the setup.');
+        return;
+    }
+    
     // Update the client ID in the HTML
     const googleOnload = document.getElementById('g_id_onload');
     if (googleOnload) {
         googleOnload.setAttribute('data-client_id', GOOGLE_CLIENT_ID);
     }
     
-    console.log('Google OAuth initialized');
+    console.log('Google OAuth initialized with Client ID:', GOOGLE_CLIENT_ID.substring(0, 20) + '...');
 }
 
 // Handle Google Sign-In Response
 function handleGoogleSignIn(response) {
-    console.log('Google Sign-In Response:', response);
+    console.log('🎯 Google Sign-In Response received:', response);
     
     if (response.credential) {
+        console.log('✅ Credential received, sending to backend...');
         // Send the credential to your backend
         authenticateWithGoogle(response.credential);
     } else {
-        console.error('No credential received from Google');
+        console.error('❌ No credential received from Google');
         showError('Google authentication failed. Please try again.');
     }
 }
@@ -36,7 +76,7 @@ async function authenticateWithGoogle(credential) {
     try {
         showLoading(true);
         
-        const response = await fetch(`${API_BASE_URL}/api/accounts/auth/google/login/`, {
+        const response = await fetch(`${API_BASE_URL}/api/auth/auth/google/login/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

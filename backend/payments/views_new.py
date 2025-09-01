@@ -17,8 +17,6 @@ from .payment_gateways import PaymentGatewayFactory, ManualPaymentVerifier, Paym
 
 logger = logging.getLogger(__name__)
 
-logger = logging.getLogger(__name__)
-
 
 class SubscriptionPlanListView(generics.ListAPIView):
     """List all active subscription plans"""
@@ -324,7 +322,7 @@ def initiate_payment(request):
         )
         
         # Handle different payment methods
-        if payment_method in ['bkash', 'nagad', 'aamarpay']:
+        if payment_method in ['bkash', 'nagad']:
             try:
                 gateway = PaymentGatewayFactory.get_gateway(payment_method)
                 user_data = {
@@ -438,7 +436,7 @@ def verify_payment(request):
             })
         
         # Verify with payment gateway
-        if payment.payment_method in ['bkash', 'nagad', 'rocket']:
+        if payment.payment_method in ['bkash', 'nagad']:
             try:
                 gateway = PaymentGatewayFactory.get_gateway(payment.payment_method)
                 result = gateway.verify_payment(transaction_id or payment.transaction_id)
@@ -549,24 +547,15 @@ def payment_methods(request):
             {
                 'id': 'bkash',
                 'name': 'bKash',
-                'icon': '/static/images/icons/bkash-logo.png',
+                'icon': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOCIgZmlsbD0iI0UyMTMzNiIvPgo8dGV4dCB4PSIyMCIgeT0iMjYiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iYm9sZCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Ykthc2g8L3RleHQ+Cjwvc3ZnPg==',
                 'description': 'Pay with your bKash account',
                 'enabled': True
             },
             {
                 'id': 'nagad',
-                'name': 'Nagad',
-                'icon': '/static/images/icons/nagad-logo.png',
+                'name': 'Nagad', 
+                'icon': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOCIgZmlsbD0iI0ZGNDQ0NCIvPgo8dGV4dCB4PSIyMCIgeT0iMjYiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iYm9sZCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+TmFnYWQ8L3RleHQ+Cjwvc3ZnPg==',
                 'description': 'Pay with your Nagad account',
-                'enabled': True
-            }
-        ],
-        'card_payments': [
-            {
-                'id': 'aamarpay',
-                'name': 'AamarPay',
-                'icon': '/static/images/icons/aamarpay-logo.png',
-                'description': 'Pay with credit/debit card via AamarPay',
                 'enabled': True
             }
         ],
@@ -574,8 +563,15 @@ def payment_methods(request):
             {
                 'id': 'bank_transfer',
                 'name': 'Bank Transfer',
-                'icon': '/static/images/icons/bank-icon.png',
+                'icon': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOCIgZmlsbD0iIzM0NjZCOCIvPgo8cGF0aCBkPSJNMTAgMTJIMzBWMTZIMTBWMTJaTTEwIDIwSDMwVjI0SDEwVjIwWk0xMCAyOEgzMFYzMkgxMFYyOFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPg==',
                 'description': 'Transfer to our bank account',
+                'enabled': True
+            },
+            {
+                'id': 'card',
+                'name': 'Credit/Debit Card',
+                'icon': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOCIgZmlsbD0iIzAwNTFBNSIvPgo8cmVjdCB4PSI4IiB5PSIxMiIgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiByeD0iMiIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeD0iOCIgeT0iMTYiIHdpZHRoPSIyNCIgaGVpZ2h0PSIzIiBmaWxsPSIjRkZBNzAwIi8+Cjx0ZXh0IHg9IjIwIiB5PSIzNCIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iOCIgZm9udC13ZWlnaHQ9ImJvbGQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNhcmQ8L3RleHQ+Cjwvc3ZnPg==',
+                'description': 'Pay with your credit or debit card',
                 'enabled': True
             }
         ]
@@ -650,153 +646,3 @@ def activate_subscription(payment, verification_result):
     except Exception as e:
         logger.error(f"Subscription activation error: {str(e)}")
         raise
-
-
-def get_payment_instructions(payment_method, amount, currency):
-    """Get payment instructions for manual payment methods"""
-    instructions = {
-        'bank_transfer': {
-            'method': 'Bank Transfer',
-            'amount': f'{amount} {currency}',
-            'account_details': {
-                'bank_name': 'Your Bank Name',
-                'account_number': '1234567890',
-                'account_name': 'StudySync Limited',
-                'routing_number': '123456789'
-            },
-            'instructions': [
-                f'Transfer exactly {amount} {currency} to the above account',
-                'Use your email address as the transfer reference',
-                'Take a screenshot of the successful transfer',
-                'Submit the transaction reference number in the verification form'
-            ]
-        }
-    }
-    
-    return instructions.get(payment_method, {})
-
-
-@api_view(['POST'])
-@permission_classes([permissions.IsAuthenticated])
-def verify_payment(request):
-    """Verify payment status"""
-    try:
-        payment_id = request.data.get('payment_id')
-        transaction_id = request.data.get('transaction_id')
-        
-        if not payment_id:
-            return Response({
-                'error': 'payment_id is required'
-            }, status=status.HTTP_400_BAD_REQUEST)
-        
-        payment = get_object_or_404(Payment, id=payment_id, user=request.user)
-        
-        # If payment already completed, return success
-        if payment.payment_status == 'completed':
-            return Response({
-                'success': True,
-                'status': 'completed',
-                'message': 'Payment already verified and completed'
-            })
-        
-        # Verify with payment gateway
-        if payment.payment_method in ['bkash', 'nagad', 'rocket']:
-            try:
-                gateway = PaymentGatewayFactory.get_gateway(payment.payment_method)
-                result = gateway.verify_payment(transaction_id or payment.transaction_id)
-                
-                if result['success']:
-                    if result['status'] in ['completed', 'success', 'paid']:
-                        # Payment successful - activate subscription
-                        activate_subscription(payment, result)
-                        
-                        return Response({
-                            'success': True,
-                            'status': 'completed',
-                            'message': 'Payment verified and subscription activated successfully!'
-                        })
-                    else:
-                        payment.payment_status = result['status']
-                        payment.save()
-                        
-                        return Response({
-                            'success': False,
-                            'status': result['status'],
-                            'message': f'Payment status: {result["status"]}'
-                        })
-                else:
-                    return Response({
-                        'success': False,
-                        'error': result['error']
-                    }, status=status.HTTP_400_BAD_REQUEST)
-                    
-            except PaymentGatewayError as e:
-                return Response({
-                    'success': False,
-                    'error': str(e)
-                }, status=status.HTTP_400_BAD_REQUEST)
-        
-        else:
-            return Response({
-                'error': 'Payment verification not supported for this payment method'
-            }, status=status.HTTP_400_BAD_REQUEST)
-            
-    except Exception as e:
-        logger.error(f"Payment verification error: {str(e)}")
-        return Response({
-            'error': 'Payment verification failed. Please try again.'
-        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-
-@api_view(['POST'])
-@permission_classes([permissions.IsAuthenticated])
-def submit_manual_payment(request):
-    """Submit manual payment for verification"""
-    try:
-        payment_id = request.data.get('payment_id')
-        transaction_ref = request.data.get('transaction_reference')
-        payment_date = request.data.get('payment_date')
-        payment_method = request.data.get('payment_method')
-        amount = request.data.get('amount')
-        
-        # Validate inputs
-        required_fields = ['payment_id', 'transaction_reference', 'payment_date', 'payment_method', 'amount']
-        for field in required_fields:
-            if not request.data.get(field):
-                return Response({
-                    'error': f'{field} is required'
-                }, status=status.HTTP_400_BAD_REQUEST)
-        
-        payment = get_object_or_404(Payment, id=payment_id, user=request.user)
-        
-        # Update payment with manual details
-        payment.transaction_id = transaction_ref
-        payment.payment_gateway_response = {
-            'payment_date': payment_date,
-            'submitted_amount': amount,
-            'submission_time': timezone.now().isoformat(),
-            'status': 'pending_verification'
-        }
-        payment.payment_status = 'pending'
-        payment.save()
-        
-        # Use manual payment verifier
-        verification_result = ManualPaymentVerifier.verify_manual_payment({
-            'transaction_ref': transaction_ref,
-            'amount': amount,
-            'payment_method': payment_method,
-            'payment_date': payment_date
-        })
-        
-        return Response({
-            'success': True,
-            'message': verification_result['message'],
-            'verification_id': verification_result['verification_id'],
-            'status': 'pending_verification'
-        })
-        
-    except Exception as e:
-        logger.error(f"Manual payment submission error: {str(e)}")
-        return Response({
-            'error': 'Manual payment submission failed. Please try again.'
-        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

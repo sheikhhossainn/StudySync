@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Google Auth Test</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .result {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: left;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .info { background: #d1ecf1; color: #0c5460; }
+    </style>
+</head>
+<body>
+    <h1>🔍 Simple Google Auth Test</h1>
+    <p>This will test if Google authentication works without the complex flow.</p>
+    
+    <div id="g_id_onload"
+         data-client_id="1061988044539-0vq3h3fk08tjs9ncg63oetudgvt0onu8.apps.googleusercontent.com"
+         data-context="signup"
+         data-ux_mode="popup"
+         data-callback="handleGoogleSignIn"
+         data-auto_prompt="false">
+    </div>
+    
+    <div class="g_id_signin"
+         data-type="standard"
+         data-shape="rectangular"
+         data-theme="outline"
+         data-text="signup_with"
+         data-size="large"
+         data-logo_alignment="left">
+    </div>
+
+    <div id="result"></div>
+
+    <script>
+        function handleGoogleSignIn(response) {
+            const resultDiv = document.getElementById('result');
+            
+            try {
+                console.log('✅ Google response received:', response);
+                
+                if (!response.credential) {
+                    throw new Error('No credential received');
+                }
+                
+                // Decode JWT token
+                const payload = JSON.parse(atob(response.credential.split('.')[1]));
+                console.log('✅ JWT decoded:', payload);
+                
+                resultDiv.innerHTML = `
+                    <div class="result success">
+                        <h3>✅ Google Authentication Successful!</h3>
+                        <p><strong>Email:</strong> ${payload.email}</p>
+                        <p><strong>Name:</strong> ${payload.name}</p>
+                        <p><strong>Email Verified:</strong> ${payload.email_verified}</p>
+                        <p><strong>Picture:</strong> <img src="${payload.picture}" width="50" style="border-radius: 50%;"></p>
+                        
+                        <h4>Next Steps for StudySync:</h4>
+                        <ol>
+                            <li>Save email: ${payload.email}</li>
+                            <li>Extract name: ${payload.name}</li>
+                            <li>Ask for ID document upload</li>
+                            <li>Process with OCR</li>
+                            <li>Create account</li>
+                        </ol>
+                        
+                        <p><em>This proves Google auth works! The issue is in the main auth.js flow.</em></p>
+                    </div>
+                `;
+                
+            } catch (error) {
+                console.error('❌ Error:', error);
+                resultDiv.innerHTML = `
+                    <div class="result error">
+                        <h3>❌ Authentication Failed</h3>
+                        <p><strong>Error:</strong> ${error.message}</p>
+                        <p><strong>Response:</strong> ${JSON.stringify(response)}</p>
+                    </div>
+                `;
+            }
+        }
+        
+        // Log when page loads
+        window.onload = function() {
+            console.log('🚀 Simple Google test page loaded');
+            document.getElementById('result').innerHTML = `
+                <div class="result info">
+                    <p>Click the Google button above to test authentication...</p>
+                </div>
+            `;
+        };
+    </script>
+</body>
+</html>

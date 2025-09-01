@@ -1044,3 +1044,74 @@ WARNING 2025-09-02 01:44:03,496 log 8764 15276 Unauthorized: /api/auth/account/d
 WARNING 2025-09-02 01:44:03,496 basehttp 8764 15276 "DELETE /api/auth/account/delete/ HTTP/1.1" 401 172
 WARNING 2025-09-02 01:44:03,522 log 8764 15276 Unauthorized: /api/auth/token/refresh/
 WARNING 2025-09-02 01:44:03,523 basehttp 8764 15276 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+INFO 2025-09-02 01:46:06,337 dynamic_views 8764 11436 Received Google OAuth request: {'credential': 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjJkN2VkMzM4YzBmMTQ1N2IyMTRhMjc0YjVlMGU2NjdiNDRhNDJkZGUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMDYxOTg4MDQ0NTM5LTB2cTNoM2ZrMDh0anM5bmNnNjNvZXR1ZGd2dDBvbnU4LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiMTA2MTk4ODA0NDUzOS0wdnEzaDNmazA4dGpzOW5jZzYzb2V0dWRndnQwb251OC5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjExMzI1Nzg5MjM3OTA0OTY2ODMzOSIsImVtYWlsIjoiaHVtYWlyYXVzaGE5ODJAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTc1Njc1NTYzNiwibmFtZSI6Ikh1bWFpcmEgSGFiaWIgVXNoYSIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NKRlo2TVRNR1UwVTk5OTUxUnhUc3NzWXJ0N0o3MWN1LTk3OE9ZaEF4RzZ6bGhhWDhQWD1zOTYtYyIsImdpdmVuX25hbWUiOiJIdW1haXJhIEhhYmliIiwiZmFtaWx5X25hbWUiOiJVc2hhIiwiaWF0IjoxNzU2NzU1OTM2LCJleHAiOjE3NTY3NTk1MzYsImp0aSI6IjE5ZjkyYTg0N2QwZTQzNDkxY2I1Mzc5NzcyYjRlNTdiNmM2NzM0ZDkifQ.ViC9fT_xdAhiLiYR47Y5iWTUDThmUE23MwY82-XAQMNPe0CLj6LFwjAZKfqCn-W6oY87AzFLUpfJyAEvGvnhoHWkvRS7lIGCsxI2JUh3jmm4qMRM_DdKN9WrOjVApPubAwQJG_s7SzZQu4N66C4VEhCvx3cauLt8p5y3QS86NLENK32H6_xV0LdwJAwIBj9AnVnijbgDSxYXaErKRvDzfRpbkmzXj0cbMhyzh6jeYCMz6gxTiTRaZa-2y-_u5DTG75YxSTHN8lJd6ngPO2plV8Gui9HPRB3Jfc-p-S7d4yL4s55bjS7jHdDiqkRfEBzgLGhWh1dO5J1lTUsIwJ57rQ', 'email': 'humairausha982@gmail.com', 'name': 'Humaira Habib Usha', 'google_id': '113257892379049668339', 'profile_picture': 'https://lh3.googleusercontent.com/a/ACg8ocJFZ6MTMGU0U99951RxTsssYrt7J71cu-978OYhAxG6zlhaX8PX=s96-c', 'user_type': 'student', 'first_name': 'Humaira', 'last_name': 'Habib Usha', 'student_id': '2023-1-60-022', 'organization_name': 'East West University', 'date_of_birth': '2003-09-30', 'phone_number': '01926614699', 'extracted_full_name': 'Humaira Habib Usha', 'ocr_data': {'studentIdFile': {'fullName': 'Humaira Habib Usha', 'firstName': 'Humaira', 'lastName': 'Habib Usha', 'studentId': '2023-1-60-022', 'idNumber': '2023-1-60-022'}}}
+INFO 2025-09-02 01:46:07,253 dynamic_views 8764 11436 Google OAuth signup successful for humairausha982@gmail.com
+INFO 2025-09-02 01:46:07,305 basehttp 8764 11436 "POST /api/auth/auth/google/oauth/ HTTP/1.1" 200 1641
+WARNING 2025-09-02 01:46:09,650 log 8764 11436 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:46:09,651 basehttp 8764 11436 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:47:36,652 log 8764 11436 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:47:36,653 basehttp 8764 11436 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:49:07,494 log 8764 7184 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:49:07,494 basehttp 8764 7184 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:50:25,241 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:50:25,241 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:50:29,119 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:50:29,120 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:50:30,120 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:50:30,123 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:50:30,643 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:50:30,644 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:50:32,051 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:50:32,052 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:50:45,981 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:50:45,982 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:50:46,402 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:50:46,403 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:50:48,171 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:50:48,172 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:50:53,332 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:50:53,333 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:50:58,496 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:50:58,496 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:51:02,653 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:51:02,653 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:51:03,036 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:51:03,037 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:51:03,469 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:51:03,470 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:51:03,884 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:51:03,885 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:51:04,217 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:51:04,217 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:51:04,626 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:51:04,627 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:51:05,029 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:51:05,030 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:51:05,437 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:51:05,438 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:51:05,880 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:51:05,882 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:51:06,243 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:51:06,244 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:51:06,632 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:51:06,633 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:51:07,124 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:51:07,125 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:51:07,460 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:51:07,461 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:51:07,852 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:51:07,853 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:51:08,248 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:51:08,249 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:51:08,671 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:51:08,672 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:51:09,107 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:51:09,107 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:51:09,442 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:51:09,443 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:51:09,872 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:51:09,873 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:51:10,245 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:51:10,245 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:51:10,637 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:51:10,637 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172

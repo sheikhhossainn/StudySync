@@ -6,138 +6,413 @@
     <title>StudySync - Dashboard</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        .dashboard-container {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-        }
-        .welcome-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-        }
-        .user-info {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 20px;
+            padding: 0 20px;
         }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #667eea;
+        }
+
+        .user-menu {
+            position: relative;
+        }
+
         .user-avatar {
-            width: 80px;
-            height: 80px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.2);
+            cursor: pointer;
+            border: 2px solid #667eea;
+            object-fit: cover;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            min-width: 180px;
+            padding: 10px 0;
+            margin-top: 10px;
+        }
+
+        .dropdown-menu.show {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: background 0.3s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background: #f8f9fa;
+            color: #667eea;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .welcome-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .welcome-section h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+
+        .welcome-section p {
+            color: #666;
+            font-size: 18px;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .dashboard-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
-        }
-        .logout-btn {
-            background: #ff4757;
+            font-size: 24px;
             color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
         }
-        .auth-check {
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .card-description {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .card-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .card-button:hover {
+            transform: scale(1.05);
+        }
+
+        .stats-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-item {
             text-align: center;
-            padding: 50px;
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-container {
+                padding: 0 15px;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .main-container {
+                padding: 0 15px;
+            }
+            
+            .welcome-section {
+                padding: 25px;
+            }
+            
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <a href="index.html" class="logo">StudySync</a>
-            <nav class="nav">
-                <a href="about.html" class="nav-link">About</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-                <button onclick="logout()" class="logout-btn">Logout</button>
-            </nav>
-        </div>
-    </header>
-
-    <main class="main">
-        <div class="dashboard-container">
-            <!-- Loading state -->
-            <div id="loading" class="auth-check">
-                <h2>Loading...</h2>
-                <p>Checking authentication status...</p>
-            </div>
-
-            <!-- Not authenticated -->
-            <div id="not-authenticated" class="auth-check" style="display: none;">
-                <h2>Access Denied</h2>
-                <p>You need to be logged in to access this page.</p>
-                <a href="auth.html" class="btn btn-primary">Go to Login</a>
-            </div>
-
-            <!-- Authenticated content -->
-            <div id="dashboard-content" style="display: none;">
-                <div class="welcome-section">
-                    <div class="user-info">
-                        <div class="user-avatar" id="userAvatar">
-                            👤
-                        </div>
-                        <div>
-                            <h1>Welcome back, <span id="userName">User</span>!</h1>
-                            <p id="userEmail">user@example.com</p>
-                            <p>You're successfully authenticated with StudySync</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <h3>Study Sessions</h3>
-                        <p>Join or create study sessions with other students</p>
-                        <button class="btn btn-primary">Browse Sessions</button>
-                    </div>
-
-                    <div class="feature-card">
-                        <h3>Mentorship</h3>
-                        <p>Connect with mentors or become a mentor yourself</p>
-                        <button class="btn btn-primary">Find Mentors</button>
-                    </div>
-
-                    <div class="feature-card">
-                        <h3>Payments</h3>
-                        <p>Manage your payments and subscriptions</p>
-                        <button class="btn btn-primary">View Payments</button>
-                    </div>
-
-                    <div class="feature-card">
-                        <h3>Profile</h3>
-                        <p>Update your profile and preferences</p>
-                        <button class="btn btn-primary">Edit Profile</button>
-                    </div>
-                </div>
-
-                <div class="token-info" style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 5px;">
-                    <h3>Authentication Info</h3>
-                    <p><strong>Token Status:</strong> <span id="tokenStatus">Valid</span></p>
-                    <p><strong>User ID:</strong> <span id="userId">N/A</span></p>
-                    <p><strong>Login Method:</strong> <span id="loginMethod">N/A</span></p>
-                    <button onclick="refreshToken()" class="btn btn-secondary">Refresh Token</button>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">StudySync</div>
+            <ul class="nav-menu">
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#study-sessions">Study Sessions</a></li>
+                <li><a href="#mentorship">Mentorship</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+            <div class="user-menu">
+                <img src="https://via.placeholder.com/10/e2e8f0/64748b?text=U" alt="User Avatar" class="user-avatar" id="userAvatar" onclick="toggleDropdown()">
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="profile.html">👤 Profile</a>
+                    <a href="#settings">⚙️ Settings</a>
+                    <a href="#help">❓ Help</a>
+                    <a href="#" onclick="logout()">🚪 Logout</a>
                 </div>
             </div>
         </div>
-    </main>
+    </nav>
 
-    <script src="assets/js/google-auth.js"></script>
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Welcome Section -->
+        <div class="welcome-section">
+            <h1>Welcome back, <span id="userName">Student</span>!</h1>
+            <p>Ready to boost your learning journey? Let's get started with StudySync.</p>
+        </div>
+
+        <!-- Dashboard Cards -->
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <div class="card-icon">📚</div>
+                <div class="card-title">Study Sessions</div>
+                <div class="card-description">Join or create study sessions with your peers. Collaborate and learn together.</div>
+                <a href="#study-sessions" class="card-button">Browse Sessions</a>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="card-icon">👨‍🏫</div>
+                <div class="card-title">Find a Mentor</div>
+                <div class="card-description">Connect with experienced mentors who can guide your academic journey.</div>
+                <a href="#mentorship" class="card-button">Find Mentors</a>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="card-icon">📖</div>
+                <div class="card-title">Study Resources</div>
+                <div class="card-description">Access a vast library of study materials, notes, and academic resources.</div>
+                <a href="#resources" class="card-button">Explore Resources</a>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="card-icon">💳</div>
+                <div class="card-title">Premium Features</div>
+                <div class="card-description">Unlock advanced features with our premium subscription plans.</div>
+                <a href="#premium" class="card-button">Go Premium</a>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="card-icon">📊</div>
+                <div class="card-title">Progress Tracking</div>
+                <div class="card-description">Monitor your learning progress and achieve your academic goals.</div>
+                <a href="#progress" class="card-button">View Progress</a>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="card-icon">👥</div>
+                <div class="card-title">Study Groups</div>
+                <div class="card-description">Join study groups based on your courses and interests.</div>
+                <a href="#groups" class="card-button">Join Groups</a>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats-section">
+            <h2 style="text-align: center; margin-bottom: 30px; color: #333;">Your StudySync Stats</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" id="sessionsJoined">0</div>
+                    <div class="stat-label">Sessions Joined</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="hoursStudied">0</div>
+                    <div class="stat-label">Hours Studied</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="mentorsConnected">0</div>
+                    <div class="stat-label">Mentors Connected</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="resourcesAccessed">0</div>
+                    <div class="stat-label">Resources Accessed</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Check authentication on page load
+        // Load user data when page loads
         document.addEventListener('DOMContentLoaded', function() {
-            checkAuthentication();
+            loadUserData();
         });
 
-        function checkAuthentication() {
-            const loading = document.getElementById('loading');
-            const notAuth = document.getElementById('not-authenticated');
-            const dashboard = document.getElementById('dashboard-content');
+        function loadUserData() {
+            try {
+                const userData = localStorage.getItem('user_data');
+                if (userData) {
+                    const user = JSON.parse(userData);
+                    
+                    // Update user name
+                    document.getElementById('userName').textContent = user.first_name || 'Student';
+                    
+                    // Update user avatar
+                    const avatar = document.getElementById('userAvatar');
+                    if (user.profile_picture) {
+                        avatar.src = user.profile_picture;
+                    }
+                    
+                    // Load user stats (these would come from API in real implementation)
+                    loadUserStats();
+                } else {
+                    // Redirect to login if no user data
+                    window.location.href = 'auth.html';
+                }
+            } catch (error) {
+                console.error('Error loading user data:', error);
+                window.location.href = 'auth.html';
+            }
+        }
+
+        function loadUserStats() {
+            // In a real implementation, these would be fetched from the API
+            // For now, showing sample data
+            document.getElementById('sessionsJoined').textContent = '12';
+            document.getElementById('hoursStudied').textContent = '48';
+            document.getElementById('mentorsConnected').textContent = '3';
+            document.getElementById('resourcesAccessed').textContent = '25';
+        }
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdownMenu');
+            dropdown.classList.toggle('show');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const userMenu = document.querySelector('.user-menu');
+            const dropdown = document.getElementById('dropdownMenu');
+            
+            if (!userMenu.contains(event.target)) {
+                dropdown.classList.remove('show');
+            }
+        });
+
+        function logout() {
+            localStorage.removeItem('access_token');
+            localStorage.removeItem('refresh_token');
+            localStorage.removeItem('user_data');
+            window.location.href = 'auth.html';
+        }
+    </script>
+</body>
+</html>
 
             if (isAuthenticated()) {
                 const user = getCurrentUser();

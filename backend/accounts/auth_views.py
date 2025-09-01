@@ -1,5 +1,6 @@
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
+from django.utils import timezone
 from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
@@ -262,7 +263,20 @@ def custom_register(request):
         )
 
 
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def test_endpoint(request):
+    """Test endpoint to verify backend connectivity"""
+    return Response({
+        'message': 'Backend is working!',
+        'timestamp': timezone.now().isoformat(),
+        'method': request.method,
+        'path': request.path
+    }, status=status.HTTP_200_OK)
+
+
 @api_view(['POST'])
+@permission_classes([AllowAny])
 def refresh_token(request):
     """
     Refresh JWT token

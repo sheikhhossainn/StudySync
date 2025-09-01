@@ -532,3 +532,14 @@ WARNING 2025-09-01 23:07:47,748 log 11232 17196 Unauthorized: /api/study-session
 WARNING 2025-09-01 23:07:47,749 basehttp 11232 17196 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
 INFO 2025-09-01 23:08:16,952 basehttp 11232 19596 "GET /api/auth/profile/manage/ HTTP/1.1" 200 1117
 INFO 2025-09-01 23:08:34,969 basehttp 11232 19596 "GET /api/auth/profile/manage/ HTTP/1.1" 200 1117
+INFO 2025-09-01 23:09:11,383 basehttp 11232 19716 "GET /api/auth/profile/manage/ HTTP/1.1" 200 1117
+INFO 2025-09-01 23:10:49,485 basehttp 11232 14068 "GET /api/auth/profile/manage/ HTTP/1.1" 200 1117
+INFO 2025-09-01 23:10:54,114 basehttp 11232 10772 "GET /api/auth/profile/manage/ HTTP/1.1" 200 1117
+INFO 2025-09-01 23:10:54,632 basehttp 11232 10772 "GET /api/auth/profile/manage/ HTTP/1.1" 200 1117
+INFO 2025-09-01 23:10:55,151 basehttp 11232 10772 "GET /api/auth/profile/manage/ HTTP/1.1" 200 1117
+INFO 2025-09-01 23:11:11,253 basehttp 11232 21128 "GET /api/auth/profile/manage/ HTTP/1.1" 200 1117
+INFO 2025-09-01 23:13:11,996 basehttp 11232 18100 "GET /api/auth/profile/manage/ HTTP/1.1" 200 1117
+INFO 2025-09-01 23:15:11,351 basehttp 11232 3892 "GET /api/auth/profile/manage/ HTTP/1.1" 200 1117
+INFO 2025-09-01 23:17:11,524 basehttp 11232 9040 "GET /api/auth/profile/manage/ HTTP/1.1" 200 1117
+INFO 2025-09-01 23:19:11,307 basehttp 11232 20276 "GET /api/auth/profile/manage/ HTTP/1.1" 200 1117
+INFO 2025-09-01 23:21:11,319 basehttp 11232 20276 "GET /api/auth/profile/manage/ HTTP/1.1" 200 1117

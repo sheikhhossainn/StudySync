@@ -543,3 +543,504 @@ INFO 2025-09-01 23:15:11,351 basehttp 11232 3892 "GET /api/auth/profile/manage/ 
 INFO 2025-09-01 23:17:11,524 basehttp 11232 9040 "GET /api/auth/profile/manage/ HTTP/1.1" 200 1117
 INFO 2025-09-01 23:19:11,307 basehttp 11232 20276 "GET /api/auth/profile/manage/ HTTP/1.1" 200 1117
 INFO 2025-09-01 23:21:11,319 basehttp 11232 20276 "GET /api/auth/profile/manage/ HTTP/1.1" 200 1117
+INFO 2025-09-01 23:26:41,473 basehttp 11232 19932 "OPTIONS /api/auth/auth/google/login/ HTTP/1.1" 200 0
+INFO 2025-09-01 23:26:41,566 dynamic_views 11232 19932 Received Google OAuth login request: {'credential': 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjJkN2VkMzM4YzBmMTQ1N2IyMTRhMjc0YjVlMGU2NjdiNDRhNDJkZGUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMDYxOTg4MDQ0NTM5LTB2cTNoM2ZrMDh0anM5bmNnNjNvZXR1ZGd2dDBvbnU4LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiMTA2MTk4ODA0NDUzOS0wdnEzaDNmazA4dGpzOW5jZzYzb2V0dWRndnQwb251OC5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjEwOTk5NDA0NzY0ODgyMDk1NTY2NCIsImVtYWlsIjoic2tob3NzYWluNzk5QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYmYiOjE3NTY3NDczMDAsIm5hbWUiOiJTayBIb3NzYWluIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0pRX0piWEl1Vy1FeDhEX3Bwd3otTHBZNVh1MmxsZWN2NVpTMzhXNEx2MklNY0F2Q0k9czk2LWMiLCJnaXZlbl9uYW1lIjoiU2siLCJmYW1pbHlfbmFtZSI6Ikhvc3NhaW4iLCJpYXQiOjE3NTY3NDc2MDAsImV4cCI6MTc1Njc1MTIwMCwianRpIjoiM2JjOTNmMjFlYTNjMTZjNTY0NzBkYjZmYjQ5MDI2ZjhlNjI0MWEwMiJ9.ZIKhCOL016Q578AZS-GCAKUzkS6SSBVWPbEDL7mEkpKzZE6AzRZaAEQkgVpfO3DDaUlVay6LA04Yy3xj_K6YF2tK4dcKCMfCJEPE3nxrPjhyJO8NJqz1JDvB4Z_ka5ox7lVzsdTqh0pikj8DTrE7ZKSJB6ZXtItcEoKWMgwWrDxLUX22gNRw4n9ErD_vM6Zg0q0syplq6_S8xXw0OlAUbfp0xW1ivIrtdTGgkuKsq0FYPG8AWLFNe1zSHP0mNxMwDtz5RjyquHAfwdvF8TzJTn1w28_nMkZTiBZCiKlgiiM0FvbPFncAeUlrDoM1AE7hA3gGmt7838lA4IMRDZXSyg', 'user_type': 'student'}
+INFO 2025-09-01 23:26:42,446 dynamic_views 11232 19932 Google OAuth login successful for existing user: skhossain799@gmail.com
+INFO 2025-09-01 23:26:42,515 basehttp 11232 19932 "POST /api/auth/auth/google/login/ HTTP/1.1" 200 917
+INFO 2025-09-01 23:26:44,875 basehttp 11232 11964 "OPTIONS /api/auth/profile/manage/ HTTP/1.1" 200 0
+INFO 2025-09-01 23:26:45,095 basehttp 11232 11964 "GET /api/auth/profile/manage/ HTTP/1.1" 200 1117
+INFO 2025-09-01 23:26:53,238 basehttp 11232 19324 "OPTIONS /api/study-sessions/my-posts/ HTTP/1.1" 200 0
+WARNING 2025-09-01 23:26:53,258 log 11232 19324 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-01 23:26:53,259 basehttp 11232 19324 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-01 23:27:01,843 log 11232 19324 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-01 23:27:01,844 basehttp 11232 19324 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+INFO 2025-09-01 23:27:03,466 basehttp 11232 1032 "GET /api/auth/profile/manage/ HTTP/1.1" 200 1117
+WARNING 2025-09-01 23:35:04,142 log 11232 7240 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-01 23:35:04,143 basehttp 11232 7240 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-01 23:36:39,489 log 11232 8740 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-01 23:36:39,489 basehttp 11232 8740 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-01 23:46:32,498 log 11232 7040 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-01 23:46:32,506 basehttp 11232 7040 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-01 23:46:42,659 log 11232 18056 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-01 23:46:42,660 basehttp 11232 18056 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-01 23:46:49,540 log 11232 18056 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-01 23:46:49,541 basehttp 11232 18056 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-01 23:47:07,008 log 11232 1752 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-01 23:47:07,009 basehttp 11232 1752 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-01 23:47:39,273 log 11232 21324 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-01 23:47:39,274 basehttp 11232 21324 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-01 23:49:07,148 log 11232 17432 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-01 23:49:07,149 basehttp 11232 17432 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-01 23:49:11,083 log 11232 18860 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-01 23:49:11,083 basehttp 11232 18860 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-01 23:49:25,015 log 11232 16340 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-01 23:49:25,016 basehttp 11232 16340 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-01 23:50:00,538 log 11232 15824 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-01 23:50:00,539 basehttp 11232 15824 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-01 23:50:46,894 log 11232 10668 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-01 23:50:46,895 basehttp 11232 10668 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-01 23:51:06,978 log 11232 20420 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-01 23:51:06,979 basehttp 11232 20420 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+INFO 2025-09-02 00:07:34,251 autoreload 20416 12624 Watching for file changes with StatReloader
+INFO 2025-09-02 00:07:35,221 basehttp 20416 17104 "OPTIONS /api/auth/profile/manage/ HTTP/1.1" 200 0
+WARNING 2025-09-02 00:07:35,723 log 20416 17104 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:07:35,724 basehttp 20416 17104 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:08:02,078 log 20416 3856 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:08:02,078 basehttp 20416 3856 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:08:58,306 log 20416 5816 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:08:58,307 basehttp 20416 5816 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:09:16,385 log 20416 6080 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:09:16,386 basehttp 20416 6080 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:11:07,088 log 20416 2892 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:11:07,089 basehttp 20416 2892 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:11:07,687 log 20416 2892 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:11:07,688 basehttp 20416 2892 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:11:08,047 log 20416 2892 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:11:08,048 basehttp 20416 2892 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:11:08,408 log 20416 2892 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:11:08,408 basehttp 20416 2892 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:11:08,817 log 20416 2892 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:11:08,817 basehttp 20416 2892 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:11:09,345 log 20416 2892 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:11:09,346 basehttp 20416 2892 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:11:34,368 log 20416 13208 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:11:34,368 basehttp 20416 13208 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:11:43,210 log 20416 13208 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:11:43,211 basehttp 20416 13208 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:11:56,641 log 20416 8732 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:11:56,643 basehttp 20416 8732 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:12:01,291 log 20416 8732 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:12:01,292 basehttp 20416 8732 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:12:02,480 log 20416 8732 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:12:02,481 basehttp 20416 8732 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:12:02,993 log 20416 8732 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:12:02,993 basehttp 20416 8732 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:12:03,171 log 20416 8732 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:12:03,172 basehttp 20416 8732 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:12:03,505 log 20416 5872 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:12:03,506 basehttp 20416 5872 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:12:05,028 log 20416 5872 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:12:05,029 basehttp 20416 5872 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:13:06,989 log 20416 16764 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:06,990 basehttp 20416 16764 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+INFO 2025-09-02 00:13:09,704 autoreload 20416 12624 D:\Coding\StudySync\backend\accounts\dynamic_views.py changed, reloading.
+INFO 2025-09-02 00:13:11,556 autoreload 2528 2760 Watching for file changes with StatReloader
+WARNING 2025-09-02 00:13:12,439 log 2528 19668 Unauthorized: /api/auth/profile/manage/
+INFO 2025-09-02 00:13:12,441 basehttp 2528 19668 - Broken pipe from ('127.0.0.1', 53738)
+WARNING 2025-09-02 00:13:12,505 log 2528 12140 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:12,506 basehttp 2528 12140 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:13:12,895 log 2528 12140 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:12,896 basehttp 2528 12140 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:13:13,306 log 2528 12140 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:13,307 basehttp 2528 12140 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:13:13,666 log 2528 18732 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:13,667 basehttp 2528 18732 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:13:14,110 log 2528 18732 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:14,111 basehttp 2528 18732 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:13:14,486 log 2528 18732 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:14,487 basehttp 2528 18732 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:13:14,868 log 2528 18732 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:14,869 basehttp 2528 18732 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:13:15,272 log 2528 18732 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:15,273 basehttp 2528 18732 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:13:15,659 log 2528 18732 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:15,660 basehttp 2528 18732 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:13:16,074 log 2528 18732 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:16,074 basehttp 2528 18732 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:13:16,475 log 2528 18732 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:16,475 basehttp 2528 18732 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:13:16,881 log 2528 18732 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:16,882 basehttp 2528 18732 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:13:17,427 log 2528 18732 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:17,428 basehttp 2528 18732 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:13:20,063 log 2528 18732 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:20,064 basehttp 2528 18732 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+INFO 2025-09-02 00:13:20,614 autoreload 2528 2760 D:\Coding\StudySync\backend\accounts\dynamic_views.py changed, reloading.
+INFO 2025-09-02 00:13:21,833 autoreload 20312 17336 Watching for file changes with StatReloader
+WARNING 2025-09-02 00:13:22,526 log 20312 3032 Unauthorized: /api/auth/profile/manage/
+INFO 2025-09-02 00:13:22,527 basehttp 20312 3032 - Broken pipe from ('127.0.0.1', 62190)
+WARNING 2025-09-02 00:13:22,664 log 20312 15852 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:22,665 basehttp 20312 15852 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:13:23,052 log 20312 15852 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:23,053 basehttp 20312 15852 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:13:23,459 log 20312 15852 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:23,459 basehttp 20312 15852 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:13:23,859 log 20312 8152 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:23,860 basehttp 20312 8152 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:13:24,272 log 20312 8152 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:24,273 basehttp 20312 8152 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:13:24,652 log 20312 8152 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:24,652 basehttp 20312 8152 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:13:25,065 log 20312 8152 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:25,068 basehttp 20312 8152 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:13:25,472 log 20312 8152 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:25,473 basehttp 20312 8152 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:13:26,023 log 20312 8152 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:26,023 basehttp 20312 8152 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:13:34,926 log 20312 16956 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:34,926 basehttp 20312 16956 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+INFO 2025-09-02 00:13:35,284 autoreload 20312 17336 D:\Coding\StudySync\backend\accounts\models.py changed, reloading.
+INFO 2025-09-02 00:13:36,609 autoreload 9792 12268 Watching for file changes with StatReloader
+WARNING 2025-09-02 00:13:37,493 log 9792 5204 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:37,493 basehttp 9792 5204 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:13:48,242 log 9792 19056 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:13:48,243 basehttp 9792 19056 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:14:04,548 log 9792 10640 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:14:04,549 basehttp 9792 10640 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:14:08,100 log 9792 10640 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:14:08,101 basehttp 9792 10640 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+ERROR 2025-09-02 00:14:41,826 exception 12112 5844 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\http\request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+WARNING 2025-09-02 00:14:42,103 log 12112 5844 Bad Request: /api/auth/account/delete/
+WARNING 2025-09-02 00:14:42,844 log 9792 19928 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:14:42,846 basehttp 9792 19928 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:15:06,983 log 9792 19460 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:15:06,984 basehttp 9792 19460 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:16:06,985 log 9792 5324 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:16:06,986 basehttp 9792 5324 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:16:07,760 log 9792 5324 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:16:07,760 basehttp 9792 5324 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:16:08,174 log 9792 5324 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:16:08,175 basehttp 9792 5324 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:16:08,563 log 9792 5324 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:16:08,564 basehttp 9792 5324 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:16:08,856 log 9792 5324 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:16:08,857 basehttp 9792 5324 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:16:15,142 log 9792 13860 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:16:15,143 basehttp 9792 13860 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+INFO 2025-09-02 00:16:22,857 basehttp 9792 13860 "OPTIONS /api/auth/account/delete/ HTTP/1.1" 200 0
+WARNING 2025-09-02 00:16:22,959 log 9792 13860 Unauthorized: /api/auth/account/delete/
+WARNING 2025-09-02 00:16:22,959 basehttp 9792 13860 "DELETE /api/auth/account/delete/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:17:07,047 log 9792 13088 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:17:07,048 basehttp 9792 13088 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:17:09,518 log 9792 13088 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:17:09,521 basehttp 9792 13088 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:17:32,243 log 9792 13632 Unauthorized: /api/auth/profile/manage/
+INFO 2025-09-02 00:17:32,245 basehttp 9792 13632 - Broken pipe from ('127.0.0.1', 52434)
+WARNING 2025-09-02 00:17:32,483 log 9792 15644 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:17:32,484 basehttp 9792 15644 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:17:48,225 log 9792 19696 Unauthorized: /api/auth/account/delete/
+WARNING 2025-09-02 00:17:48,227 basehttp 9792 19696 "GET /api/auth/account/delete/ HTTP/1.1" 401 58
+WARNING 2025-09-02 00:17:48,256 log 9792 4416 Unauthorized: /api/auth/account/delete/
+WARNING 2025-09-02 00:17:48,257 basehttp 9792 4416 "DELETE /api/auth/account/delete/ HTTP/1.1" 401 58
+WARNING 2025-09-02 00:17:48,427 log 9792 11564 Unauthorized: /api/auth/account/delete/
+WARNING 2025-09-02 00:17:48,428 basehttp 9792 11564 "DELETE /api/auth/account/delete/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:17:49,038 log 9792 1152 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:17:49,043 basehttp 9792 1152 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:18:12,195 log 9792 8340 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:18:12,197 basehttp 9792 8340 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:18:36,741 log 9792 2580 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:18:36,742 basehttp 9792 2580 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:18:43,567 log 9792 2580 Unauthorized: /api/auth/account/delete/
+WARNING 2025-09-02 00:18:43,568 basehttp 9792 2580 "DELETE /api/auth/account/delete/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:19:07,030 log 9792 10412 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:19:07,031 basehttp 9792 10412 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:19:40,794 log 9792 10412 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:19:40,795 basehttp 9792 10412 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:19:51,742 log 9792 10412 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:19:51,742 basehttp 9792 10412 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:21:07,003 log 9792 20324 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:21:07,003 basehttp 9792 20324 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:21:39,620 log 9792 9804 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:21:39,620 basehttp 9792 9804 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:21:40,742 log 9792 9804 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:21:40,743 basehttp 9792 9804 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:23:07,133 log 9792 18928 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:23:07,134 basehttp 9792 18928 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:24:14,277 log 9792 4412 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:24:14,278 basehttp 9792 4412 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:24:45,074 log 9792 16564 Unauthorized: /api/auth/account/delete/
+WARNING 2025-09-02 00:24:45,075 basehttp 9792 16564 "DELETE /api/auth/account/delete/ HTTP/1.1" 401 172
+INFO 2025-09-02 00:24:45,083 basehttp 9792 16564 "OPTIONS /api/auth/token/refresh/ HTTP/1.1" 200 0
+INFO 2025-09-02 00:24:45,693 basehttp 9792 16564 "POST /api/auth/token/refresh/ HTTP/1.1" 200 489
+INFO 2025-09-02 00:24:45,769 dynamic_views 9792 16564 Account deletion initiated for user skhossain799@gmail.com (ID: 2)
+WARNING 2025-09-02 00:24:45,780 dynamic_views 9792 16564 Could not count user data before deletion: relation "posts" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "posts" WHERE "posts"."use...
+                                          ^
+
+ERROR 2025-09-02 00:24:45,794 dynamic_views 9792 16564 Account deletion error for user skhossain799@gmail.com: current transaction is aborted, commands ignored until end of transaction block
+
+ERROR 2025-09-02 00:24:45,815 log 9792 16564 Internal Server Error: /api/auth/account/delete/
+ERROR 2025-09-02 00:24:45,816 basehttp 9792 16564 "DELETE /api/auth/account/delete/ HTTP/1.1" 500 168
+INFO 2025-09-02 00:25:20,305 basehttp 9792 14392 "GET /api/auth/profile/manage/ HTTP/1.1" 200 1117
+INFO 2025-09-02 00:25:21,901 basehttp 9792 14392 "GET /api/auth/profile/manage/ HTTP/1.1" 200 1117
+INFO 2025-09-02 00:25:31,356 dynamic_views 9792 16032 Account deletion initiated for user skhossain799@gmail.com (ID: 2)
+WARNING 2025-09-02 00:25:31,359 dynamic_views 9792 16032 Could not count user data before deletion: relation "posts" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "posts" WHERE "posts"."use...
+                                          ^
+
+ERROR 2025-09-02 00:25:31,360 dynamic_views 9792 16032 Account deletion error for user skhossain799@gmail.com: current transaction is aborted, commands ignored until end of transaction block
+
+ERROR 2025-09-02 00:25:31,377 log 9792 16032 Internal Server Error: /api/auth/account/delete/
+ERROR 2025-09-02 00:25:31,377 basehttp 9792 16032 "DELETE /api/auth/account/delete/ HTTP/1.1" 500 168
+INFO 2025-09-02 00:26:18,210 basehttp 9792 13688 "GET /api/auth/profile/manage/ HTTP/1.1" 200 1117
+INFO 2025-09-02 00:26:30,630 autoreload 9792 12268 D:\Coding\StudySync\backend\accounts\models.py changed, reloading.
+INFO 2025-09-02 00:26:32,434 autoreload 3612 13992 Watching for file changes with StatReloader
+INFO 2025-09-02 00:26:52,241 autoreload 3612 13992 D:\Coding\StudySync\backend\accounts\dynamic_views.py changed, reloading.
+INFO 2025-09-02 00:26:53,817 autoreload 2168 11564 Watching for file changes with StatReloader
+INFO 2025-09-02 00:30:08,128 basehttp 2168 18932 "GET /api/auth/profile/manage/ HTTP/1.1" 200 1117
+INFO 2025-09-02 00:30:22,284 dynamic_views 2168 18932 Account deletion initiated for user skhossain799@gmail.com (ID: 2)
+WARNING 2025-09-02 00:30:22,288 dynamic_views 2168 18932 Could not count user data before deletion: relation "posts" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "posts" WHERE "posts"."use...
+                                          ^
+
+INFO 2025-09-02 00:30:22,288 models 2168 18932 Starting account deletion for user skhossain799@gmail.com (ID: 2)
+INFO 2025-09-02 00:30:22,306 models 2168 18932 Profile data cleared for user 2
+INFO 2025-09-02 00:30:22,332 models 2168 18932 User 2 marked as deleted and anonymized
+INFO 2025-09-02 00:30:22,333 dynamic_views 2168 18932 Account successfully deleted for user skhossain799@gmail.com (ID: 2)
+INFO 2025-09-02 00:30:22,360 basehttp 2168 18932 "DELETE /api/auth/account/delete/ HTTP/1.1" 200 120
+INFO 2025-09-02 00:32:21,061 basehttp 2168 200 "OPTIONS /api/auth/auth/google/oauth/ HTTP/1.1" 200 0
+INFO 2025-09-02 00:32:21,067 dynamic_views 2168 200 Received Google OAuth request: {'credential': 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjJkN2VkMzM4YzBmMTQ1N2IyMTRhMjc0YjVlMGU2NjdiNDRhNDJkZGUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMDYxOTg4MDQ0NTM5LTB2cTNoM2ZrMDh0anM5bmNnNjNvZXR1ZGd2dDBvbnU4LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiMTA2MTk4ODA0NDUzOS0wdnEzaDNmazA4dGpzOW5jZzYzb2V0dWRndnQwb251OC5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjEwOTk5NDA0NzY0ODgyMDk1NTY2NCIsImVtYWlsIjoic2tob3NzYWluNzk5QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYmYiOjE3NTY3NTEyMTEsIm5hbWUiOiJTayBIb3NzYWluIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0pRX0piWEl1Vy1FeDhEX3Bwd3otTHBZNVh1MmxsZWN2NVpTMzhXNEx2MklNY0F2Q0k9czk2LWMiLCJnaXZlbl9uYW1lIjoiU2siLCJmYW1pbHlfbmFtZSI6Ikhvc3NhaW4iLCJpYXQiOjE3NTY3NTE1MTEsImV4cCI6MTc1Njc1NTExMSwianRpIjoiMDFiMjcxZDFhMmYwZDI3ZDc4YTZhNzFlNTQ1NmFmYjM3YmNkOTA4NCJ9.KcehFfA_Bcn9oFjXktvg_xfyKiBSvqX6qtYyOX1StgqBdJU1pJh7Wk0GfYuT9OcpELsuhqIBZIDmEJkJ2uyWxw0IUg1trM8pRCWsnRWB8XCdl3C5vGpzGH1zzqBT4iPLdHqah4XAjc3OsIjNc1_uezBX_CuusWJzPU0jOe5OhnMe_Q26HwO93T4VNs0wB_GZzBX2FWRrSDEzXTKSs1LctZCT0V4I93E_owZ1sIWYqcKPbSGwQHsqn-gG8jCKJSaAxAT2dx1arlyzQVIqjyCNoQHi1u2v5Ik79e_fwrPrOcwAmZ1PQLIKkUyFs8iXrDmNb4LwxaOIWWRzCDT-1U1c-Q', 'email': 'skhossain799@gmail.com', 'name': 'Sheikh Hossain Bin Bakhtiar', 'google_id': '109994047648820955664', 'profile_picture': 'https://lh3.googleusercontent.com/a/ACg8ocJQ_JbXIuW-Ex8D_ppwz-LpY5Xu2llecv5ZS38W4Lv2IMcAvCI=s96-c', 'user_type': 'student', 'first_name': 'Sheikh', 'last_name': 'Hosszin Bin Bakhtiar', 'student_id': '2023-1-60-060', 'organization_name': 'East West University', 'date_of_birth': '2004-05-17', 'phone_number': '01840804905', 'extracted_full_name': 'Sheikh Hossain Bin Bakhtiar', 'ocr_data': {'studentIdFile': {'fullName': 'Sheikh Hosszin Bin Bakhtiar', 'firstName': 'Sheikh', 'lastName': 'Hosszin Bin Bakhtiar', 'studentId': '2023-1-60-060', 'idNumber': '2023-1-60-060'}}}
+INFO 2025-09-02 00:32:21,826 dynamic_views 2168 200 Google OAuth signup successful for skhossain799@gmail.com
+INFO 2025-09-02 00:32:21,870 basehttp 2168 200 "POST /api/auth/auth/google/oauth/ HTTP/1.1" 200 1661
+INFO 2025-09-02 00:32:39,461 autoreload 2168 11564 D:\Coding\StudySync\backend\accounts\models.py changed, reloading.
+INFO 2025-09-02 00:32:41,193 autoreload 8764 16868 Watching for file changes with StatReloader
+WARNING 2025-09-02 00:45:43,217 log 8764 19496 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:45:43,221 basehttp 8764 19496 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+INFO 2025-09-02 00:46:01,562 basehttp 8764 12244 "OPTIONS /api/study-sessions/my-posts/ HTTP/1.1" 200 0
+WARNING 2025-09-02 00:46:01,577 log 8764 12244 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 00:46:01,577 basehttp 8764 12244 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 00:48:59,988 log 8764 12964 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:48:59,989 basehttp 8764 12964 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:49:01,851 log 8764 11744 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:49:01,852 basehttp 8764 11744 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:49:02,609 log 8764 11744 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:49:02,610 basehttp 8764 11744 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:49:03,208 log 8764 11744 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:49:03,209 basehttp 8764 11744 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:49:07,083 log 8764 11744 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:49:07,084 basehttp 8764 11744 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:49:07,406 log 8764 11744 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:49:07,407 basehttp 8764 11744 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:49:07,788 log 8764 11744 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:49:07,789 basehttp 8764 11744 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:49:08,202 log 8764 11744 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:49:08,202 basehttp 8764 11744 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:49:08,625 log 8764 11744 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:49:08,626 basehttp 8764 11744 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:49:09,043 log 8764 11744 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:49:09,044 basehttp 8764 11744 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:49:09,419 log 8764 11744 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:49:09,419 basehttp 8764 11744 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:49:09,854 log 8764 11744 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:49:09,855 basehttp 8764 11744 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:49:10,226 log 8764 11744 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:49:10,226 basehttp 8764 11744 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:49:10,648 log 8764 11744 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:49:10,649 basehttp 8764 11744 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:49:11,029 log 8764 11744 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:49:11,029 basehttp 8764 11744 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:49:11,582 log 8764 16776 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:49:11,583 basehttp 8764 16776 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:51:07,163 log 8764 9208 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:51:07,163 basehttp 8764 9208 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:51:09,166 log 8764 9208 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:51:09,167 basehttp 8764 9208 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:51:21,172 log 8764 10840 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:51:21,173 basehttp 8764 10840 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:51:28,929 log 8764 10996 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:51:28,930 basehttp 8764 10996 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:51:43,611 log 8764 3156 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:51:43,612 basehttp 8764 3156 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:51:58,653 log 8764 17852 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:51:58,653 basehttp 8764 17852 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:52:07,684 log 8764 1928 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:52:07,684 basehttp 8764 1928 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:52:14,383 log 8764 1928 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:52:14,383 basehttp 8764 1928 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:52:22,095 log 8764 1928 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:52:22,096 basehttp 8764 1928 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:52:29,615 log 8764 1928 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:52:29,616 basehttp 8764 1928 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:52:37,050 log 8764 16072 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:52:37,051 basehttp 8764 16072 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:52:44,507 log 8764 10544 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:52:44,508 basehttp 8764 10544 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:52:51,355 log 8764 10544 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:52:51,356 basehttp 8764 10544 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:52:59,844 log 8764 6332 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:52:59,845 basehttp 8764 6332 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:53:07,175 log 8764 8776 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:53:07,176 basehttp 8764 8776 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:53:25,782 log 8764 18256 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:53:25,782 basehttp 8764 18256 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:53:33,452 log 8764 9324 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:53:33,453 basehttp 8764 9324 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:53:40,866 log 8764 9324 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 00:53:40,867 basehttp 8764 9324 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 00:54:38,930 log 8764 12920 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 00:54:38,931 basehttp 8764 12920 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 00:54:41,573 log 8764 12920 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 00:54:41,574 basehttp 8764 12920 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 00:59:54,178 log 8764 1608 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 00:59:54,178 basehttp 8764 1608 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 00:59:57,721 log 8764 1608 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 00:59:57,722 basehttp 8764 1608 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:00:44,736 log 8764 1608 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:00:44,737 basehttp 8764 1608 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:01:07,389 log 8764 1608 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:01:07,390 basehttp 8764 1608 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:01:39,795 log 8764 1608 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:01:39,796 basehttp 8764 1608 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:01:50,987 log 8764 1608 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:01:50,988 basehttp 8764 1608 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:01:57,900 log 8764 12396 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:01:57,901 basehttp 8764 12396 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:02:04,127 log 8764 12396 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:02:04,128 basehttp 8764 12396 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:03:07,395 log 8764 19796 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:03:07,397 basehttp 8764 19796 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:03:16,639 log 8764 19796 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:03:16,640 basehttp 8764 19796 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:03:28,762 log 8764 19796 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:03:28,763 basehttp 8764 19796 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:05:07,426 log 8764 14184 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:05:07,428 basehttp 8764 14184 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:05:36,503 log 8764 2020 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:05:36,505 basehttp 8764 2020 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:07:07,434 log 8764 12268 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:07:07,434 basehttp 8764 12268 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:09:07,150 log 8764 12268 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:09:07,151 basehttp 8764 12268 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:09:35,873 log 8764 12268 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:09:35,874 basehttp 8764 12268 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:10:14,184 log 8764 12268 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:10:14,184 basehttp 8764 12268 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:10:18,274 log 8764 12268 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:10:18,275 basehttp 8764 12268 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:10:18,655 log 8764 12268 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:10:18,656 basehttp 8764 12268 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:10:19,073 log 8764 12268 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:10:19,074 basehttp 8764 12268 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:10:19,554 log 8764 12268 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:10:19,555 basehttp 8764 12268 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:10:19,974 log 8764 12268 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:10:19,974 basehttp 8764 12268 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:10:20,375 log 8764 12268 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:10:20,376 basehttp 8764 12268 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:10:20,763 log 8764 12268 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:10:20,763 basehttp 8764 12268 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:10:21,163 log 8764 12268 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:10:21,164 basehttp 8764 12268 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:10:21,545 log 8764 12268 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:10:21,545 basehttp 8764 12268 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:10:21,967 log 8764 12268 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:10:21,968 basehttp 8764 12268 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:10:22,360 log 8764 12268 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:10:22,360 basehttp 8764 12268 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:11:12,519 log 8764 13960 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:11:12,520 basehttp 8764 13960 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:11:17,213 log 8764 13960 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:11:17,214 basehttp 8764 13960 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:11:43,445 log 8764 13960 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:11:43,446 basehttp 8764 13960 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:23:52,489 log 8764 17960 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:23:52,498 basehttp 8764 17960 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:23:54,897 log 8764 17960 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:23:54,898 basehttp 8764 17960 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:24:03,170 log 8764 14936 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:24:03,171 basehttp 8764 14936 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:24:25,292 log 8764 14936 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:24:25,293 basehttp 8764 14936 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:25:07,213 log 8764 14936 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:25:07,214 basehttp 8764 14936 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:26:29,796 log 8764 19560 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:26:29,797 basehttp 8764 19560 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:26:52,927 log 8764 14240 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:26:52,928 basehttp 8764 14240 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:27:00,026 log 8764 14240 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:27:00,027 basehttp 8764 14240 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:27:07,124 log 8764 14240 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:27:07,125 basehttp 8764 14240 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:27:07,444 log 8764 14240 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:27:07,446 basehttp 8764 14240 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:27:07,863 log 8764 14240 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:27:07,864 basehttp 8764 14240 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:27:08,272 log 8764 14240 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:27:08,273 basehttp 8764 14240 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:27:08,651 log 8764 14240 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:27:08,652 basehttp 8764 14240 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:27:09,042 log 8764 14240 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:27:09,043 basehttp 8764 14240 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:27:09,456 log 8764 14240 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:27:09,457 basehttp 8764 14240 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:27:09,859 log 8764 14240 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:27:09,860 basehttp 8764 14240 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:27:10,264 log 8764 14240 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:27:10,265 basehttp 8764 14240 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:27:10,653 log 8764 14240 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:27:10,654 basehttp 8764 14240 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:27:11,061 log 8764 14240 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:27:11,062 basehttp 8764 14240 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:27:11,454 log 8764 14240 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:27:11,455 basehttp 8764 14240 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:27:11,866 log 8764 14240 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:27:11,867 basehttp 8764 14240 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:27:12,275 log 8764 14240 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:27:12,275 basehttp 8764 14240 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:27:12,674 log 8764 14240 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:27:12,675 basehttp 8764 14240 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:27:13,383 log 8764 2760 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:27:13,383 basehttp 8764 2760 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:29:07,181 log 8764 2760 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:29:07,182 basehttp 8764 2760 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:29:07,669 log 8764 2760 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:29:07,670 basehttp 8764 2760 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:31:07,253 log 8764 2760 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:31:07,255 basehttp 8764 2760 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:33:07,531 log 8764 17784 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:33:07,531 basehttp 8764 17784 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:33:14,333 log 8764 17784 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:33:14,333 basehttp 8764 17784 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:33:58,920 log 8764 20148 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:33:58,923 basehttp 8764 20148 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:35:07,592 log 8764 12160 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:35:07,592 basehttp 8764 12160 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:37:07,518 log 8764 12160 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:37:07,519 basehttp 8764 12160 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:38:35,656 log 8764 12160 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:38:35,657 basehttp 8764 12160 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:38:37,176 log 8764 12160 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:38:37,178 basehttp 8764 12160 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:38:49,362 log 8764 12160 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:38:49,363 basehttp 8764 12160 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:38:51,698 log 8764 12160 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:38:51,699 basehttp 8764 12160 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:39:07,193 log 8764 12160 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:39:07,194 basehttp 8764 12160 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:39:07,523 log 8764 12160 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:39:07,523 basehttp 8764 12160 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:39:07,936 log 8764 12160 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:39:07,937 basehttp 8764 12160 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:39:08,835 log 8764 12160 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:39:08,836 basehttp 8764 12160 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:41:07,254 log 8764 12160 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:41:07,255 basehttp 8764 12160 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:41:07,878 log 8764 12160 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:41:07,879 basehttp 8764 12160 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:43:10,373 log 8764 12160 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:43:10,374 basehttp 8764 12160 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:43:13,037 log 8764 12160 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:43:13,038 basehttp 8764 12160 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:43:38,919 log 8764 12160 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 01:43:38,920 basehttp 8764 12160 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 01:43:43,887 log 8764 15276 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:43:43,887 basehttp 8764 15276 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+INFO 2025-09-02 01:43:50,366 basehttp 8764 15276 "OPTIONS /api/auth/profile/picture/ HTTP/1.1" 200 0
+WARNING 2025-09-02 01:43:50,610 log 8764 15276 Not Found: /api/auth/profile/picture/
+WARNING 2025-09-02 01:43:50,611 basehttp 8764 15276 "PUT /api/auth/profile/picture/ HTTP/1.1" 404 17700
+WARNING 2025-09-02 01:43:55,692 log 8764 15276 Not Found: /api/auth/profile/picture/
+WARNING 2025-09-02 01:43:55,693 basehttp 8764 15276 "PUT /api/auth/profile/picture/ HTTP/1.1" 404 17699
+WARNING 2025-09-02 01:44:03,496 log 8764 15276 Unauthorized: /api/auth/account/delete/
+WARNING 2025-09-02 01:44:03,496 basehttp 8764 15276 "DELETE /api/auth/account/delete/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:44:03,522 log 8764 15276 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 01:44:03,523 basehttp 8764 15276 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54

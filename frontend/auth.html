@@ -1182,11 +1182,11 @@
                     
                     showMessage('Account created successfully! Welcome to StudySync!', 'success');
                     
-                    // Redirect to dashboard page
+                    // Redirect to profile settings page
                     setTimeout(() => {
-                        const dashboardUrl = 'dashboard.html';
-                        console.log('🔄 Redirecting to:', dashboardUrl);
-                        window.location.href = dashboardUrl;
+                        const profileUrl = 'profile.html';
+                        console.log('🔄 Redirecting to:', profileUrl);
+                        window.location.href = profileUrl;
                     }, 2000);
                 } else {
                     throw new Error(result.error || result.message || 'Account creation failed');

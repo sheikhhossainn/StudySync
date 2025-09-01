@@ -349,7 +349,7 @@ def delete_user_account(request):
     """Handle account deletion with CASCADE effects"""
     
     try:
-        # Confirm deletion with password or confirmation
+        # Confirm deletion with exact confirmation text
         confirmation = request.data.get('confirmation')
         if confirmation != 'DELETE_MY_ACCOUNT':
             return Response({
@@ -358,22 +358,58 @@ def delete_user_account(request):
         
         user = request.user
         user_email = user.email
+        user_id = user.id
         
-        with transaction.atomic():
-            # Soft delete the account (preserves data integrity)
-            user.delete_account()
+        # Log deletion attempt
+        logger.info(f"Account deletion initiated for user {user_email} (ID: {user_id})")
+        
+        # Get counts before deletion for logging (outside transaction to avoid conflicts)
+        try:
+            from study_sessions.models import Post
+            from mentorship.models import UserConnection, Review
+            from django.db.models import Q
             
-            logger.info(f"Account deleted for user {user_email}")
+            posts_count = Post.objects.filter(user=user).count()
+            connections_count = UserConnection.objects.filter(
+                Q(mentor_user=user) | Q(student_user=user)
+            ).count()
+            reviews_count = Review.objects.filter(
+                Q(reviewer=user) | Q(reviewee=user)
+            ).count()
             
+            logger.info(f"User {user_email} data to be affected: "
+                       f"{posts_count} posts, {connections_count} connections, {reviews_count} reviews")
+        except Exception as e:
+            logger.warning(f"Could not count user data before deletion: {e}")
+        
+        # Perform the account deletion
+        try:
+            success = user.delete_account()
+            if success:
+                logger.info(f"Account successfully deleted for user {user_email} (ID: {user_id})")
+                
+                return Response({
+                    'success': True,
+                    'message': 'Your account has been successfully deleted. All your data has been removed from our system.'
+                }, status=status.HTTP_200_OK)
+            else:
+                logger.error(f"delete_account returned False for user {user_id}")
+                return Response({
+                    'error': 'Failed to delete account. Please try again.'
+                }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+                
+        except Exception as deletion_error:
+            logger.error(f"Error during account deletion for user {user_id}: {deletion_error}")
             return Response({
-                'success': True,
-                'message': 'Your account has been successfully deleted. All your data has been removed from our system.'
-            })
+                'error': 'Failed to delete account due to database error. Please try again or contact support.',
+                'details': str(deletion_error) if settings.DEBUG else None
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
             
     except Exception as e:
-        logger.error(f"Account deletion error: {e}")
+        logger.error(f"Account deletion error for user {request.user.email if request.user else 'unknown'}: {e}")
         return Response({
-            'error': 'Failed to delete account. Please try again or contact support.'
+            'error': 'Failed to delete account. Please try again or contact support.',
+            'details': str(e) if settings.DEBUG else None
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 

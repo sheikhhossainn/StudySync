@@ -71,17 +71,57 @@ class User(AbstractUser):
     def delete_account(self):
         """Soft delete user account with CASCADE effects"""
         from django.db import transaction
+        from django.utils import timezone
+        import logging
         
-        with transaction.atomic():
-            # Mark user as inactive instead of hard delete
-            self.is_active = False
-            self.is_verified = False
-            self.email = f"deleted_{self.id}_{self.email}"
-            self.username = f"deleted_{self.id}_{self.username}"
-            self.save()
-            
-            # Related data will be handled by CASCADE in database
-            return True
+        logger = logging.getLogger(__name__)
+        
+        try:
+            with transaction.atomic():
+                # Store original values for logging
+                original_email = self.email
+                original_username = self.username
+                user_id = self.id
+                
+                logger.info(f"Starting account deletion for user {original_email} (ID: {user_id})")
+                
+                # Mark user as inactive and anonymize sensitive data
+                self.is_active = False
+                self.is_verified = False
+                self.is_staff = False
+                self.is_superuser = False
+                
+                # Anonymize email and username with timestamp to avoid conflicts
+                timestamp = timezone.now().strftime('%Y%m%d_%H%M%S')
+                self.email = f"deleted_{user_id}_{timestamp}@deleted.local"
+                self.username = f"deleted_{user_id}_{timestamp}"
+                
+                # Clear sensitive profile data
+                if hasattr(self, 'profile'):
+                    try:
+                        profile = self.profile
+                        profile.bio = None
+                        profile.phone = None
+                        profile.location = None
+                        profile.profile_picture = None
+                        profile.student_id = None
+                        profile.save()
+                        logger.info(f"Profile data cleared for user {user_id}")
+                    except Exception as e:
+                        logger.warning(f"Could not clear profile data for user {user_id}: {e}")
+                
+                # Save the user with anonymized data
+                self.save()
+                logger.info(f"User {user_id} marked as deleted and anonymized")
+                
+                # Related data (posts, connections, reviews) will be handled by CASCADE in database
+                # This preserves referential integrity while removing user's personal information
+                
+                return True
+                
+        except Exception as e:
+            logger.error(f"Error during account deletion for user {self.id}: {e}")
+            raise e
 
 
 class UserProfile(models.Model):

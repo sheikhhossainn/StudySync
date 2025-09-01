@@ -214,7 +214,7 @@
                 <a href="about.html" class="nav-link">About</a>
                 <a href="contact.html" class="nav-link">Contact</a>
                 <div class="user-avatar-dropdown">
-                    <img id="navUserAvatar" src="https://via.placeholder.com/10/e2e8f0/64748b?text=U" alt="User Avatar" class="user-avatar" onclick="toggleDropdown()">
+                    <img id="navUserAvatar" src="https://via.placeholder.com/40/3b82f6/ffffff?text=U" alt="User Avatar" class="user-avatar" onclick="toggleDropdown()">
                     <div id="userDropdown" class="dropdown-content">
                         <a href="profile.html">👤 Profile Settings</a>
                         <a href="#" onclick="logout()">🚪 Logout</a>
@@ -369,14 +369,14 @@
                 // Get user data for default avatar
                 const userData = localStorage.getItem('user_data');
                 let defaultAvatar = 'https://via.placeholder.com/120/e2e8f0/64748b?text=User';
-                let navDefaultAvatar = 'https://via.placeholder.com/10/e2e8f0/64748b?text=U';
+                let navDefaultAvatar = 'https://via.placeholder.com/40/3b82f6/ffffff?text=U';
                 
                 if (userData) {
                     try {
                         const user = JSON.parse(userData);
                         const initials = (user.first_name?.[0] || '') + (user.last_name?.[0] || '');
                         defaultAvatar = 'https://via.placeholder.com/120/e2e8f0/64748b?text=' + encodeURIComponent(initials);
-                        navDefaultAvatar = 'https://via.placeholder.com/10/e2e8f0/64748b?text=' + encodeURIComponent(initials);
+                        navDefaultAvatar = 'https://via.placeholder.com/40/3b82f6/ffffff?text=' + encodeURIComponent(initials);
                     } catch (e) {
                         console.error('Error parsing user data:', e);
                     }
@@ -503,7 +503,7 @@
             document.getElementById('profileAvatar').src = avatarSrc;
             
             // Update navbar avatar with smaller default
-            const navDefaultAvatar = 'https://via.placeholder.com/10/e2e8f0/64748b?text=' + 
+            const navDefaultAvatar = 'https://via.placeholder.com/40/3b82f6/ffffff?text=' + 
                 encodeURIComponent((firstName[0] || '') + (lastName[0] || ''));
             const navAvatarSrc = profile?.profile_picture || user?.profile_picture || navDefaultAvatar;
             
@@ -535,17 +535,60 @@
         }
 
         function confirmDeleteAccount() {
-            const confirmation = prompt('⚠️ WARNING: This will permanently delete your account!\n\nType "DELETE_MY_ACCOUNT" to confirm:');
+            const confirmation = document.getElementById('deleteConfirmation').value;
             
             if (confirmation === 'DELETE_MY_ACCOUNT') {
+                hideDeleteModal();
                 deleteAccount();
-            } else if (confirmation !== null) {
+            } else {
                 alert('Account deletion cancelled. You must type "DELETE_MY_ACCOUNT" exactly.');
             }
         }
 
+        // Function to refresh the access token
+        async function refreshAccessToken() {
+            const refreshToken = localStorage.getItem('refresh_token');
+            
+            if (!refreshToken) {
+                console.log('No refresh token available');
+                return null;
+            }
+
+            try {
+                console.log('Attempting to refresh access token...');
+                const response = await fetch('http://127.0.0.1:8000/api/auth/token/refresh/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        refresh: refreshToken
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    const newAccessToken = data.access;
+                    
+                    // Update localStorage with new access token
+                    localStorage.setItem('access_token', newAccessToken);
+                    console.log('Access token refreshed successfully');
+                    return newAccessToken;
+                } else {
+                    console.log('Failed to refresh token, response:', response.status);
+                    return null;
+                }
+            } catch (error) {
+                console.error('Error refreshing token:', error);
+                return null;
+            }
+        }
+
         async function deleteAccount() {
-            const accessToken = localStorage.getItem('access_token');
+            let accessToken = localStorage.getItem('access_token');
+            
+            console.log('Access token exists:', !!accessToken);
+            console.log('Access token length:', accessToken ? accessToken.length : 0);
             
             if (!accessToken) {
                 alert('Please login again to delete your account.');
@@ -553,28 +596,102 @@
             }
 
             try {
-                const response = await fetch('http://127.0.0.1:8000/api/auth/account/delete/', {
-                    method: 'DELETE',
-                    headers: {
-                        'Authorization': `Bearer ${accessToken}`,
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        confirmation: 'DELETE_MY_ACCOUNT'
-                    })
-                });
+                // Show loading state
+                const deleteBtn = document.querySelector('button[onclick="confirmDeleteAccount()"]');
+                const originalText = deleteBtn.textContent;
+                deleteBtn.textContent = 'Deleting Account...';
+                deleteBtn.disabled = true;
 
-                const result = await response.json();
+                console.log('Attempting to delete account...');
+
+                const makeDeleteRequest = async (token) => {
+                    return await fetch('http://127.0.0.1:8000/api/auth/account/delete/', {
+                        method: 'DELETE',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            confirmation: 'DELETE_MY_ACCOUNT'
+                        })
+                    });
+                };
+
+                let response = await makeDeleteRequest(accessToken);
+
+                // If token is invalid, try to refresh it
+                if (response.status === 401) {
+                    console.log('Access token expired, attempting to refresh...');
+                    const newAccessToken = await refreshAccessToken();
+                    
+                    if (newAccessToken) {
+                        console.log('Retrying delete request with new token...');
+                        response = await makeDeleteRequest(newAccessToken);
+                        accessToken = newAccessToken;
+                    } else {
+                        // Reset button state
+                        deleteBtn.textContent = originalText;
+                        deleteBtn.disabled = false;
+                        
+                        alert('Your session has expired. Please login again to delete your account.');
+                        // Redirect to login
+                        window.location.href = 'user-selection.html';
+                        return;
+                    }
+                }
+
+                console.log('Response status:', response.status);
+                console.log('Response status text:', response.statusText);
+                console.log('Response ok:', response.ok);
+
+                let result;
+                const contentType = response.headers.get('content-type');
+                console.log('Response content type:', contentType);
+
+                if (contentType && contentType.includes('application/json')) {
+                    try {
+                        result = await response.json();
+                        console.log('Response data:', result);
+                    } catch (jsonError) {
+                        console.error('Error parsing JSON response:', jsonError);
+                        const text = await response.text();
+                        console.log('Response text:', text);
+                        throw new Error('Server returned invalid JSON response: ' + text);
+                    }
+                } else {
+                    const text = await response.text();
+                    console.log('Response text (non-JSON):', text);
+                    throw new Error('Server returned non-JSON response: ' + text);
+                }
 
                 if (response.ok) {
-                    alert('Account deleted successfully. You will be redirected to the login page.');
-                    logout();
+                    alert('Account deleted successfully. All your data has been removed from our system. You will be redirected to the login page.');
+                    
+                    // Clear all local storage data
+                    localStorage.clear();
+                    
+                    // Redirect to login page
+                    window.location.href = 'user-selection.html';
                 } else {
-                    alert('Error deleting account: ' + (result.error || result.message || 'Unknown error'));
+                    // Reset button state
+                    deleteBtn.textContent = originalText;
+                    deleteBtn.disabled = false;
+                    
+                    const errorMessage = result.error || result.message || result.detail || result.details || `HTTP ${response.status}: ${response.statusText}`;
+                    console.error('API Error:', errorMessage);
+                    alert('Error deleting account: ' + errorMessage);
                 }
             } catch (error) {
                 console.error('Delete account error:', error);
-                alert('Error deleting account. Please try again.');
+                
+                // Reset button state
+                const deleteBtn = document.querySelector('button[onclick="confirmDeleteAccount()"]');
+                if (deleteBtn) {
+                    deleteBtn.textContent = 'Delete Account';
+                    deleteBtn.disabled = false;
+                }
+                
+                alert('Error deleting account: ' + error.message + '\nPlease check the browser console for more details.');
             }
         }
 
@@ -617,6 +734,46 @@
             localStorage.removeItem('refresh_token');
             localStorage.removeItem('user_data');
             window.location.href = 'auth.html';
+        }
+
+        // Modal functions for delete account
+        function showDeleteModal() {
+            document.getElementById('deleteModal').style.display = 'block';
+            document.getElementById('deleteConfirmation').value = '';
+            
+            // Add real-time validation
+            const confirmationInput = document.getElementById('deleteConfirmation');
+            const deleteBtn = document.querySelector('button[onclick="confirmDeleteAccount()"]');
+            
+            confirmationInput.addEventListener('input', function() {
+                if (this.value === 'DELETE_MY_ACCOUNT') {
+                    deleteBtn.disabled = false;
+                    deleteBtn.style.backgroundColor = '#dc2626';
+                    deleteBtn.style.opacity = '1';
+                } else {
+                    deleteBtn.disabled = true;
+                    deleteBtn.style.backgroundColor = '#9ca3af';
+                    deleteBtn.style.opacity = '0.6';
+                }
+            });
+            
+            // Initially disable the delete button
+            deleteBtn.disabled = true;
+            deleteBtn.style.backgroundColor = '#9ca3af';
+            deleteBtn.style.opacity = '0.6';
+        }
+
+        function hideDeleteModal() {
+            document.getElementById('deleteModal').style.display = 'none';
+            document.getElementById('deleteConfirmation').value = '';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('deleteModal');
+            if (event.target == modal) {
+                hideDeleteModal();
+            }
         }
     </script>
 

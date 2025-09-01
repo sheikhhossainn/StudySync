@@ -15,7 +15,17 @@
                     <a href="mentorship.html" class="nav-link">Mentorship</a>
                     <a href="about.html" class="nav-link">About</a>
                     <a href="contact.html" class="nav-link">Contact</a>
-                    <a href="user-selection.html" class="btn btn-primary">Log in</a>
+                    <!-- Show avatar if logged in, otherwise show login button -->
+                    <div id="navAuthSection">
+                        <a href="user-selection.html" class="btn btn-primary" id="loginBtn">Log in</a>
+                        <div class="user-avatar-dropdown" id="userAvatarSection" style="display: none;">
+                            <img id="navUserAvatar" src="https://via.placeholder.com/40/3b82f6/ffffff?text=U" alt="User Avatar" class="user-avatar" onclick="toggleDropdown()">
+                            <div id="userDropdown" class="dropdown-content">
+                                <a href="profile.html">👤 Profile Settings</a>
+                                <a href="#" onclick="logout()">🚪 Logout</a>
+                            </div>
+                        </div>
+                    </div>
                 </nav>
             </div>
         </header>
@@ -91,7 +101,7 @@
 
                             <div class="session-list">
                                 <div class="session-card">
-                                    <div class="user-avatar blue-avatar">
+                                    <div class="user-avatar-large blue-avatar">
                                         <span>J</span>
                                     </div>
                                     <div class="session-info">
@@ -106,7 +116,7 @@
                                 </div>
 
                                 <div class="session-card">
-                                    <div class="user-avatar blue-avatar">
+                                    <div class="user-avatar-large blue-avatar">
                                         <span>A</span>
                                     </div>
                                     <div class="session-info">
@@ -121,7 +131,7 @@
                                 </div>
 
                                 <div class="session-card">
-                                    <div class="user-avatar blue-avatar">
+                                    <div class="user-avatar-large blue-avatar">
                                         <span>T</span>
                                     </div>
                                     <div class="session-info">
@@ -143,7 +153,7 @@
                                 <input type="text" placeholder="Search" class="search-input">
                             </div>
                             <div class="message-item">
-                                <div class="user-avatar blue-avatar small">
+                                <div class="user-avatar-large blue-avatar small">
                                     <span>J</span>
                                 </div>
 
@@ -157,5 +167,80 @@
                 </div>
             </div>
         </main>
-    </body>
+
+    <script>
+        // Load user data when page loads (copied from working profile page)
+        document.addEventListener('DOMContentLoaded', function() {
+            checkLoginStatus();
+        });
+
+        function checkLoginStatus() {
+            const accessToken = localStorage.getItem('access_token');
+            const userData = localStorage.getItem('user_data');
+            
+            const loginBtn = document.getElementById('loginBtn');
+            const userAvatarSection = document.getElementById('userAvatarSection');
+            
+            if (accessToken && userData) {
+                // User is logged in - show avatar dropdown
+                loginBtn.style.display = 'none';
+                userAvatarSection.style.display = 'block';
+                
+                // Load avatar using EXACT same logic as profile page
+                try {
+                    const user = JSON.parse(userData);
+                    updateNavbarAvatar(user, user.profile);
+                } catch (e) {
+                    console.error('Error parsing user data:', e);
+                    updateNavbarAvatar({ first_name: 'User', last_name: '' }, null);
+                }
+            } else {
+                // User is not logged in - show login button
+                loginBtn.style.display = 'inline-block';
+                userAvatarSection.style.display = 'none';
+            }
+        }
+
+        // EXACT same avatar logic as working profile page
+        function updateNavbarAvatar(user, profile = null) {
+            const firstName = user?.first_name || '';
+            const lastName = user?.last_name || '';
+            
+            // Update navbar avatar with smaller default (EXACT same as profile page)
+            const navDefaultAvatar = 'https://via.placeholder.com/40/3b82f6/ffffff?text=' + 
+                encodeURIComponent((firstName[0] || '') + (lastName[0] || ''));
+            const navAvatarSrc = profile?.profile_picture || user?.profile_picture || navDefaultAvatar;
+            
+            const navAvatar = document.getElementById('navUserAvatar');
+            if (navAvatar) {
+                navAvatar.src = navAvatarSrc;
+                console.log('✅ Avatar loaded:', navAvatarSrc);
+            }
+        }
+
+        function toggleDropdown() {
+            document.getElementById("userDropdown").classList.toggle("show");
+        }
+
+        // Close dropdown when clicking outside
+        window.onclick = function(event) {
+            if (!event.target.matches('.user-avatar')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('access_token');
+            localStorage.removeItem('refresh_token');
+            localStorage.removeItem('user_data');
+            window.location.reload(); // Refresh to update login state
+        }
+    </script>
+</body>
 </html>

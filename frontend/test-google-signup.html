@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Google Signup</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <h1>Test Google Signup</h1>
+    <div id="g_id_onload"
+         data-client_id="1061988044539-0vq3h3fk08tjs9ncg63oetudgvt0onu8.apps.googleusercontent.com"
+         data-context="signin"
+         data-ux_mode="popup"
+         data-callback="handleGoogleSignIn"
+         data-auto_prompt="false">
+    </div>
+    
+    <div class="g_id_signin"
+         data-type="standard"
+         data-shape="rectangular"
+         data-theme="outline"
+         data-text="signin_with"
+         data-size="large"
+         data-logo_alignment="left">
+    </div>
+
+    <div id="result"></div>
+
+    <script>
+        function handleGoogleSignIn(response) {
+            console.log('🎯 Google Sign-In Response:', response);
+            
+            if (response.credential) {
+                // Decode the JWT token to get user info
+                const payload = JSON.parse(atob(response.credential.split('.')[1]));
+                console.log('✅ User info from Google:', payload);
+                
+                document.getElementById('result').innerHTML = `
+                    <h2>Success!</h2>
+                    <p>Email: ${payload.email}</p>
+                    <p>Name: ${payload.name}</p>
+                    <p>Picture: <img src="${payload.picture}" width="50"></p>
+                    <p>Credential received: ✅</p>
+                    
+                    <h3>Testing Backend API:</h3>
+                    <button onclick="testBackendAPI('${response.credential}')">Test Backend Signup</button>
+                `;
+                
+            } else {
+                console.error('❌ No credential received from Google');
+                document.getElementById('result').innerHTML = '<p>❌ No credential received</p>';
+            }
+        }
+
+        async function testBackendAPI(credential) {
+            try {
+                console.log('🚀 Testing backend API...');
+                
+                const response = await fetch('http://127.0.0.1:8000/api/accounts/auth/google/oauth/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        credential: credential,
+                        user_type: 'student'
+                    })
+                });
+
+                const data = await response.json();
+                console.log('📡 Backend response:', data);
+
+                if (response.ok) {
+                    document.getElementById('result').innerHTML += `
+                        <div style="background: #d4edda; padding: 10px; margin: 10px 0; border-radius: 5px;">
+                            <h4>✅ Backend Success!</h4>
+                            <p>Status: ${response.status}</p>
+                            <p>User: ${JSON.stringify(data.user)}</p>
+                            <p>Tokens: ${data.access_token ? '✅ Present' : '❌ Missing'}</p>
+                        </div>
+                    `;
+                } else {
+                    document.getElementById('result').innerHTML += `
+                        <div style="background: #f8d7da; padding: 10px; margin: 10px 0; border-radius: 5px;">
+                            <h4>❌ Backend Error</h4>
+                            <p>Status: ${response.status}</p>
+                            <p>Error: ${data.error || 'Unknown error'}</p>
+                            <p>Details: ${JSON.stringify(data)}</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error('💥 Network error:', error);
+                document.getElementById('result').innerHTML += `
+                    <div style="background: #f8d7da; padding: 10px; margin: 10px 0; border-radius: 5px;">
+                        <h4>💥 Network Error</h4>
+                        <p>Error: ${error.message}</p>
+                        <p>Check if Django server is running on http://127.0.0.1:8000</p>
+                    </div>
+                `;
+            }
+        }
+        
+        // Auto-run tests on page load
+        window.onload = function() {
+            console.log('🚀 Starting Google signup test...');
+            
+            // Test 1: Check if Google Identity Services library loaded
+            setTimeout(() => {
+                if (typeof google !== 'undefined' && google.accounts) {
+                    console.log('✅ Google Identity Services library loaded successfully');
+                    document.getElementById('result').innerHTML += '<p>✅ Google library loaded</p>';
+                } else {
+                    console.log('❌ Google Identity Services library not loaded');
+                    document.getElementById('result').innerHTML += '<p>❌ Google library not loaded</p>';
+                }
+            }, 2000);
+            
+            // Test 2: Check if backend is accessible
+            setTimeout(async () => {
+                try {
+                    const response = await fetch('http://127.0.0.1:8000/api/accounts/auth/google/oauth/', {
+                        method: 'OPTIONS'
+                    });
+                    console.log('✅ Backend server accessible:', response.status);
+                    document.getElementById('result').innerHTML += '<p>✅ Backend accessible (Status: ' + response.status + ')</p>';
+                } catch (error) {
+                    console.log('❌ Backend server not accessible:', error.message);
+                    document.getElementById('result').innerHTML += '<p>❌ Backend not accessible: ' + error.message + '</p>';
+                }
+            }, 3000);
+        };
+    </script>
+</body>
+</html>

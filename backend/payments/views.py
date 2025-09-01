@@ -4,12 +4,20 @@ from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from datetime import timedelta
+from decimal import Decimal
+import logging
+
 from .models import SubscriptionPlan, UserSubscription, Payment, UserPaymentMethod, Advertisement
 from .serializers import (
     SubscriptionPlanSerializer, UserSubscriptionSerializer, PaymentSerializer,
     PaymentCreateSerializer, UserPaymentMethodSerializer, AdvertisementSerializer,
     SubscriptionUpgradeSerializer, UserSubscriptionStatusSerializer
 )
+from .payment_gateways import PaymentGatewayFactory, ManualPaymentVerifier, PaymentGatewayError
+
+logger = logging.getLogger(__name__)
+
+logger = logging.getLogger(__name__)
 
 
 class SubscriptionPlanListView(generics.ListAPIView):
@@ -242,6 +250,19 @@ def subscription_features(request):
     """Get detailed comparison of subscription features"""
     plans = SubscriptionPlan.objects.filter(is_active=True).order_by('price')
     
+    # Get user's current plan
+    current_plan = None
+    if request.user.is_premium:
+        try:
+            current_subscription = UserSubscription.objects.filter(
+                user=request.user, 
+                status='active'
+            ).first()
+            if current_subscription:
+                current_plan = current_subscription.plan.name
+        except UserSubscription.DoesNotExist:
+            pass
+    
     features_comparison = []
     for plan in plans:
         features_comparison.append({
@@ -261,8 +282,521 @@ def subscription_features(request):
                 'custom_features': plan.features
             }
         })
-    
+
     return Response({
         'plans': features_comparison,
+        'current_plan': current_plan,
         'user_current_plan': request.user.subscription_type
     })
+
+
+# ========================
+# PAYMENT GATEWAY VIEWS
+# ========================
+
+@api_view(['POST'])
+@permission_classes([permissions.IsAuthenticated])
+def initiate_payment(request):
+    """Initiate payment with selected gateway"""
+    try:
+        payment_method = request.data.get('payment_method')
+        plan_id = request.data.get('plan_id')
+        months = int(request.data.get('months', 1))
+        user_phone = request.data.get('phone_number', '')
+        
+        # Validate inputs
+        if not all([payment_method, plan_id]):
+            return Response({
+                'error': 'payment_method and plan_id are required'
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
+        # Get subscription plan
+        plan = get_object_or_404(SubscriptionPlan, id=plan_id, is_active=True)
+        total_amount = plan.price * months
+        
+        # Create payment record
+        payment = Payment.objects.create(
+            user=request.user,
+            amount=total_amount,
+            currency=plan.currency,
+            payment_method=payment_method,
+            payment_status='pending'
+        )
+        
+        # Handle different payment methods
+        if payment_method in ['bkash', 'nagad', 'aamarpay']:
+            try:
+                gateway = PaymentGatewayFactory.get_gateway(payment_method)
+                user_data = {
+                    'phone': user_phone,
+                    'email': request.user.email,
+                    'name': f"{request.user.first_name} {request.user.last_name}"
+                }
+                
+                result = gateway.initiate_payment(total_amount, plan.currency, user_data)
+                
+                if result['success']:
+                    payment.transaction_id = result['transaction_id']
+                    payment.payment_gateway_response = result['gateway_response']
+                    payment.save()
+                    
+                    return Response({
+                        'success': True,
+                        'payment_id': payment.id,
+                        'transaction_id': result['transaction_id'],
+                        'checkout_url': result['checkout_url'],
+                        'message': f'Payment initiated successfully via {payment_method.title()}'
+                    })
+                else:
+                    payment.payment_status = 'failed'
+                    payment.failure_reason = result['error']
+                    payment.save()
+                    
+                    return Response({
+                        'success': False,
+                        'error': result['error']
+                    }, status=status.HTTP_400_BAD_REQUEST)
+                    
+            except PaymentGatewayError as e:
+                payment.payment_status = 'failed'
+                payment.failure_reason = str(e)
+                payment.save()
+                
+                return Response({
+                    'success': False,
+                    'error': str(e)
+                }, status=status.HTTP_400_BAD_REQUEST)
+        
+        elif payment_method in ['bank_transfer', 'card']:
+            # For manual payment methods
+            return Response({
+                'success': True,
+                'payment_id': payment.id,
+                'message': f'Please complete the payment using {payment_method.replace("_", " ").title()}',
+                'manual_payment': True,
+                'payment_instructions': get_payment_instructions(payment_method, total_amount, plan.currency)
+            })
+        
+        else:
+            payment.delete()
+            return Response({
+                'error': f'Unsupported payment method: {payment_method}'
+            }, status=status.HTTP_400_BAD_REQUEST)
+            
+    except Exception as e:
+        logger.error(f"Payment initiation error: {str(e)}")
+        return Response({
+            'error': 'Payment initiation failed. Please try again.'
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+def get_payment_instructions(payment_method, amount, currency):
+    """Get payment instructions for manual payment methods"""
+    instructions = {
+        'bank_transfer': {
+            'method': 'Bank Transfer',
+            'amount': f'{amount} {currency}',
+            'account_details': {
+                'bank_name': 'Your Bank Name',
+                'account_number': '1234567890',
+                'account_name': 'StudySync Limited',
+                'routing_number': '123456789'
+            },
+            'instructions': [
+                f'Transfer exactly {amount} {currency} to the above account',
+                'Use your email address as the transfer reference',
+                'Take a screenshot of the successful transfer',
+                'Submit the transaction reference number in the verification form'
+            ]
+        }
+    }
+    
+    return instructions.get(payment_method, {})
+
+
+@api_view(['POST'])
+@permission_classes([permissions.IsAuthenticated])
+def verify_payment(request):
+    """Verify payment status"""
+    try:
+        payment_id = request.data.get('payment_id')
+        transaction_id = request.data.get('transaction_id')
+        
+        if not payment_id:
+            return Response({
+                'error': 'payment_id is required'
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
+        payment = get_object_or_404(Payment, id=payment_id, user=request.user)
+        
+        # If payment already completed, return success
+        if payment.payment_status == 'completed':
+            return Response({
+                'success': True,
+                'status': 'completed',
+                'message': 'Payment already verified and completed'
+            })
+        
+        # Verify with payment gateway
+        if payment.payment_method in ['bkash', 'nagad', 'rocket']:
+            try:
+                gateway = PaymentGatewayFactory.get_gateway(payment.payment_method)
+                result = gateway.verify_payment(transaction_id or payment.transaction_id)
+                
+                if result['success']:
+                    if result['status'] in ['completed', 'success', 'paid']:
+                        # Payment successful - activate subscription
+                        activate_subscription(payment, result)
+                        
+                        return Response({
+                            'success': True,
+                            'status': 'completed',
+                            'message': 'Payment verified and subscription activated successfully!'
+                        })
+                    else:
+                        payment.payment_status = result['status']
+                        payment.save()
+                        
+                        return Response({
+                            'success': False,
+                            'status': result['status'],
+                            'message': f'Payment status: {result["status"]}'
+                        })
+                else:
+                    return Response({
+                        'success': False,
+                        'error': result['error']
+                    }, status=status.HTTP_400_BAD_REQUEST)
+                    
+            except PaymentGatewayError as e:
+                return Response({
+                    'success': False,
+                    'error': str(e)
+                }, status=status.HTTP_400_BAD_REQUEST)
+        
+        else:
+            return Response({
+                'error': 'Payment verification not supported for this payment method'
+            }, status=status.HTTP_400_BAD_REQUEST)
+            
+    except Exception as e:
+        logger.error(f"Payment verification error: {str(e)}")
+        return Response({
+            'error': 'Payment verification failed. Please try again.'
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(['POST'])
+@permission_classes([permissions.IsAuthenticated])
+def submit_manual_payment(request):
+    """Submit manual payment for verification"""
+    try:
+        payment_id = request.data.get('payment_id')
+        transaction_ref = request.data.get('transaction_reference')
+        payment_date = request.data.get('payment_date')
+        payment_method = request.data.get('payment_method')
+        amount = request.data.get('amount')
+        
+        # Validate inputs
+        required_fields = ['payment_id', 'transaction_reference', 'payment_date', 'payment_method', 'amount']
+        for field in required_fields:
+            if not request.data.get(field):
+                return Response({
+                    'error': f'{field} is required'
+                }, status=status.HTTP_400_BAD_REQUEST)
+        
+        payment = get_object_or_404(Payment, id=payment_id, user=request.user)
+        
+        # Update payment with manual details
+        payment.transaction_id = transaction_ref
+        payment.payment_gateway_response = {
+            'payment_date': payment_date,
+            'submitted_amount': amount,
+            'submission_time': timezone.now().isoformat(),
+            'status': 'pending_verification'
+        }
+        payment.payment_status = 'pending'
+        payment.save()
+        
+        # Use manual payment verifier
+        verification_result = ManualPaymentVerifier.verify_manual_payment({
+            'transaction_ref': transaction_ref,
+            'amount': amount,
+            'payment_method': payment_method,
+            'payment_date': payment_date
+        })
+        
+        return Response({
+            'success': True,
+            'message': verification_result['message'],
+            'verification_id': verification_result['verification_id'],
+            'status': 'pending_verification'
+        })
+        
+    except Exception as e:
+        logger.error(f"Manual payment submission error: {str(e)}")
+        return Response({
+            'error': 'Manual payment submission failed. Please try again.'
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(['GET'])
+@permission_classes([permissions.IsAuthenticated])
+def payment_methods(request):
+    """Get available payment methods"""
+    return Response({
+        'mobile_payments': [
+            {
+                'id': 'bkash',
+                'name': 'bKash',
+                'icon': '/static/images/icons/bkash-logo.png',
+                'description': 'Pay with your bKash account',
+                'enabled': True
+            },
+            {
+                'id': 'nagad',
+                'name': 'Nagad',
+                'icon': '/static/images/icons/nagad-logo.png',
+                'description': 'Pay with your Nagad account',
+                'enabled': True
+            }
+        ],
+        'card_payments': [
+            {
+                'id': 'aamarpay',
+                'name': 'AamarPay',
+                'icon': '/static/images/icons/aamarpay-logo.png',
+                'description': 'Pay with credit/debit card via AamarPay',
+                'enabled': True
+            }
+        ],
+        'other_methods': [
+            {
+                'id': 'bank_transfer',
+                'name': 'Bank Transfer',
+                'icon': '/static/images/icons/bank-icon.png',
+                'description': 'Transfer to our bank account',
+                'enabled': True
+            }
+        ]
+    })
+
+
+def activate_subscription(payment, verification_result):
+    """Activate user subscription after successful payment"""
+    try:
+        user = payment.user
+        
+        # Update payment status
+        payment.payment_status = 'completed'
+        payment.paid_at = timezone.now()
+        payment.payment_gateway_response.update(verification_result.get('gateway_response', {}))
+        payment.save()
+        
+        # Get or create subscription plan (default premium if no subscription)
+        if payment.subscription:
+            plan = payment.subscription.plan
+        else:
+            # Get default premium plan
+            plan = SubscriptionPlan.objects.filter(name__icontains='premium', is_active=True).first()
+            if not plan:
+                # Create default premium plan if none exists
+                plan = SubscriptionPlan.objects.create(
+                    name='Premium Monthly',
+                    description='Premium subscription with all features',
+                    price=Decimal('299.00'),
+                    currency='BDT',
+                    duration_days=30,
+                    max_posts_per_month=-1,
+                    can_use_mentorship=True,
+                    has_ads=False
+                )
+        
+        # Calculate expiry date
+        current_time = timezone.now()
+        if user.is_premium and user.premium_expires_at and user.premium_expires_at > current_time:
+            new_expiry = user.premium_expires_at + timedelta(days=plan.duration_days)
+        else:
+            new_expiry = current_time + timedelta(days=plan.duration_days)
+        
+        # Update user subscription
+        user.subscription_type = 'premium'
+        user.premium_expires_at = new_expiry
+        user.save()
+        
+        # Create or update UserSubscription record
+        subscription, created = UserSubscription.objects.get_or_create(
+            user=user,
+            defaults={
+                'plan': plan,
+                'expires_at': new_expiry,
+                'status': 'active'
+            }
+        )
+        
+        if not created:
+            subscription.plan = plan
+            subscription.expires_at = new_expiry
+            subscription.status = 'active'
+            subscription.save()
+        
+        # Link payment to subscription
+        if not payment.subscription:
+            payment.subscription = subscription
+            payment.save()
+        
+        logger.info(f"Subscription activated for user {user.email} until {new_expiry}")
+        
+    except Exception as e:
+        logger.error(f"Subscription activation error: {str(e)}")
+        raise
+
+
+def get_payment_instructions(payment_method, amount, currency):
+    """Get payment instructions for manual payment methods"""
+    instructions = {
+        'bank_transfer': {
+            'method': 'Bank Transfer',
+            'amount': f'{amount} {currency}',
+            'account_details': {
+                'bank_name': 'Your Bank Name',
+                'account_number': '1234567890',
+                'account_name': 'StudySync Limited',
+                'routing_number': '123456789'
+            },
+            'instructions': [
+                f'Transfer exactly {amount} {currency} to the above account',
+                'Use your email address as the transfer reference',
+                'Take a screenshot of the successful transfer',
+                'Submit the transaction reference number in the verification form'
+            ]
+        }
+    }
+    
+    return instructions.get(payment_method, {})
+
+
+@api_view(['POST'])
+@permission_classes([permissions.IsAuthenticated])
+def verify_payment(request):
+    """Verify payment status"""
+    try:
+        payment_id = request.data.get('payment_id')
+        transaction_id = request.data.get('transaction_id')
+        
+        if not payment_id:
+            return Response({
+                'error': 'payment_id is required'
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
+        payment = get_object_or_404(Payment, id=payment_id, user=request.user)
+        
+        # If payment already completed, return success
+        if payment.payment_status == 'completed':
+            return Response({
+                'success': True,
+                'status': 'completed',
+                'message': 'Payment already verified and completed'
+            })
+        
+        # Verify with payment gateway
+        if payment.payment_method in ['bkash', 'nagad', 'rocket']:
+            try:
+                gateway = PaymentGatewayFactory.get_gateway(payment.payment_method)
+                result = gateway.verify_payment(transaction_id or payment.transaction_id)
+                
+                if result['success']:
+                    if result['status'] in ['completed', 'success', 'paid']:
+                        # Payment successful - activate subscription
+                        activate_subscription(payment, result)
+                        
+                        return Response({
+                            'success': True,
+                            'status': 'completed',
+                            'message': 'Payment verified and subscription activated successfully!'
+                        })
+                    else:
+                        payment.payment_status = result['status']
+                        payment.save()
+                        
+                        return Response({
+                            'success': False,
+                            'status': result['status'],
+                            'message': f'Payment status: {result["status"]}'
+                        })
+                else:
+                    return Response({
+                        'success': False,
+                        'error': result['error']
+                    }, status=status.HTTP_400_BAD_REQUEST)
+                    
+            except PaymentGatewayError as e:
+                return Response({
+                    'success': False,
+                    'error': str(e)
+                }, status=status.HTTP_400_BAD_REQUEST)
+        
+        else:
+            return Response({
+                'error': 'Payment verification not supported for this payment method'
+            }, status=status.HTTP_400_BAD_REQUEST)
+            
+    except Exception as e:
+        logger.error(f"Payment verification error: {str(e)}")
+        return Response({
+            'error': 'Payment verification failed. Please try again.'
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(['POST'])
+@permission_classes([permissions.IsAuthenticated])
+def submit_manual_payment(request):
+    """Submit manual payment for verification"""
+    try:
+        payment_id = request.data.get('payment_id')
+        transaction_ref = request.data.get('transaction_reference')
+        payment_date = request.data.get('payment_date')
+        payment_method = request.data.get('payment_method')
+        amount = request.data.get('amount')
+        
+        # Validate inputs
+        required_fields = ['payment_id', 'transaction_reference', 'payment_date', 'payment_method', 'amount']
+        for field in required_fields:
+            if not request.data.get(field):
+                return Response({
+                    'error': f'{field} is required'
+                }, status=status.HTTP_400_BAD_REQUEST)
+        
+        payment = get_object_or_404(Payment, id=payment_id, user=request.user)
+        
+        # Update payment with manual details
+        payment.transaction_id = transaction_ref
+        payment.payment_gateway_response = {
+            'payment_date': payment_date,
+            'submitted_amount': amount,
+            'submission_time': timezone.now().isoformat(),
+            'status': 'pending_verification'
+        }
+        payment.payment_status = 'pending'
+        payment.save()
+        
+        # Use manual payment verifier
+        verification_result = ManualPaymentVerifier.verify_manual_payment({
+            'transaction_ref': transaction_ref,
+            'amount': amount,
+            'payment_method': payment_method,
+            'payment_date': payment_date
+        })
+        
+        return Response({
+            'success': True,
+            'message': verification_result['message'],
+            'verification_id': verification_result['verification_id'],
+            'status': 'pending_verification'
+        })
+        
+    except Exception as e:
+        logger.error(f"Manual payment submission error: {str(e)}")
+        return Response({
+            'error': 'Manual payment submission failed. Please try again.'
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

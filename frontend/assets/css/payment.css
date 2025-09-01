@@ -812,3 +812,100 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+/* Payment Icon Styles */
+.payment-icon {
+    max-width: 80px;
+    max-height: 40px;
+    object-fit: contain;
+}
+
+.bkash-logo {
+    background: linear-gradient(135deg, #e2136e, #b70e5a);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+}
+
+.nagad-logo {
+    background: linear-gradient(135deg, #ec6f00, #d1600a);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+}
+
+.aamarpay-logo {
+    background: linear-gradient(135deg, #4f46e5, #3b82f6);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+    gap: 8px;
+}
+
+.aamarpay-logo .payment-icon {
+    max-width: 120px;
+    max-height: 30px;
+    filter: brightness(0) invert(1);
+}
+
+.supported-cards {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.card-brand {
+    width: 24px;
+    height: 15px;
+    object-fit: contain;
+}
+
+.payment-logo-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-method-option:hover .bkash-logo {
+    background: linear-gradient(135deg, #f5175e, #c90e50);
+}
+
+.payment-method-option:hover .nagad-logo {
+    background: linear-gradient(135deg, #ff7a00, #e5660a);
+}
+
+.payment-method-option:hover .aamarpay-logo {
+    background: linear-gradient(135deg, #5b52f0, #4f75ff);
+}
+
+/* Selected payment method styles */
+.payment-method-option input:checked + label .bkash-logo {
+    background: linear-gradient(135deg, #c70e54, #a00b46);
+    box-shadow: 0 4px 12px rgba(226, 19, 110, 0.3);
+}
+
+.payment-method-option input:checked + label .nagad-logo {
+    background: linear-gradient(135deg, #d1600a, #b5530a);
+    box-shadow: 0 4px 12px rgba(236, 111, 0, 0.3);
+}
+
+.payment-method-option input:checked + label .aamarpay-logo {
+    background: linear-gradient(135deg, #3b38d6, #2563eb);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}

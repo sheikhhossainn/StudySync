@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudySync - Edit Profile</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        .edit-section {
+            background: white;
+            border-radius: 0.75rem;
+            border: 1px solid #e2e8f0;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .profile-picture-section {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .current-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e2e8f0;
+            margin-bottom: 1rem;
+            transition: transform 0.2s ease;
+        }
+
+        .current-avatar:hover {
+            transform: scale(1.05);
+            border-color: #3b82f6;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .upload-btn, .remove-btn {
+            margin: 0 0.5rem;
+        }
+
+        .remove-btn {
+            background-color: #dc2626;
+        }
+
+        .remove-btn:hover {
+            background-color: #b91c1c;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 500;
+            color: #374151;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            transition: border-color 0.2s ease;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .actions-section {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 1rem 0;
+        }
+
+        .success-message {
+            background: #dcfce7;
+            color: #166534;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #bbf7d0;
+            display: none;
+        }
+
+        .error-message {
+            background: #fef2f2;
+            color: #991b1b;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #fecaca;
+            display: none;
+        }
+
+        .preview-container {
+            display: none;
+            margin-top: 1rem;
+        }
+
+        .preview-image {
+            max-width: 150px;
+            max-height: 150px;
+            border-radius: 50%;
+            border: 3px solid #3b82f6;
+        }
+
+        .password-section {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .password-toggle {
+            position: relative;
+        }
+
+        .password-toggle-btn {
+            position: absolute;
+            right: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: #64748b;
+        }
+
+        .error {
+            text-align: center;
+            padding: 3rem;
+            color: #dc2626;
+        }
+
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .actions-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">StudySync</a>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="my-posts.html" class="nav-link">My Posts</a>
+                <a href="mentorship.html" class="nav-link">Mentorship</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="profile.html" class="nav-link">Profile</a>
+                <button class="btn btn-primary" onclick="logout()">Logout</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div id="loading" class="loading">
+                <h3>Loading profile data...</h3>
+            </div>
+
+            <div id="error" class="error" style="display: none;">
+                <h3>Error loading profile</h3>
+                <p>Please <a href="profile.html" style="color: #3b82f6;">go back</a> or <a href="auth.html" style="color: #3b82f6;">login again</a>.</p>
+            </div>
+
+            <div id="editContent" style="display: none;">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h1 style="font-size: 1.875rem; font-weight: 700; color: #1e293b; margin-bottom: 0.5rem;">Edit Your Profile</h1>
+                    <p style="color: #64748b;">Update your information and preferences</p>
+                </div>
+
+                <div class="success-message" id="successMessage">
+                    Profile updated successfully!
+                </div>
+
+                <div class="error-message" id="errorMessage">
+                    Failed to update profile. Please try again.
+                </div>
+
+            <!-- Profile Picture Section -->
+            <div class="edit-section">
+                <h2 class="section-title">Profile Picture</h2>
+                <div class="profile-picture-section">
+                    <img id="currentAvatar" src="" alt="Current Profile Picture" class="current-avatar">
+                    <div class="preview-container" id="previewContainer">
+                        <p><strong>Preview:</strong></p>
+                        <img id="previewImage" src="" alt="Preview" class="preview-image">
+                    </div>
+                    <div>
+                        <input type="file" id="profilePictureInput" class="file-input" accept="image/*">
+                        <button type="button" class="upload-btn" onclick="document.getElementById('profilePictureInput').click()">
+                            📷 Choose New Picture
+                        </button>
+                        <button type="button" class="remove-btn" onclick="removeProfilePicture()">
+                            🗑️ Remove Picture
+                        </button>
+                    </div>
+                    <p style="color: #7f8c8d; font-size: 12px; margin-top: 10px;">
+                        Supported formats: JPG, PNG, GIF. Max size: 5MB
+                    </p>
+                </div>
+            </div>
+
+            <!-- Personal Information -->
+            <div class="edit-section">
+                <h2 class="section-title">Personal Information</h2>
+                <form id="profileForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="dateOfBirth">Date of Birth</label>
+                            <input type="date" id="dateOfBirth" name="dateOfBirth">
+                        </div>
+                        <div class="form-group">
+                            <label for="userType">Account Type</label>
+                            <select id="userType" name="userType">
+                                <option value="student">Student</option>
+                                <option value="mentor">Mentor</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Academic Information -->
+            <div class="edit-section">
+                <h2 class="section-title">Academic Information</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="studentId">Student ID</label>
+                        <input type="text" id="studentId" name="studentId">
+                    </div>
+                    <div class="form-group">
+                        <label for="university">University/Institution</label>
+                        <input type="text" id="university" name="university">
+                    </div>
+                    <div class="form-group">
+                        <label for="major">Major/Field of Study</label>
+                        <input type="text" id="major" name="major">
+                    </div>
+                    <div class="form-group">
+                        <label for="yearOfStudy">Year of Study</label>
+                        <select id="yearOfStudy" name="yearOfStudy">
+                            <option value="">Select Year</option>
+                            <option value="1st Year">1st Year</option>
+                            <option value="2nd Year">2nd Year</option>
+                            <option value="3rd Year">3rd Year</option>
+                            <option value="4th Year">4th Year</option>
+                            <option value="Graduate">Graduate</option>
+                            <option value="Postgraduate">Postgraduate</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="bio">Bio/About Me</label>
+                        <textarea id="bio" name="bio" placeholder="Tell us about yourself, your interests, goals, etc."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="edit-section">
+                <h2 class="section-title">Social Links</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="linkedin">LinkedIn Profile</label>
+                        <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/username">
+                    </div>
+                    <div class="form-group">
+                        <label for="github">GitHub Profile</label>
+                        <input type="url" id="github" name="github" placeholder="https://github.com/username">
+                    </div>
+                    <div class="form-group">
+                        <label for="portfolio">Portfolio Website</label>
+                        <input type="url" id="portfolio" name="portfolio" placeholder="https://yourwebsite.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="twitter">Twitter/X Profile</label>
+                        <input type="url" id="twitter" name="twitter" placeholder="https://twitter.com/username">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Change Password Section -->
+            <div class="edit-section">
+                <h2 class="section-title">Change Password</h2>
+                <div class="password-section">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="currentPassword">Current Password</label>
+                            <div class="password-toggle">
+                                <input type="password" id="currentPassword" name="currentPassword">
+                                <button type="button" class="password-toggle-btn" onclick="togglePassword('currentPassword')">👁️</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="newPassword">New Password</label>
+                            <div class="password-toggle">
+                                <input type="password" id="newPassword" name="newPassword">
+                                <button type="button" class="password-toggle-btn" onclick="togglePassword('newPassword')">👁️</button>
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="confirmPassword">Confirm New Password</label>
+                            <div class="password-toggle">
+                                <input type="password" id="confirmPassword" name="confirmPassword">
+                                <button type="button" class="password-toggle-btn" onclick="togglePassword('confirmPassword')">👁️</button>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="color: #7f8c8d; font-size: 12px; margin-top: 10px;">
+                        Leave password fields empty if you don't want to change your password.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="edit-section">
+                <div class="actions-section">
+                    <button type="button" class="btn btn-primary" onclick="saveProfile()">
+                        💾 Save Changes
+                    </button>
+                    <a href="profile.html" class="btn btn-secondary">
+                        ❌ Cancel
+                    </a>
+                    <button type="button" class="btn btn-danger" onclick="confirmDelete()">
+                        🗑️ Delete Account
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let originalProfileData = {};
+        let profilePictureFile = null;
+        let profilePictureChanged = false;
+
+        // Load user data when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadUserProfile();
+            setupProfilePictureUpload();
+        });
+
+        function setupProfilePictureUpload() {
+            const fileInput = document.getElementById('profilePictureInput');
+            fileInput.addEventListener('change', handleProfilePictureChange);
+        }
+
+        function handleProfilePictureChange(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            // Validate file size (5MB max)
+            if (file.size > 5 * 1024 * 1024) {
+                alert('File size must be less than 5MB');
+                return;
+            }
+
+            // Validate file type
+            if (!file.type.startsWith('image/')) {
+                alert('Please select an image file (JPG, PNG, GIF)');
+                return;
+            }
+
+            profilePictureFile = file;
+            profilePictureChanged = true;
+
+            // Show preview
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const previewImage = document.getElementById('previewImage');
+                const previewContainer = document.getElementById('previewContainer');
+                
+                previewImage.src = e.target.result;
+                previewContainer.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function removeProfilePicture() {
+            profilePictureFile = null;
+            profilePictureChanged = true;
+            
+            // Reset file input
+            document.getElementById('profilePictureInput').value = '';
+            
+            // Hide preview
+            document.getElementById('previewContainer').style.display = 'none';
+            
+            // Set current avatar to default
+            document.getElementById('currentAvatar').src = 'https://via.placeholder.com/120';
+        }
+
+        async function loadUserProfile() {
+            try {
+                const userData = localStorage.getItem('user_data');
+                const accessToken = localStorage.getItem('access_token');
+
+                if (!userData || !accessToken) {
+                    showError('No user data found. Please login again.');
+                    return;
+                }
+
+                const user = JSON.parse(userData);
+                
+                // Fetch fresh data from backend
+                try {
+                    const response = await fetch('http://127.0.0.1:8000/api/auth/profile/manage/', {
+                        headers: {
+                            'Authorization': `Bearer ${accessToken}`,
+                            'Content-Type': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        const freshData = await response.json();
+                        populateForm(freshData.user || user, freshData.profile);
+                    } else {
+                        populateForm(user);
+                    }
+                } catch (apiError) {
+                    console.warn('Failed to fetch fresh data, using cached data:', apiError);
+                    populateForm(user);
+                }
+
+            } catch (error) {
+                console.error('Error loading profile:', error);
+                showError('Error loading profile data.');
+            }
+        }
+
+        function populateForm(user, profile = null) {
+            // Store original data for comparison
+            originalProfileData = { user, profile };
+            
+            // Hide loading, show content
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('editContent').style.display = 'block';
+
+            // Profile picture
+            const avatarSrc = profile?.profile_picture || user.profile_picture || 'https://via.placeholder.com/120';
+            document.getElementById('currentAvatar').src = avatarSrc;
+
+            // Personal information
+            document.getElementById('firstName').value = user.first_name || '';
+            document.getElementById('lastName').value = user.last_name || '';
+            document.getElementById('email').value = user.email || '';
+            document.getElementById('phone').value = user.phone || '';
+            document.getElementById('dateOfBirth').value = profile?.date_of_birth || '';
+            document.getElementById('userType').value = user.user_type || 'student';
+
+            // Academic information
+            document.getElementById('studentId').value = profile?.student_id || '';
+            document.getElementById('university').value = profile?.university || '';
+            document.getElementById('major').value = profile?.major || '';
+            document.getElementById('yearOfStudy').value = profile?.year_of_study || '';
+            document.getElementById('bio').value = profile?.bio || '';
+
+            // Social links
+            document.getElementById('linkedin').value = profile?.linkedin || '';
+            document.getElementById('github').value = profile?.github || '';
+            document.getElementById('portfolio').value = profile?.portfolio || '';
+            document.getElementById('twitter').value = profile?.twitter || '';
+        }
+
+        async function saveProfile() {
+            const accessToken = localStorage.getItem('access_token');
+            if (!accessToken) {
+                showErrorMessage('Please login again to save changes.');
+                return;
+            }
+
+            try {
+                // Prepare form data
+                const formData = new FormData();
+                
+                // Add basic user data
+                formData.append('first_name', document.getElementById('firstName').value);
+                formData.append('last_name', document.getElementById('lastName').value);
+                formData.append('email', document.getElementById('email').value);
+                formData.append('phone', document.getElementById('phone').value);
+                formData.append('user_type', document.getElementById('userType').value);
+
+                // Add profile data
+                formData.append('date_of_birth', document.getElementById('dateOfBirth').value);
+                formData.append('student_id', document.getElementById('studentId').value);
+                formData.append('university', document.getElementById('university').value);
+                formData.append('major', document.getElementById('major').value);
+                formData.append('year_of_study', document.getElementById('yearOfStudy').value);
+                formData.append('bio', document.getElementById('bio').value);
+                formData.append('linkedin', document.getElementById('linkedin').value);
+                formData.append('github', document.getElementById('github').value);
+                formData.append('portfolio', document.getElementById('portfolio').value);
+                formData.append('twitter', document.getElementById('twitter').value);
+
+                // Add profile picture if changed
+                if (profilePictureChanged) {
+                    if (profilePictureFile) {
+                        formData.append('profile_picture', profilePictureFile);
+                    } else {
+                        formData.append('remove_profile_picture', 'true');
+                    }
+                }
+
+                // Add password change if provided
+                const currentPassword = document.getElementById('currentPassword').value;
+                const newPassword = document.getElementById('newPassword').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+
+                if (currentPassword || newPassword || confirmPassword) {
+                    if (!currentPassword) {
+                        showErrorMessage('Current password is required to change password.');
+                        return;
+                    }
+                    if (newPassword !== confirmPassword) {
+                        showErrorMessage('New passwords do not match.');
+                        return;
+                    }
+                    if (newPassword.length < 8) {
+                        showErrorMessage('New password must be at least 8 characters long.');
+                        return;
+                    }
+                    
+                    formData.append('current_password', currentPassword);
+                    formData.append('new_password', newPassword);
+                }
+
+                // Send update request
+                const response = await fetch('http://127.0.0.1:8000/api/auth/profile/update/', {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `Bearer ${accessToken}`
+                    },
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    showSuccessMessage('Profile updated successfully!');
+                    
+                    // Update localStorage with new data
+                    if (result.user) {
+                        localStorage.setItem('user_data', JSON.stringify(result.user));
+                    }
+                    
+                    // Clear password fields
+                    document.getElementById('currentPassword').value = '';
+                    document.getElementById('newPassword').value = '';
+                    document.getElementById('confirmPassword').value = '';
+                    
+                    // Reset profile picture change flag
+                    profilePictureChanged = false;
+                    profilePictureFile = null;
+                    document.getElementById('previewContainer').style.display = 'none';
+                    
+                    // Update current avatar if changed
+                    if (result.profile?.profile_picture) {
+                        document.getElementById('currentAvatar').src = result.profile.profile_picture;
+                    }
+                    
+                    // Redirect to profile page after 2 seconds
+                    setTimeout(() => {
+                        window.location.href = 'profile.html';
+                    }, 2000);
+                    
+                } else {
+                    showErrorMessage(result.error || result.message || 'Failed to update profile');
+                }
+
+            } catch (error) {
+                console.error('Error saving profile:', error);
+                showErrorMessage('Error saving profile. Please check your internet connection.');
+            }
+        }
+
+        function togglePassword(fieldId) {
+            const field = document.getElementById(fieldId);
+            const button = field.nextElementSibling;
+            
+            if (field.type === 'password') {
+                field.type = 'text';
+                button.textContent = '🙈';
+            } else {
+                field.type = 'password';
+                button.textContent = '👁️';
+            }
+        }
+
+        function confirmDelete() {
+            if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
+                window.location.href = 'profile.html#delete';
+            }
+        }
+
+        function showSuccessMessage(message) {
+            const successEl = document.getElementById('successMessage');
+            successEl.textContent = message;
+            successEl.style.display = 'block';
+            document.getElementById('errorMessage').style.display = 'none';
+            
+            // Scroll to top to show message
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showErrorMessage(message) {
+            const errorEl = document.getElementById('errorMessage');
+            errorEl.textContent = message;
+            errorEl.style.display = 'block';
+            document.getElementById('successMessage').style.display = 'none';
+            
+            // Scroll to top to show message
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showError(message) {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('error').style.display = 'block';
+            document.querySelector('#error p').textContent = message;
+        }
+
+        function logout() {
+            localStorage.removeItem('access_token');
+            localStorage.removeItem('refresh_token');
+            localStorage.removeItem('user_data');
+            window.location.href = 'auth.html';
+        }
+    </script>
+</body>
+</html>

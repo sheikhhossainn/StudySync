@@ -3,7 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="stylesheet" hre            });
+        });
+        
+        // Check if user is already logged in and redirect
+        async function checkIfAlreadyLoggedIn() {
+            const accessToken = localStorage.getItem('access_token');
+            const userData = localStorage.getItem('user_data');
+            
+            if (accessToken && userData) {
+                console.log('🔍 Checking if existing token is valid...');
+                
+                try {
+                    // Test the token with a simple API call
+                    const response = await fetch(`${window.StudySyncConfig.API_BASE_URL}/api/accounts/profile/`, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${accessToken}`,
+                            'Content-Type': 'application/json',
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        console.log('✅ Token is valid, redirecting to home...');
+                        showNotification('You are already logged in! Redirecting...', 'info');
+                        setTimeout(() => {
+                            window.location.href = 'index.html';
+                        }, 1000);
+                        return;
+                    } else {
+                        console.log('❌ Token is invalid, clearing storage...');
+                        localStorage.removeItem('access_token');
+                        localStorage.removeItem('refresh_token');
+                        localStorage.removeItem('user_data');
+                    }
+                } catch (error) {
+                    console.error('Error checking token validity:', error);
+                    // Don't clear storage on network error, just proceed with login
+                }
+            }
+        }
+        
+        // Initialize Google OAuth
+        function initializeGoogleOAuth() {
+            // Load Google Identity Services
+            const script = document.createElement('script');
+            script.src = 'https://accounts.google.com/gsi/client';
+            script.onload = function() {
+                if (window.google && window.google.accounts) {
+                    window.google.accounts.id.initialize({
+                        client_id: window.StudySyncConfig.GOOGLE_CLIENT_ID,
+                        callback: handleGoogleCallback,
+                        auto_select: false,
+                        cancel_on_tap_outside: true,
+                        ux_mode: 'popup',
+                        use_fedcm_for_prompt: false
+                    });
+                    
+                    // Add click handler to Google button
+                    const googleBtn = document.getElementById('googleSignIn');
+                    if (googleBtn) {
+                        googleBtn.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            showNotification('Initializing Google Sign-In...', 'info');
+                            
+                            try {
+                                window.google.accounts.id.prompt((notification) => {
+                                    console.log('Google prompt notification:', notification);
+                                    if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+                                        console.log('Google prompt not displayed, trying direct sign-in...');
+                                        // Fallback: Try direct OAuth flow
+                                        initiateGoogleOAuthFlow();
+                                    }
+                                });
+                            } catch (error) {
+                                console.error('Google prompt error:', error);
+                                showNotification('Google Sign-In initialization failed. Please try again.', 'error');
+                            }
+                        });
+                    }
+                }
+            };
+            script.onerror = function() {
+                showNotification('Failed to load Google Sign-In. Please check your internet connection.', 'error');
+            };
+            document.head.appendChild(script);
+        }
+        
+        // Fallback OAuth flow
+        function initiateGoogleOAuthFlow() {
+            const clientId = window.StudySyncConfig.GOOGLE_CLIENT_ID;
+            const redirectUri = encodeURIComponent(window.location.origin + '/login.html');
+            const scope = encodeURIComponent('openid email profile');
+            const responseType = 'code';
+            
+            const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?` +
+                `client_id=${clientId}&` +
+                `redirect_uri=${redirectUri}&` +
+                `scope=${scope}&` +
+                `response_type=${responseType}&` +
+                `access_type=offline&` +
+                `prompt=consent`;
+            
+            window.location.href = googleAuthUrl;
+        }
+        
+        // Handle Google OAuth callback
+        async function handleGoogleCallback(response) {
+            try {
+                showNotification('Processing Google authentication...', 'info');
+                console.log('Google credential received:', response);
+                
+                // Send the credential to backend
+                const loginResponse = await fetch(`${window.StudySyncConfig.API_BASE_URL}/api/accounts/auth/google/login/`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        credential: response.credential
+                    })
+                });
+                
+                const data = await loginResponse.json();
+                console.log('Backend response:', data);
+                
+                if (loginResponse.ok) {
+                    // Store tokens and user data
+                    if (data.access_token) {
+                        localStorage.setItem('access_token', data.access_token);
+                        localStorage.setItem('refresh_token', data.refresh_token);
+                        console.log('Google OAuth tokens stored successfully');
+                    } else {
+                        console.error('No access_token in response:', data);
+                        showNotification('Google login response missing tokens', 'error');
+                        return;
+                    }
+                    
+                    if (data.user) {
+                        // Ensure the user object has the profile data embedded
+                        const userData = {
+                            ...data.user,
+                            profile: data.profile || {
+                                profile_picture: data.user.profile_picture,
+                                student_id: data.user.student_id,
+                                university: data.user.institution,
+                                date_of_birth: data.user.date_of_birth
+                            }
+                        };
+                        localStorage.setItem('user_data', JSON.stringify(userData));
+                        console.log('Google OAuth user data stored:', userData);
+                    } else {
+                        console.error('No user data in response:', data);
+                        showNotification('Google login response missing user data', 'error');
+                        return;
+                    }
+                    
+                    showNotification('Google login successful! Redirecting...', 'success');
+                    
+                    // Redirect to home page
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 1500);
+                } else {
+                    console.error('Google login failed:', data);
+                    if (data.code === 'USER_NOT_FOUND') {
+                        showNotification('No account found with this Google email. Please sign up first or use a different login method.', 'error');
+                    } else {
+                        showNotification(data.error || data.message || 'Google login failed. Please try again.', 'error');
+                    }
+                }
+            } catch (error) {
+                console.error('Google login error:', error);
+                showNotification('Network error during Google login. Please try again.', 'error');
+            }
+        }
+        
+        // Notification functionssets/css/auth.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>StudySync - Login</title>
 </head>
@@ -99,5 +275,154 @@
     <script type="module" src="assets/js/oauth2-service.js"></script>
     <script type="module" src="assets/js/auth-oauth.js"></script>
     <script src="assets/js/auth.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script>
+        // Login form handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('loginForm');
+            
+            // Initialize Google OAuth
+            initializeGoogleOAuth();
+            
+            // Check if user is already logged in
+            checkIfAlreadyLoggedIn();
+            
+            if (loginForm) {
+                loginForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    const email = document.getElementById('email').value;
+                    const password = document.getElementById('password').value;
+                    
+                    if (!email || !password) {
+                        showNotification('Please fill in all fields', 'error');
+                        return;
+                    }
+                    
+                    try {
+                        showNotification('Logging in...', 'info');
+                        
+                        const response = await fetch(`${window.StudySyncConfig.API_BASE_URL}/api/accounts/auth/login/`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                email: email,
+                                password: password
+                            })
+                        });
+                        
+                        const data = await response.json();
+                        
+                        console.log('Login response status:', response.status);
+                        console.log('Login response data:', data);
+                        
+                        if (response.ok) {
+                            // Store tokens and user data
+                            if (data.tokens && data.tokens.access) {
+                                localStorage.setItem('access_token', data.tokens.access);
+                                localStorage.setItem('refresh_token', data.tokens.refresh);
+                                console.log('Tokens stored successfully');
+                            } else {
+                                console.error('No tokens in response:', data);
+                                showNotification('Login response missing tokens', 'error');
+                                return;
+                            }
+                            
+                            if (data.user) {
+                                localStorage.setItem('user_data', JSON.stringify(data.user));
+                                console.log('User data stored:', data.user);
+                            } else {
+                                console.error('No user data in response:', data);
+                                showNotification('Login response missing user data', 'error');
+                                return;
+                            }
+                            
+                            showNotification('Login successful! Redirecting...', 'success');
+                            
+                            // Redirect to home page after a brief delay
+                            setTimeout(() => {
+                                window.location.href = 'index.html';
+                            }, 1500);
+                        } else {
+                            console.error('Login failed:', response.status, data);
+                            showNotification(data.error || data.detail || 'Login failed. Please check your credentials.', 'error');
+                        }
+                    } catch (error) {
+                        console.error('Login error:', error);
+                        showNotification('Network error. Please try again.', 'error');
+                    }
+                });
+            }
+        });
+        
+        // Notification function
+        function showNotification(message, type = 'info') {
+            // Remove existing notifications
+            const existingNotifications = document.querySelectorAll('.notification');
+            existingNotifications.forEach(n => n.remove());
+            
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 15px 20px;
+                border-radius: 5px;
+                color: white;
+                font-weight: 500;
+                z-index: 10000;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                animation: slideIn 0.3s ease-out;
+            `;
+            
+            // Set background color based on type
+            switch(type) {
+                case 'success':
+                    notification.style.backgroundColor = '#10b981';
+                    break;
+                case 'error':
+                    notification.style.backgroundColor = '#ef4444';
+                    break;
+                case 'info':
+                    notification.style.backgroundColor = '#3b82f6';
+                    break;
+                default:
+                    notification.style.backgroundColor = '#6b7280';
+            }
+            
+            notification.innerHTML = `
+                <span>${message}</span>
+                <button style="background: none; border: none; color: white; font-size: 18px; margin-left: 15px; cursor: pointer;" onclick="this.parentElement.remove()">×</button>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.remove();
+                }
+            }, 5000);
+        }
+        
+        // Add CSS for animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>

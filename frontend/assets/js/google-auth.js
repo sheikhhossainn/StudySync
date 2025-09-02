@@ -76,7 +76,7 @@ async function authenticateWithGoogle(credential) {
     try {
         showLoading(true);
         
-        const response = await fetch(`${API_BASE_URL}/api/auth/auth/google/login/`, {
+        const response = await fetch(`${API_BASE_URL}/api/auth/auth/google/oauth/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

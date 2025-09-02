@@ -137,7 +137,7 @@ class ProfileManager {
             const formData = new FormData(document.getElementById('profileForm'));
             const profileData = Object.fromEntries(formData.entries());
 
-            const response = await fetch('/api/accounts/profile/manage/', {
+                            const response = await fetch('/api/auth/profile/', {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -190,7 +190,7 @@ class ProfileManager {
             const formData = new FormData();
             formData.append('profile_picture', file);
 
-            const response = await fetch('/api/accounts/profile/upload-picture/', {
+            const response = await fetch('/api/auth/profile/upload-picture/', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
@@ -243,7 +243,7 @@ class ProfileManager {
         try {
             this.showLoading('Deleting account...');
 
-            const response = await fetch('/api/accounts/account/delete/', {
+            const response = await fetch('/api/auth/account/delete/', {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
@@ -280,7 +280,7 @@ class ProfileManager {
         if (!username || username.length < 3) return;
 
         try {
-            const response = await fetch(`/api/accounts/check/username/?username=${encodeURIComponent(username)}`);
+            const response = await fetch(`/api/auth/check/username/?username=${encodeURIComponent(username)}`);
             const data = await response.json();
 
             const usernameStatus = document.getElementById('usernameStatus');
@@ -300,7 +300,7 @@ class ProfileManager {
         try {
             this.showLoading('Sending verification email...');
 
-            const response = await fetch('/api/accounts/verify/email/', {
+            const response = await fetch('/api/auth/verify/email/', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
@@ -327,7 +327,7 @@ class ProfileManager {
         try {
             this.showLoading('Sending verification SMS...');
 
-            const response = await fetch('/api/accounts/verify/phone/', {
+            const response = await fetch('/api/auth/verify/phone/', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
@@ -352,7 +352,7 @@ class ProfileManager {
 
     async loadDashboardData() {
         try {
-            const response = await fetch('/api/accounts/dashboard/data/', {
+            const response = await fetch('/api/auth/dashboard/data/', {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('access_token')}`
                 }

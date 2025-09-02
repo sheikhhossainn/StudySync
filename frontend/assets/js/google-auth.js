@@ -125,7 +125,7 @@ async function customLogin(email, password) {
     try {
         showLoading(true);
         
-        const response = await fetch(`${API_BASE_URL}/api/accounts/auth/login/`, {
+        const response = await fetch(`${API_BASE_URL}/api/auth/auth/login/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -172,7 +172,7 @@ async function customRegister(email, password, firstName, lastName) {
     try {
         showLoading(true);
         
-        const response = await fetch(`${API_BASE_URL}/api/accounts/auth/register/`, {
+        const response = await fetch(`${API_BASE_URL}/api/auth/auth/register/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -224,7 +224,7 @@ async function refreshToken() {
             throw new Error('No refresh token available');
         }
         
-        const response = await fetch(`${API_BASE_URL}/api/accounts/auth/refresh/`, {
+        const response = await fetch(`${API_BASE_URL}/api/auth/auth/refresh/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -262,7 +262,7 @@ async function logout() {
         const refreshToken = localStorage.getItem('refresh_token');
         
         if (refreshToken) {
-            await fetch(`${API_BASE_URL}/api/accounts/auth/logout/`, {
+            await fetch(`${API_BASE_URL}/api/auth/auth/logout/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

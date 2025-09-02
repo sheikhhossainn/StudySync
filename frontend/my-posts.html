@@ -5,6 +5,220 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/my-posts.css">
+    <title>My Posts - StudySync</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">StudySync</a>
+            <nav class="nav">
+                <a href="my-posts.html" class="nav-link active">My Posts</a>
+                <a href="mentorship.html" class="nav-link">Mentorship</a>
+                <a href="payment.html" class="nav-link">Payment</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <!-- Dynamic auth section - will be updated by shared-auth.js -->
+                <div id="navAuthSection">
+                    <a href="user-selection.html" class="btn btn-primary" id="loginBtn">Log in</a>
+                    <div class="user-avatar-dropdown" id="userAvatarSection" style="display: none;">
+                        <img id="navUserAvatar" src="https://via.placeholder.com/40/3b82f6/ffffff?text=U" alt="User Avatar" class="user-avatar" onclick="toggleDropdown()">
+                        <div id="userDropdown" class="dropdown-content">
+                            <a href="profile.html">👤 Profile Settings</a>
+                            <a href="#" onclick="logout()">🚪 Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="content-wrapper">
+                <aside class="sidebar">
+                    <div class="filter-group">
+                        <label for="status-filter">STATUS</label>
+                        <select id="status-filter" class="select">
+                            <option value="all">All</option>
+                            <option value="active">Active</option>
+                            <option value="completed">Completed</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="subject-filter">SUBJECT</label>
+                        <select id="subject-filter" class="select">
+                            <option value="all">All</option>
+                            <option value="mathematics">Mathematics</option>
+                            <option value="science">Science</option>
+                            <option value="english">English</option>
+                            <option value="history">History</option>
+                        </select>
+                    </div>
+
+                    <button class="btn btn-primary btn-full">Post a New Session</button>
+                </aside>
+
+                <div class="main-content">
+                    <div class="section-header">
+                        <h2 class="section-title">My Study Sessions</h2>
+                        <p class="section-subtitle">Manage your posted study sessions and track participation.</p>
+                    </div>
+
+                    <div class="session-list">
+                        <div class="session-card">
+                            <div class="user-avatar blue-avatar">
+                                <span>Me</span>
+                            </div>
+                            <div class="session-info">
+                                <h3 class="user-name">Your Session</h3>
+                                <p class="subject">JavaScript - Advanced Concepts</p>
+                                <p class="time-slot">Tomorrow, 6:00PM - 8:00PM</p>
+                                <span class="status-badge active">Active - 3 participants</span>
+                            </div>
+                            <div class="session-actions">
+                                <button class="btn btn-secondary">Edit</button>
+                                <button class="btn btn-primary">View Participants</button>
+                                <button class="btn btn-secondary">Delete</button>
+                            </div>
+                        </div>
+
+                        <div class="session-card">
+                            <div class="user-avatar blue-avatar">
+                                <span>Me</span>
+                            </div>
+                            <div class="session-info">
+                                <h3 class="user-name">Your Session</h3>
+                                <p class="subject">React.js Study Group</p>
+                                <p class="time-slot">Friday, 3:00PM - 5:00PM</p>
+                                <span class="status-badge active">Active - 2 participants</span>
+                            </div>
+                            <div class="session-actions">
+                                <button class="btn btn-secondary">Edit</button>
+                                <button class="btn btn-primary">View Participants</button>
+                                <button class="btn btn-secondary">Delete</button>
+                            </div>
+                        </div>
+
+                        <div class="session-card">
+                            <div class="user-avatar blue-avatar">
+                                <span>Me</span>
+                            </div>
+                            <div class="session-info">
+                                <h3 class="user-name">Your Session</h3>
+                                <p class="subject">Python Data Science Workshop</p>
+                                <p class="time-slot">Yesterday, 2:00PM - 4:00PM</p>
+                                <span class="status-badge completed">Completed - 5 participants</span>
+                            </div>
+                            <div class="session-actions">
+                                <button class="btn btn-secondary">View Details</button>
+                                <button class="btn btn-secondary">Feedback</button>
+                            </div>
+                        </div>
+
+                        <div class="session-card">
+                            <div class="user-avatar blue-avatar">
+                                <span>Me</span>
+                            </div>
+                            <div class="session-info">
+                                <h3 class="user-name">Your Session</h3>
+                                <p class="subject">Web Development Basics</p>
+                                <p class="time-slot">Last Week, 7:00PM - 9:00PM</p>
+                                <span class="status-badge completed">Completed - 4 participants</span>
+                            </div>
+                            <div class="session-actions">
+                                <button class="btn btn-secondary">View Details</button>
+                                <button class="btn btn-secondary">Feedback</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        // Load user data when page loads (copied from working profile page)
+        document.addEventListener('DOMContentLoaded', function() {
+            checkLoginStatus();
+        });
+
+        function checkLoginStatus() {
+            const accessToken = localStorage.getItem('access_token');
+            const userData = localStorage.getItem('user_data');
+            
+            const loginBtn = document.getElementById('loginBtn');
+            const userAvatarSection = document.getElementById('userAvatarSection');
+            
+            if (accessToken && userData) {
+                // User is logged in - show avatar dropdown
+                if (loginBtn) loginBtn.style.display = 'none';
+                if (userAvatarSection) userAvatarSection.style.display = 'block';
+                
+                // Load avatar using EXACT same logic as profile page
+                try {
+                    const user = JSON.parse(userData);
+                    updateNavbarAvatar(user, user.profile);
+                } catch (e) {
+                    console.error('Error parsing user data:', e);
+                }
+            } else {
+                // User is not logged in - show login button
+                if (loginBtn) loginBtn.style.display = 'inline-block';
+                if (userAvatarSection) userAvatarSection.style.display = 'none';
+            }
+        }
+
+        // EXACT same avatar logic as working profile page
+        function updateNavbarAvatar(user, profile = null) {
+            const firstName = user?.first_name || '';
+            const lastName = user?.last_name || '';
+            
+            // Update navbar avatar with smaller default (EXACT same as profile page)
+            const navDefaultAvatar = 'https://via.placeholder.com/40/3b82f6/ffffff?text=' + 
+                encodeURIComponent((firstName[0] || '') + (lastName[0] || ''));
+            const navAvatarSrc = profile?.profile_picture || user?.profile_picture || navDefaultAvatar;
+            
+            const navAvatar = document.getElementById('navUserAvatar');
+            if (navAvatar) {
+                navAvatar.src = navAvatarSrc;
+                console.log('✅ Avatar loaded:', navAvatarSrc);
+            }
+        }
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById("userDropdown");
+            if (dropdown) dropdown.classList.toggle("show");
+        }
+
+        function logout() {
+            localStorage.removeItem('access_token');
+            localStorage.removeItem('refresh_token');
+            localStorage.removeItem('user_data');
+            window.location.href = 'index.html';
+        }
+
+        // Close dropdown when clicking outside
+        window.onclick = function(event) {
+            if (!event.target.matches('.user-avatar')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- JavaScript for API integration -->
+    <script src="assets/js/my-posts.js"></script>
+</body>
+</html>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/my-posts.css">
     <link rel="stylesheet" href="assets/css/subscription.css">
     <title>My Posts - StudySync</title>
 </head>
@@ -22,7 +236,7 @@
                 <div id="navAuthSection">
                     <a href="user-selection.html" class="btn btn-primary" id="loginBtn">Log in</a>
                     <div class="user-avatar-dropdown" id="userAvatarSection" style="display: none;">
-                        <img id="navUserAvatar" src="https://via.placeholder.com/10/e2e8f0/64748b?text=U" alt="User Avatar" class="user-avatar" onclick="toggleDropdown()">
+                        <img id="navUserAvatar" src="https://via.placeholder.com/40/3b82f6/ffffff?text=U" alt="User Avatar" class="user-avatar" onclick="toggleDropdown()">
                         <div id="userDropdown" class="dropdown-content">
                             <a href="profile.html">👤 Profile Settings</a>
                             <a href="#" onclick="logout()">🚪 Logout</a>
@@ -69,7 +283,7 @@
 
                     <div class="session-list">
                         <div class="session-card">
-                            <div class="user-avatar blue-avatar">
+                            <div class="user-avatar-small blue-avatar">
                                 <span>Me</span>
                             </div>
                             <div class="session-info">
@@ -86,7 +300,7 @@
                         </div>
 
                         <div class="session-card">
-                            <div class="user-avatar blue-avatar">
+                            <div class="user-avatar-small blue-avatar">
                                 <span>Me</span>
                             </div>
                             <div class="session-info">
@@ -178,7 +392,7 @@
             const lastName = user?.last_name || '';
             
             // Update navbar avatar with smaller default (EXACT same as profile page)
-            const navDefaultAvatar = 'https://via.placeholder.com/10/e2e8f0/64748b?text=' + 
+            const navDefaultAvatar = 'https://via.placeholder.com/40/3b82f6/ffffff?text=' + 
                 encodeURIComponent((firstName[0] || '') + (lastName[0] || ''));
             const navAvatarSrc = profile?.profile_picture || user?.profile_picture || navDefaultAvatar;
             

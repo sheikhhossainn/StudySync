@@ -70,3 +70,4 @@ logs/
 # Temporary files
 *.tmp
 *.temp
+backend/logs/django.log

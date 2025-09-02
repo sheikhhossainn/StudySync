@@ -17,7 +17,7 @@ import json
 import logging
 
 from .models import User
-from .serializers import UserSerializer, UserRegistrationSerializer, UserProfileSerializer
+from .serializers import UserSerializer, UserRegistrationSerializer
 
 logger = logging.getLogger(__name__)
 
@@ -69,17 +69,9 @@ class ProfileView(APIView):
         try:
             user_data = UserSerializer(request.user).data
             
-            # Get or create user profile
-            if hasattr(request.user, 'userprofile'):
-                profile_data = UserProfileSerializer(request.user.userprofile).data
-            else:
-                from .models import UserProfile
-                profile = UserProfile.objects.create(user=request.user)
-                profile_data = UserProfileSerializer(profile).data
-            
             return Response({
                 'user': user_data,
-                'profile': profile_data
+                'completion_percentage': request.user.completion_percentage
             }, status=status.HTTP_200_OK)
             
         except Exception as e:
@@ -91,37 +83,25 @@ class ProfileView(APIView):
     def patch(self, request):
         """Update user profile"""
         try:
-            # Get or create user profile
-            if hasattr(request.user, 'userprofile'):
-                profile = request.user.userprofile
-            else:
-                from .models import UserProfile
-                profile = UserProfile.objects.create(user=request.user)
+            # Update all user fields directly
+            user_fields = ['first_name', 'last_name', 'email', 'phone', 'bio', 'location', 
+                          'gender', 'date_of_birth', 'student_id', 'institution', 'department',
+                          'year_of_study', 'skills', 'interests']
             
-            # Update user model fields
-            user_fields = ['first_name', 'last_name', 'email', 'phone_number', 'bio']
             for field in user_fields:
                 if field in request.data:
                     setattr(request.user, field, request.data[field])
             
             request.user.save()
             
-            # Update profile fields
-            profile_serializer = UserProfileSerializer(profile, data=request.data, partial=True)
-            if profile_serializer.is_valid():
-                profile_serializer.save()
-                
-                # Return updated data
-                user_data = UserSerializer(request.user).data
-                profile_data = UserProfileSerializer(profile).data
-                
-                return Response({
-                    'message': 'Profile updated successfully',
-                    'user': user_data,
-                    'profile': profile_data
-                }, status=status.HTTP_200_OK)
+            # Return updated data
+            user_data = UserSerializer(request.user).data
             
-            return Response(profile_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({
+                'message': 'Profile updated successfully',
+                'user': user_data,
+                'completion_percentage': request.user.completion_percentage
+            }, status=status.HTTP_200_OK)
             
         except Exception as e:
             logger.error(f"Profile update error for user {request.user.id}: {str(e)}")
@@ -182,22 +162,20 @@ def calculate_profile_completion(user):
         completed_fields += 1
     if user.email:
         completed_fields += 1
-    if user.phone_number:
+    if user.phone:
         completed_fields += 1
     if user.bio:
         completed_fields += 1
     
-    # Check profile fields
-    if hasattr(user, 'userprofile'):
-        profile = user.userprofile
-        if profile.institution:
-            completed_fields += 1
-        if profile.expertise:
-            completed_fields += 1
-        if profile.social_linkedin:
-            completed_fields += 1
-        if profile.social_github:
-            completed_fields += 1
+    # Check profile fields (now part of User model)
+    if user.institution:
+        completed_fields += 1
+    if user.student_id:
+        completed_fields += 1
+    if user.skills:
+        completed_fields += 1
+    if user.interests:
+        completed_fields += 1
         if user.profile_picture:
             completed_fields += 1
     

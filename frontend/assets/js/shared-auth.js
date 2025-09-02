@@ -85,7 +85,7 @@ function setAvatarImage(avatarImg, user) {
     const lastName = user?.last_name || '';
     
     // Create default based on initials (same as profile page)
-    const navDefaultAvatar = 'https://via.placeholder.com/10/e2e8f0/64748b?text=' + 
+    const navDefaultAvatar = 'https://via.placeholder.com/40/3b82f6/ffffff?text=' + 
         encodeURIComponent((firstName[0] || '') + (lastName[0] || ''));
     
     // Check for profile picture in the exact same way as profile page
@@ -142,7 +142,7 @@ function createAvatarSection() {
     // Create avatar dropdown HTML
     const avatarHTML = `
         <div class="user-avatar-dropdown" id="userAvatarSection">
-            <img id="navUserAvatar" src="https://via.placeholder.com/10/e2e8f0/64748b?text=U" alt="User Avatar" class="user-avatar" onclick="toggleDropdown()">
+            <img id="navUserAvatar" src="https://via.placeholder.com/40/3b82f6/ffffff?text=U" alt="User Avatar" class="user-avatar" onclick="toggleDropdown()">
             <div id="userDropdown" class="dropdown-content">
                 <a href="profile.html">👤 Profile Settings</a>
                 <a href="#" onclick="logout()">🚪 Logout</a>

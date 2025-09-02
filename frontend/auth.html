@@ -1170,23 +1170,22 @@
                 
                 if (response.ok) {
                     // Store tokens and combined user data
-                    localStorage.setItem('access_token', result.access_token);
-                    localStorage.setItem('refresh_token', result.refresh_token);
+                    localStorage.setItem('access_token', result.tokens.access);
+                    localStorage.setItem('refresh_token', result.tokens.refresh);
                     
-                    // Combine user and profile data for consistent access
+                    // Combine user and combined user data for consistent access
                     const combinedUserData = {
-                        ...result.user,
-                        profile: result.profile
+                        ...result.user
                     };
                     localStorage.setItem('user_data', JSON.stringify(combinedUserData));
                     
                     showMessage('Account created successfully! Welcome to StudySync!', 'success');
                     
-                    // Redirect to dashboard page
+                    // Redirect to profile settings page
                     setTimeout(() => {
-                        const dashboardUrl = 'dashboard.html';
-                        console.log('🔄 Redirecting to:', dashboardUrl);
-                        window.location.href = dashboardUrl;
+                        const profileUrl = 'profile.html';
+                        console.log('🔄 Redirecting to:', profileUrl);
+                        window.location.href = profileUrl;
                     }, 2000);
                 } else {
                     throw new Error(result.error || result.message || 'Account creation failed');

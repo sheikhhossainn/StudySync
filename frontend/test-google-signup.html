@@ -57,7 +57,7 @@
             try {
                 console.log('🚀 Testing backend API...');
                 
-                const response = await fetch('http://127.0.0.1:8000/api/accounts/auth/google/oauth/', {
+                const response = await fetch('http://127.0.0.1:8000/api/auth/auth/google/oauth/', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -120,7 +120,7 @@
             // Test 2: Check if backend is accessible
             setTimeout(async () => {
                 try {
-                    const response = await fetch('http://127.0.0.1:8000/api/accounts/auth/google/oauth/', {
+                    const response = await fetch('http://127.0.0.1:8000/api/auth/auth/google/oauth/', {
                         method: 'OPTIONS'
                     });
                     console.log('✅ Backend server accessible:', response.status);

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudySync Admin Portal</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        .admin-portal-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 2rem;
+        }
+        
+        .admin-portal-card {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .admin-portal-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
+            background-size: 300% 100%;
+            animation: rainbow 3s ease infinite;
+        }
+        
+        @keyframes rainbow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .admin-logo {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .admin-title {
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        .admin-subtitle {
+            color: #718096;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .access-code-section {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 2px dashed #cbd5e0;
+        }
+        
+        .access-code-label {
+            color: #4a5568;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .access-code-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        .access-code-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .access-methods {
+            display: grid;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .access-method {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+        
+        .access-method:hover {
+            background: #e8f4fd;
+            border-color: #667eea;
+        }
+        
+        .method-title {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .method-description {
+            color: #718096;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .method-url {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            word-break: break-all;
+        }
+        
+        .btn-admin-access {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+        }
+        
+        .btn-admin-access:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .security-notice {
+            background: #fff5f5;
+            border: 1px solid #fed7d7;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .security-notice-title {
+            color: #c53030;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .security-notice-text {
+            color: #742a2a;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #5a67d8;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-portal-container">
+        <div class="admin-portal-card">
+            <div class="admin-logo">🔐</div>
+            <h1 class="admin-title">StudySync Admin Portal</h1>
+            <p class="admin-subtitle">Secure Administrative Access</p>
+            
+            <div class="access-code-section">
+                <div class="access-code-label">🔑 Enter Access Code</div>
+                <input type="password" id="accessCode" class="access-code-input" placeholder="••••••••••••" maxlength="12">
+            </div>
+            
+            <button class="btn-admin-access" onclick="verifyAccess()">
+                🚀 Access Admin Dashboard
+            </button>
+            
+            <div class="access-methods">
+                <div class="access-method">
+                    <div class="method-title">
+                        🌐 Method 1: Special URL
+                    </div>
+                    <div class="method-description">
+                        Access admin dashboard via special URL path
+                    </div>
+                    <div class="method-url">
+                        http://localhost:3000/admin-panel/secure-access
+                    </div>
+                </div>
+                
+                <div class="access-method">
+                    <div class="method-title">
+                        🔌 Method 2: Admin Port
+                    </div>
+                    <div class="method-description">
+                        Dedicated admin port for secure access
+                    </div>
+                    <div class="method-url">
+                        http://localhost:8080/admin-dashboard.html
+                    </div>
+                </div>
+                
+                <div class="access-method">
+                    <div class="method-title">
+                        🔐 Method 3: Secure Subdomain
+                    </div>
+                    <div class="method-description">
+                        Admin-only subdomain for enhanced security
+                    </div>
+                    <div class="method-url">
+                        https://admin.studysync.localhost:3000/dashboard
+                    </div>
+                </div>
+                
+                <div class="access-method">
+                    <div class="method-title">
+                        🎯 Method 4: Direct Portal Access
+                    </div>
+                    <div class="method-description">
+                        Current page with access code verification
+                    </div>
+                    <div class="method-url">
+                        http://localhost:3000/admin-portal.html
+                    </div>
+                </div>
+            </div>
+            
+            <div class="security-notice">
+                <div class="security-notice-title">
+                    ⚠️ Security Notice
+                </div>
+                <div class="security-notice-text">
+                    Admin access is restricted to authorized personnel only. All access attempts are logged and monitored.
+                </div>
+            </div>
+            
+            <a href="index.html" class="back-link">← Return to StudySync</a>
+        </div>
+    </div>
+
+    <script>
+        // Special access codes for different admin levels
+        const ACCESS_CODES = {
+            'ADMIN2024SS': { level: 'super_admin', redirect: 'admin-dashboard.html' },
+            'MANAGER2024': { level: 'admin', redirect: 'admin-dashboard.html' },
+            'DEVTEST123': { level: 'dev_admin', redirect: 'admin-dashboard.html' },
+            'STUDYSYNC24': { level: 'admin', redirect: 'admin-dashboard.html' }
+        };
+
+        // Verify access code
+        function verifyAccess() {
+            const code = document.getElementById('accessCode').value.toUpperCase();
+            
+            if (ACCESS_CODES[code]) {
+                const adminData = ACCESS_CODES[code];
+                
+                // Set admin session data
+                localStorage.setItem('userRole', 'admin');
+                localStorage.setItem('adminLevel', adminData.level);
+                localStorage.setItem('authToken', `admin-${Date.now()}`);
+                localStorage.setItem('adminAccess', 'granted');
+                localStorage.setItem('accessTime', new Date().toISOString());
+                
+                // Success animation and redirect
+                showSuccessMessage();
+                setTimeout(() => {
+                    window.location.href = adminData.redirect;
+                }, 2000);
+                
+            } else {
+                showErrorMessage();
+            }
+        }
+        
+        // Show success message
+        function showSuccessMessage() {
+            const button = document.querySelector('.btn-admin-access');
+            button.innerHTML = '✅ Access Granted! Redirecting...';
+            button.style.background = 'linear-gradient(135deg, #48bb78, #38a169)';
+            button.disabled = true;
+            
+            // Add success animation
+            document.querySelector('.admin-portal-card').style.animation = 'successPulse 0.5s ease';
+        }
+        
+        // Show error message
+        function showErrorMessage() {
+            const input = document.getElementById('accessCode');
+            const button = document.querySelector('.btn-admin-access');
+            
+            input.style.borderColor = '#e53e3e';
+            input.style.animation = 'shake 0.5s ease';
+            
+            button.innerHTML = '❌ Invalid Access Code';
+            button.style.background = 'linear-gradient(135deg, #e53e3e, #c53030)';
+            
+            setTimeout(() => {
+                button.innerHTML = '🚀 Access Admin Dashboard';
+                button.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+                input.style.borderColor = '#e2e8f0';
+                input.style.animation = '';
+                input.value = '';
+            }, 2000);
+        }
+        
+        // Enter key support
+        document.getElementById('accessCode').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                verifyAccess();
+            }
+        });
+        
+        // Add CSS animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                25% { transform: translateX(-5px); }
+                75% { transform: translateX(5px); }
+            }
+            
+            @keyframes successPulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Console message for developers
+        console.log(`
+        🔐 StudySync Admin Portal
+        ========================
+        
+        Admin Access Codes:
+        • ADMIN2024SS (Super Admin)
+        • MANAGER2024 (Admin)
+        • DEVTEST123 (Dev Admin)
+        • STUDYSYNC24 (Admin)
+        
+        Special URLs:
+        • http://localhost:3000/admin-panel/secure-access
+        • http://localhost:8080/admin-dashboard.html
+        • https://admin.studysync.localhost:3000/dashboard
+        • http://localhost:3000/admin-portal.html
+        
+        Security Level: High
+        Access Logging: Enabled
+        `);
+    </script>
+</body>
+</html>

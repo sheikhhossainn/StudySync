@@ -28,3 +28,41 @@ const StudySyncConfig = {
 
 // Export for use in other files
 window.StudySyncConfig = StudySyncConfig;
+
+// Authentication and User Management Functions
+function checkUserRole() {
+    const userRole = localStorage.getItem('userRole');
+    const adminLink = document.getElementById('adminLink');
+    
+    // Show admin link only for admin users
+    if (adminLink) {
+        if (userRole === 'admin') {
+            adminLink.style.display = 'inline-block';
+        } else {
+            adminLink.style.display = 'none';
+        }
+    }
+}
+
+// Initialize role check when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    checkUserRole();
+});
+
+// Function to set user role (for testing purposes)
+function setUserRole(role) {
+    localStorage.setItem('userRole', role);
+    checkUserRole();
+}
+
+// Function to simulate admin login (for testing)
+function loginAsAdmin() {
+    setUserRole('admin');
+    console.log('Logged in as admin');
+}
+
+// Function to simulate regular user login (for testing)
+function loginAsUser() {
+    setUserRole('user');
+    console.log('Logged in as regular user');
+}

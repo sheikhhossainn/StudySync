@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudySync Admin - No Code Required</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        .instant-access-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+        }
+        
+        .access-card {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+        
+        .access-title {
+            color: #2d3748;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        
+        .access-subtitle {
+            color: #718096;
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+        }
+        
+        .instant-button {
+            background: linear-gradient(135deg, #48bb78, #38a169);
+            color: white;
+            border: none;
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 15px rgba(72, 187, 120, 0.3);
+        }
+        
+        .instant-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(72, 187, 120, 0.4);
+        }
+        
+        .codes-section {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+        
+        .codes-title {
+            color: #2d3748;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            text-align: center;
+        }
+        
+        .code-item {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .code-item:hover {
+            border-color: #667eea;
+            background: #e8f4fd;
+        }
+        
+        .code-text {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .code-description {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        
+        .highlight-box {
+            background: #e6fffa;
+            border: 2px solid #81e6d9;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .highlight-title {
+            color: #234e52;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .highlight-text {
+            color: #285e61;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        
+        .copy-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-left: 1rem;
+            transition: background 0.3s ease;
+        }
+        
+        .copy-button:hover {
+            background: #5a67d8;
+        }
+    </style>
+</head>
+<body>
+    <div class="instant-access-container">
+        <div class="access-card">
+            <h1 class="access-title">🔓 Instant Admin Access</h1>
+            <p class="access-subtitle">No codes required - Just click below!</p>
+            
+            <button class="instant-button" onclick="instantAdminAccess()">
+                🚀 Open Admin Dashboard Now
+            </button>
+            
+            <div class="highlight-box">
+                <div class="highlight-title">
+                    ⚡ Super Easy Access
+                </div>
+                <div class="highlight-text">
+                    Click the green button above for immediate admin access. No passwords, no codes, no hassle!
+                </div>
+            </div>
+            
+            <div class="codes-section">
+                <div class="codes-title">
+                    🔑 Access Codes (If Needed)
+                </div>
+                
+                <div class="code-item" onclick="copyCode('ADMIN2024SS')">
+                    <div class="code-text">ADMIN2024SS</div>
+                    <div class="code-description">Super Admin - Full access to everything</div>
+                </div>
+                
+                <div class="code-item" onclick="copyCode('STUDYSYNC24')">
+                    <div class="code-text">STUDYSYNC24</div>
+                    <div class="code-description">Standard Admin - Basic admin features</div>
+                </div>
+                
+                <div class="code-item" onclick="copyCode('MANAGER2024')">
+                    <div class="code-text">MANAGER2024</div>
+                    <div class="code-description">Manager Level - User management</div>
+                </div>
+                
+                <div class="code-item" onclick="copyCode('DEVTEST123')">
+                    <div class="code-text">DEVTEST123</div>
+                    <div class="code-description">Developer - Testing and development</div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <div class="highlight-title">
+                    📝 Quick Instructions
+                </div>
+                <div class="highlight-text">
+                    <strong>Method 1:</strong> Click "Open Admin Dashboard Now" (easiest)<br>
+                    <strong>Method 2:</strong> Open admin-portal.html and use any code above<br>
+                    <strong>Method 3:</strong> Double-click start-admin-simple.bat
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function instantAdminAccess() {
+            // Set admin credentials immediately
+            localStorage.setItem('userRole', 'admin');
+            localStorage.setItem('adminLevel', 'super_admin');
+            localStorage.setItem('authToken', `instant-admin-${Date.now()}`);
+            localStorage.setItem('adminAccess', 'granted');
+            localStorage.setItem('accessTime', new Date().toISOString());
+            localStorage.setItem('accessMethod', 'instant');
+            
+            // Show success message
+            const button = document.querySelector('.instant-button');
+            button.innerHTML = '✅ Admin Access Granted! Opening Dashboard...';
+            button.style.background = 'linear-gradient(135deg, #48bb78, #38a169)';
+            
+            // Open admin dashboard
+            setTimeout(() => {
+                window.location.href = 'admin-dashboard.html';
+            }, 1500);
+            
+            // Show notification
+            alert('🎉 Admin access granted! You now have full admin privileges.');
+        }
+        
+        function copyCode(code) {
+            // Copy to clipboard
+            navigator.clipboard.writeText(code).then(() => {
+                alert(`✅ Access code "${code}" copied to clipboard!`);
+            }).catch(() => {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = code;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert(`✅ Access code "${code}" copied!`);
+            });
+        }
+        
+        // Display helpful information
+        console.log(`
+🔓 StudySync Instant Admin Access
+================================
+
+Access Codes Available:
+• ADMIN2024SS - Super Admin (Full Access)
+• STUDYSYNC24 - Standard Admin 
+• MANAGER2024 - Manager Level
+• DEVTEST123 - Developer Access
+
+Quick Access Methods:
+1. Click "Open Admin Dashboard Now" button
+2. Use any access code in admin-portal.html
+3. Run start-admin-simple.bat script
+
+Current Status: Ready for instant access!
+        `);
+        
+        // Auto-show access codes in console for easy copying
+        window.addEventListener('DOMContentLoaded', function() {
+            console.log('🔑 Access Codes:');
+            console.log('Super Admin: ADMIN2024SS');
+            console.log('Standard: STUDYSYNC24');
+            console.log('Manager: MANAGER2024');
+            console.log('Developer: DEVTEST123');
+        });
+    </script>
+</body>
+</html>

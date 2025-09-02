@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - StudySync</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        .admin-login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+        }
+        
+        .admin-login-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.25);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        
+        .admin-login-card h2 {
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #4a5568;
+            font-weight: 500;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .btn-admin-login {
+            width: 100%;
+            padding: 0.75rem;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .btn-admin-login:hover {
+            background: #5a67d8;
+        }
+        
+        .demo-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .demo-section h3 {
+            color: #4a5568;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .demo-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-direction: column;
+        }
+        
+        .btn-demo {
+            padding: 0.5rem;
+            border: 1px solid #e2e8f0;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-demo:hover {
+            background: #f7fafc;
+            border-color: #cbd5e0;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-login-container">
+        <div class="admin-login-card">
+            <h2>🔐 Admin Access</h2>
+            
+            <form id="adminLoginForm">
+                <div class="form-group">
+                    <label for="adminEmail">Email</label>
+                    <input type="email" id="adminEmail" placeholder="admin@studysync.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="adminPassword">Password</label>
+                    <input type="password" id="adminPassword" placeholder="Enter admin password" required>
+                </div>
+                
+                <button type="submit" class="btn-admin-login">
+                    Access Admin Dashboard
+                </button>
+            </form>
+            
+            <div class="demo-section">
+                <h3>🚀 Quick Demo Access</h3>
+                <div class="demo-buttons">
+                    <button class="btn-demo" onclick="demoAdminLogin()">
+                        👑 Login as Admin
+                    </button>
+                    <button class="btn-demo" onclick="demoUserLogin()">
+                        👤 Login as Regular User
+                    </button>
+                </div>
+                <p style="font-size: 0.8rem; color: #718096; margin-top: 0.5rem;">
+                    Demo accounts for testing purposes
+                </p>
+            </div>
+            
+            <a href="index.html" class="back-link">← Back to StudySync</a>
+        </div>
+    </div>
+
+    <script src="assets/js/config.js"></script>
+    <script>
+        // Handle admin login form
+        document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('adminEmail').value;
+            const password = document.getElementById('adminPassword').value;
+            
+            // Simple demo authentication (in real app, this would be server-side)
+            if (email === 'admin@studysync.com' && password === 'admin123') {
+                localStorage.setItem('userRole', 'admin');
+                localStorage.setItem('authToken', 'demo-admin-token');
+                localStorage.setItem('userEmail', email);
+                
+                alert('Admin login successful!');
+                window.location.href = 'admin-dashboard.html';
+            } else {
+                alert('Invalid admin credentials!');
+            }
+        });
+        
+        // Demo login functions
+        function demoAdminLogin() {
+            localStorage.setItem('userRole', 'admin');
+            localStorage.setItem('authToken', 'demo-admin-token');
+            localStorage.setItem('userEmail', 'admin@studysync.com');
+            
+            alert('Logged in as Admin! Check the navigation menu.');
+            window.location.href = 'index.html';
+        }
+        
+        function demoUserLogin() {
+            localStorage.setItem('userRole', 'user');
+            localStorage.setItem('authToken', 'demo-user-token');
+            localStorage.setItem('userEmail', 'user@studysync.com');
+            
+            alert('Logged in as Regular User! Admin link will be hidden.');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

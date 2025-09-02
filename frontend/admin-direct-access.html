@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudySync Admin - Direct Access</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        .direct-access-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+        }
+        
+        .access-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+        
+        .access-title {
+            color: #2d3748;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        .access-subtitle {
+            color: #718096;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .access-methods {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .access-method {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: left;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .access-method:hover {
+            background: #e8f4fd;
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+        
+        .method-title {
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .method-description {
+            color: #718096;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        
+        .method-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .method-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .security-note {
+            background: #e6fffa;
+            border: 1px solid #81e6d9;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 2rem;
+            text-align: left;
+        }
+        
+        .security-note-title {
+            color: #234e52;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .security-note-text {
+            color: #285e61;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        .code-display {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <div class="direct-access-container">
+        <div class="access-card">
+            <h1 class="access-title">🚀 StudySync Admin Access</h1>
+            <p class="access-subtitle">Choose your preferred access method (No server required)</p>
+            
+            <div class="access-methods">
+                <div class="access-method" onclick="openDirectAdmin()">
+                    <div class="method-title">
+                        🎯 Method 1: Direct File Access
+                    </div>
+                    <div class="method-description">
+                        Open admin dashboard directly from your file system. Works without any server setup.
+                    </div>
+                    <button class="method-button">
+                        Open Admin Dashboard Directly
+                    </button>
+                </div>
+                
+                <div class="access-method" onclick="openWithCode()">
+                    <div class="method-title">
+                        🔐 Method 2: Access Code Portal
+                    </div>
+                    <div class="method-description">
+                        Use secure access codes for authentication. Enhanced security with role verification.
+                    </div>
+                    <button class="method-button">
+                        Open Access Code Portal
+                    </button>
+                </div>
+                
+                <div class="access-method" onclick="setupPythonServer()">
+                    <div class="method-title">
+                        🐍 Method 3: Python Server (if available)
+                    </div>
+                    <div class="method-description">
+                        If Python is installed, run a simple local server for full functionality.
+                    </div>
+                    <button class="method-button">
+                        Setup Python Server
+                    </button>
+                </div>
+                
+                <div class="access-method" onclick="openVSCode()">
+                    <div class="method-title">
+                        💻 Method 4: VS Code Live Server
+                    </div>
+                    <div class="method-description">
+                        If you have VS Code with Live Server extension, use it for development.
+                    </div>
+                    <button class="method-button">
+                        Instructions for VS Code
+                    </button>
+                </div>
+            </div>
+            
+            <div class="security-note">
+                <div class="security-note-title">
+                    🔑 Admin Access Codes
+                </div>
+                <div class="security-note-text">
+                    <strong>Available Access Codes:</strong><br>
+                    • <code>ADMIN2024SS</code> - Super Admin Access<br>
+                    • <code>MANAGER2024</code> - Manager Level<br>
+                    • <code>DEVTEST123</code> - Developer Access<br>
+                    • <code>STUDYSYNC24</code> - Standard Admin<br><br>
+                    <strong>Note:</strong> Some features may be limited when opening files directly without a server.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openDirectAdmin() {
+            // Set admin role immediately
+            localStorage.setItem('userRole', 'admin');
+            localStorage.setItem('adminLevel', 'super_admin');
+            localStorage.setItem('authToken', `direct-admin-${Date.now()}`);
+            localStorage.setItem('adminAccess', 'granted');
+            
+            // Open admin dashboard directly
+            window.open('admin-dashboard.html', '_blank');
+            
+            alert('✅ Admin access granted! Dashboard opened in new tab.');
+        }
+        
+        function openWithCode() {
+            // Open access code portal
+            window.open('admin-portal.html', '_blank');
+        }
+        
+        function setupPythonServer() {
+            const instructions = `
+🐍 Python Server Setup Instructions:
+
+1. Open Command Prompt (cmd) or PowerShell
+2. Navigate to your project folder:
+   cd "C:\\Users\\Usha_Personal_Laptop\\Desktop\\Vs all Code\\StudySync\\frontend"
+
+3. Start Python server:
+   python -m http.server 3000
+
+4. Open browser and go to:
+   http://localhost:3000/admin-portal.html
+
+5. Use access code: ADMIN2024SS
+
+Alternative (if you have Python 2):
+   python -m SimpleHTTPServer 3000
+            `;
+            
+            alert(instructions);
+            
+            // Try to detect if Python is available
+            if (window.location.protocol === 'file:') {
+                const confirmation = confirm('Would you like to copy the Python command to clipboard?');
+                if (confirmation) {
+                    const command = 'python -m http.server 3000';
+                    navigator.clipboard.writeText(command).then(() => {
+                        alert('✅ Command copied to clipboard! Paste it in your terminal.');
+                    }).catch(() => {
+                        console.log('Python command:', command);
+                    });
+                }
+            }
+        }
+        
+        function openVSCode() {
+            const instructions = `
+💻 VS Code Live Server Instructions:
+
+1. Open VS Code
+2. Install "Live Server" extension (if not installed)
+3. Right-click on index.html or admin-portal.html
+4. Select "Open with Live Server"
+5. Your browser will open automatically
+6. For admin access, navigate to /admin-portal.html
+7. Use access code: ADMIN2024SS
+
+Alternative VS Code method:
+1. Open terminal in VS Code (Ctrl + \`)
+2. Run: npx live-server --port=3000
+3. Open: http://localhost:3000/admin-portal.html
+            `;
+            
+            alert(instructions);
+        }
+        
+        // Auto-detect current environment
+        window.addEventListener('DOMContentLoaded', function() {
+            if (window.location.protocol === 'file:') {
+                console.log('📁 Running from file system - some features may be limited');
+            } else {
+                console.log('🌐 Running on server - full functionality available');
+            }
+            
+            // Add helpful console messages
+            console.log(`
+🔐 StudySync Admin Access Helper
+==============================
+
+Quick Admin Access:
+1. Click "Direct File Access" button above
+2. Or use access code: ADMIN2024SS
+
+Current Environment: ${window.location.protocol === 'file:' ? 'File System' : 'Server'}
+            `);
+        });
+    </script>
+</body>
+</html>

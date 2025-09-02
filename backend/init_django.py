@@ -20,7 +20,7 @@ django.setup()
 
 def create_sample_data():
     """Create sample data for testing"""
-    from accounts.models import User, UserProfile
+    from accounts.models import User
     from django.contrib.auth.hashers import make_password
     
     # Create sample users
@@ -44,19 +44,20 @@ def create_sample_data():
     ]
     
     for user_data in users_data:
+        # Add profile fields directly to user_data
+        user_data.update({
+            'bio': f"Sample user for testing",
+            'skills': ['JavaScript', 'Python', 'Math'],
+            'institution': 'Test University',
+            'student_id': f"STU00{len(users_data)}",
+        })
+        
         user, created = User.objects.get_or_create(
             email=user_data['email'],
             defaults=user_data
         )
         
         if created:
-            # Create user profile
-            UserProfile.objects.create(
-                user=user,
-                bio=f"Sample {user.user_type} user for testing",
-                subjects_of_interest=['JavaScript', 'Python', 'Math'],
-                expertise_level='intermediate'
-            )
             print(f"Created user: {user.email}")
         else:
             print(f"User already exists: {user.email}")

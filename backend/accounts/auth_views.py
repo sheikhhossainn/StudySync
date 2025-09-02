@@ -12,7 +12,7 @@ from google.oauth2 import id_token
 from django.conf import settings
 import requests as http_requests
 import json
-from .models import User as CustomUser, Student, Mentor
+from .models import User as CustomUser
 from .serializers import UserSerializer
 
 
@@ -93,20 +93,20 @@ def google_oauth_login(request):
                 is_active=True
             )
             
-            # Create user profile based on user type
+            
+            # Update user profile fields directly (single table design)
             try:
                 if user.user_type == 'student':
-                    profile, created = Student.objects.get_or_create(
-                        user=user,
-                        defaults={'name': f'{first_name} {last_name}', 'institution_name': 'Not specified', 'field_of_study': 'Not specified'}
-                    )
+                    if not user.institution:
+                        user.institution = 'Not specified'
+                    if not user.department:
+                        user.department = 'Not specified'
                 elif user.user_type == 'mentor':
-                    profile, created = Mentor.objects.get_or_create(
-                        user=user,
-                        defaults={'name': f'{first_name} {last_name}', 'job_role': 'Not specified', 'organization_name': 'Not specified'}
-                    )
+                    if not user.bio:
+                        user.bio = f'Mentor - {first_name} {last_name}'
+                user.save()
             except Exception as e:
-                pass  # Profile creation is optional
+                pass  # Profile update is optional
         
         # Generate JWT tokens
         tokens = get_tokens_for_user(user)
@@ -231,20 +231,19 @@ def custom_register(request):
             is_active=True
         )
         
-        # Create user profile based on user type
+        # Update user profile fields directly (single table design)
         try:
             if user.user_type == 'student':
-                profile, created = Student.objects.get_or_create(
-                    user=user,
-                    defaults={'name': f'{first_name} {last_name}', 'institution_name': 'Not specified', 'field_of_study': 'Not specified'}
-                )
+                if not user.institution:
+                    user.institution = 'Not specified'
+                if not user.department:
+                    user.department = 'Not specified'
             elif user.user_type == 'mentor':
-                profile, created = Mentor.objects.get_or_create(
-                    user=user,
-                    defaults={'name': f'{first_name} {last_name}', 'job_role': 'Not specified', 'organization_name': 'Not specified'}
-                )
+                if not user.bio:
+                    user.bio = f'Mentor - {first_name} {last_name}'
+            user.save()
         except Exception as e:
-            pass  # Profile creation is optional
+            pass  # Profile update is optional
         
         # Generate JWT tokens
         tokens = get_tokens_for_user(user)

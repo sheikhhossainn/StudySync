@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import Post, JoinRequest, Message
-from accounts.models import User, Student, Mentor
+from accounts.models import User
 
 
 class UserBasicSerializer(serializers.ModelSerializer):
@@ -12,10 +12,9 @@ class UserBasicSerializer(serializers.ModelSerializer):
         fields = ['id', 'email', 'user_type', 'name']
     
     def get_name(self, obj):
-        if obj.user_type == 'student' and hasattr(obj, 'student_profile'):
-            return obj.student_profile.name
-        elif obj.user_type == 'mentor' and hasattr(obj, 'mentor_profile'):
-            return obj.mentor_profile.name
+        # With single User model, just use first_name + last_name
+        if obj.first_name and obj.last_name:
+            return f"{obj.first_name} {obj.last_name}"
         return obj.username
 
 
@@ -32,10 +31,9 @@ class PostSerializer(serializers.ModelSerializer):
         read_only_fields = ['id', 'user', 'view_count', 'created_at', 'updated_at']
     
     def get_author_name(self, obj):
-        if obj.user.user_type == 'student' and hasattr(obj.user, 'student_profile'):
-            return obj.user.student_profile.name
-        elif obj.user.user_type == 'mentor' and hasattr(obj.user, 'mentor_profile'):
-            return obj.user.mentor_profile.name
+        # With single User model, just use first_name + last_name
+        if obj.user.first_name and obj.user.last_name:
+            return f"{obj.user.first_name} {obj.user.last_name}"
         return obj.user.username
     
     def get_total_requests(self, obj):

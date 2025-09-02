@@ -1,51 +1,42 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import User, UserProfile
+from .models import User
 
 
 @admin.register(User)
 class CustomUserAdmin(UserAdmin):
-    list_display = ('username', 'email', 'first_name', 'last_name', 'is_active', 'date_joined')
-    list_filter = ('is_active', 'is_staff', 'is_verified', 'is_premium', 'date_joined')
-    search_fields = ('username', 'email', 'first_name', 'last_name', 'phone')
+    list_display = ('username', 'email', 'first_name', 'last_name', 'institution', 'student_id', 'is_active', 'date_joined')
+    list_filter = ('is_active', 'is_staff', 'is_verified', 'is_premium', 'institution', 'gender', 'date_joined')
+    search_fields = ('username', 'email', 'first_name', 'last_name', 'phone', 'student_id', 'institution')
     
     fieldsets = UserAdmin.fieldsets + (
-        ('Additional Info', {
+        ('Profile Information', {
             'fields': (
                 'phone', 
+                'profile_picture',
+                'bio',
+                'date_of_birth',
+                'gender',
+                'student_id',
+                'institution',
+                'department',
+                'year_of_study',
+                'skills',
+                'interests',
+                'location',
+                'timezone',
+                'language_preference'
+            )
+        }),
+        ('Account Status', {
+            'fields': (
                 'is_verified', 
+                'email_verified',
+                'phone_verified',
+                'profile_completed',
                 'is_premium',
                 'premium_expires_at',
                 'uuid'
             )
         }),
-    )
-
-
-@admin.register(UserProfile)
-class UserProfileAdmin(admin.ModelAdmin):
-    list_display = ('user', 'university', 'major', 'year_of_study', 'created_at')
-    list_filter = ('university', 'major', 'created_at', 'updated_at')
-    search_fields = ('user__username', 'user__email', 'university', 'major')
-    readonly_fields = ('created_at', 'updated_at')
-    
-    fieldsets = (
-        ('User Information', {
-            'fields': ('user',)
-        }),
-        ('Academic Info', {
-            'fields': ('university', 'major', 'year_of_study', 'gpa')
-        }),
-        ('Personal Info', {
-            'fields': ('bio', 'profile_picture', 'location', 'timezone'),
-            'classes': ('collapse',)
-        }),
-        ('Preferences', {
-            'fields': ('study_preferences',),
-            'classes': ('collapse',)
-        }),
-        ('Timestamps', {
-            'fields': ('created_at', 'updated_at'),
-            'classes': ('collapse',)
-        })
     )

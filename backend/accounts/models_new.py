@@ -25,7 +25,6 @@ class User(AbstractUser):
     # Primary fields (inherited from AbstractUser: username, email, first_name, last_name, password, is_active, is_staff, is_superuser, date_joined, last_login)
     id = models.AutoField(primary_key=True)
     uuid = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)
-    email = models.EmailField(unique=True)  # Override to make email unique since it's our USERNAME_FIELD
     phone = models.CharField(max_length=20, blank=True, null=True)
     
     # Profile Information (merged from UserProfile table)

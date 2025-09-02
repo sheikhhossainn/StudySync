@@ -269,7 +269,7 @@ class AuthManager {
             console.log('📤 Sending signup data to backend:', signupData);
 
             // Use the dynamic OAuth signup endpoint
-            const response = await fetch('http://127.0.0.1:8000/api/accounts/auth/google/oauth/', {
+            const response = await fetch('http://127.0.0.1:8000/api/auth/auth/google/oauth/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -830,7 +830,7 @@ class AuthManager {
     async completeGoogleLogin(googleUser) {
         try {
             // Use existing login endpoint
-            const response = await fetch('/api/accounts/auth/login/', {
+            const response = await fetch('/api/auth/auth/login/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -867,7 +867,7 @@ class AuthManager {
 
     async checkUserExists(email) {
         try {
-            const response = await fetch(`http://127.0.0.1:8000/api/accounts/check/email/?email=${encodeURIComponent(email)}`);
+            const response = await fetch(`http://127.0.0.1:8000/api/auth/check/email/?email=${encodeURIComponent(email)}`);
             const data = await response.json();
             return data.exists;
         } catch (error) {

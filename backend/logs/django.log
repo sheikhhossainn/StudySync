@@ -1115,3 +1115,2276 @@ WARNING 2025-09-02 01:51:10,245 log 8764 13260 Unauthorized: /api/auth/profile/m
 WARNING 2025-09-02 01:51:10,245 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
 WARNING 2025-09-02 01:51:10,637 log 8764 13260 Unauthorized: /api/auth/profile/manage/
 WARNING 2025-09-02 01:51:10,637 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:51:11,187 log 8764 13260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:51:11,188 basehttp 8764 13260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:51:22,423 log 8764 1540 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:51:22,424 basehttp 8764 1540 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:51:23,151 log 8764 1540 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:51:23,152 basehttp 8764 1540 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:53:02,054 log 8764 19932 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:53:02,055 basehttp 8764 19932 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:53:02,410 log 8764 19932 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:53:02,411 basehttp 8764 19932 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:53:02,816 log 8764 19932 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:53:02,816 basehttp 8764 19932 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:53:03,229 log 8764 19932 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:53:03,230 basehttp 8764 19932 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:53:03,640 log 8764 19932 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:53:03,641 basehttp 8764 19932 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:53:03,999 log 8764 19932 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:53:03,999 basehttp 8764 19932 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:53:04,420 log 8764 19932 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:53:04,421 basehttp 8764 19932 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:53:04,813 log 8764 19932 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:53:04,814 basehttp 8764 19932 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:53:05,234 log 8764 19932 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:53:05,235 basehttp 8764 19932 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:53:05,616 log 8764 19932 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:53:05,617 basehttp 8764 19932 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:53:06,033 log 8764 19932 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:53:06,034 basehttp 8764 19932 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:53:06,428 log 8764 19932 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:53:06,428 basehttp 8764 19932 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:53:06,881 log 8764 19932 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:53:06,882 basehttp 8764 19932 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:53:07,385 log 8764 17756 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:53:07,385 basehttp 8764 17756 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:54:10,609 log 8764 13416 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:54:10,610 basehttp 8764 13416 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:55:00,762 log 8764 272 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:55:00,763 basehttp 8764 272 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:55:07,349 log 8764 11664 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:55:07,350 basehttp 8764 11664 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:55:08,922 log 8764 11664 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:55:08,923 basehttp 8764 11664 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:55:22,300 log 8764 1408 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:55:22,301 basehttp 8764 1408 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:56:40,856 log 8764 11616 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:56:40,857 basehttp 8764 11616 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:56:48,348 log 8764 12792 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:56:48,349 basehttp 8764 12792 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:57:07,437 log 8764 17724 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:57:07,438 basehttp 8764 17724 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:57:08,156 log 8764 17724 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:57:08,156 basehttp 8764 17724 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:57:08,489 log 8764 17724 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:57:08,490 basehttp 8764 17724 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:57:08,881 log 8764 17724 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:57:08,882 basehttp 8764 17724 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:57:09,280 log 8764 17724 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:57:09,281 basehttp 8764 17724 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:57:09,690 log 8764 17724 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:57:09,691 basehttp 8764 17724 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:57:10,117 log 8764 17724 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:57:10,117 basehttp 8764 17724 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:57:11,037 log 8764 17724 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:57:11,037 basehttp 8764 17724 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:58:17,250 log 8764 3512 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:58:17,252 basehttp 8764 3512 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:58:17,439 log 8764 3512 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 01:58:17,440 basehttp 8764 3512 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 01:58:37,122 log 8764 9132 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:58:37,124 basehttp 8764 9132 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:58:37,272 log 8764 9132 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 01:58:37,273 basehttp 8764 9132 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 01:59:00,245 log 8764 4796 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:59:00,246 basehttp 8764 4796 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:59:00,409 log 8764 4796 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 01:59:00,410 basehttp 8764 4796 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 01:59:07,716 log 8764 4796 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:59:07,716 basehttp 8764 4796 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:59:07,882 log 8764 4796 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 01:59:07,883 basehttp 8764 4796 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 01:59:40,023 log 8764 17796 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 01:59:40,025 basehttp 8764 17796 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 01:59:40,178 log 8764 17796 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 01:59:40,179 basehttp 8764 17796 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:01:07,719 log 8764 13404 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:01:07,720 basehttp 8764 13404 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:01:07,908 log 8764 13404 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:01:07,909 basehttp 8764 13404 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:02:40,403 log 8764 13404 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:02:40,404 basehttp 8764 13404 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:02:40,479 log 8764 13404 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:02:40,480 basehttp 8764 13404 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:03:07,546 log 8764 5536 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:03:07,547 basehttp 8764 5536 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:03:07,668 log 8764 5536 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:03:07,668 basehttp 8764 5536 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:05:07,967 log 8764 5536 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:05:07,968 basehttp 8764 5536 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:05:08,156 log 8764 5536 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:05:08,157 basehttp 8764 5536 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:07:07,932 log 8764 9684 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:07:07,934 basehttp 8764 9684 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:07:08,022 log 8764 9684 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:07:08,023 basehttp 8764 9684 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+INFO 2025-09-02 02:08:48,864 basehttp 8764 19464 "OPTIONS /api/auth/profile/manage/ HTTP/1.1" 200 0
+WARNING 2025-09-02 02:08:49,028 log 8764 19464 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:08:49,029 basehttp 8764 19464 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:08:49,175 log 8764 19464 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:08:49,177 basehttp 8764 19464 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:09:07,739 log 8764 18256 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:09:07,740 basehttp 8764 18256 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:09:07,908 log 8764 18256 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:09:07,909 basehttp 8764 18256 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:10:15,420 log 8764 18272 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:10:15,422 basehttp 8764 18272 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:10:15,578 log 8764 18272 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:10:15,578 basehttp 8764 18272 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:10:41,649 log 8764 12984 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:10:41,650 basehttp 8764 12984 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:10:41,828 log 8764 12984 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:10:41,829 basehttp 8764 12984 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:11:07,732 log 8764 10976 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:11:07,733 basehttp 8764 10976 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:11:07,896 log 8764 10976 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:11:07,896 basehttp 8764 10976 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:11:11,703 log 8764 10976 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:11:11,704 basehttp 8764 10976 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:11:11,900 log 8764 10976 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:11:11,901 basehttp 8764 10976 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:11:23,522 log 8764 10976 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:11:23,522 basehttp 8764 10976 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:11:23,641 log 8764 10976 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:11:23,642 basehttp 8764 10976 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:11:42,028 log 8764 10976 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:11:42,029 basehttp 8764 10976 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:11:42,212 log 8764 10976 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:11:42,213 basehttp 8764 10976 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:12:25,118 log 8764 10976 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:12:25,118 basehttp 8764 10976 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:12:25,307 log 8764 10976 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:12:25,308 basehttp 8764 10976 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:13:08,058 log 8764 10976 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:13:08,059 basehttp 8764 10976 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:13:08,221 log 8764 10976 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:13:08,221 basehttp 8764 10976 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:15:08,024 log 8764 12244 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:15:08,025 basehttp 8764 12244 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:15:08,173 log 8764 12244 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:15:08,174 basehttp 8764 12244 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:17:07,796 log 8764 12244 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:17:07,797 basehttp 8764 12244 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:17:07,940 log 8764 12244 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:17:07,941 basehttp 8764 12244 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:19:08,211 log 8764 12244 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:19:08,213 basehttp 8764 12244 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:19:08,343 log 8764 12244 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:19:08,344 basehttp 8764 12244 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:21:08,214 log 8764 12244 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:21:08,215 basehttp 8764 12244 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:21:08,352 log 8764 12244 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:21:08,353 basehttp 8764 12244 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:23:08,180 log 8764 12244 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:23:08,181 basehttp 8764 12244 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:23:08,361 log 8764 12244 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:23:08,362 basehttp 8764 12244 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:23:38,765 log 8764 12244 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:23:38,766 basehttp 8764 12244 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:23:38,923 log 8764 12244 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:23:38,924 basehttp 8764 12244 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:24:15,283 log 8764 3768 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:24:15,284 basehttp 8764 3768 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:24:15,375 log 8764 3768 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:24:15,376 basehttp 8764 3768 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:24:23,981 log 8764 3768 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:24:23,982 basehttp 8764 3768 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:24:24,146 log 8764 3768 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:24:24,146 basehttp 8764 3768 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:24:46,782 log 8764 11496 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:24:46,783 basehttp 8764 11496 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+INFO 2025-09-02 02:24:46,822 basehttp 8764 11496 "OPTIONS /api/auth/token/refresh/ HTTP/1.1" 200 0
+WARNING 2025-09-02 02:24:46,841 log 8764 11496 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:24:46,842 basehttp 8764 11496 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:24:56,215 log 8764 5012 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:24:56,216 basehttp 8764 5012 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:24:56,412 log 8764 5012 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:24:56,412 basehttp 8764 5012 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:25:03,162 log 8764 17580 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:25:03,163 basehttp 8764 17580 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:25:03,364 log 8764 17580 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:25:03,365 basehttp 8764 17580 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:25:07,775 log 8764 17580 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:25:07,776 basehttp 8764 17580 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:25:07,951 log 8764 17580 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:25:07,951 basehttp 8764 17580 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:25:13,066 log 8764 18388 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:25:13,066 basehttp 8764 18388 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:25:13,205 log 8764 18388 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:25:13,206 basehttp 8764 18388 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:25:19,276 log 8764 18388 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:25:19,277 basehttp 8764 18388 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:25:19,452 log 8764 18388 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:25:19,453 basehttp 8764 18388 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:25:26,820 log 8764 18388 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:25:26,820 basehttp 8764 18388 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:25:27,002 log 8764 18388 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:25:27,003 basehttp 8764 18388 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:25:54,729 log 8764 3268 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:25:54,730 basehttp 8764 3268 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:25:54,890 log 8764 3268 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:25:54,891 basehttp 8764 3268 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:26:16,874 log 8764 17844 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:26:16,875 basehttp 8764 17844 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:26:16,917 log 8764 17844 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:26:16,918 basehttp 8764 17844 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+INFO 2025-09-02 02:26:28,769 basehttp 8764 20116 "OPTIONS /api/auth/account/delete/ HTTP/1.1" 200 0
+WARNING 2025-09-02 02:26:28,862 log 8764 20116 Unauthorized: /api/auth/account/delete/
+WARNING 2025-09-02 02:26:28,862 basehttp 8764 20116 "DELETE /api/auth/account/delete/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:26:28,876 log 8764 20116 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:26:28,877 basehttp 8764 20116 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+INFO 2025-09-02 02:30:01,144 dynamic_views 8764 20036 Received Google OAuth request: {'credential': 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjJkN2VkMzM4YzBmMTQ1N2IyMTRhMjc0YjVlMGU2NjdiNDRhNDJkZGUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMDYxOTg4MDQ0NTM5LTB2cTNoM2ZrMDh0anM5bmNnNjNvZXR1ZGd2dDBvbnU4LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiMTA2MTk4ODA0NDUzOS0wdnEzaDNmazA4dGpzOW5jZzYzb2V0dWRndnQwb251OC5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjExMzI1Nzg5MjM3OTA0OTY2ODMzOSIsImVtYWlsIjoiaHVtYWlyYXVzaGE5ODJAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTc1Njc1ODI0NCwibmFtZSI6Ikh1bWFpcmEgSGFiaWIgVXNoYSIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NKRlo2TVRNR1UwVTk5OTUxUnhUc3NzWXJ0N0o3MWN1LTk3OE9ZaEF4RzZ6bGhhWDhQWD1zOTYtYyIsImdpdmVuX25hbWUiOiJIdW1haXJhIEhhYmliIiwiZmFtaWx5X25hbWUiOiJVc2hhIiwiaWF0IjoxNzU2NzU4NTQ0LCJleHAiOjE3NTY3NjIxNDQsImp0aSI6ImRmMDRjNWNlNGE1OTdlZTE5Njk0MjBjYTA5ODNlYWU0ZjY1MzRjZjYifQ.uJDsEKhQllBr0SycXQ-TkIhZ9i3-Af15v5BXYaKXjKAQT-pGr8AFJJHS1QTSscPwKnGuTDqOG4o-bIRv0zlDUd6e0a1RJUnM9rPDDdoVlJ8VkJV1GVV3zy5lgUDsvurSU7OEOFY5aPnZRMgSqepb7TCNTDAiwWMvbuw6NkxfOBK56dQdJk3Axsjpe8I2I7xNNm3GsRtatv0Cpd5mmGUVKFNt3E_j30zSwnGrU7QcCKAbbqWpFa5y49zldsPDBADLR6iNT6qAxKiEKYclBPdxhyBM6Cf538XXOp_HyoIPvF-bwOX1_29SbCvNNYraKjC2YP83TzR2k2QkzHDaLm-d7g', 'email': 'humairausha982@gmail.com', 'name': 'Humaira Habib Usha', 'google_id': '113257892379049668339', 'profile_picture': 'https://lh3.googleusercontent.com/a/ACg8ocJFZ6MTMGU0U99951RxTsssYrt7J71cu-978OYhAxG6zlhaX8PX=s96-c', 'user_type': 'student', 'first_name': 'Humaira', 'last_name': 'Habib Usha', 'student_id': '2023-1-60-022', 'organization_name': 'East West University', 'date_of_birth': '2003-09-30', 'phone_number': '01795616746', 'extracted_full_name': 'Humaira Habib Usha', 'ocr_data': {'studentIdFile': {'fullName': 'Humaira Habib Usha', 'firstName': 'Humaira', 'lastName': 'Habib Usha', 'studentId': '2023-1-60-022', 'idNumber': '2023-1-60-022'}}}
+INFO 2025-09-02 02:30:01,947 dynamic_views 8764 20036 Google OAuth signup successful for humairausha982@gmail.com
+INFO 2025-09-02 02:30:02,016 basehttp 8764 20036 "POST /api/auth/auth/google/oauth/ HTTP/1.1" 200 1641
+WARNING 2025-09-02 02:30:04,262 log 8764 20036 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:30:04,263 basehttp 8764 20036 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:30:04,291 log 8764 20036 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:30:04,292 basehttp 8764 20036 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:30:18,053 log 8764 20036 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:30:18,054 basehttp 8764 20036 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:30:18,073 log 8764 20036 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:30:18,074 basehttp 8764 20036 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:30:30,438 log 8764 20036 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:30:30,438 basehttp 8764 20036 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:30:30,463 log 8764 20036 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:30:30,464 basehttp 8764 20036 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:31:07,530 log 8764 11276 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:31:07,530 basehttp 8764 11276 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:31:07,566 log 8764 11276 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:31:07,567 basehttp 8764 11276 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:33:07,712 log 8764 10448 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:33:07,713 basehttp 8764 10448 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:33:07,795 log 8764 10448 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:33:07,796 basehttp 8764 10448 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:35:07,548 log 8764 7260 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:35:07,549 basehttp 8764 7260 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:35:07,584 log 8764 7260 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:35:07,585 basehttp 8764 7260 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:37:07,713 log 8764 14892 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:37:07,714 basehttp 8764 14892 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:37:07,737 log 8764 14892 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:37:07,738 basehttp 8764 14892 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:38:21,837 log 8764 1640 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:38:21,837 basehttp 8764 1640 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:38:21,946 log 8764 1640 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:38:21,947 basehttp 8764 1640 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:38:32,096 log 8764 15372 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:38:32,097 basehttp 8764 15372 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:38:32,137 log 8764 15372 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:38:32,137 basehttp 8764 15372 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:39:07,684 log 8764 5664 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:39:07,685 basehttp 8764 5664 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:39:07,803 log 8764 5664 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:39:07,805 basehttp 8764 5664 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:39:08,852 log 8764 5664 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:39:08,853 basehttp 8764 5664 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:39:08,891 log 8764 5664 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:39:08,892 basehttp 8764 5664 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+INFO 2025-09-02 02:39:08,988 autoreload 8764 16868 D:\Coding\StudySync\backend\accounts\models.py changed, reloading.
+INFO 2025-09-02 02:39:11,837 autoreload 5264 15016 Watching for file changes with StatReloader
+INFO 2025-09-02 02:39:16,223 autoreload 5264 15016 D:\Coding\StudySync\backend\accounts\models.py changed, reloading.
+INFO 2025-09-02 02:39:17,488 autoreload 14052 19796 Watching for file changes with StatReloader
+INFO 2025-09-02 02:39:24,903 autoreload 14052 19796 D:\Coding\StudySync\backend\accounts\serializers.py changed, reloading.
+INFO 2025-09-02 02:39:26,256 autoreload 18628 9184 Watching for file changes with StatReloader
+INFO 2025-09-02 02:39:33,782 autoreload 18628 9184 D:\Coding\StudySync\backend\accounts\dynamic_views.py changed, reloading.
+INFO 2025-09-02 02:39:35,940 autoreload 10468 736 Watching for file changes with StatReloader
+INFO 2025-09-02 02:39:41,729 autoreload 10468 736 D:\Coding\StudySync\backend\accounts\dynamic_views.py changed, reloading.
+INFO 2025-09-02 02:39:43,467 autoreload 17976 19508 Watching for file changes with StatReloader
+INFO 2025-09-02 02:39:51,084 autoreload 17976 19508 D:\Coding\StudySync\backend\accounts\dynamic_views.py changed, reloading.
+INFO 2025-09-02 02:39:52,258 autoreload 13516 4856 Watching for file changes with StatReloader
+INFO 2025-09-02 02:40:46,156 autoreload 13516 4856 D:\Coding\StudySync\backend\accounts\admin.py changed, reloading.
+INFO 2025-09-02 02:40:47,396 autoreload 19988 10308 Watching for file changes with StatReloader
+WARNING 2025-09-02 02:40:48,673 log 19988 10704 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:40:48,674 basehttp 19988 10704 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:40:48,694 log 19988 10704 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:40:48,694 basehttp 19988 10704 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:40:52,088 log 19988 13744 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:40:52,088 basehttp 19988 13744 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:40:52,135 log 19988 13744 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:40:52,136 basehttp 19988 13744 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+INFO 2025-09-02 02:40:52,712 autoreload 19988 10308 D:\Coding\StudySync\backend\accounts\admin.py changed, reloading.
+INFO 2025-09-02 02:40:54,056 autoreload 19488 4232 Watching for file changes with StatReloader
+WARNING 2025-09-02 02:40:54,934 log 19488 5784 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:40:54,935 basehttp 19488 5784 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:40:54,953 log 19488 5784 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:40:54,953 basehttp 19488 5784 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:41:02,849 log 19488 19396 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:41:02,850 basehttp 19488 19396 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:41:02,901 log 19488 19396 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:41:02,902 basehttp 19488 19396 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:41:07,619 log 19488 19396 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:41:07,621 basehttp 19488 19396 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:41:07,658 log 19488 19396 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:41:07,659 basehttp 19488 19396 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:41:15,818 log 19488 11708 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:41:15,819 basehttp 19488 11708 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:41:15,856 log 19488 11708 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:41:15,858 basehttp 19488 11708 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:42:26,847 log 19488 17336 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:42:26,847 basehttp 19488 17336 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:42:27,009 log 19488 17336 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:42:27,010 basehttp 19488 17336 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:42:36,591 log 19488 2196 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:42:36,593 basehttp 19488 2196 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:42:36,630 log 19488 2196 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:42:36,631 basehttp 19488 2196 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:42:37,450 log 19488 2196 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:42:37,452 basehttp 19488 2196 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:42:37,506 log 19488 2196 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:42:37,507 basehttp 19488 2196 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:42:53,845 log 19488 2196 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:42:53,846 basehttp 19488 2196 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:42:53,896 log 19488 2196 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:42:53,897 basehttp 19488 2196 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:43:07,552 log 19488 2196 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:43:07,553 basehttp 19488 2196 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:43:07,590 log 19488 2196 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:43:07,591 basehttp 19488 2196 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:43:08,774 log 19488 2196 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:43:08,775 basehttp 19488 2196 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:43:08,821 log 19488 2196 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:43:08,822 basehttp 19488 2196 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:43:09,183 log 19488 2196 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:43:09,184 basehttp 19488 2196 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:43:09,259 log 19488 2196 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:43:09,260 basehttp 19488 2196 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:43:17,983 log 19488 10904 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:43:17,984 basehttp 19488 10904 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:43:18,052 log 19488 10904 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:43:18,053 basehttp 19488 10904 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:43:27,536 log 19488 8716 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:43:27,538 basehttp 19488 8716 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:43:27,596 log 19488 8716 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:43:27,597 basehttp 19488 8716 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:43:28,114 log 19488 8716 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:43:28,115 basehttp 19488 8716 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:43:28,200 log 19488 8716 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:43:28,201 basehttp 19488 8716 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:43:37,558 log 19488 17396 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:43:37,558 basehttp 19488 17396 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:43:37,579 log 19488 17396 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:43:37,580 basehttp 19488 17396 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:43:52,346 log 19488 17396 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:43:52,347 basehttp 19488 17396 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:43:52,379 log 19488 17396 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:43:52,380 basehttp 19488 17396 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:43:52,972 log 19488 17396 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:43:52,973 basehttp 19488 17396 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:43:53,016 log 19488 17396 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:43:53,017 basehttp 19488 17396 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:44:27,802 log 19488 7916 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:44:27,803 basehttp 19488 7916 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:44:27,921 log 19488 7916 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:44:27,923 basehttp 19488 7916 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:44:41,453 log 19488 9684 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:44:41,454 basehttp 19488 9684 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:44:41,496 log 19488 9684 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:44:41,496 basehttp 19488 9684 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:44:50,958 log 19488 16764 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:44:50,958 basehttp 19488 16764 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:44:50,976 log 19488 16764 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:44:50,977 basehttp 19488 16764 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:44:59,013 log 19488 16764 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:44:59,014 basehttp 19488 16764 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:44:59,058 log 19488 16764 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:44:59,060 basehttp 19488 16764 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:45:04,762 log 19488 17908 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:45:04,763 basehttp 19488 17908 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:45:04,828 log 19488 17908 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:45:04,829 basehttp 19488 17908 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:45:07,665 log 19488 17908 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:45:07,666 basehttp 19488 17908 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:45:07,683 log 19488 17908 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:45:07,684 basehttp 19488 17908 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:45:09,621 log 19488 17908 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:45:09,621 basehttp 19488 17908 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:45:09,666 log 19488 17908 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:45:09,667 basehttp 19488 17908 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:45:10,339 log 19488 17908 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:45:10,340 basehttp 19488 17908 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:45:10,365 log 19488 17908 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:45:10,366 basehttp 19488 17908 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:45:19,604 log 19488 18692 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:45:19,605 basehttp 19488 18692 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:45:19,648 log 19488 18692 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:45:19,649 basehttp 19488 18692 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:45:20,066 log 19488 18692 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:45:20,066 basehttp 19488 18692 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:45:20,083 log 19488 18692 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:45:20,084 basehttp 19488 18692 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:45:20,471 log 19488 18692 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:45:20,471 basehttp 19488 18692 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:45:20,489 log 19488 18692 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:45:20,489 basehttp 19488 18692 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:45:20,750 log 19488 18692 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:45:20,751 basehttp 19488 18692 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:45:20,786 log 19488 18692 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:45:20,787 basehttp 19488 18692 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:45:21,161 log 19488 18692 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:45:21,162 basehttp 19488 18692 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:45:21,196 log 19488 18692 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:45:21,197 basehttp 19488 18692 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:45:21,558 log 19488 18692 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:45:21,559 basehttp 19488 18692 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:45:21,590 log 19488 18692 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:45:21,591 basehttp 19488 18692 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:45:21,952 log 19488 18692 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:45:21,953 basehttp 19488 18692 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:45:21,988 log 19488 18692 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:45:21,989 basehttp 19488 18692 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:45:22,364 log 19488 18692 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:45:22,365 basehttp 19488 18692 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:45:22,397 log 19488 18692 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:45:22,398 basehttp 19488 18692 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:45:22,753 log 19488 18692 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:45:22,753 basehttp 19488 18692 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:45:22,783 log 19488 18692 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:45:22,783 basehttp 19488 18692 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:45:23,148 log 19488 18692 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:45:23,149 basehttp 19488 18692 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:45:23,187 log 19488 18692 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:45:23,187 basehttp 19488 18692 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:45:23,571 log 19488 18692 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:45:23,572 basehttp 19488 18692 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:45:23,604 log 19488 18692 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:45:23,605 basehttp 19488 18692 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:45:23,976 log 19488 18692 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:45:23,977 basehttp 19488 18692 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:45:24,036 log 19488 18692 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:45:24,036 basehttp 19488 18692 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:45:24,414 log 19488 18692 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:45:24,415 basehttp 19488 18692 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:45:24,456 log 19488 18692 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:45:24,456 basehttp 19488 18692 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:45:24,907 log 19488 18692 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:45:24,908 basehttp 19488 18692 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:45:24,971 log 19488 18692 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:45:24,973 basehttp 19488 18692 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:45:25,623 log 19488 18692 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:45:25,624 basehttp 19488 18692 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:45:25,640 log 19488 18692 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:45:25,641 basehttp 19488 18692 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+INFO 2025-09-02 02:46:19,133 autoreload 19488 4232 D:\Coding\StudySync\backend\accounts\serializers.py changed, reloading.
+INFO 2025-09-02 02:46:21,272 autoreload 11300 15088 Watching for file changes with StatReloader
+WARNING 2025-09-02 02:46:22,307 log 11300 7788 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:46:22,307 basehttp 11300 7788 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:46:22,327 log 11300 7788 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:46:22,328 basehttp 11300 7788 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:46:45,222 log 11300 3272 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:46:45,223 basehttp 11300 3272 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:46:45,251 log 11300 3272 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:46:45,251 basehttp 11300 3272 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+INFO 2025-09-02 02:46:45,626 autoreload 11300 15088 D:\Coding\StudySync\backend\accounts\migrations\0002_rename_university_to_institution.py changed, reloading.
+INFO 2025-09-02 02:46:46,973 autoreload 19092 1168 Watching for file changes with StatReloader
+WARNING 2025-09-02 02:46:47,819 log 19092 8784 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:46:47,820 basehttp 19092 8784 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:46:47,846 log 19092 8784 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:46:47,847 basehttp 19092 8784 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:46:48,156 log 19092 8784 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:46:48,157 basehttp 19092 8784 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:46:48,192 log 19092 8784 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:46:48,193 basehttp 19092 8784 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:46:48,564 log 19092 8784 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:46:48,565 basehttp 19092 8784 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:46:48,599 log 19092 8784 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:46:48,599 basehttp 19092 8784 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:46:48,959 log 19092 8784 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:46:48,960 basehttp 19092 8784 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:46:49,002 log 19092 8784 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:46:49,003 basehttp 19092 8784 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:46:49,371 log 19092 8784 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:46:49,372 basehttp 19092 8784 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:46:49,408 log 19092 8784 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:46:49,409 basehttp 19092 8784 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:46:49,856 log 19092 8784 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:46:49,856 basehttp 19092 8784 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:46:49,894 log 19092 8784 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:46:49,895 basehttp 19092 8784 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:46:50,506 log 19092 8784 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:46:50,507 basehttp 19092 8784 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:46:50,566 log 19092 8784 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:46:50,567 basehttp 19092 8784 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:46:50,944 log 19092 8784 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:46:50,944 basehttp 19092 8784 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:46:50,999 log 19092 8784 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:46:51,001 basehttp 19092 8784 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:46:51,383 log 19092 8784 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:46:51,384 basehttp 19092 8784 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:46:51,425 log 19092 8784 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:46:51,426 basehttp 19092 8784 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:46:51,840 log 19092 8784 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:46:51,841 basehttp 19092 8784 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:46:51,898 log 19092 8784 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:46:51,899 basehttp 19092 8784 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:46:52,359 log 19092 8784 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:46:52,360 basehttp 19092 8784 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:46:52,399 log 19092 8784 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:46:52,400 basehttp 19092 8784 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:46:53,040 log 19092 13280 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:46:53,041 basehttp 19092 13280 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:46:53,107 log 19092 13280 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:46:53,108 basehttp 19092 13280 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:46:53,467 log 19092 13280 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:46:53,468 basehttp 19092 13280 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:46:53,508 log 19092 13280 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:46:53,509 basehttp 19092 13280 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:46:53,928 log 19092 13280 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:46:53,929 basehttp 19092 13280 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:46:53,968 log 19092 13280 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:46:53,968 basehttp 19092 13280 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:46:54,322 log 19092 13280 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:46:54,323 basehttp 19092 13280 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:46:54,375 log 19092 13280 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:46:54,376 basehttp 19092 13280 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:46:54,831 log 19092 13280 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:46:54,831 basehttp 19092 13280 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:46:54,849 log 19092 13280 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:46:54,849 basehttp 19092 13280 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:47:07,562 log 19092 16060 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:47:07,563 basehttp 19092 16060 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:47:07,597 log 19092 16060 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:47:07,597 basehttp 19092 16060 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+INFO 2025-09-02 02:47:28,077 autoreload 19092 1168 D:\Coding\StudySync\backend\accounts\migrations\0002_rename_university_to_institution.py changed, reloading.
+INFO 2025-09-02 02:47:29,522 autoreload 19912 17972 Watching for file changes with StatReloader
+WARNING 2025-09-02 02:47:30,514 log 19912 17452 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:47:30,515 basehttp 19912 17452 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:47:30,534 log 19912 17452 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:47:30,534 basehttp 19912 17452 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:49:07,714 log 19912 17452 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:49:07,716 basehttp 19912 17452 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:49:07,907 log 19912 17452 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:49:07,908 basehttp 19912 17452 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:49:23,938 log 19912 17452 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:49:23,939 basehttp 19912 17452 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:49:23,989 log 19912 17452 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:49:23,989 basehttp 19912 17452 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:49:40,054 log 19912 17452 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:49:40,055 basehttp 19912 17452 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:49:40,096 log 19912 17452 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:49:40,097 basehttp 19912 17452 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:51:07,757 log 19912 7588 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:51:07,758 basehttp 19912 7588 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:51:07,809 log 19912 7588 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:51:07,810 basehttp 19912 7588 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:51:55,153 log 19912 19668 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:51:55,155 basehttp 19912 19668 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:51:55,199 log 19912 19668 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:51:55,199 basehttp 19912 19668 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:51:55,422 log 19912 19668 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:51:55,422 basehttp 19912 19668 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:51:55,462 log 19912 19668 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:51:55,463 basehttp 19912 19668 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:53:00,752 log 19912 7128 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:53:00,753 basehttp 19912 7128 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:53:00,898 log 19912 7128 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:53:00,900 basehttp 19912 7128 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2025-09-02 02:53:07,593 log 19912 13500 Unauthorized: /api/auth/profile/manage/
+WARNING 2025-09-02 02:53:07,594 basehttp 19912 13500 "GET /api/auth/profile/manage/ HTTP/1.1" 401 172
+WARNING 2025-09-02 02:53:07,636 log 19912 13500 Unauthorized: /api/auth/token/refresh/
+WARNING 2025-09-02 02:53:07,637 basehttp 19912 13500 "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+INFO 2025-09-02 02:54:15,717 autoreload 19912 17972 D:\Coding\StudySync\backend\accounts\models.py changed, reloading.
+INFO 2025-09-02 02:54:19,148 autoreload 18704 396 Watching for file changes with StatReloader
+INFO 2025-09-02 02:54:31,226 autoreload 18704 396 D:\Coding\StudySync\backend\accounts\admin.py changed, reloading.
+INFO 2025-09-02 02:54:32,669 autoreload 19956 11236 Watching for file changes with StatReloader
+INFO 2025-09-02 02:56:45,970 autoreload 19956 11236 D:\Coding\StudySync\backend\accounts\serializers.py changed, reloading.
+INFO 2025-09-02 02:56:47,950 autoreload 11144 6940 Watching for file changes with StatReloader
+INFO 2025-09-02 03:00:13,628 autoreload 11144 6940 D:\Coding\StudySync\backend\accounts\views.py changed, reloading.
+INFO 2025-09-02 03:00:15,361 autoreload 17012 17708 Watching for file changes with StatReloader
+INFO 2025-09-02 03:00:24,758 autoreload 17012 17708 D:\Coding\StudySync\backend\accounts\views.py changed, reloading.
+INFO 2025-09-02 03:00:25,998 autoreload 15180 428 Watching for file changes with StatReloader
+INFO 2025-09-02 03:00:40,925 autoreload 15180 428 D:\Coding\StudySync\backend\accounts\views.py changed, reloading.
+INFO 2025-09-02 03:00:42,020 autoreload 12168 12948 Watching for file changes with StatReloader
+INFO 2025-09-02 03:01:28,852 autoreload 12168 12948 D:\Coding\StudySync\backend\accounts\auth_views.py changed, reloading.
+INFO 2025-09-02 03:01:30,047 autoreload 10952 4796 Watching for file changes with StatReloader
+INFO 2025-09-02 03:01:42,701 autoreload 10952 4796 D:\Coding\StudySync\backend\accounts\auth_views.py changed, reloading.
+INFO 2025-09-02 03:01:43,992 autoreload 1160 9132 Watching for file changes with StatReloader
+INFO 2025-09-02 03:01:54,379 autoreload 1160 9132 D:\Coding\StudySync\backend\accounts\auth_views.py changed, reloading.
+INFO 2025-09-02 03:01:55,555 autoreload 5872 5592 Watching for file changes with StatReloader
+INFO 2025-09-02 03:02:26,929 autoreload 5872 5592 D:\Coding\StudySync\backend\study_sessions\serializers.py changed, reloading.
+INFO 2025-09-02 03:02:28,274 autoreload 6824 10764 Watching for file changes with StatReloader
+ERROR 2025-09-02 03:02:29,627 log 6824 13668 Internal Server Error: /api/auth/profile/manage/
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\middleware.py", line 32, in __call__
+    user = authenticate(request=request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\backends.py", line 19, in authenticate
+    valid, request = OAuthLibCore.verify_request(request, scopes=[])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_backends.py", line 200, in verify_request
+    valid, r = self.server.verify_request(uri, http_method, body, headers, scopes=scopes)
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\base.py", line 112, in wrapper
+    return f(endpoint, uri, *args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\resource.py", line 72, in verify_request
+    return token_type_handler.validate_request(request), request
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\tokens.py", line 337, in validate_request
+    return self.request_validator.validate_bearer_token(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        token, request.scopes, request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 387, in validate_bearer_token
+    access_token = self._load_access_token(token)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 409, in _load_access_token
+    return AccessToken.objects.select_related("application", "user").filter(token=token).first()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+ERROR 2025-09-02 03:02:29,635 basehttp 6824 13668 "GET /api/auth/profile/manage/ HTTP/1.1" 500 216020
+ERROR 2025-09-02 03:02:46,921 log 6824 9872 Internal Server Error: /api/auth/profile/manage/
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\middleware.py", line 32, in __call__
+    user = authenticate(request=request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\backends.py", line 19, in authenticate
+    valid, request = OAuthLibCore.verify_request(request, scopes=[])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_backends.py", line 200, in verify_request
+    valid, r = self.server.verify_request(uri, http_method, body, headers, scopes=scopes)
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\base.py", line 112, in wrapper
+    return f(endpoint, uri, *args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\resource.py", line 72, in verify_request
+    return token_type_handler.validate_request(request), request
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\tokens.py", line 337, in validate_request
+    return self.request_validator.validate_bearer_token(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        token, request.scopes, request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 387, in validate_bearer_token
+    access_token = self._load_access_token(token)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 409, in _load_access_token
+    return AccessToken.objects.select_related("application", "user").filter(token=token).first()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+ERROR 2025-09-02 03:02:46,928 basehttp 6824 9872 "GET /api/auth/profile/manage/ HTTP/1.1" 500 216020
+INFO 2025-09-02 03:02:47,204 autoreload 6824 10764 D:\Coding\StudySync\backend\study_sessions\serializers.py changed, reloading.
+INFO 2025-09-02 03:02:48,517 autoreload 15752 15268 Watching for file changes with StatReloader
+ERROR 2025-09-02 03:02:49,109 log 15752 7104 Internal Server Error: /api/auth/profile/manage/
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\middleware.py", line 32, in __call__
+    user = authenticate(request=request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\backends.py", line 19, in authenticate
+    valid, request = OAuthLibCore.verify_request(request, scopes=[])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_backends.py", line 200, in verify_request
+    valid, r = self.server.verify_request(uri, http_method, body, headers, scopes=scopes)
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\base.py", line 112, in wrapper
+    return f(endpoint, uri, *args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\resource.py", line 72, in verify_request
+    return token_type_handler.validate_request(request), request
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\tokens.py", line 337, in validate_request
+    return self.request_validator.validate_bearer_token(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        token, request.scopes, request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 387, in validate_bearer_token
+    access_token = self._load_access_token(token)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 409, in _load_access_token
+    return AccessToken.objects.select_related("application", "user").filter(token=token).first()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+ERROR 2025-09-02 03:02:49,434 log 15752 18832 Internal Server Error: /api/auth/profile/manage/
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\middleware.py", line 32, in __call__
+    user = authenticate(request=request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\backends.py", line 19, in authenticate
+    valid, request = OAuthLibCore.verify_request(request, scopes=[])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_backends.py", line 200, in verify_request
+    valid, r = self.server.verify_request(uri, http_method, body, headers, scopes=scopes)
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\base.py", line 112, in wrapper
+    return f(endpoint, uri, *args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\resource.py", line 72, in verify_request
+    return token_type_handler.validate_request(request), request
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\tokens.py", line 337, in validate_request
+    return self.request_validator.validate_bearer_token(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        token, request.scopes, request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 387, in validate_bearer_token
+    access_token = self._load_access_token(token)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 409, in _load_access_token
+    return AccessToken.objects.select_related("application", "user").filter(token=token).first()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+ERROR 2025-09-02 03:02:49,439 basehttp 15752 18832 "GET /api/auth/profile/manage/ HTTP/1.1" 500 216020
+ERROR 2025-09-02 03:02:49,714 log 15752 12044 Internal Server Error: /api/auth/profile/manage/
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\middleware.py", line 32, in __call__
+    user = authenticate(request=request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\backends.py", line 19, in authenticate
+    valid, request = OAuthLibCore.verify_request(request, scopes=[])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_backends.py", line 200, in verify_request
+    valid, r = self.server.verify_request(uri, http_method, body, headers, scopes=scopes)
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\base.py", line 112, in wrapper
+    return f(endpoint, uri, *args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\resource.py", line 72, in verify_request
+    return token_type_handler.validate_request(request), request
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\tokens.py", line 337, in validate_request
+    return self.request_validator.validate_bearer_token(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        token, request.scopes, request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 387, in validate_bearer_token
+    access_token = self._load_access_token(token)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 409, in _load_access_token
+    return AccessToken.objects.select_related("application", "user").filter(token=token).first()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+ERROR 2025-09-02 03:02:49,719 basehttp 15752 12044 "GET /api/auth/profile/manage/ HTTP/1.1" 500 216020
+ERROR 2025-09-02 03:02:50,132 log 15752 7080 Internal Server Error: /api/auth/profile/manage/
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\middleware.py", line 32, in __call__
+    user = authenticate(request=request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\backends.py", line 19, in authenticate
+    valid, request = OAuthLibCore.verify_request(request, scopes=[])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_backends.py", line 200, in verify_request
+    valid, r = self.server.verify_request(uri, http_method, body, headers, scopes=scopes)
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\base.py", line 112, in wrapper
+    return f(endpoint, uri, *args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\resource.py", line 72, in verify_request
+    return token_type_handler.validate_request(request), request
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\tokens.py", line 337, in validate_request
+    return self.request_validator.validate_bearer_token(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        token, request.scopes, request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 387, in validate_bearer_token
+    access_token = self._load_access_token(token)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 409, in _load_access_token
+    return AccessToken.objects.select_related("application", "user").filter(token=token).first()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+ERROR 2025-09-02 03:02:50,137 basehttp 15752 7080 "GET /api/auth/profile/manage/ HTTP/1.1" 500 216020
+ERROR 2025-09-02 03:02:50,638 log 15752 12168 Internal Server Error: /api/auth/profile/manage/
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\middleware.py", line 32, in __call__
+    user = authenticate(request=request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\backends.py", line 19, in authenticate
+    valid, request = OAuthLibCore.verify_request(request, scopes=[])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_backends.py", line 200, in verify_request
+    valid, r = self.server.verify_request(uri, http_method, body, headers, scopes=scopes)
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\base.py", line 112, in wrapper
+    return f(endpoint, uri, *args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\resource.py", line 72, in verify_request
+    return token_type_handler.validate_request(request), request
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\tokens.py", line 337, in validate_request
+    return self.request_validator.validate_bearer_token(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        token, request.scopes, request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 387, in validate_bearer_token
+    access_token = self._load_access_token(token)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 409, in _load_access_token
+    return AccessToken.objects.select_related("application", "user").filter(token=token).first()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+ERROR 2025-09-02 03:02:50,642 basehttp 15752 12168 "GET /api/auth/profile/manage/ HTTP/1.1" 500 216020
+ERROR 2025-09-02 03:02:52,886 log 15752 5860 Internal Server Error: /api/auth/profile/manage/
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\middleware.py", line 32, in __call__
+    user = authenticate(request=request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\backends.py", line 19, in authenticate
+    valid, request = OAuthLibCore.verify_request(request, scopes=[])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_backends.py", line 200, in verify_request
+    valid, r = self.server.verify_request(uri, http_method, body, headers, scopes=scopes)
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\base.py", line 112, in wrapper
+    return f(endpoint, uri, *args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\resource.py", line 72, in verify_request
+    return token_type_handler.validate_request(request), request
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\tokens.py", line 337, in validate_request
+    return self.request_validator.validate_bearer_token(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        token, request.scopes, request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 387, in validate_bearer_token
+    access_token = self._load_access_token(token)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 409, in _load_access_token
+    return AccessToken.objects.select_related("application", "user").filter(token=token).first()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+ERROR 2025-09-02 03:02:52,890 basehttp 15752 5860 "GET /api/auth/profile/manage/ HTTP/1.1" 500 216020
+INFO 2025-09-02 03:02:52,961 autoreload 15752 15268 D:\Coding\StudySync\backend\study_sessions\serializers.py changed, reloading.
+INFO 2025-09-02 03:02:54,184 autoreload 17904 13148 Watching for file changes with StatReloader
+ERROR 2025-09-02 03:02:54,864 log 17904 18400 Internal Server Error: /api/auth/profile/manage/
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\middleware.py", line 32, in __call__
+    user = authenticate(request=request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\backends.py", line 19, in authenticate
+    valid, request = OAuthLibCore.verify_request(request, scopes=[])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_backends.py", line 200, in verify_request
+    valid, r = self.server.verify_request(uri, http_method, body, headers, scopes=scopes)
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\base.py", line 112, in wrapper
+    return f(endpoint, uri, *args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\resource.py", line 72, in verify_request
+    return token_type_handler.validate_request(request), request
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\tokens.py", line 337, in validate_request
+    return self.request_validator.validate_bearer_token(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        token, request.scopes, request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 387, in validate_bearer_token
+    access_token = self._load_access_token(token)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 409, in _load_access_token
+    return AccessToken.objects.select_related("application", "user").filter(token=token).first()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+ERROR 2025-09-02 03:02:54,873 basehttp 17904 18400 "GET /api/auth/profile/manage/ HTTP/1.1" 500 216020
+ERROR 2025-09-02 03:02:55,129 log 17904 17148 Internal Server Error: /api/auth/profile/manage/
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\middleware.py", line 32, in __call__
+    user = authenticate(request=request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\backends.py", line 19, in authenticate
+    valid, request = OAuthLibCore.verify_request(request, scopes=[])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_backends.py", line 200, in verify_request
+    valid, r = self.server.verify_request(uri, http_method, body, headers, scopes=scopes)
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\base.py", line 112, in wrapper
+    return f(endpoint, uri, *args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\resource.py", line 72, in verify_request
+    return token_type_handler.validate_request(request), request
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\tokens.py", line 337, in validate_request
+    return self.request_validator.validate_bearer_token(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        token, request.scopes, request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 387, in validate_bearer_token
+    access_token = self._load_access_token(token)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 409, in _load_access_token
+    return AccessToken.objects.select_related("application", "user").filter(token=token).first()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+ERROR 2025-09-02 03:02:55,135 basehttp 17904 17148 "GET /api/auth/profile/manage/ HTTP/1.1" 500 216020
+ERROR 2025-09-02 03:02:55,493 log 17904 5624 Internal Server Error: /api/auth/profile/manage/
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\middleware.py", line 32, in __call__
+    user = authenticate(request=request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\backends.py", line 19, in authenticate
+    valid, request = OAuthLibCore.verify_request(request, scopes=[])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_backends.py", line 200, in verify_request
+    valid, r = self.server.verify_request(uri, http_method, body, headers, scopes=scopes)
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\base.py", line 112, in wrapper
+    return f(endpoint, uri, *args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\resource.py", line 72, in verify_request
+    return token_type_handler.validate_request(request), request
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\tokens.py", line 337, in validate_request
+    return self.request_validator.validate_bearer_token(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        token, request.scopes, request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 387, in validate_bearer_token
+    access_token = self._load_access_token(token)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 409, in _load_access_token
+    return AccessToken.objects.select_related("application", "user").filter(token=token).first()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+ERROR 2025-09-02 03:02:55,498 basehttp 17904 5624 "GET /api/auth/profile/manage/ HTTP/1.1" 500 216020
+ERROR 2025-09-02 03:02:55,920 log 17904 9868 Internal Server Error: /api/auth/profile/manage/
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\middleware.py", line 32, in __call__
+    user = authenticate(request=request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\backends.py", line 19, in authenticate
+    valid, request = OAuthLibCore.verify_request(request, scopes=[])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_backends.py", line 200, in verify_request
+    valid, r = self.server.verify_request(uri, http_method, body, headers, scopes=scopes)
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\base.py", line 112, in wrapper
+    return f(endpoint, uri, *args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\resource.py", line 72, in verify_request
+    return token_type_handler.validate_request(request), request
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\tokens.py", line 337, in validate_request
+    return self.request_validator.validate_bearer_token(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        token, request.scopes, request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 387, in validate_bearer_token
+    access_token = self._load_access_token(token)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 409, in _load_access_token
+    return AccessToken.objects.select_related("application", "user").filter(token=token).first()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+ERROR 2025-09-02 03:02:55,925 basehttp 17904 9868 "GET /api/auth/profile/manage/ HTTP/1.1" 500 216020
+ERROR 2025-09-02 03:02:56,325 log 17904 17380 Internal Server Error: /api/auth/profile/manage/
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\middleware.py", line 32, in __call__
+    user = authenticate(request=request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\backends.py", line 19, in authenticate
+    valid, request = OAuthLibCore.verify_request(request, scopes=[])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_backends.py", line 200, in verify_request
+    valid, r = self.server.verify_request(uri, http_method, body, headers, scopes=scopes)
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\base.py", line 112, in wrapper
+    return f(endpoint, uri, *args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\resource.py", line 72, in verify_request
+    return token_type_handler.validate_request(request), request
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\tokens.py", line 337, in validate_request
+    return self.request_validator.validate_bearer_token(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        token, request.scopes, request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 387, in validate_bearer_token
+    access_token = self._load_access_token(token)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 409, in _load_access_token
+    return AccessToken.objects.select_related("application", "user").filter(token=token).first()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+ERROR 2025-09-02 03:02:56,332 basehttp 17904 17380 "GET /api/auth/profile/manage/ HTTP/1.1" 500 216020
+ERROR 2025-09-02 03:02:56,902 log 17904 19856 Internal Server Error: /api/auth/profile/manage/
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\middleware.py", line 32, in __call__
+    user = authenticate(request=request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\backends.py", line 19, in authenticate
+    valid, request = OAuthLibCore.verify_request(request, scopes=[])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_backends.py", line 200, in verify_request
+    valid, r = self.server.verify_request(uri, http_method, body, headers, scopes=scopes)
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\base.py", line 112, in wrapper
+    return f(endpoint, uri, *args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\resource.py", line 72, in verify_request
+    return token_type_handler.validate_request(request), request
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\tokens.py", line 337, in validate_request
+    return self.request_validator.validate_bearer_token(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        token, request.scopes, request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 387, in validate_bearer_token
+    access_token = self._load_access_token(token)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 409, in _load_access_token
+    return AccessToken.objects.select_related("application", "user").filter(token=token).first()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+ERROR 2025-09-02 03:02:56,906 basehttp 17904 19856 "GET /api/auth/profile/manage/ HTTP/1.1" 500 216020
+ERROR 2025-09-02 03:03:00,977 log 17904 18332 Internal Server Error: /api/auth/profile/manage/
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\middleware.py", line 32, in __call__
+    user = authenticate(request=request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\backends.py", line 19, in authenticate
+    valid, request = OAuthLibCore.verify_request(request, scopes=[])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_backends.py", line 200, in verify_request
+    valid, r = self.server.verify_request(uri, http_method, body, headers, scopes=scopes)
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\base.py", line 112, in wrapper
+    return f(endpoint, uri, *args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\resource.py", line 72, in verify_request
+    return token_type_handler.validate_request(request), request
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\tokens.py", line 337, in validate_request
+    return self.request_validator.validate_bearer_token(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        token, request.scopes, request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 387, in validate_bearer_token
+    access_token = self._load_access_token(token)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 409, in _load_access_token
+    return AccessToken.objects.select_related("application", "user").filter(token=token).first()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+ERROR 2025-09-02 03:03:00,984 basehttp 17904 18332 "GET /api/auth/profile/manage/ HTTP/1.1" 500 216020
+ERROR 2025-09-02 03:03:07,736 log 17904 2484 Internal Server Error: /api/auth/profile/manage/
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\middleware.py", line 32, in __call__
+    user = authenticate(request=request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\backends.py", line 19, in authenticate
+    valid, request = OAuthLibCore.verify_request(request, scopes=[])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_backends.py", line 200, in verify_request
+    valid, r = self.server.verify_request(uri, http_method, body, headers, scopes=scopes)
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\base.py", line 112, in wrapper
+    return f(endpoint, uri, *args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\resource.py", line 72, in verify_request
+    return token_type_handler.validate_request(request), request
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\tokens.py", line 337, in validate_request
+    return self.request_validator.validate_bearer_token(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        token, request.scopes, request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 387, in validate_bearer_token
+    access_token = self._load_access_token(token)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 409, in _load_access_token
+    return AccessToken.objects.select_related("application", "user").filter(token=token).first()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+ERROR 2025-09-02 03:03:07,744 basehttp 17904 2484 "GET /api/auth/profile/manage/ HTTP/1.1" 500 216020
+ERROR 2025-09-02 03:03:09,977 log 17904 10868 Internal Server Error: /api/auth/profile/manage/
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\middleware.py", line 32, in __call__
+    user = authenticate(request=request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\backends.py", line 19, in authenticate
+    valid, request = OAuthLibCore.verify_request(request, scopes=[])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_backends.py", line 200, in verify_request
+    valid, r = self.server.verify_request(uri, http_method, body, headers, scopes=scopes)
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\base.py", line 112, in wrapper
+    return f(endpoint, uri, *args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\resource.py", line 72, in verify_request
+    return token_type_handler.validate_request(request), request
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\tokens.py", line 337, in validate_request
+    return self.request_validator.validate_bearer_token(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        token, request.scopes, request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 387, in validate_bearer_token
+    access_token = self._load_access_token(token)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 409, in _load_access_token
+    return AccessToken.objects.select_related("application", "user").filter(token=token).first()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+ERROR 2025-09-02 03:03:09,981 basehttp 17904 10868 "GET /api/auth/profile/manage/ HTTP/1.1" 500 216020
+ERROR 2025-09-02 03:03:21,364 log 17904 18064 Internal Server Error: /api/auth/profile/manage/
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\middleware.py", line 32, in __call__
+    user = authenticate(request=request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\backends.py", line 19, in authenticate
+    valid, request = OAuthLibCore.verify_request(request, scopes=[])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_backends.py", line 200, in verify_request
+    valid, r = self.server.verify_request(uri, http_method, body, headers, scopes=scopes)
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\base.py", line 112, in wrapper
+    return f(endpoint, uri, *args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\endpoints\resource.py", line 72, in verify_request
+    return token_type_handler.validate_request(request), request
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauthlib\oauth2\rfc6749\tokens.py", line 337, in validate_request
+    return self.request_validator.validate_bearer_token(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        token, request.scopes, request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 387, in validate_bearer_token
+    access_token = self._load_access_token(token)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\oauth2_provider\oauth2_validators.py", line 409, in _load_access_token
+    return AccessToken.objects.select_related("application", "user").filter(token=token).first()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column users.profile_picture does not exist
+LINE 1: ...", "users"."id", "users"."uuid", "users"."phone", "users"."p...
+                                                             ^
+
+ERROR 2025-09-02 03:03:21,369 basehttp 17904 18064 "GET /api/auth/profile/manage/ HTTP/1.1" 500 216020
+INFO 2025-09-02 03:40:49,535 autoreload 13340 10980 Watching for file changes with StatReloader
+INFO 2025-09-02 03:41:17,093 autoreload 6588 18880 Watching for file changes with StatReloader
+INFO 2025-09-02 03:41:35,614 autoreload 6588 18880 D:\Coding\StudySync\backend\accounts\auth_views.py changed, reloading.
+INFO 2025-09-02 03:41:36,462 autoreload 13340 10980 D:\Coding\StudySync\backend\accounts\auth_views.py changed, reloading.
+INFO 2025-09-02 03:41:37,222 autoreload 10516 4284 Watching for file changes with StatReloader
+INFO 2025-09-02 03:41:37,988 autoreload 2212 6756 Watching for file changes with StatReloader
+INFO 2025-09-02 03:41:49,237 autoreload 10516 4284 D:\Coding\StudySync\backend\accounts\auth_views.py changed, reloading.
+INFO 2025-09-02 03:41:49,323 autoreload 2212 6756 D:\Coding\StudySync\backend\accounts\auth_views.py changed, reloading.
+INFO 2025-09-02 03:41:51,013 autoreload 15744 19344 Watching for file changes with StatReloader
+INFO 2025-09-02 03:41:51,083 autoreload 18544 19304 Watching for file changes with StatReloader
+INFO 2025-09-02 03:42:01,924 autoreload 15744 19344 D:\Coding\StudySync\backend\accounts\auth_views.py changed, reloading.
+INFO 2025-09-02 03:42:02,707 autoreload 18544 19304 D:\Coding\StudySync\backend\accounts\auth_views.py changed, reloading.
+INFO 2025-09-02 03:42:03,571 autoreload 11788 5668 Watching for file changes with StatReloader
+INFO 2025-09-02 03:42:04,338 autoreload 2092 6588 Watching for file changes with StatReloader
+INFO 2025-09-02 03:42:13,125 autoreload 2544 11844 Watching for file changes with StatReloader
+INFO 2025-09-02 03:42:28,304 autoreload 2544 11844 D:\Coding\StudySync\backend\study_sessions\serializers.py changed, reloading.
+INFO 2025-09-02 03:42:28,857 autoreload 2092 6588 D:\Coding\StudySync\backend\study_sessions\serializers.py changed, reloading.
+INFO 2025-09-02 03:42:29,033 autoreload 11788 5668 D:\Coding\StudySync\backend\study_sessions\serializers.py changed, reloading.
+INFO 2025-09-02 03:42:29,896 autoreload 9240 3560 Watching for file changes with StatReloader
+INFO 2025-09-02 03:42:30,399 autoreload 6756 9284 Watching for file changes with StatReloader
+INFO 2025-09-02 03:42:30,512 autoreload 6520 16532 Watching for file changes with StatReloader
+INFO 2025-09-02 03:42:43,506 autoreload 9240 3560 D:\Coding\StudySync\backend\study_sessions\serializers.py changed, reloading.
+INFO 2025-09-02 03:42:43,915 autoreload 6756 9284 D:\Coding\StudySync\backend\study_sessions\serializers.py changed, reloading.
+INFO 2025-09-02 03:42:43,978 autoreload 6520 16532 D:\Coding\StudySync\backend\study_sessions\serializers.py changed, reloading.
+INFO 2025-09-02 03:42:45,045 autoreload 19244 19132 Watching for file changes with StatReloader
+INFO 2025-09-02 03:42:45,498 autoreload 18676 4384 Watching for file changes with StatReloader
+INFO 2025-09-02 03:42:45,500 autoreload 8704 7800 Watching for file changes with StatReloader
+INFO 2025-09-02 03:42:53,025 autoreload 19244 19132 D:\Coding\StudySync\backend\study_sessions\serializers.py changed, reloading.
+INFO 2025-09-02 03:42:53,061 autoreload 18676 4384 D:\Coding\StudySync\backend\study_sessions\serializers.py changed, reloading.
+INFO 2025-09-02 03:42:53,440 autoreload 8704 7800 D:\Coding\StudySync\backend\study_sessions\serializers.py changed, reloading.
+INFO 2025-09-02 03:42:54,676 autoreload 18880 18368 Watching for file changes with StatReloader
+INFO 2025-09-02 03:42:54,740 autoreload 14404 7716 Watching for file changes with StatReloader
+INFO 2025-09-02 03:42:54,999 autoreload 3348 19380 Watching for file changes with StatReloader
+INFO 2025-09-02 03:43:18,073 autoreload 13464 6860 Watching for file changes with StatReloader
+INFO 2025-09-02 03:47:31,556 autoreload 14188 19088 Watching for file changes with StatReloader
+INFO 2025-09-02 03:48:29,386 autoreload 14188 19088 D:\Coding\StudySync\backend\accounts\models.py changed, reloading.
+INFO 2025-09-02 03:48:31,863 autoreload 11300 728 Watching for file changes with StatReloader
+INFO 2025-09-02 03:56:40,200 autoreload 7152 4692 Watching for file changes with StatReloader
+INFO 2025-09-02 03:59:03,235 basehttp 7152 18468 "OPTIONS /api/auth/auth/google/oauth/ HTTP/1.1" 200 0
+INFO 2025-09-02 03:59:03,247 dynamic_views 7152 18468 Received Google OAuth request: {'credential': 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjJkN2VkMzM4YzBmMTQ1N2IyMTRhMjc0YjVlMGU2NjdiNDRhNDJkZGUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMDYxOTg4MDQ0NTM5LTB2cTNoM2ZrMDh0anM5bmNnNjNvZXR1ZGd2dDBvbnU4LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiMTA2MTk4ODA0NDUzOS0wdnEzaDNmazA4dGpzOW5jZzYzb2V0dWRndnQwb251OC5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjEwOTk5NDA0NzY0ODgyMDk1NTY2NCIsImVtYWlsIjoic2tob3NzYWluNzk5QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYmYiOjE3NTY3NjM2MTcsIm5hbWUiOiJTayBIb3NzYWluIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0pRX0piWEl1Vy1FeDhEX3Bwd3otTHBZNVh1MmxsZWN2NVpTMzhXNEx2MklNY0F2Q0k9czk2LWMiLCJnaXZlbl9uYW1lIjoiU2siLCJmYW1pbHlfbmFtZSI6Ikhvc3NhaW4iLCJpYXQiOjE3NTY3NjM5MTcsImV4cCI6MTc1Njc2NzUxNywianRpIjoiNjA4NWVkN2M3YzU4ODhkZDI5ZjVlNWEwZDRiYzAyNmU2NTU5NzBhNiJ9.lwTM_WvuNqOZhOX45E3f6pETqcq15avOFWjX_l3F9EuiFEP8TK-KOle5ZIqOz1p5Iv3myAzxa8teY_FGwh8gAWweR9CM5QSutzlBnFLJ2jorTVUwGr_hNB2ibHDmOFoY3u6sHOC7GkWBtIswAG9PhT7FsWqq4WK08Y5JVVO9yNv-q7bynKimvvzjWrxepmqVLbny7HqI1SPoPkwiLdQtwSjKIkiey0xt7A06njD0DoyGdclTv_tIebV2FpDXTqoWWtk8Ob_filfcRLTZt9hFyAt9bW0QKL3c6iL_W6jSLzGzLZVbZn_gbirN31tOsnpw_yvti3hKc3Ml6_r9iY1kvQ', 'email': 'skhossain799@gmail.com', 'name': 'Sheikh Hossain Bin Bakhtiar', 'google_id': '109994047648820955664', 'profile_picture': 'https://lh3.googleusercontent.com/a/ACg8ocJQ_JbXIuW-Ex8D_ppwz-LpY5Xu2llecv5ZS38W4Lv2IMcAvCI=s96-c', 'user_type': 'student', 'first_name': 'Sheikh', 'last_name': 'Hosszin Bin Bakhtiar', 'student_id': '2023-1-60-060', 'organization_name': 'East West University', 'date_of_birth': '2004-05-17', 'phone_number': '01840804905', 'extracted_full_name': 'Sheikh Hossain Bin Bakhtiar', 'ocr_data': {'studentIdFile': {'fullName': 'Sheikh Hosszin Bin Bakhtiar', 'firstName': 'Sheikh', 'lastName': 'Hosszin Bin Bakhtiar', 'studentId': '2023-1-60-060', 'idNumber': '2023-1-60-060'}}}
+ERROR 2025-09-02 03:59:05,033 dynamic_views 7152 18468 Unexpected error in Google OAuth: column users.profile_picture does not exist
+LINE 1: ..."users"."uuid", "users"."email", "users"."phone", "users"."p...
+                                                             ^
+
+ERROR 2025-09-02 03:59:05,334 log 7152 18468 Internal Server Error: /api/auth/auth/google/oauth/
+ERROR 2025-09-02 03:59:05,335 basehttp 7152 18468 "POST /api/auth/auth/google/oauth/ HTTP/1.1" 500 33
+WARNING 2025-09-02 04:01:49,537 log 7152 15904 Not Found: /api/accounts/auth/google/oauth/
+WARNING 2025-09-02 04:01:49,547 basehttp 7152 15904 "GET /api/accounts/auth/google/oauth/ HTTP/1.1" 404 12169
+WARNING 2025-09-02 04:02:13,275 log 7152 15904 Method Not Allowed: /api/auth/auth/google/oauth/
+WARNING 2025-09-02 04:02:13,275 basehttp 7152 15904 "GET /api/auth/auth/google/oauth/ HTTP/1.1" 405 40
+INFO 2025-09-02 04:08:15,088 basehttp 7152 1644 "GET /?id=72ad43db-28ac-4cb5-a6e8-c62ef28a3255&vscodeBrowserReqId=1756764494863 HTTP/1.1" 200 228
+INFO 2025-09-02 04:09:30,005 dynamic_views 7152 20308 Received Google OAuth request: {'credential': 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjJkN2VkMzM4YzBmMTQ1N2IyMTRhMjc0YjVlMGU2NjdiNDRhNDJkZGUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMDYxOTg4MDQ0NTM5LTB2cTNoM2ZrMDh0anM5bmNnNjNvZXR1ZGd2dDBvbnU4LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiMTA2MTk4ODA0NDUzOS0wdnEzaDNmazA4dGpzOW5jZzYzb2V0dWRndnQwb251OC5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjEwOTk5NDA0NzY0ODgyMDk1NTY2NCIsImVtYWlsIjoic2tob3NzYWluNzk5QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYmYiOjE3NTY3NjQyNDcsIm5hbWUiOiJTayBIb3NzYWluIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0pRX0piWEl1Vy1FeDhEX3Bwd3otTHBZNVh1MmxsZWN2NVpTMzhXNEx2MklNY0F2Q0k9czk2LWMiLCJnaXZlbl9uYW1lIjoiU2siLCJmYW1pbHlfbmFtZSI6Ikhvc3NhaW4iLCJpYXQiOjE3NTY3NjQ1NDcsImV4cCI6MTc1Njc2ODE0NywianRpIjoiM2Y5MWQwYTgyMWExMDgyZDk5ZmNlYzk5YmY0ODAwOGE1NzljNjAzNSJ9.V3LtLP2Jg1CFA08zpLN777ys0ELQ7ay9Ibw4ywJbJ61dNUjvSyG2syz0pxOb3-MaQCdpadz02XBut5xIzrtQpqdh3nRKgdWY-zP8xFiPUhvILPHK6_CO-AjwBIIv9OD2iy7CEA4vlVl4t-7qQuxfTcE_uuzvDJeBFddLbg-MIFzZ8FnirkhoLdtpz8xp-0_bn_LmATND4955j5PZsoR7VaSu2oDzFVvDsF0aSsbpWUY_LasLBZKoHJjuHsfs6byriyWwXzeMuldkyiPJr44QlhD-sgUvZCX8bIcV4FSELyA7I7NVF8x8Ji0xr0gKj1pnExzm9Rb0him0KpFHtYLxQg', 'email': 'skhossain799@gmail.com', 'name': 'Sheikh Hossain Bin Bakhtiar', 'google_id': '109994047648820955664', 'profile_picture': 'https://lh3.googleusercontent.com/a/ACg8ocJQ_JbXIuW-Ex8D_ppwz-LpY5Xu2llecv5ZS38W4Lv2IMcAvCI=s96-c', 'user_type': 'student', 'first_name': 'Sheikh', 'last_name': 'Hosszin Bin Bakhtiar', 'student_id': '2023-1-60-060', 'organization_name': 'East West University', 'date_of_birth': '2004-05-17', 'phone_number': '01840804905', 'extracted_full_name': 'Sheikh Hossain Bin Bakhtiar', 'ocr_data': {'studentIdFile': {'fullName': 'Sheikh Hosszin Bin Bakhtiar', 'firstName': 'Sheikh', 'lastName': 'Hosszin Bin Bakhtiar', 'studentId': '2023-1-60-060', 'idNumber': '2023-1-60-060'}}}
+ERROR 2025-09-02 04:09:31,219 dynamic_views 7152 20308 Unexpected error in Google OAuth: column users.profile_picture does not exist
+LINE 1: ..."users"."uuid", "users"."email", "users"."phone", "users"."p...
+                                                             ^
+
+ERROR 2025-09-02 04:09:31,257 log 7152 20308 Internal Server Error: /api/auth/auth/google/oauth/
+ERROR 2025-09-02 04:09:31,258 basehttp 7152 20308 "POST /api/auth/auth/google/oauth/ HTTP/1.1" 500 33
+INFO 2025-09-02 04:14:11,144 autoreload 7152 4692 D:\Coding\StudySync\backend\accounts\migrations\0002_alter_user_email_unique.py changed, reloading.
+INFO 2025-09-02 04:14:13,795 autoreload 12164 19540 Watching for file changes with StatReloader
+INFO 2025-09-02 04:15:09,141 dynamic_views 12164 16652 Received Google OAuth request: {'credential': 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjJkN2VkMzM4YzBmMTQ1N2IyMTRhMjc0YjVlMGU2NjdiNDRhNDJkZGUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMDYxOTg4MDQ0NTM5LTB2cTNoM2ZrMDh0anM5bmNnNjNvZXR1ZGd2dDBvbnU4LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiMTA2MTk4ODA0NDUzOS0wdnEzaDNmazA4dGpzOW5jZzYzb2V0dWRndnQwb251OC5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjEwOTk5NDA0NzY0ODgyMDk1NTY2NCIsImVtYWlsIjoic2tob3NzYWluNzk5QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYmYiOjE3NTY3NjQ1ODcsIm5hbWUiOiJTayBIb3NzYWluIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0pRX0piWEl1Vy1FeDhEX3Bwd3otTHBZNVh1MmxsZWN2NVpTMzhXNEx2MklNY0F2Q0k9czk2LWMiLCJnaXZlbl9uYW1lIjoiU2siLCJmYW1pbHlfbmFtZSI6Ikhvc3NhaW4iLCJpYXQiOjE3NTY3NjQ4ODcsImV4cCI6MTc1Njc2ODQ4NywianRpIjoiNzgwNzg5MzVkMWIwYmRmNTdhNDlmMjc2ODVlOThmNTkwZDk2MjUxMSJ9.mEas48bJ_jfwAhxV79VzKqFNwqn9Ipd202loI3zhLkZl2hmJvR_wjadXh1-exGoXUlW75AD8OL53TY0ZUOlYm7mh_yw8aqYLCCHXI_P-O4lX5djtds9iy6l-2cjCCYlMa_zonrhIasry4de_F7sWffrcYs5rLKKVe8X0xIeSy_1HIMGpTGCmxelVpb2LL81p9TctcbXO8pxW8OhBnRPK1DMtT8geNsejTUZQK4wzr6jBtLx5YeJG3JOktgVeJEvsfDX78wJALqmu81f1ZCceN8BPQPjAElbZncTV7B8gVDrXUVo2vkQLUSXKb3Bjgczkn53cfJjeKFvsgyIenKQG9w', 'email': 'skhossain799@gmail.com', 'name': 'Sheikh Hossain Bin Bakhtiar', 'google_id': '109994047648820955664', 'profile_picture': 'https://lh3.googleusercontent.com/a/ACg8ocJQ_JbXIuW-Ex8D_ppwz-LpY5Xu2llecv5ZS38W4Lv2IMcAvCI=s96-c', 'user_type': 'student', 'first_name': 'Sheikh', 'last_name': 'Hosszin Bin Bakhtiar', 'student_id': '2023-1-60-060', 'organization_name': 'East West University', 'date_of_birth': '2004-05-17', 'phone_number': '01840804905', 'extracted_full_name': 'Sheikh Hossain Bin Bakhtiar', 'ocr_data': {'studentIdFile': {'fullName': 'Sheikh Hosszin Bin Bakhtiar', 'firstName': 'Sheikh', 'lastName': 'Hosszin Bin Bakhtiar', 'studentId': '2023-1-60-060', 'idNumber': '2023-1-60-060'}}}
+INFO 2025-09-02 04:15:10,743 dynamic_views 12164 16652 Google OAuth signup successful for skhossain799@gmail.com
+INFO 2025-09-02 04:15:10,860 basehttp 12164 16652 "POST /api/auth/auth/google/oauth/ HTTP/1.1" 200 1538
+INFO 2025-09-02 04:15:13,234 basehttp 12164 16652 "OPTIONS /api/auth/profile/manage/ HTTP/1.1" 200 0
+ERROR 2025-09-02 04:15:13,602 log 12164 16652 Internal Server Error: /api/auth/profile/manage/
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\Coding\StudySync\backend\accounts\dynamic_views.py", line 278, in user_profile_management
+    'completion_percentage': request.user.completion_percentage
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'completion_percentage'. Did you mean: 'profile_completion_percentage'?
+ERROR 2025-09-02 04:15:13,651 basehttp 12164 16652 "GET /api/auth/profile/manage/ HTTP/1.1" 500 120977
+INFO 2025-09-02 04:15:26,656 basehttp 12164 18772 "OPTIONS /api/study-sessions/my-posts/ HTTP/1.1" 200 0
+WARNING 2025-09-02 04:15:26,681 log 12164 18772 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 04:15:26,681 basehttp 12164 18772 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 04:15:31,076 log 12164 18772 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 04:15:31,077 basehttp 12164 18772 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+WARNING 2025-09-02 04:15:37,414 log 12164 15744 Unauthorized: /api/study-sessions/my-posts/
+WARNING 2025-09-02 04:15:37,415 basehttp 12164 15744 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 58
+ERROR 2025-09-02 04:15:39,867 log 12164 20212 Internal Server Error: /api/auth/profile/manage/
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\Coding\StudySync\backend\accounts\dynamic_views.py", line 278, in user_profile_management
+    'completion_percentage': request.user.completion_percentage
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'completion_percentage'. Did you mean: 'profile_completion_percentage'?
+ERROR 2025-09-02 04:15:39,893 basehttp 12164 20212 "GET /api/auth/profile/manage/ HTTP/1.1" 500 120976
+ERROR 2025-09-02 04:15:45,069 log 12164 20212 Internal Server Error: /api/auth/profile/manage/
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\Coding\StudySync\backend\accounts\dynamic_views.py", line 278, in user_profile_management
+    'completion_percentage': request.user.completion_percentage
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'completion_percentage'. Did you mean: 'profile_completion_percentage'?
+ERROR 2025-09-02 04:15:45,094 basehttp 12164 20212 "GET /api/auth/profile/manage/ HTTP/1.1" 500 120976
+INFO 2025-09-02 04:15:52,066 basehttp 12164 20212 "OPTIONS /api/auth/profile/picture/ HTTP/1.1" 200 0
+WARNING 2025-09-02 04:15:52,298 log 12164 20212 Not Found: /api/auth/profile/picture/
+WARNING 2025-09-02 04:15:52,298 basehttp 12164 20212 "PUT /api/auth/profile/picture/ HTTP/1.1" 404 17699
+ERROR 2025-09-02 04:15:59,974 log 12164 20212 Internal Server Error: /api/auth/profile/manage/
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\Coding\StudySync\backend\accounts\dynamic_views.py", line 278, in user_profile_management
+    'completion_percentage': request.user.completion_percentage
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'completion_percentage'. Did you mean: 'profile_completion_percentage'?
+ERROR 2025-09-02 04:16:00,000 basehttp 12164 20212 "GET /api/auth/profile/manage/ HTTP/1.1" 500 120976
+INFO 2025-09-02 04:17:22,774 autoreload 12164 19540 D:\Coding\StudySync\backend\accounts\migrations\0002_alter_user_email_unique.py changed, reloading.
+INFO 2025-09-02 04:17:24,842 autoreload 19104 14196 Watching for file changes with StatReloader
+INFO 2025-09-02 04:17:31,061 autoreload 19104 14196 D:\Coding\StudySync\backend\accounts\migrations\0002_alter_user_email_unique.py changed, reloading.
+INFO 2025-09-02 04:17:32,379 autoreload 1700 20060 Watching for file changes with StatReloader
+INFO 2025-09-02 04:17:44,554 autoreload 1700 20060 D:\Coding\StudySync\backend\accounts\migrations\0002_alter_user_email_unique.py changed, reloading.
+INFO 2025-09-02 04:17:46,671 autoreload 12072 18716 Watching for file changes with StatReloader

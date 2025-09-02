@@ -15054,3 +15054,87 @@ WARNING 2025-09-02 20:14:57,360 log 20664 10008 Unauthorized: /api/study-session
 WARNING 2025-09-02 20:14:57,361 basehttp 20664 10008 "GET /api/study-sessions/my-posts/ HTTP/1.1" 401 172
 INFO 2025-09-02 20:16:09,867 autoreload 20664 10032 D:\Coding\StudySync\backend\study_sessions\views.py changed, reloading.
 INFO 2025-09-02 20:16:12,352 autoreload 21444 10776 Watching for file changes with StatReloader
+INFO 2025-09-02 21:40:45,957 autoreload 18080 10896 Watching for file changes with StatReloader
+WARNING 2025-09-02 21:42:51,539 log 18080 16708 Not Found: /api/accounts/auth/login/
+WARNING 2025-09-02 21:42:51,543 basehttp 18080 16708 "POST /api/accounts/auth/login/ HTTP/1.1" 404 12142
+WARNING 2025-09-02 21:43:18,238 log 18080 16708 Not Found: /api/auth/auth/login/
+WARNING 2025-09-02 21:43:18,239 basehttp 18080 16708 "POST /api/auth/auth/login/ HTTP/1.1" 404 26
+WARNING 2025-09-02 21:44:18,802 log 18080 16708 Forbidden (CSRF cookie not set.): /api/auth/auth/register/
+WARNING 2025-09-02 21:44:18,824 basehttp 18080 16708 "POST /api/auth/auth/register/ HTTP/1.1" 403 11836
+INFO 2025-09-02 22:10:03,940 autoreload 20740 12028 Watching for file changes with StatReloader
+INFO 2025-09-02 22:10:13,789 basehttp 20740 12496 "OPTIONS /api/auth/auth/google/login/ HTTP/1.1" 200 0
+INFO 2025-09-02 22:10:13,822 dynamic_views 20740 12496 Received Google OAuth login request: {'credential': 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjJkN2VkMzM4YzBmMTQ1N2IyMTRhMjc0YjVlMGU2NjdiNDRhNDJkZGUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMDYxOTg4MDQ0NTM5LTB2cTNoM2ZrMDh0anM5bmNnNjNvZXR1ZGd2dDBvbnU4LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiMTA2MTk4ODA0NDUzOS0wdnEzaDNmazA4dGpzOW5jZzYzb2V0dWRndnQwb251OC5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjEwOTk5NDA0NzY0ODgyMDk1NTY2NCIsImVtYWlsIjoic2tob3NzYWluNzk5QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYmYiOjE3NTY4MjkxMTIsIm5hbWUiOiJTayBIb3NzYWluIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0pRX0piWEl1Vy1FeDhEX3Bwd3otTHBZNVh1MmxsZWN2NVpTMzhXNEx2MklNY0F2Q0k9czk2LWMiLCJnaXZlbl9uYW1lIjoiU2siLCJmYW1pbHlfbmFtZSI6Ikhvc3NhaW4iLCJpYXQiOjE3NTY4Mjk0MTIsImV4cCI6MTc1NjgzMzAxMiwianRpIjoiZTYyOWZmYTUzY2VkZDc0ZmQwYTZiMmQ4YmRhZWM3MzdhODJlYjkyYyJ9.iOWPmvBcPhZF4TEaXxgJHrxkd4TgnUIrHvKHcRNOtlosdYsjmGLvE3du5IUw3ATJLudU58mM8_pS3C2NMS3K2KeQP1r4lPBXfiPYJiPLfmi8A4Ft7OxCJVg_WW2drAHSYD9HzLkcLUzYD1dfYNtK5uJ_-KJde1Iou8PMD-_erdS5mRz4_PMtqzp0qF9w49y9gRrHxlB6_iqbaA1Mp5dmxm2SiO82V8mXfNT4TAIF23TdAAYlWHpoIHcTGx1e34SpX1AueYeK9PZ70__6jlsqd84yKQ8H8HBow-Hwsw-pFn1EZoHlwrlF80Xzv2DY2kzg1cFLwBIrnAbnECkRN6x8nQ', 'user_type': 'student'}
+INFO 2025-09-02 22:10:13,823 dynamic_views 20740 12496 Verifying Google token with client ID: 1061988044539-0vq3h3fk08tjs9ncg63oetudgvt0onu8.apps.googleusercontent.com
+INFO 2025-09-02 22:10:14,748 dynamic_views 20740 12496 Token verification successful for: skhossain799@gmail.com
+INFO 2025-09-02 22:10:15,409 dynamic_views 20740 12496 Google OAuth login successful for existing user: skhossain799@gmail.com
+INFO 2025-09-02 22:10:15,514 basehttp 20740 12496 "POST /api/auth/auth/google/login/ HTTP/1.1" 200 1130
+INFO 2025-09-02 22:10:17,683 basehttp 20740 11604 "OPTIONS /api/auth/profile/manage/ HTTP/1.1" 200 0
+ERROR 2025-09-02 22:10:18,111 log 20740 11604 Internal Server Error: /api/auth/profile/manage/
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\Coding\StudySync\backend\accounts\dynamic_views.py", line 293, in user_profile_management
+    'completion_percentage': request.user.completion_percentage
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'completion_percentage'. Did you mean: 'profile_completion_percentage'?
+ERROR 2025-09-02 22:10:18,155 basehttp 20740 11604 "GET /api/auth/profile/manage/ HTTP/1.1" 500 123510
+INFO 2025-09-02 22:10:20,970 basehttp 20740 2416 "OPTIONS /api/study-sessions/posts/ HTTP/1.1" 200 0
+INFO 2025-09-02 22:10:21,214 basehttp 20740 2416 "GET /api/study-sessions/posts/ HTTP/1.1" 200 637
+INFO 2025-09-02 22:10:36,342 basehttp 20740 20640 "GET /api/study-sessions/posts/ HTTP/1.1" 200 637
+INFO 2025-09-02 22:10:43,663 autoreload 20740 12028 D:\Coding\StudySync\backend\studysync\settings.py changed, reloading.
+INFO 2025-09-02 22:10:46,099 autoreload 21572 20584 Watching for file changes with StatReloader
+INFO 2025-09-02 22:10:59,450 dynamic_views 21572 20596 Received Google OAuth login request: {'credential': 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjJkN2VkMzM4YzBmMTQ1N2IyMTRhMjc0YjVlMGU2NjdiNDRhNDJkZGUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMDYxOTg4MDQ0NTM5LTB2cTNoM2ZrMDh0anM5bmNnNjNvZXR1ZGd2dDBvbnU4LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiMTA2MTk4ODA0NDUzOS0wdnEzaDNmazA4dGpzOW5jZzYzb2V0dWRndnQwb251OC5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjEwOTk5NDA0NzY0ODgyMDk1NTY2NCIsImVtYWlsIjoic2tob3NzYWluNzk5QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYmYiOjE3NTY4MjkxNTcsIm5hbWUiOiJTayBIb3NzYWluIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0pRX0piWEl1Vy1FeDhEX3Bwd3otTHBZNVh1MmxsZWN2NVpTMzhXNEx2MklNY0F2Q0k9czk2LWMiLCJnaXZlbl9uYW1lIjoiU2siLCJmYW1pbHlfbmFtZSI6Ikhvc3NhaW4iLCJpYXQiOjE3NTY4Mjk0NTcsImV4cCI6MTc1NjgzMzA1NywianRpIjoiNGZlNjE0ZDQ1NDhjMGM4ZTM2M2FmNmY2NTI3Yjk4Zjk4ODczNTEyYyJ9.q1z3DoUsgKbXbsboQ_R7SmrvpkavVtx397_PXsqSTzPQXAbFlU_UkQW7Y2eemveoIW6sql9SR5JpVlaOV-zXAKbAt3Sh0n96kjSWoE53WavNFk5lN8yTXVcWclsD2CgbUnn7FfojQ1jkJ57yghba34xPue9UTbAZqgEhVTsvttbtDzv3vAvB8NBe2Cc8Ix6GBVVmuuCZI8uycoanLEETRR2Qhj8WS1NhGXC1D9Qx74U1WN1gc9DbgTdueSiWmmh4kOY06wW-UYfZ7bzZ-R2eDbZq2AXO5Ur-pxkS_F1Yl488GVNzIi44Pc1ua_o6oLT4Yv0srLfGoWSfId8NnKb2wQ', 'user_type': 'student'}
+INFO 2025-09-02 22:10:59,450 dynamic_views 21572 20596 Verifying Google token with client ID: 1061988044539-0vq3h3fk08tjs9ncg63oetudgvt0onu8.apps.googleusercontent.com
+INFO 2025-09-02 22:11:00,384 dynamic_views 21572 20596 Token verification successful for: skhossain799@gmail.com
+INFO 2025-09-02 22:11:01,299 dynamic_views 21572 20596 Google OAuth login successful for existing user: skhossain799@gmail.com
+INFO 2025-09-02 22:11:01,425 basehttp 21572 20596 "POST /api/auth/auth/google/login/ HTTP/1.1" 200 1130
+ERROR 2025-09-02 22:11:03,669 log 21572 12524 Internal Server Error: /api/auth/profile/manage/
+Traceback (most recent call last):
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Mahi-Shahi\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\Coding\StudySync\backend\accounts\dynamic_views.py", line 293, in user_profile_management
+    'completion_percentage': request.user.completion_percentage
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'completion_percentage'. Did you mean: 'profile_completion_percentage'?
+ERROR 2025-09-02 22:11:03,721 basehttp 21572 12524 "GET /api/auth/profile/manage/ HTTP/1.1" 500 123868
+INFO 2025-09-02 22:11:05,599 basehttp 21572 20596 "GET /api/study-sessions/posts/ HTTP/1.1" 200 637
+INFO 2025-09-02 22:11:15,429 basehttp 21572 16244 "OPTIONS /api/study-sessions/posts/c32c49fa-8bbf-46f4-bb27-4da75066796c/ HTTP/1.1" 200 0
+INFO 2025-09-02 22:11:15,814 basehttp 21572 16244 "GET /api/study-sessions/posts/ HTTP/1.1" 200 637
+INFO 2025-09-02 22:11:55,359 basehttp 21572 7452 "GET /api/study-sessions/posts/ HTTP/1.1" 200 637
+INFO 2025-09-02 22:12:39,859 autoreload 23132 22760 Watching for file changes with StatReloader

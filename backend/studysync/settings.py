@@ -256,9 +256,15 @@ CORS_ALLOW_HEADERS = [
     'user-agent',
     'x-csrftoken',
     'x-requested-with',
+    'x-goog-spa',
+    'x-client-data',
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+
+# Additional CORS settings for OAuth
+CORS_ALLOW_PRIVATE_NETWORK = True
+CORS_EXPOSE_HEADERS = ['content-length', 'x-my-custom-header']
 
 # Payment API Configuration
 PAYMENT_APIS = {

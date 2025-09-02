@@ -250,26 +250,45 @@
             const accessToken = localStorage.getItem('access_token');
             const userData = localStorage.getItem('user_data');
             
+            console.log('🔍 Login Status Check:', {
+                hasAccessToken: !!accessToken,
+                hasUserData: !!userData,
+                tokenLength: accessToken ? accessToken.length : 0,
+                userDataParseable: userData ? (() => {
+                    try {
+                        JSON.parse(userData);
+                        return true;
+                    } catch {
+                        return false;
+                    }
+                })() : false
+            });
+            
             const loginBtn = document.getElementById('loginBtn');
             const userAvatarSection = document.getElementById('userAvatarSection');
             
             if (accessToken && userData) {
+                console.log('✅ User appears to be logged in');
+                
                 // User is logged in - show avatar dropdown
-                loginBtn.style.display = 'none';
-                userAvatarSection.style.display = 'block';
+                if (loginBtn) loginBtn.style.display = 'none';
+                if (userAvatarSection) userAvatarSection.style.display = 'block';
                 
                 // Load avatar using EXACT same logic as profile page
                 try {
                     const user = JSON.parse(userData);
+                    console.log('📝 Parsed user data:', user);
                     updateNavbarAvatar(user, user.profile);
                 } catch (e) {
-                    console.error('Error parsing user data:', e);
+                    console.error('❌ Error parsing user data:', e);
                     updateNavbarAvatar({ first_name: 'User', last_name: '' }, null);
                 }
             } else {
+                console.log('❌ User is not logged in - showing login button');
+                
                 // User is not logged in - show login button
-                loginBtn.style.display = 'inline-block';
-                userAvatarSection.style.display = 'none';
+                if (loginBtn) loginBtn.style.display = 'inline-block';
+                if (userAvatarSection) userAvatarSection.style.display = 'none';
             }
         }
 

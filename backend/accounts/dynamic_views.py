@@ -195,11 +195,23 @@ def google_oauth_login(request):
             }, status=status.HTTP_400_BAD_REQUEST)
         
         # Verify Google token
-        idinfo = id_token.verify_oauth2_token(
-            credential, 
-            requests.Request(), 
-            settings.GOOGLE_OAUTH2_CLIENT_ID
-        )
+        try:
+            logger.info(f"Verifying Google token with client ID: {settings.GOOGLE_OAUTH2_CLIENT_ID}")
+            # For JWT tokens from Google Sign-In, we only need the client ID for audience verification
+            idinfo = id_token.verify_oauth2_token(
+                credential, 
+                requests.Request(), 
+                settings.GOOGLE_OAUTH2_CLIENT_ID
+            )
+            logger.info(f"Token verification successful for: {idinfo.get('email', 'unknown')}")
+        except Exception as e:
+            logger.error(f"Google token verification failed: {str(e)}")
+            logger.error(f"Token type: {type(credential)}")
+            logger.error(f"Token preview: {credential[:50] if credential else 'None'}...")
+            return Response({
+                'error': 'Invalid Google token',
+                'details': str(e)
+            }, status=status.HTTP_400_BAD_REQUEST)
         
         if idinfo['iss'] not in ['accounts.google.com', 'https://accounts.google.com']:
             return Response({
@@ -212,7 +224,6 @@ def google_oauth_login(request):
         try:
             # Check if user exists (LOGIN ONLY - no new account creation)
             user = User.objects.get(email=email)
-            profile = user.profile
             
             # Generate tokens
             refresh = RefreshToken.for_user(user)
@@ -232,12 +243,16 @@ def google_oauth_login(request):
                     'first_name': user.first_name,
                     'last_name': user.last_name,
                     'is_verified': user.is_verified,
+                    'profile_picture': user.profile_picture,
+                    'student_id': user.student_id,
+                    'institution': user.institution,
+                    'date_of_birth': user.date_of_birth,
                 },
                 'profile': {
-                    'profile_picture': profile.profile_picture,
-                    'student_id': profile.student_id,
-                    'university': profile.university,
-                    'date_of_birth': profile.date_of_birth,
+                    'profile_picture': user.profile_picture,
+                    'student_id': user.student_id,
+                    'university': user.institution,
+                    'date_of_birth': user.date_of_birth,
                     'user_type': user_type,
                 },
                 'message': 'Login successful!'

@@ -17,7 +17,7 @@ class PostListCreateView(generics.ListCreateAPIView):
     """List all posts or create a new post"""
     queryset = Post.objects.filter(is_active=True).select_related('user').prefetch_related('join_requests')
     serializer_class = PostSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]  # Allow reading without auth
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['post_type', 'subject_area', 'difficulty_level']
     
@@ -27,23 +27,14 @@ class PostListCreateView(generics.ListCreateAPIView):
         return PostSerializer
     
     def perform_create(self, serializer):
-        # Check if user can create posts based on subscription
-        if not self.request.user.can_create_post():
-            from rest_framework.exceptions import PermissionDenied
-            limit = self.request.user.get_post_limit()
-            current_posts = self.request.user.get_current_month_posts()
-            raise PermissionDenied(
-                f"You've reached your monthly post limit ({current_posts}/{limit}). "
-                f"Upgrade to premium for unlimited posts."
-            )
-        
-        # Check if post type is allowed for user's subscription
+        # Only check if post type is allowed for user's subscription
+        # Free users can create unlimited posts but only premium users can create mentorship posts
         post_type = serializer.validated_data.get('post_type')
         if post_type == 'mentorship' and not self.request.user.can_use_mentorship():
             from rest_framework.exceptions import PermissionDenied
             raise PermissionDenied(
                 "Mentorship posts are only available for premium users. "
-                "Upgrade to premium to access mentorship features."
+                "Upgrade to premium to access mentorship features and remove ads."
             )
         
         serializer.save(user=self.request.user)
@@ -69,29 +60,31 @@ class PostDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = PostSerializer
     permission_classes = [permissions.IsAuthenticated]
     
+    def get_permissions(self):
+        """
+        Allow read access without authentication, but require authentication for update/delete
+        """
+        if self.request.method in ['PUT', 'PATCH', 'DELETE']:
+            return [permissions.IsAuthenticated()]
+        return [permissions.AllowAny()]
+    
     def get_object(self):
         post = super().get_object()
-        # Increment view count
-        post.view_count += 1
-        post.save(update_fields=['view_count'])
+        # View count functionality removed as requested
         return post
     
     def perform_update(self, serializer):
         # Only allow the post owner to update
         if serializer.instance.user != self.request.user:
-            return Response(
-                {'error': 'You can only update your own posts.'}, 
-                status=status.HTTP_403_FORBIDDEN
-            )
+            from rest_framework.exceptions import PermissionDenied
+            raise PermissionDenied('You can only update your own posts.')
         serializer.save()
     
     def perform_destroy(self, instance):
         # Only allow the post owner to delete
         if instance.user != self.request.user:
-            return Response(
-                {'error': 'You can only delete your own posts.'}, 
-                status=status.HTTP_403_FORBIDDEN
-            )
+            from rest_framework.exceptions import PermissionDenied
+            raise PermissionDenied('You can only delete your own posts.')
         # Soft delete by setting is_active to False
         instance.is_active = False
         instance.save()

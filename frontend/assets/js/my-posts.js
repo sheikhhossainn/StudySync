@@ -1,5 +1,15 @@
-// API Configuration
-const API_BASE_URL = 'http://localhost:8000/api';
+// API Configuration - Use dynamic URL like other pages
+const StudySyncConfig = window.StudySyncConfig || {
+    API_BASE_URL: (() => {
+        const hostname = window.location.hostname;
+        if (hostname === 'localhost' || hostname === '127.0.0.1') {
+            return 'http://localhost:8000';
+        }
+        return 'https://study-sync-teal.vercel.app';
+    })()
+};
+
+const API_BASE_URL = StudySyncConfig.API_BASE_URL + '/api';
 const ENDPOINTS = {
     MY_POSTS: '/study-sessions/my-posts/',
     POSTS: '/study-sessions/posts/',
@@ -12,9 +22,9 @@ function getCSRFToken() {
     return document.querySelector('[name=csrfmiddlewaretoken]')?.value || '';
 }
 
-// Get auth token from localStorage (assuming JWT authentication)
+// Get auth token from localStorage (using correct key)
 function getAuthToken() {
-    return localStorage.getItem('authToken') || '';
+    return localStorage.getItem('access_token') || '';
 }
 
 // API request helper

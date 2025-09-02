@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudySync API Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 2rem; }
+        .test-section { background: #f8f9fa; padding: 1rem; margin: 1rem 0; border-radius: 8px; }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .btn { background: #007bff; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; margin: 0.5rem; }
+        .btn:hover { background: #0056b3; }
+        pre { background: #e9ecef; padding: 1rem; border-radius: 4px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>StudySync API Test</h1>
+    
+    <div class="test-section">
+        <h2>🔗 API Connectivity Test</h2>
+        <button class="btn" onclick="testAPI()">Test API Connection</button>
+        <div id="apiResult"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>📄 Load Posts Test</h2>
+        <button class="btn" onclick="testLoadPosts()">Load Posts</button>
+        <div id="postsResult"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>✅ Fixed Issues Summary</h2>
+        <ul>
+            <li>✅ Removed post creation limits for free users</li>
+            <li>✅ Made posts viewable without authentication</li>
+            <li>✅ Fixed JavaScript errors with simplified code</li>
+            <li>✅ Added better error handling and notifications</li>
+            <li>✅ Only restricted mentorship posts to premium users</li>
+            <li>✅ Enhanced empty state with motivational content</li>
+            <li>✅ Improved form validation and user feedback</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>🎯 What Should Work Now</h2>
+        <ol>
+            <li><strong>Non-logged users:</strong> Can view all posts in the feed</li>
+            <li><strong>Logged users:</strong> Can create unlimited posts (except mentorship)</li>
+            <li><strong>Post creation:</strong> No more network errors</li>
+            <li><strong>Empty state:</strong> Shows encouraging message with benefits</li>
+            <li><strong>Premium features:</strong> Only mentorship posts require premium</li>
+        </ol>
+    </div>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:8000';
+
+        async function testAPI() {
+            const resultDiv = document.getElementById('apiResult');
+            resultDiv.innerHTML = '<p>Testing API connection...</p>';
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/study-sessions/posts/`);
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    resultDiv.innerHTML = `
+                        <div class="success">
+                            <h3>✅ API Connection Successful!</h3>
+                            <p>Status: ${response.status}</p>
+                            <p>Posts found: ${Array.isArray(data) ? data.length : (data.results ? data.results.length : 'Unknown')}</p>
+                        </div>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="error">
+                            <h3>❌ API Error</h3>
+                            <p>Status: ${response.status}</p>
+                            <p>Status Text: ${response.statusText}</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="error">
+                        <h3>❌ Network Error</h3>
+                        <p>Error: ${error.message}</p>
+                        <p>Make sure Django server is running on http://localhost:8000</p>
+                    </div>
+                `;
+            }
+        }
+
+        async function testLoadPosts() {
+            const resultDiv = document.getElementById('postsResult');
+            resultDiv.innerHTML = '<p>Loading posts...</p>';
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/study-sessions/posts/`);
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    const posts = Array.isArray(data) ? data : (data.results || []);
+                    
+                    if (posts.length === 0) {
+                        resultDiv.innerHTML = `
+                            <div class="success">
+                                <h3>✅ Posts Loaded Successfully</h3>
+                                <p>No posts found - this is expected for a new installation</p>
+                                <p>The empty state will be shown in the main app</p>
+                            </div>
+                        `;
+                    } else {
+                        resultDiv.innerHTML = `
+                            <div class="success">
+                                <h3>✅ Posts Loaded Successfully</h3>
+                                <p>Found ${posts.length} posts</p>
+                                <h4>Sample Post:</h4>
+                                <pre>${JSON.stringify(posts[0], null, 2)}</pre>
+                            </div>
+                        `;
+                    }
+                } else {
+                    const errorText = await response.text();
+                    resultDiv.innerHTML = `
+                        <div class="error">
+                            <h3>❌ Failed to Load Posts</h3>
+                            <p>Status: ${response.status}</p>
+                            <p>Error: ${errorText}</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="error">
+                        <h3>❌ Network Error</h3>
+                        <p>Error: ${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Auto-test on page load
+        window.onload = function() {
+            testAPI();
+        };
+    </script>
+</body>
+</html>

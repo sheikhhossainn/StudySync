@@ -9,7 +9,7 @@ class UserBasicSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = User
-        fields = ['id', 'email', 'user_type', 'name']
+        fields = ['id', 'email', 'first_name', 'last_name', 'name']
     
     def get_name(self, obj):
         # With single User model, just use first_name + last_name

@@ -28,6 +28,7 @@ def api_root(request):
             'auth': '/api/auth/',
             'payments': '/api/payments/',
             'study-sessions': '/api/study-sessions/',
+            'mentorship': '/api/mentorship/',
             'admin': '/admin/',
             'oauth': '/o/',
             'social-auth': '/auth/',
@@ -40,7 +41,7 @@ urlpatterns = [
     path('api/auth/', include('accounts.urls')),
     path('api/payments/', include('payments.urls')),
     path('api/study-sessions/', include('study_sessions.urls')),
-    # path('api/mentorship/', include('mentorship.urls')),  # TODO: Create mentorship views
+    path('api/mentorship/', include('mentorship.urls')),
     # path('api/', include('core.urls')),  # TODO: Create core views
     
     # OAuth 2.0 endpoints

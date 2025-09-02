@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/mentorship.css">
+    <script src="assets/js/config.js"></script>
     <title>Find your mentor - StudySync</title>
 </head>
 <body>
@@ -37,7 +38,25 @@
             <div class="hero-section">
                 <h1 class="hero-title">Find your mentor</h1>
                 <p class="hero-subtitle">Post your goals and get guidance from experienced mentors in your field.</p>
-                <button class="btn btn-primary btn-large">Post a Mentorship Request</button>
+                <button class="btn btn-primary btn-large" onclick="openMentorshipModal()">Post a Mentorship Request</button>
+            </div>
+
+            <!-- Mentorship Requests Section -->
+            <div class="mentorship-section">
+                <div class="section-header">
+                    <h2 class="section-title">Recent Mentorship Requests</h2>
+                    <p class="section-subtitle">Students seeking guidance from experienced mentors</p>
+                </div>
+                
+                <div class="mentorship-requests" id="mentorshipRequests">
+                    <!-- Loading indicator -->
+                    <div id="mentorshipLoadingIndicator" class="loading-indicator">
+                        <div class="loading-spinner"></div>
+                        <p>Loading mentorship requests...</p>
+                    </div>
+                    
+                    <!-- Mentorship requests will be loaded dynamically here -->
+                </div>
             </div>
 
             <div class="mentors-grid">
@@ -168,10 +187,147 @@
         </div>
     </main>
 
+    <!-- Mentorship Request Modal -->
+    <div id="mentorshipModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create Mentorship Request</h2>
+                <span class="close" onclick="closeMentorshipModal()">&times;</span>
+            </div>
+            <form id="mentorshipForm" class="post-form">
+                <div class="form-group">
+                    <label for="mentorshipTitle">Title *</label>
+                    <input type="text" id="mentorshipTitle" name="title" required maxlength="255" 
+                           placeholder="e.g., Seeking mentor for software engineering career guidance">
+                </div>
+                
+                <div class="form-group">
+                    <label for="mentorshipDescription">Description *</label>
+                    <textarea id="mentorshipDescription" name="description" required rows="4" 
+                              placeholder="Describe your goals, current situation, and what kind of guidance you're looking for..."></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="targetRole">Target Role/Goal *</label>
+                        <input type="text" id="targetRole" name="target_role" required 
+                               placeholder="e.g., Software Engineer at FAANG, Data Scientist, etc.">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mentorshipField">Field/Industry *</label>
+                        <select id="mentorshipField" name="field" required>
+                            <option value="">Select field</option>
+                            <option value="software_engineering">Software Engineering</option>
+                            <option value="data_science">Data Science</option>
+                            <option value="machine_learning">Machine Learning</option>
+                            <option value="product_management">Product Management</option>
+                            <option value="ui_ux_design">UI/UX Design</option>
+                            <option value="cybersecurity">Cybersecurity</option>
+                            <option value="devops">DevOps</option>
+                            <option value="mobile_development">Mobile Development</option>
+                            <option value="web_development">Web Development</option>
+                            <option value="finance">Finance</option>
+                            <option value="marketing">Marketing</option>
+                            <option value="consulting">Consulting</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="topicsNeeded">Topics/Skills Needed *</label>
+                        <input type="text" id="topicsNeeded" name="topics" required 
+                               placeholder="e.g., System Design, DSA, Interview Prep, Portfolio Review">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="experienceLevel">Your Experience Level *</label>
+                        <select id="experienceLevel" name="experience_level" required>
+                            <option value="">Select level</option>
+                            <option value="student">Student</option>
+                            <option value="entry_level">Entry Level (0-1 years)</option>
+                            <option value="junior">Junior (1-3 years)</option>
+                            <option value="mid_level">Mid Level (3-5 years)</option>
+                            <option value="senior">Senior (5+ years)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="preferredTime">Preferred Meeting Time</label>
+                        <select id="preferredTime" name="preferred_time">
+                            <option value="">Select time preference</option>
+                            <option value="morning">Morning (6 AM - 12 PM)</option>
+                            <option value="afternoon">Afternoon (12 PM - 6 PM)</option>
+                            <option value="evening">Evening (6 PM - 11 PM)</option>
+                            <option value="weekend">Weekends</option>
+                            <option value="flexible">Flexible</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sessionFrequency">Session Frequency</label>
+                        <select id="sessionFrequency" name="session_frequency">
+                            <option value="">Select frequency</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="biweekly">Bi-weekly</option>
+                            <option value="monthly">Monthly</option>
+                            <option value="as_needed">As needed</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="budget">Budget (per month) *</label>
+                        <select id="budget" name="budget" required>
+                            <option value="">Select budget range</option>
+                            <option value="free">Free/Volunteer</option>
+                            <option value="under_500">Under $500</option>
+                            <option value="500_1000">$500 - $1000</option>
+                            <option value="1000_2000">$1000 - $2000</option>
+                            <option value="2000_3000">$2000 - $3000</option>
+                            <option value="3000_5000">$3000 - $5000</option>
+                            <option value="above_5000">Above $5000</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mentorshipDuration">Expected Duration</label>
+                        <select id="mentorshipDuration" name="duration">
+                            <option value="">Select duration</option>
+                            <option value="1_month">1 Month</option>
+                            <option value="3_months">3 Months</option>
+                            <option value="6_months">6 Months</option>
+                            <option value="1_year">1 Year</option>
+                            <option value="ongoing">Ongoing</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="additionalInfo">Additional Information</label>
+                    <textarea id="additionalInfo" name="additional_info" rows="3" 
+                              placeholder="Any specific requirements, timeline, or additional context..."></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeMentorshipModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Post Mentorship Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script>
-        // Load user data when page loads (copied from working profile page)
+        // Load user data and mentorship requests when page loads
         document.addEventListener('DOMContentLoaded', function() {
             checkLoginStatus();
+            loadMentorshipRequests();
+            setupEventListeners();
         });
 
         function checkLoginStatus() {
@@ -217,6 +373,336 @@
                 console.log('✅ Mentorship page avatar loaded:', navAvatarSrc);
             }
         }
+
+        // ========================
+        // MODAL OPERATIONS
+        // ========================
+        
+        function openMentorshipModal() {
+            const accessToken = localStorage.getItem('access_token');
+            if (!accessToken) {
+                showNotification('Please log in to create a mentorship request.', 'error');
+                setTimeout(() => window.location.href = 'user-selection.html', 2000);
+                return;
+            }
+            
+            document.getElementById('mentorshipModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMentorshipModal() {
+            document.getElementById('mentorshipModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+            
+            // Reset form
+            document.getElementById('mentorshipForm').reset();
+        }
+
+        // ========================
+        // EVENT LISTENERS SETUP
+        // ========================
+        
+        function setupEventListeners() {
+            // Mentorship form submission
+            const mentorshipForm = document.getElementById('mentorshipForm');
+            if (mentorshipForm) {
+                mentorshipForm.addEventListener('submit', handleMentorshipSubmission);
+            }
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', function(event) {
+                const modal = document.getElementById('mentorshipModal');
+                if (event.target === modal) {
+                    closeMentorshipModal();
+                }
+            });
+        }
+
+        // ========================
+        // MENTORSHIP REQUEST SUBMISSION
+        // ========================
+        
+        async function handleMentorshipSubmission(event) {
+            event.preventDefault();
+            
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            try {
+                // Show loading state
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Creating...';
+                
+                const formData = new FormData(event.target);
+                const mentorshipData = {
+                    title: formData.get('title'),
+                    description: formData.get('description'),
+                    target_role: formData.get('target_role'),
+                    field: formData.get('field'),
+                    topics: formData.get('topics'),
+                    experience_level: formData.get('experience_level'),
+                    preferred_time: formData.get('preferred_time') || null,
+                    session_frequency: formData.get('session_frequency') || null,
+                    budget: formData.get('budget'),
+                    duration: formData.get('duration') || null,
+                    additional_info: formData.get('additional_info') || null
+                };
+
+                // Validate required fields
+                if (!mentorshipData.title || !mentorshipData.description || !mentorshipData.target_role || 
+                    !mentorshipData.field || !mentorshipData.topics || !mentorshipData.experience_level || 
+                    !mentorshipData.budget) {
+                    throw new Error('Please fill in all required fields.');
+                }
+
+                // API call to create mentorship request
+                const response = await fetch(`${window.StudySyncConfig?.API_BASE_URL || 'http://127.0.0.1:8000'}/api/mentorship/requests/`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+                    },
+                    body: JSON.stringify(mentorshipData)
+                });
+
+                if (response.ok) {
+                    const newRequest = await response.json();
+                    closeMentorshipModal();
+                    showNotification('Mentorship request created successfully! 🎉', 'success');
+                    loadMentorshipRequests(); // Reload the requests
+                } else {
+                    const errorData = await response.json();
+                    console.error('Server error:', errorData);
+                    
+                    if (response.status === 401) {
+                        showNotification('Session expired. Please log in again.', 'error');
+                        localStorage.clear();
+                        setTimeout(() => window.location.href = 'user-selection.html', 2000);
+                    } else {
+                        const errorMessage = errorData.detail || 
+                                           errorData.message ||
+                                           'Failed to create mentorship request. Please try again.';
+                        showNotification(errorMessage, 'error');
+                    }
+                }
+            } catch (error) {
+                console.error('Error creating mentorship request:', error);
+                showNotification(error.message || 'Network error. Please check your connection.', 'error');
+            } finally {
+                // Restore button state
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
+        }
+
+        // ========================
+        // LOAD MENTORSHIP REQUESTS
+        // ========================
+        
+        async function loadMentorshipRequests() {
+            try {
+                console.log('Loading mentorship requests...');
+                
+                const response = await fetch(`${window.StudySyncConfig?.API_BASE_URL || 'http://127.0.0.1:8000'}/api/mentorship/requests/`);
+                
+                if (response.ok) {
+                    const requests = await response.json();
+                    displayMentorshipRequests(requests);
+                } else {
+                    console.error('Failed to load mentorship requests:', response.status);
+                    showErrorMessage('Failed to load mentorship requests. Please try again later.');
+                }
+            } catch (error) {
+                console.error('Error loading mentorship requests:', error);
+                showErrorMessage('Network error. Please check your connection.');
+            }
+        }
+
+        function displayMentorshipRequests(requests) {
+            const container = document.getElementById('mentorshipRequests');
+            const loadingIndicator = document.getElementById('mentorshipLoadingIndicator');
+            
+            // Hide loading indicator
+            if (loadingIndicator) {
+                loadingIndicator.style.display = 'none';
+            }
+            
+            if (!requests || requests.length === 0) {
+                container.innerHTML = '<div class="no-requests"><p>No mentorship requests yet. Be the first to post one!</p></div>';
+                return;
+            }
+            
+            // Clear existing content
+            container.innerHTML = '';
+            
+            requests.forEach(request => {
+                const requestCard = createMentorshipRequestCard(request);
+                container.appendChild(requestCard);
+            });
+        }
+
+        function createMentorshipRequestCard(request) {
+            const card = document.createElement('div');
+            card.className = 'mentor-card mentorship-request-card';
+            
+            // Format budget display
+            const budgetDisplay = formatBudget(request.budget);
+            
+            // Format time preference
+            const timeDisplay = request.preferred_time ? formatTimePreference(request.preferred_time) : 'Flexible';
+            
+            card.innerHTML = `
+                <div class="mentor-header">
+                    <div class="user-avatar mentor-avatar">
+                        <span>${getInitials(request.author?.first_name, request.author?.last_name)}</span>
+                    </div>
+                    <div class="mentor-info">
+                        <h3 class="mentor-name">${request.author?.first_name || 'Anonymous'} ${request.author?.last_name || ''}</h3>
+                        <div class="mentor-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🎯</span>
+                                <span class="detail-text">Target: ${request.target_role}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📚</span>
+                                <span class="detail-text">Topics: ${request.topics}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">⏰</span>
+                                <span class="detail-text">Time: ${timeDisplay}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">💰</span>
+                                <span class="detail-text">Budget: ${budgetDisplay}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📊</span>
+                                <span class="detail-text">Level: ${formatExperienceLevel(request.experience_level)}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🏢</span>
+                                <span class="detail-text">Field: ${formatField(request.field)}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mentor-footer">
+                    <p class="mentor-description">${request.description}</p>
+                    <button class="btn btn-primary" onclick="contactMentee(${request.id})">Offer Mentorship</button>
+                </div>
+            `;
+            
+            return card;
+        }
+
+        // ========================
+        // UTILITY FUNCTIONS
+        // ========================
+        
+        function getInitials(firstName, lastName) {
+            const first = firstName ? firstName.charAt(0).toUpperCase() : '';
+            const last = lastName ? lastName.charAt(0).toUpperCase() : '';
+            return first + last || 'U';
+        }
+
+        function formatBudget(budget) {
+            const budgetMap = {
+                'free': 'Free/Volunteer',
+                'under_500': 'Under $500',
+                '500_1000': '$500 - $1000',
+                '1000_2000': '$1000 - $2000',
+                '2000_3000': '$2000 - $3000',
+                '3000_5000': '$3000 - $5000',
+                'above_5000': 'Above $5000'
+            };
+            return budgetMap[budget] || budget;
+        }
+
+        function formatTimePreference(time) {
+            const timeMap = {
+                'morning': 'Morning',
+                'afternoon': 'Afternoon',
+                'evening': 'Evening',
+                'weekend': 'Weekends',
+                'flexible': 'Flexible'
+            };
+            return timeMap[time] || time;
+        }
+
+        function formatExperienceLevel(level) {
+            const levelMap = {
+                'student': 'Student',
+                'entry_level': 'Entry Level',
+                'junior': 'Junior',
+                'mid_level': 'Mid Level',
+                'senior': 'Senior'
+            };
+            return levelMap[level] || level;
+        }
+
+        function formatField(field) {
+            const fieldMap = {
+                'software_engineering': 'Software Engineering',
+                'data_science': 'Data Science',
+                'machine_learning': 'Machine Learning',
+                'product_management': 'Product Management',
+                'ui_ux_design': 'UI/UX Design',
+                'cybersecurity': 'Cybersecurity',
+                'devops': 'DevOps',
+                'mobile_development': 'Mobile Development',
+                'web_development': 'Web Development',
+                'finance': 'Finance',
+                'marketing': 'Marketing',
+                'consulting': 'Consulting',
+                'other': 'Other'
+            };
+            return fieldMap[field] || field;
+        }
+
+        function contactMentee(requestId) {
+            // TODO: Implement messaging/contact functionality
+            showNotification('Contact functionality will be implemented soon!', 'info');
+        }
+
+        function showErrorMessage(message) {
+            const container = document.getElementById('mentorshipRequests');
+            const loadingIndicator = document.getElementById('mentorshipLoadingIndicator');
+            
+            if (loadingIndicator) {
+                loadingIndicator.style.display = 'none';
+            }
+            
+            container.innerHTML = `<div class="error-message"><p>${message}</p></div>`;
+        }
+
+        // ========================
+        // NOTIFICATION SYSTEM
+        // ========================
+        
+        function showNotification(message, type = 'info') {
+            // Remove existing notifications
+            const existingNotifications = document.querySelectorAll('.notification');
+            existingNotifications.forEach(notification => notification.remove());
+            
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.textContent = message;
+            
+            // Add to page
+            document.body.appendChild(notification);
+            
+            // Remove after 5 seconds
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.remove();
+                }
+            }, 5000);
+        }
+
+        // ========================
+        // DROPDOWN AND AUTH
+        // ========================
 
         function toggleDropdown() {
             const dropdown = document.getElementById("userDropdown");

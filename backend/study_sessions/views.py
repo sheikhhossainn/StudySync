@@ -27,16 +27,7 @@ class PostListCreateView(generics.ListCreateAPIView):
         return PostSerializer
     
     def perform_create(self, serializer):
-        # Only check if post type is allowed for user's subscription
-        # Free users can create unlimited posts but only premium users can create mentorship posts
-        post_type = serializer.validated_data.get('post_type')
-        if post_type == 'mentorship' and not self.request.user.can_use_mentorship():
-            from rest_framework.exceptions import PermissionDenied
-            raise PermissionDenied(
-                "Mentorship posts are only available for premium users. "
-                "Upgrade to premium to access mentorship features and remove ads."
-            )
-        
+        # Save the post with the current user
         serializer.save(user=self.request.user)
     
     def get_queryset(self):

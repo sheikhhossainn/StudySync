@@ -49,9 +49,10 @@ class MentorshipRequestSerializer(serializers.ModelSerializer):
         return value.strip()
 
     def validate_topics(self, value):
-        if len(value.strip()) < 3:
-            raise serializers.ValidationError("Please specify at least one topic or skill.")
-        return value.strip()
+        cleaned_value = value.strip()
+        if len(cleaned_value) < 3:
+            raise serializers.ValidationError("Please specify at least 3 characters for topics or skills.")
+        return cleaned_value
 
 
 class UserConnectionSerializer(serializers.ModelSerializer):

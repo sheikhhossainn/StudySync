@@ -6,7 +6,35 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/mentorship.css">
     <script src="assets/js/config.js"></script>
+    <script src="assets/js/shared-auth.js"></script>
     <title>Find your mentor - StudySync</title>
+    <style>
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+            border: 1px solid;
+        }
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+        .mentor-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .mentor-actions .btn {
+            flex: 1;
+            min-width: 100px;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -56,132 +84,6 @@
                     </div>
                     
                     <!-- Mentorship requests will be loaded dynamically here -->
-                </div>
-            </div>
-
-            <div class="mentors-grid">
-                <div class="mentor-card">
-                    <div class="mentor-header">
-                        <div class="user-avatar mentor-avatar">
-                            <span>SH</span>
-                        </div>
-                        <div class="mentor-info">
-                            <h3 class="mentor-name">Sheikh Hossain Bin Bakhtiar</h3>
-                            <div class="mentor-details">
-                                <div class="detail-item">
-                                    <span class="detail-icon">🎯</span>
-                                    <span class="detail-text">Target: Meta SWE internship</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-icon">📚</span>
-                                    <span class="detail-text">Topics: System Design, DSA</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-icon">⏰</span>
-                                    <span class="detail-text">Time: Evening, Weekend</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-icon">💰</span>
-                                    <span class="detail-text">Budget: $3000/month</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mentor-footer">
-                        <p class="mentor-description">Need help with mock interviews...</p>
-                        <button class="btn btn-primary">Request Mentor</button>
-                    </div>
-                </div>
-
-                <div class="mentor-card">
-                    <div class="mentor-header">
-                        <div class="user-avatar mentor-avatar">
-                            <span>H</span>
-                        </div>
-                        <div class="mentor-info">
-                            <h3 class="mentor-name">Hasan</h3>
-                            <div class="mentor-details">
-                                <div class="detail-item">
-                                    <span class="detail-icon">🎯</span>
-                                    <span class="detail-text">Target: Google SWE</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-icon">📚</span>
-                                    <span class="detail-text">Topics: DSA, Portfolio Review</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-icon">⏰</span>
-                                    <span class="detail-text">Time: Morning, Afternoon</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-icon">💰</span>
-                                    <span class="detail-text">Budget: $3000/month</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mentor-footer">
-                        <p class="mentor-description">Guidance for internship applications</p>
-                        <button class="btn btn-primary">Request Mentor</button>
-                    </div>
-                </div>
-
-                <div class="mentor-card">
-                    <div class="mentor-header">
-                        <div class="user-avatar mentor-avatar">
-                            <span>A</span>
-                        </div>
-                        <div class="mentor-info">
-                            <h3 class="mentor-name">Sarah</h3>
-                            <div class="mentor-details">
-                                <div class="detail-item">
-                                    <span class="detail-icon">🎯</span>
-                                    <span class="detail-text">Target: UI/UX Designer</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-icon">📚</span>
-                                    <span class="detail-text">Topics: UX/UI Principles</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-icon">⏰</span>
-                                    <span class="detail-text">Time: Weekly Check-ins</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mentor-footer">
-                        <p class="mentor-description">I'm learning to improve my portfolio</p>
-                        <button class="btn btn-primary">Request Mentor</button>
-                    </div>
-                </div>
-
-                <div class="mentor-card">
-                    <div class="mentor-header">
-                        <div class="user-avatar mentor-avatar">
-                            <span>A</span>
-                        </div>
-                        <div class="mentor-info">
-                            <h3 class="mentor-name">Adam</h3>
-                            <div class="mentor-details">
-                                <div class="detail-item">
-                                    <span class="detail-icon">🎯</span>
-                                    <span class="detail-text">Target: Microsoft Data Scientist</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-icon">📚</span>
-                                    <span class="detail-text">Topics: Machine Learning</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-icon">⏰</span>
-                                    <span class="detail-text">Time: Evening</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mentor-footer">
-                        <p class="mentor-description">Looking for advice on projects...</p>
-                        <button class="btn btn-primary">Request Mentor</button>
-                    </div>
                 </div>
             </div>
         </div>
@@ -504,9 +406,16 @@
                 console.log('Loading mentorship requests...');
                 
                 const response = await fetch(`${window.StudySyncConfig?.API_BASE_URL || 'http://127.0.0.1:8000'}/api/mentorship/requests/`);
+                console.log('Response status:', response.status);
                 
                 if (response.ok) {
-                    const requests = await response.json();
+                    const data = await response.json();
+                    console.log('API Response:', data);
+                    
+                    // Handle both paginated and non-paginated responses
+                    const requests = data.results || data;
+                    console.log('Mentorship requests to display:', requests);
+                    
                     displayMentorshipRequests(requests);
                 } else {
                     console.error('Failed to load mentorship requests:', response.status);
@@ -544,6 +453,12 @@
         function createMentorshipRequestCard(request) {
             const card = document.createElement('div');
             card.className = 'mentor-card mentorship-request-card';
+            card.setAttribute('data-request-id', request.id); // Add ID for easy removal
+            
+            // Check if this is the current user's request
+            const currentUserId = localStorage.getItem('user_data') ? 
+                JSON.parse(localStorage.getItem('user_data')).id : null;
+            const isOwnRequest = currentUserId && request.author?.id === currentUserId;
             
             // Format budget display
             const budgetDisplay = formatBudget(request.budget);
@@ -586,9 +501,25 @@
                         </div>
                     </div>
                 </div>
-                <div class="mentor-footer">
+                <div class="mentor-content">
+                    <h4 class="mentorship-title">${request.title}</h4>
                     <p class="mentor-description">${request.description}</p>
-                    <button class="btn btn-primary" onclick="contactMentee(${request.id})">Offer Mentorship</button>
+                    ${request.additional_info ? `
+                    <div class="additional-info">
+                        <p><strong>Additional Info:</strong> ${request.additional_info}</p>
+                    </div>
+                    ` : ''}
+                </div>
+                <div class="mentor-footer">
+                    <div class="mentor-actions">
+                        ${!isOwnRequest ? `
+                        <button class="btn btn-primary" onclick="contactMentee('${request.id}')">Offer Mentorship</button>
+                        ` : ''}
+                        <button class="btn btn-secondary" onclick="viewMentorshipDetails('${request.id}')">View Details</button>
+                        ${isOwnRequest ? `
+                        <button class="btn btn-danger" onclick="deleteMentorshipRequest('${request.id}')">Delete Request</button>
+                        ` : ''}
+                    </div>
                 </div>
             `;
             
@@ -662,6 +593,61 @@
         function contactMentee(requestId) {
             // TODO: Implement messaging/contact functionality
             showNotification('Contact functionality will be implemented soon!', 'info');
+        }
+
+        function viewMentorshipDetails(requestId) {
+            // TODO: Implement view mentorship details functionality
+            showNotification('View details functionality will be implemented soon!', 'info');
+        }
+
+        // Delete mentorship request function
+        async function deleteMentorshipRequest(requestId) {
+            if (!confirm('Are you sure you want to delete this mentorship request? This action cannot be undone.')) {
+                return;
+            }
+
+            try {
+                console.log('🗑️ Deleting mentorship request:', requestId);
+
+                const accessToken = localStorage.getItem('access_token');
+                if (!accessToken) {
+                    showNotification('Please log in to delete your request.', 'error');
+                    return;
+                }
+
+                const response = await fetch(`${window.StudySyncConfig?.API_BASE_URL || 'http://127.0.0.1:8000'}/api/mentorship/requests/${requestId}/`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Authorization': `Bearer ${accessToken}`
+                    }
+                });
+
+                if (response.ok) {
+                    console.log('✅ Mentorship request deleted successfully');
+                    showNotification('Mentorship request deleted successfully! 🗑️', 'success');
+                    
+                    // Remove the card from the DOM immediately
+                    const card = document.querySelector(`[data-request-id="${requestId}"]`);
+                    if (card) {
+                        card.remove();
+                    }
+                    
+                    // Reload the requests to ensure consistency
+                    loadMentorshipRequests();
+                } else if (response.status === 404) {
+                    showNotification('Request not found or already deleted.', 'warning');
+                    loadMentorshipRequests(); // Refresh to sync state
+                } else if (response.status === 403) {
+                    showNotification('You can only delete your own mentorship requests.', 'error');
+                } else {
+                    const errorData = await response.text();
+                    console.error('❌ Delete failed:', errorData);
+                    showNotification('Failed to delete request. Please try again.', 'error');
+                }
+            } catch (error) {
+                console.error('❌ Error deleting mentorship request:', error);
+                showNotification('Network error. Please check your connection.', 'error');
+            }
         }
 
         function showErrorMessage(message) {

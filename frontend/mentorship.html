@@ -34,6 +34,48 @@
             flex: 1;
             min-width: 100px;
         }
+        /* Grid layout improvements */
+        .mentors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .mentor-card {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        /* Modal for details */
+        .details-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .details-modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .details-modal .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .details-modal .close:hover {
+            color: black;
+        }
     </style>
 </head>
 <body>
@@ -187,13 +229,12 @@
                         <label for="budget">Budget (per month) *</label>
                         <select id="budget" name="budget" required>
                             <option value="">Select budget range</option>
-                            <option value="free">Free/Volunteer</option>
-                            <option value="under_500">Under $500</option>
-                            <option value="500_1000">$500 - $1000</option>
-                            <option value="1000_2000">$1000 - $2000</option>
-                            <option value="2000_3000">$2000 - $3000</option>
-                            <option value="3000_5000">$3000 - $5000</option>
-                            <option value="above_5000">Above $5000</option>
+                            <option value="10000_20000">৳10,000 - ৳20,000</option>
+                            <option value="20000_30000">৳20,000 - ৳30,000</option>
+                            <option value="30000_50000">৳30,000 - ৳50,000</option>
+                            <option value="50000_75000">৳50,000 - ৳75,000</option>
+                            <option value="75000_100000">৳75,000 - ৳1,00,000</option>
+                            <option value="above_100000">Above ৳1,00,000</option>
                         </select>
                     </div>
                     
@@ -221,6 +262,16 @@
                     <button type="submit" class="btn btn-primary">Post Mentorship Request</button>
                 </div>
             </form>
+        </div>
+    </div>
+
+    <!-- Mentorship Details Modal -->
+    <div id="detailsModal" class="details-modal">
+        <div class="details-modal-content">
+            <span class="close" onclick="closeDetailsModal()">&times;</span>
+            <div id="detailsContent">
+                <!-- Details will be loaded here -->
+            </div>
         </div>
     </div>
 
@@ -538,13 +589,20 @@
 
         function formatBudget(budget) {
             const budgetMap = {
-                'free': 'Free/Volunteer',
-                'under_500': 'Under $500',
-                '500_1000': '$500 - $1000',
-                '1000_2000': '$1000 - $2000',
-                '2000_3000': '$2000 - $3000',
-                '3000_5000': '$3000 - $5000',
-                'above_5000': 'Above $5000'
+                '10000_20000': '৳10,000 - ৳20,000',
+                '20000_30000': '৳20,000 - ৳30,000',
+                '30000_50000': '৳30,000 - ৳50,000',
+                '50000_75000': '৳50,000 - ৳75,000',
+                '75000_100000': '৳75,000 - ৳1,00,000',
+                'above_100000': 'Above ৳1,00,000',
+                // Legacy support for old values
+                'free': '৳10,000 - ৳20,000',
+                'under_500': '৳10,000 - ৳20,000',
+                '500_1000': '৳20,000 - ৳30,000',
+                '1000_2000': '৳30,000 - ৳50,000',
+                '2000_3000': '৳50,000 - ৳75,000',
+                '3000_5000': '৳75,000 - ৳1,00,000',
+                'above_5000': 'Above ৳1,00,000'
             };
             return budgetMap[budget] || budget;
         }
@@ -590,14 +648,177 @@
             return fieldMap[field] || field;
         }
 
+        function formatSessionFrequency(frequency) {
+            const frequencyMap = {
+                'once_week': 'Once per week',
+                'twice_week': 'Twice per week',
+                'three_times_week': 'Three times per week',
+                'daily': 'Daily',
+                'bi_weekly': 'Bi-weekly',
+                'flexible': 'Flexible'
+            };
+            return frequencyMap[frequency] || frequency;
+        }
+
+        function formatDuration(duration) {
+            const durationMap = {
+                '1_month': '1 Month',
+                '2_months': '2 Months',
+                '3_months': '3 Months',
+                '6_months': '6 Months',
+                '1_year': '1 Year',
+                'ongoing': 'Ongoing'
+            };
+            return durationMap[duration] || duration;
+        }
+
         function contactMentee(requestId) {
             // TODO: Implement messaging/contact functionality
             showNotification('Contact functionality will be implemented soon!', 'info');
         }
 
-        function viewMentorshipDetails(requestId) {
-            // TODO: Implement view mentorship details functionality
-            showNotification('View details functionality will be implemented soon!', 'info');
+        async function viewMentorshipDetails(requestId) {
+            try {
+                console.log('📖 Loading details for request:', requestId);
+                
+                const response = await fetch(`${window.StudySyncConfig?.API_BASE_URL || 'http://127.0.0.1:8000'}/api/mentorship/requests/${requestId}/`);
+                
+                if (response.ok) {
+                    const request = await response.json();
+                    displayMentorshipDetails(request);
+                } else {
+                    console.error('Failed to load mentorship details:', response.status);
+                    showNotification('Failed to load mentorship details. Please try again.', 'error');
+                }
+            } catch (error) {
+                console.error('Error loading mentorship details:', error);
+                showNotification('Network error. Please check your connection.', 'error');
+            }
+        }
+
+        function displayMentorshipDetails(request) {
+            const detailsContent = document.getElementById('detailsContent');
+            const author = request.author || {};
+            const authorName = `${author.first_name || ''} ${author.last_name || ''}`.trim() || author.email || 'Anonymous';
+            
+            // Check if this is the current user's request
+            const currentUserId = localStorage.getItem('user_data') ? 
+                JSON.parse(localStorage.getItem('user_data')).id : null;
+            const isOwnRequest = currentUserId && author.id === currentUserId;
+            
+            detailsContent.innerHTML = `
+                <div class="details-header">
+                    <div class="user-avatar mentor-avatar" style="width: 60px; height: 60px; font-size: 24px;">
+                        <span>${getInitials(author.first_name, author.last_name)}</span>
+                    </div>
+                    <div style="margin-left: 20px;">
+                        <h2>${request.title}</h2>
+                        <h3 style="color: #666; margin: 5px 0;">by ${authorName}</h3>
+                        <p style="color: #888; margin: 0;">${formatTimeAgo(request.created_at)}</p>
+                    </div>
+                </div>
+                
+                <div class="details-body" style="margin-top: 30px;">
+                    <div class="detail-section">
+                        <h4>🎯 Target Goal</h4>
+                        <p>${request.target_role}</p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4>📝 Description</h4>
+                        <p>${request.description}</p>
+                    </div>
+                    
+                    <div class="details-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
+                        <div class="detail-section">
+                            <h4>💼 Field</h4>
+                            <p>${request.field_display || formatField(request.field)}</p>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4>📚 Topics/Skills</h4>
+                            <p>${request.topics}</p>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4>📈 Experience Level</h4>
+                            <p>${request.experience_level_display || formatExperienceLevel(request.experience_level)}</p>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4>💰 Budget</h4>
+                            <p>${request.budget_display || formatBudget(request.budget)}</p>
+                        </div>
+                        
+                        ${request.preferred_time ? `
+                        <div class="detail-section">
+                            <h4>🕐 Preferred Time</h4>
+                            <p>${request.preferred_time_display || formatTimePreference(request.preferred_time)}</p>
+                        </div>
+                        ` : ''}
+                        
+                        ${request.session_frequency ? `
+                        <div class="detail-section">
+                            <h4>📅 Session Frequency</h4>
+                            <p>${request.session_frequency_display || formatSessionFrequency(request.session_frequency)}</p>
+                        </div>
+                        ` : ''}
+                        
+                        ${request.duration ? `
+                        <div class="detail-section">
+                            <h4>⏱️ Expected Duration</h4>
+                            <p>${request.duration_display || formatDuration(request.duration)}</p>
+                        </div>
+                        ` : ''}
+                    </div>
+                    
+                    ${request.additional_info ? `
+                    <div class="detail-section">
+                        <h4>ℹ️ Additional Information</h4>
+                        <p>${request.additional_info}</p>
+                    </div>
+                    ` : ''}
+                    
+                    <div class="details-actions" style="margin-top: 30px; text-align: center;">
+                        ${!isOwnRequest ? `
+                        <button class="btn btn-primary btn-large" onclick="contactMentee('${request.id}'); closeDetailsModal();">
+                            Offer Mentorship
+                        </button>
+                        ` : `
+                        <p style="color: #666; font-style: italic;">This is your mentorship request</p>
+                        `}
+                    </div>
+                </div>
+            `;
+            
+            // Show the modal
+            document.getElementById('detailsModal').style.display = 'block';
+        }
+
+        function closeDetailsModal() {
+            document.getElementById('detailsModal').style.display = 'none';
+        }
+
+        // Helper function for time formatting
+        function formatTimeAgo(dateString) {
+            if (!dateString) return 'Recently';
+            
+            const now = new Date();
+            const postDate = new Date(dateString);
+            const diffMs = now - postDate;
+            const diffMins = Math.floor(diffMs / 60000);
+            const diffHours = Math.floor(diffMs / 3600000);
+            const diffDays = Math.floor(diffMs / 86400000);
+
+            if (diffMins < 1) return 'Just now';
+            if (diffMins < 60) return `${diffMins} minute${diffMins > 1 ? 's' : ''} ago`;
+            if (diffHours < 24) return `${diffHours} hour${diffHours > 1 ? 's' : ''} ago`;
+            if (diffDays < 7) return `${diffDays} day${diffDays > 1 ? 's' : ''} ago`;
+            return postDate.toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
         }
 
         // Delete mentorship request function

@@ -76,6 +76,36 @@
         .details-modal .close:hover {
             color: black;
         }
+        
+        /* Mentor message styling */
+        .mentor-message {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 20px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+        }
+        
+        .mentor-message-content i {
+            font-size: 48px;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+        
+        .mentor-message-content h3 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        .mentor-message-content p {
+            margin: 0;
+            font-size: 16px;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
@@ -109,6 +139,15 @@
                 <h1 class="hero-title">Find your mentor</h1>
                 <p class="hero-subtitle">Post your goals and get guidance from experienced mentors in your field.</p>
                 <button class="btn btn-primary btn-large" onclick="openMentorshipModal()">Post a Mentorship Request</button>
+                
+                <!-- Mentor-specific message (hidden by default) -->
+                <div id="mentorMessage" class="mentor-message" style="display: none;">
+                    <div class="mentor-message-content">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <h3>Welcome, Mentor!</h3>
+                        <p>Browse through student mentorship requests below and click "Apply" to offer your guidance.</p>
+                    </div>
+                </div>
             </div>
 
             <!-- Mentorship Requests Section -->
@@ -229,12 +268,13 @@
                         <label for="budget">Budget (per month) *</label>
                         <select id="budget" name="budget" required>
                             <option value="">Select budget range</option>
-                            <option value="10000_20000">৳10,000 - ৳20,000</option>
-                            <option value="20000_30000">৳20,000 - ৳30,000</option>
-                            <option value="30000_50000">৳30,000 - ৳50,000</option>
-                            <option value="50000_75000">৳50,000 - ৳75,000</option>
-                            <option value="75000_100000">৳75,000 - ৳1,00,000</option>
-                            <option value="above_100000">Above ৳1,00,000</option>
+                            <option value="free">Free/Volunteer</option>
+                            <option value="under_500">Under $500</option>
+                            <option value="500_1000">$500 - $1000</option>
+                            <option value="1000_2000">$1000 - $2000</option>
+                            <option value="2000_3000">$2000 - $3000</option>
+                            <option value="3000_5000">$3000 - $5000</option>
+                            <option value="above_5000">Above $5000</option>
                         </select>
                     </div>
                     
@@ -289,6 +329,7 @@
             
             const loginBtn = document.getElementById('loginBtn');
             const userAvatarSection = document.getElementById('userAvatarSection');
+            const postButton = document.querySelector('.btn-large');
             
             if (accessToken && userData) {
                 // User is logged in - show avatar dropdown
@@ -299,14 +340,59 @@
                 try {
                     const user = JSON.parse(userData);
                     updateNavbarAvatar(user, user.profile);
+                    
+                    // Check user type and show/hide post button accordingly
+                    checkUserRoleAndUpdateUI(user);
                 } catch (e) {
                     console.error('Error parsing user data:', e);
                     updateNavbarAvatar({ first_name: 'User', last_name: '' }, null);
                 }
             } else {
-                // User is not logged in - show login button
+                // User is not logged in - show login button and hide post button
                 if (loginBtn) loginBtn.style.display = 'inline-block';
                 if (userAvatarSection) userAvatarSection.style.display = 'none';
+                if (postButton) postButton.style.display = 'none';
+            }
+        }
+
+        function checkUserRoleAndUpdateUI(user) {
+            const postButton = document.querySelector('.btn-large');
+            const heroSubtitle = document.querySelector('.hero-subtitle');
+            const mentorMessage = document.getElementById('mentorMessage');
+            
+            // Check if user is a student or mentor
+            // This could come from user.user_type, user.is_mentor, or user.role
+            const userType = user.user_type || user.role || (user.is_mentor ? 'mentor' : 'student');
+            
+            console.log('User type detected:', userType);
+            
+            if (userType === 'student') {
+                // Students can post mentorship requests
+                if (postButton) {
+                    postButton.style.display = 'inline-block';
+                    postButton.textContent = 'Post a Mentorship Request';
+                }
+                if (heroSubtitle) {
+                    heroSubtitle.textContent = 'Post your goals and get guidance from experienced mentors in your field.';
+                }
+                if (mentorMessage) {
+                    mentorMessage.style.display = 'none';
+                }
+            } else if (userType === 'mentor') {
+                // Mentors cannot post, only respond to requests
+                if (postButton) {
+                    postButton.style.display = 'none';
+                }
+                if (heroSubtitle) {
+                    heroSubtitle.textContent = 'Browse mentorship requests from students and offer your guidance.';
+                }
+                if (mentorMessage) {
+                    mentorMessage.style.display = 'block';
+                }
+            } else {
+                // Default behavior for unknown roles
+                if (postButton) postButton.style.display = 'none';
+                if (mentorMessage) mentorMessage.style.display = 'none';
             }
         }
 
@@ -387,6 +473,13 @@
                 submitBtn.textContent = 'Creating...';
                 
                 const formData = new FormData(event.target);
+                
+                // Debug: Log all form data entries
+                console.log('=== FormData Debug ===');
+                for (let [key, value] of formData.entries()) {
+                    console.log(`${key}:`, value, typeof value);
+                }
+                
                 const mentorshipData = {
                     title: formData.get('title'),
                     description: formData.get('description'),
@@ -400,6 +493,9 @@
                     duration: formData.get('duration') || null,
                     additional_info: formData.get('additional_info') || null
                 };
+                
+                console.log('=== Final Data ===');
+                console.log('mentorshipData:', mentorshipData);
 
                 // Validate required fields
                 if (!mentorshipData.title || !mentorshipData.description || !mentorshipData.target_role || 

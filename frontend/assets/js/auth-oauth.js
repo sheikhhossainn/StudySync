@@ -258,7 +258,7 @@ class AuthManager {
         try {
             this.showLoading('Signing in...');
             
-            const response = await fetch('http://localhost:8000/api/auth/login/', {
+            const response = await fetch(`${window.StudySyncConfig?.API_BASE_URL || 'http://localhost:8000'}/api/auth/login/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -320,7 +320,7 @@ class AuthManager {
         try {
             this.showLoading('Creating account...');
             
-            const response = await fetch('http://localhost:8000/api/auth/signup/', {
+            const response = await fetch(`${window.StudySyncConfig?.API_BASE_URL || 'http://localhost:8000'}/api/auth/signup/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -370,7 +370,7 @@ class AuthManager {
                 // For login, check if user exists
                 this.showLoading('Checking account...');
                 
-                const response = await fetch(`http://localhost:8000/api/auth/check-email/?email=${encodeURIComponent(email)}`);
+                const response = await fetch(`${window.StudySyncConfig?.API_BASE_URL || 'http://localhost:8000'}/api/auth/check-email/?email=${encodeURIComponent(email)}`);
                 const data = await response.json();
                 
                 if (data.exists) {
@@ -400,7 +400,7 @@ class AuthManager {
         try {
             this.showLoading('Sending verification code...');
             
-            const response = await fetch('http://localhost:8000/api/auth/send-sms/', {
+            const response = await fetch(`${window.StudySyncConfig?.API_BASE_URL || 'http://localhost:8000'}/api/auth/send-sms/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -454,7 +454,7 @@ class AuthManager {
         try {
             this.showLoading('Submitting documents...');
             
-            const response = await oauth2Service.apiRequest('http://localhost:8000/api/auth/verify-documents/', {
+            const response = await oauth2Service.apiRequest(`${window.StudySyncConfig?.API_BASE_URL || 'http://localhost:8000'}/api/auth/verify-documents/`, {
                 method: 'POST',
                 body: formData
             });

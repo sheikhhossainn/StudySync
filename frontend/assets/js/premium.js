@@ -1,7 +1,7 @@
 // Premium Membership JavaScript
 
 // API Configuration
-const API_BASE_URL = 'http://127.0.0.1:8000/api';
+const API_BASE_URL = `${window.StudySyncConfig?.API_BASE_URL || 'http://127.0.0.1:8000'}/api`;
 
 // Get auth token from localStorage (if user is logged in)
 function getAuthToken() {

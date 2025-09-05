@@ -5,7 +5,7 @@
 
 class OAuth2Service {
     constructor() {
-        this.apiBaseUrl = 'http://localhost:8000/api';
+        this.apiBaseUrl = `${window.StudySyncConfig?.API_BASE_URL || 'http://localhost:8000'}/api`;
         this.clientId = null;
         this.redirectUri = window.location.origin + '/auth/callback';
         this.scopes = 'read write';

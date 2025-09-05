@@ -3,7 +3,8 @@
 
 class StudySyncAPI {
     constructor() {
-        this.baseURL = 'http://localhost:8000/api';
+        // Use dynamic API base URL from configuration
+        this.baseURL = `${window.StudySyncConfig?.API_BASE_URL || 'http://localhost:8000'}/api`;
         this.token = localStorage.getItem('authToken');
     }
 

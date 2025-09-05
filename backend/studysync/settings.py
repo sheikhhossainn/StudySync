@@ -35,9 +35,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY', default='django-insecure-change-me-in-production')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=True, cast=bool)
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1').split(',')
+# Parse ALLOWED_HOSTS and filter out empty strings
+ALLOWED_HOSTS = [host.strip() for host in config('ALLOWED_HOSTS', default='localhost,127.0.0.1').split(',') if host.strip()]
 
 # Application definition
 DJANGO_APPS = [
@@ -226,7 +227,10 @@ REST_FRAMEWORK = {
 
 # CORS Configuration
 CORS_ALLOW_ALL_ORIGINS = DEBUG
-CORS_ALLOWED_ORIGINS = config('CORS_ALLOWED_ORIGINS', default='').split(',') if not DEBUG else []
+
+# Parse CORS origins and filter out empty strings
+cors_origins_config = config('CORS_ALLOWED_ORIGINS', default='')
+CORS_ALLOWED_ORIGINS = [origin.strip() for origin in cors_origins_config.split(',') if origin.strip()]
 
 # Development origins - including your Live Server port
 if DEBUG:
@@ -239,12 +243,16 @@ if DEBUG:
         'http://localhost:3000',   # Alternative localhost
     ]
 
-# For Vercel deployment
+# Ensure production domains are always included when not in DEBUG mode
 if not DEBUG:
-    CORS_ALLOWED_ORIGINS += [
-        'https://your-domain.vercel.app',  # Replace with your Vercel domain
-        'https://studysync.vercel.app',   # Example domain
+    production_origins = [
+        'https://study-sync-teal.vercel.app',
+        'https://studysync-frontend.vercel.app',
     ]
+    # Add production origins if they're not already in the list
+    for origin in production_origins:
+        if origin not in CORS_ALLOWED_ORIGINS:
+            CORS_ALLOWED_ORIGINS.append(origin)
 
 CORS_ALLOW_HEADERS = [
     'accept',

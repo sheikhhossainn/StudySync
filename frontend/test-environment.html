@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudySync Environment Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .status {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover { background: #0056b3; }
+        .code {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 StudySync Environment Test</h1>
+    
+    <div id="status-container">
+        <div class="status info">
+            Loading configuration...
+        </div>
+    </div>
+
+    <h2>Environment Information</h2>
+    <div class="code" id="env-info">Loading...</div>
+
+    <h2>Test Actions</h2>
+    <button onclick="testAPIConnection()">Test API Connection</button>
+    <button onclick="showConfig()">Show Configuration</button>
+    <button onclick="forceDevMode()">Force Dev Mode</button>
+    <button onclick="forceProdMode()">Force Prod Mode</button>
+
+    <h2>Test Results</h2>
+    <div id="test-results"></div>
+
+    <!-- Include the configuration -->
+    <script src="assets/js/config.js"></script>
+    
+    <script>
+        // Wait for config to load
+        setTimeout(() => {
+            checkEnvironment();
+        }, 100);
+
+        function checkEnvironment() {
+            const container = document.getElementById('status-container');
+            const envInfo = document.getElementById('env-info');
+            
+            // Get environment info
+            const config = window.StudySyncConfig;
+            const hostname = window.location.hostname;
+            const port = window.location.port;
+            const isLocal = hostname === 'localhost' || hostname === '127.0.0.1';
+            
+            // Display environment info
+            envInfo.innerHTML = `
+                <strong>Current Environment:</strong><br>
+                Hostname: ${hostname}<br>
+                Port: ${port}<br>
+                API Base URL: ${config.API_BASE_URL}<br>
+                Is Local: ${isLocal ? 'Yes' : 'No'}<br>
+                Force Dev Mode: ${localStorage.getItem('forceDevMode') || 'false'}
+            `;
+
+            // Check if configuration is correct
+            if (isLocal && config.API_BASE_URL.includes('localhost:8000')) {
+                container.innerHTML = '<div class="status success">✅ Local development mode detected correctly!</div>';
+            } else if (!isLocal && !config.API_BASE_URL.includes('localhost')) {
+                container.innerHTML = '<div class="status success">✅ Production mode detected correctly!</div>';
+            } else {
+                container.innerHTML = '<div class="status error">❌ Environment detection may have issues</div>';
+            }
+        }
+
+        function testAPIConnection() {
+            const results = document.getElementById('test-results');
+            results.innerHTML = '<div class="status info">Testing API connection...</div>';
+            
+            if (window.StudySyncDev && window.StudySyncDev.testAPI) {
+                window.StudySyncDev.testAPI().then(() => {
+                    // Results will be shown in console
+                    results.innerHTML += '<div class="status info">Check browser console for results</div>';
+                });
+            } else {
+                // Manual test
+                fetch(`${window.StudySyncConfig.API_BASE_URL}/api/`)
+                    .then(response => {
+                        if (response.ok) {
+                            results.innerHTML = '<div class="status success">✅ API connection successful!</div>';
+                        } else {
+                            results.innerHTML = '<div class="status error">❌ API returned status: ' + response.status + '</div>';
+                        }
+                    })
+                    .catch(error => {
+                        results.innerHTML = '<div class="status error">❌ API connection failed: ' + error.message + '</div>';
+                    });
+            }
+        }
+
+        function showConfig() {
+            if (window.StudySyncDev && window.StudySyncDev.showConfig) {
+                window.StudySyncDev.showConfig();
+                document.getElementById('test-results').innerHTML = '<div class="status info">Configuration logged to console</div>';
+            } else {
+                console.log('StudySync Configuration:', window.StudySyncConfig);
+                document.getElementById('test-results').innerHTML = '<div class="status info">Configuration logged to console</div>';
+            }
+        }
+
+        function forceDevMode() {
+            if (window.StudySyncDev && window.StudySyncDev.enableDevMode) {
+                window.StudySyncDev.enableDevMode();
+            } else {
+                localStorage.setItem('forceDevMode', 'true');
+                location.reload();
+            }
+        }
+
+        function forceProdMode() {
+            if (window.StudySyncDev && window.StudySyncDev.enableProdMode) {
+                window.StudySyncDev.enableProdMode();
+            } else {
+                localStorage.removeItem('forceDevMode');
+                location.reload();
+            }
+        }
+    </script>
+</body>
+</html>

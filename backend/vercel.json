@@ -6,42 +6,14 @@
       "use": "@vercel/python",
       "config": { 
         "maxLambdaSize": "15mb", 
-        "runtime": "python3.9"
-      }
-    },
-    {
-      "src": "build_files.sh",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "staticfiles"
+        "runtime": "python3.11"
       }
     }
   ],
   "routes": [
     {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    },
-    {
-      "src": "/media/(.*)",
-      "dest": "/media/$1"
-    },
-    {
-      "src": "/api/(.*)",
-      "dest": "studysync/wsgi.py"
-    },
-    {
-      "src": "/admin/(.*)",
-      "dest": "studysync/wsgi.py"
-    },
-    {
       "src": "/(.*)",
       "dest": "studysync/wsgi.py"
     }
-  ],
-  "functions": {
-    "studysync/wsgi.py": {
-      "maxDuration": 30
-    }
-  }
+  ]
 }

@@ -20,8 +20,8 @@ const StudySyncConfig = {
             return 'http://localhost:8000';
         }
         
-        // Production - Use your deployed backend URL
-        return 'https://studysync-backend-production.vercel.app';
+        // Production - Use your deployed backend URL  
+        return 'https://study-backend-delta.vercel.app';
     })(),
     
     // Google OAuth Configuration

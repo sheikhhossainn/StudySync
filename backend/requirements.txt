@@ -3,8 +3,6 @@ Django==4.2.7
 psycopg2-binary==2.9.9
 dj-database-url==2.1.0
 django-cors-headers==4.3.1
-
-# Environment variables
 python-decouple==3.8
 
 # API Development
@@ -15,26 +13,7 @@ django-filter==23.3
 # OAuth 2.0 and Authentication
 django-oauth-toolkit==1.7.1
 django-allauth==0.57.0
-social-auth-app-django==5.4.0
 PyJWT==2.8.0
 
-# Google Authentication
-google-auth==2.40.3
-google-auth-oauthlib==1.2.2
-google-auth-httplib2==0.2.0
-
-# Payment Processing
-requests==2.31.0
-cryptography==41.0.7
-
-# Development and Testing
-django-debug-toolbar==4.2.0
-pytest-django==4.5.2
-factory-boy==3.3.0
-
 # Production
-gunicorn==21.2.0
 whitenoise==6.6.0
-
-# Mobile Banking APIs
-pycryptodome==3.19.0  # For encryption in Nagad

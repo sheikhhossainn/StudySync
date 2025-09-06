@@ -1,8 +1,19 @@
-# Minimal requirements for Vercel deployment
+# Core Django and Database
 Django==4.2.7
 psycopg2-binary==2.9.9
 dj-database-url==2.1.0
 django-cors-headers==4.3.1
 python-decouple==3.8
+
+# API Development
 djangorestframework==3.14.0
+djangorestframework-simplejwt==5.5.1
+django-filter==23.3
+
+# OAuth 2.0 and Authentication
+django-oauth-toolkit==1.7.1
+django-allauth==0.57.0
+PyJWT==2.8.0
+
+# Production
 whitenoise==6.6.0

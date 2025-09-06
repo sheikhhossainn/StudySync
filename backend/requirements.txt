@@ -10,10 +10,14 @@ djangorestframework==3.14.0
 djangorestframework-simplejwt==5.5.1
 django-filter==23.3
 
-# OAuth 2.0 and Authentication
+# OAuth 2.0 and Authentication (minimal set)
 django-oauth-toolkit==1.7.1
 django-allauth==0.57.0
 PyJWT==2.8.0
 
 # Production
 whitenoise==6.6.0
+
+# For existing models and payment integration
+requests==2.31.0
+cryptography==41.0.7

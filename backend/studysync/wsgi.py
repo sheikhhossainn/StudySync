@@ -11,8 +11,8 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-# Use simple settings for Vercel deployment to avoid complex dependencies
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'studysync.settings_simple')
+# Use full settings to access existing database with proper models
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'studysync.settings')
 
 application = get_wsgi_application()
 
